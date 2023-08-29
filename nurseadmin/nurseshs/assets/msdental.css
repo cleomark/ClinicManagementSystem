@@ -1,0 +1,26 @@
+.main-content { 
+  padding: 5px;
+  margin-left: 0; /* Adjust margin-left to your preference */
+}
+
+.email-list-item {
+  padding-top: 1px;
+  cursor: pointer;
+  padding-bottom: 20px;
+}
+.message {
+  display: inline;
+  max-width: 200px; /* Adjust the maximum width as needed */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.read {
+  background-color: white; /* Background color for read messages */
+}
+
+.email-list-item .timestamp {
+  color: #666;
+  font-size: 12px;
+}

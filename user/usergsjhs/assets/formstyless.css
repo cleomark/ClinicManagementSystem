@@ -1,0 +1,313 @@
+input[type="text"] {
+    border: 2px solid #afbdcf;
+    border-radius: 5px;
+    height: 52px;
+    width:auto;
+    color: #1E1E1E;
+    font-size: 14px;
+    padding-left: 20px;
+    box-shadow: none;  
+}
+
+input[type="date"] {
+    border: 2px solid #afbdcf;
+    border-radius: 5px;
+    height: 47px;
+    width:240px;
+    color: #1E1E1E;
+    font-size: 14px;
+    padding-left: 20px;
+    box-shadow: none;  
+}
+
+input[type="number"] {
+    border: 2px solid #afbdcf;
+    border-radius: 5px;
+    height: 47px;
+    width:240px;
+    color: #1E1E1E;
+    font-size: 14px;
+    padding-left: 20px;
+    box-shadow: none;  
+}
+
+select[name="gender"] {
+    border: 2px solid #afbdcf;
+    border-radius: 5px;
+    height: 47px;
+    width:240px;
+    color: #1E1E1E;
+    font-size: 14px;
+    padding-left: 20px;
+    box-shadow: none;  
+}
+
+select[name="role"] {
+    border: 2px solid #afbdcf;
+    border-radius: 5px;
+    height: 47px;
+    width:240px;
+    color: #1E1E1E;
+    font-size: 14px;
+    padding-left: 20px;
+    box-shadow: none;  
+}
+
+select[name="leveleduc"] {
+    border: 2px solid #afbdcf;
+    border-radius: 5px;
+    height: 47px;
+    width:240px;
+    color: #1E1E1E;
+    font-size: 14px;
+    padding-left: 20px;
+    box-shadow: none;  
+}
+
+
+select {
+    border: 2px solid #afbdcf;
+    border-radius: 5px;
+    height: 47px;
+    width:240px;
+    color: #1E1E1E;
+    font-size: 14px;
+    padding-left: 20px;
+    box-shadow: none;  
+}
+
+  /* Label style after Input feild is in focus. Can also use input:focus ~ label to select sibling. */
+
+  input:focus + label, input:valid + label{
+    font-size: 10px;
+    color: #1E1E1E;
+    top: -5px;
+    left:10px;
+    background: #ffffff;
+    padding: 0px 5px 0px 5px;
+}
+
+.input_wrap select:focus + label,
+.input_wrap select:valid + label,
+.input_wrap select.has-value + label {
+    font-size: 15px;
+    color: #1E1E1E;
+    top: -5px;
+    left: 10px;
+    background: #ffffff;
+    width: 250px;
+    padding: 0px 5px 0px 5px;
+    transform: translateY(0);
+}
+/* .input_wrap {width:auto; height:auto; position:relative;
+} */
+
+.input_wrap label {
+    font-family:arial;
+    font-size:15px;
+    color: #1E1E1E;
+    padding: -1px;
+    top:0;
+    left: 0;
+    transition:0.2s ease all; 
+    -moz-transition:0.2s ease all; 
+    -webkit-transition:0.2s ease all;
+    pointer-events: none;
+}
+
+input[type="text"]:focus {outline:none;}
+.input_wrap {
+    display: flex;
+    flex-direction: column;
+}
+
+#address{
+    width: 999px;
+}
+#paddress{
+    width: 999px;
+}
+#father{
+    width: 500px;
+}
+#cfather{
+    width: 300px;
+}
+#mother{
+    width: 500px;
+}
+#cmother{
+    width: 300px;
+}
+#religion{
+    width: 500px;
+}
+#nationality{
+    width: 300px;
+}
+#language{
+    width: 999px;
+}
+#guardianrelation{
+    width: 400px;
+}
+#cguardian{
+    width: 300px;
+}
+#altrelation{
+    width: 350px;
+}
+#altrel{
+    width: 300px;
+}
+#acontact{
+    width: 300px;
+}
+#others{
+    width: 400px;
+}
+#othersmedical{
+    width: 400px;
+}
+#guardianname{
+    width: 400px;
+}
+.input_form {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    
+}
+.input_form_2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.input_wrap {
+    padding-top: 10px; 
+    padding-bottom: 10px; 
+}
+
+.align_form{
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    grid-template-rows: repeat(4, minmax(0, 1fr));
+}
+
+select[readonly] {
+    color: black; /* You can change the color to your preferred text color */
+  }
+.title_{
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #000;
+}
+
+.checkbox {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.checkbox input[type="checkbox"] {
+    display: none;
+}
+
+.checkbox label {
+    position: relative;
+    font-size: 200px;
+    padding-left: 25px;
+    cursor: pointer;
+}
+select.form-select:not(:disabled) {
+    color: black; /* Change the text color to your preferred color */
+    background-color: white; /* Change the background color to your preferred color */
+    cursor: pointer; /* Change the cursor style to pointer to indicate it's clickable */
+  }
+
+.checkbox label:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 18px;
+    height: 20px;
+    border: 2px solid #15a362;
+    border-radius: 4px;
+}
+
+.checkbox label:after {
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+    background-color: #15a362;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.checkbox input[type="checkbox"]:checked + label:after {
+    opacity: 1;
+}
+
+
+/* input_form_2 */
+
+.input_wrap_2 {
+    position: relative;
+    width: 3450px;
+}
+
+.input_wrap_2 select:focus + label,
+.input_wrap_2 select:valid + label,
+.input_wrap_2 select.has-value + label {
+    font-size: 10px;
+    color: #1E1E1E;
+    top: 5px;
+    left: 10px;
+    background: #ffffff;
+    width: 4550px;
+    padding: 0px 5px 0px 5px;
+    transform: translateY(0);
+    z-index: 1;
+}
+
+.input_wrap_2 label {
+    font-family: arial;
+    font-size: 15px;
+    color: #1E1E1E;
+    padding: 10px;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    transition: 0.2s ease all;
+    pointer-events: none;
+}
+.input_form_2 > .input_wrap_2{
+    width: 350px;
+}
+
+.btn{
+    width: 350px;
+    color: #fff;
+}
+.btn:hover{
+    color: #15a362;
+}
+.image_container {
+    width: 200px;
+    height: 200px;
+}
+
+.image_container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
