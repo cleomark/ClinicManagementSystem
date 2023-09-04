@@ -219,8 +219,6 @@ if (mysqli_num_rows($result) > 0) {
     <div id="submenu-8" class="collapse submenu submenu-8" data-bs-parent="#menu-accordion">
         <ul class="submenu-list list-unstyled">
             <li class="submenu-item"><a class="submenu-link" href="healthprofilegsjhs.php">Health Profile</a></li>
-            <li class="submenu-item"><a class="submenu-link" href="healthdeclarationgsjhs.php">Health Declaration</a></li>
-            <li class="submenu-item"><a class="submenu-link" href="medicalcertificategsjhs.php">Medical Certificate</a></li>
         </ul>
     </div>
 </li>

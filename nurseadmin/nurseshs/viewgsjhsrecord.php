@@ -42,70 +42,84 @@ $sql = "SELECT * FROM healthrecordformgsjhs WHERE idnumber = '$idnumber'";
 $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0) {
-  $row = $result->fetch_assoc(); 
-  $image = $row['image'];
-  $gradelevel = $row['gradelevel'];
-  $idnumber = $row['role'];
-  $fullname= $row['fullname'];
-  $cp = $row['cp'];
-  $age = $row['idnumber'];
-  $gender = $row['gender'];
-  $address = $row ['address'];
-  $paddress = $row ['paddress'];
-  $father = $row['father'];
-  $cfather = $row['cfather'];
-  $mother = $row['mother'];
-  $cmother = $row['cmother'];
-  $religion = $row['religion'];
-  $nationality = $row['nationality'];
-  $language = $row['language'];
-  $bothparents = $row['bothparents'];
-  $livesfather = $row['livesfather'];
-  $livesmother = $row['livesmother'];
-  $guardian = $row['guardian'];
-  $guardianname = $row['guardianname'];
-  $guardianrelation = $row['guardianrelation'];
-  $cguardian = $row['cguardian'];
-  $altrelation = $row['altrelation'];
-  $altrel = $row['altrel'];
-  $acontact = $row['acontact'];
-  $bcg = $row['bcg'];
-  $dpt = $row['dpt'];
-  $opv = ['opv'];
-  $hepa = $row['hepa'];
-  $measles = $row['measles'];
-  $others = $row['others'];
-  $firstdose =$row ['firstdose'];
-  $seconddose = $row['seconddose'];
-  $boosterdose =$row['boosterdose'];
-  $no = $row['no'];
-  $imagevac = $row['imagevac'];
-  $asthma = $row['asthma'];
-  $faintingspells = $row['faintingspells'];
-  $allergicrhinitis = $row['allergicrhinitis'];
-  $freqheadache =$row['freqheadache'];
-  $anxietydis =$row['anxietydis'];
-  $g6pd = $row['g6pd'];
-  $bleedingclotting =$row['bleedingclotting'];
-  $hearingprob =$row['hearingprob'];
-  $hypergas = $row['hypergas'];
-  $derma =$row['derma'];
-  $hypertension =$row['hypertension'];
-  $diabetes = $row['diabetes'];
-  $hyperventilation =$row['hyperventilation'];
-  $mens =$row['mens'];
-  $othersmedical = $row['othersmedical'];
-  $heartcondition =$row['heartcondition'];
-  $eyeproblem =$row['eyeproblem'];
-  $illness = $row['illness'];
-  $injuries =$row['injuries'];
-  $treatment =$row['treatment'];
-  $medication = $row['medication'];
-  $food =$row['food'];
-  $firstaid =$row['firstaid'];
-  $concernshealth =$row['concernshealth'];
-
-
+    $row = $result->fetch_assoc(); 
+    $image = $row['image'];
+    $fullname= $row['fullname'];
+    $idnumber = $row['idnumber'];
+    $cp = $row['cp'];
+    $birthday = $row['birthday'];
+    $gender = $row['gender'];
+    $address = $row ['address'];
+    $paddress = $row ['paddress'];
+    $father = $row['father'];
+    $cfather = $row['cfather'];
+    $mother = $row['mother'];
+    $cmother = $row['cmother'];
+    $religion = $row['religion'];
+    $nationality = $row['nationality'];
+    $language = $row['language'];
+    $bothparents = $row['bothparents'];
+    $livesfather = $row['livesfather'];
+    $livesmother = $row['livesmother'];
+    $guardian = $row['guardian'];
+    $guardianname = $row['guardianname'];
+    $guardianrelation = $row['guardianrelation'];
+    $cguardian = $row['cguardian'];
+    $altrelation = $row['altrelation'];
+    $altrel = $row['altrel'];
+    $acontact = $row['acontact'];
+    $bcg = $row['bcg'];
+    $dpt = $row['dpt'];
+    $opv = ['opv'];
+    $hepa = $row['hepa'];
+    $measles = $row['measles'];
+    $others = $row['others'];
+    $firstdose =$row ['firstdose'];
+    $seconddose = $row['seconddose'];
+    $boosterdose =$row['boosterdose'];
+    $no = $row['no'];
+    $imagevac = $row['imagevac'];
+    $asthma = $row['asthma'];
+    $faintingspells = $row['faintingspells'];
+    $allergicrhinitis = $row['allergicrhinitis'];
+    $freqheadache =$row['freqheadache'];
+    $anxietydis =$row['anxietydis'];
+    $g6pd = $row['g6pd'];
+    $bleedingclotting =$row['bleedingclotting'];
+    $hearingprob =$row['hearingprob'];
+    $hypergas = $row['hypergas'];
+    $derma =$row['derma'];
+    $hypertension =$row['hypertension'];
+    $diabetes = $row['diabetes'];
+    $hyperventilation =$row['hyperventilation'];
+    $mens =$row['mens'];
+    $othersmedical = $row['othersmedical'];
+    $yesheartcon = $row['yesheartcon'];
+    $noheartcon = $row['noheartcon'];
+    $heartcon = $row['heartcon'];
+    $yeseyeprob = $row['yeseyeprob'];
+    $noeyeprob = $row['noeyeprob'];
+    $eyeprob = $row['eyeprob'];
+    $yesseriousillnes = $row['yesseriousillnes'];
+    $noseriousillnes = $row['noseriousillnes'];
+    $seriousillnes = $row['seriousillnes'];
+    $yessurgeries = $row['yessurgeries'];
+    $nosurgeries = $row['nosurgeries'];
+    $surgeries = $row['surgeries'];
+    $yesreceive = $row['yesreceive'];
+    $noreceive = $row['noreceive'];
+    $receive = $row['receive'];
+    $yesallergiesmed = $row['yesallergiesmed'];
+    $noallergiesmed = $row['noallergiesmed'];
+    $allergiesmed = $row['allergiesmed'];
+    $yesallergiesfood = $row['yesallergiesfood'];
+    $noallergiesfood = $row['noallergiesfood'];
+    $allergiesfood = $row['allergiesfood'];
+    $yesfirstaid = $row['yesfirstaid'];
+    $nofirstaid = $row['nofirstaid'];
+    $yesconcerns = $row['yesconcerns'];
+    $noconcerns = $row['noconcerns'];
+    $concerns = $row['concerns'];
     }
  else {
  } 
@@ -329,7 +343,7 @@ if (mysqli_num_rows($result) > 0) {
 					        </div><!--//col-->
 				        </div><!--//row-->
 				    </div><!--//app-card-header-->
-				    <div class="app-card-body p-4">
+                    <div class="app-card-body p-4">
 							<div class="align_form">
 								<div class="input_form">
 								<div class="input_wrap">
@@ -340,27 +354,12 @@ if (mysqli_num_rows($result) > 0) {
 								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label>Your Image</label>
 							</div>
 						</div>
-
-    <div class="input_wrap">
-        <label for="gradelevel">Grade Level</label>
-        <input id="gradelevel" name="gradelevel" type="text" value="<?=$row['gradelevel'];?>" readonly >
-    </div>
-    <div class="input_wrap">
-                <label for="fullname">Role</label>
-                <select class="form-select" name="role">
-                <option disabled selected><?= $row['role'];?></option>
-                </select>
-        </div>
 <div class="input_wrap">
         <label for="fullname">Full Name</label>
         <input id="fullname" name="fullname" type="text" value="<?= $fullname; ?>" >
     </div>
-                    </div>
-                    </div>
-                    <br><br>
-<div class="input_form">
+
     <div class="input_wrap">
-    
         <label for="fullname">ID Number</label>
         <input name="idnumber" type="text" value="<?=$row['idnumber'];?>" readonly >
     </div>
@@ -368,9 +367,13 @@ if (mysqli_num_rows($result) > 0) {
         <label for="fullname">Personal Contact Number</label>
         <input name="cp" type="text" value="<?=$row['cp'];?>" readonly>
     </div>
+                    </div>
+                    </div>
+                    <br><br>
+<div class="input_form">
     <div class="input_wrap">
-        <label for="fullname">Age</label>
-        <input name="age" type="text" value="<?=$row['age'];?>" readonly>
+        <label for="fullname">Birthday</label>
+        <input name="birthday" type="text" value="<?=$row['birthday'];?>" readonly>
     </div>
  <div class="input_wrap">
         <label for="fullname">Gender</label>
@@ -440,19 +443,19 @@ if (mysqli_num_rows($result) > 0) {
     <label for="fullname">Student lives with: </label>
 </div><br>
 <div class="checkbox">
-    <input name="bothparents" value="bothparents" type="checkbox" id="bothparents" value="<?= $row['bothparents'];?>" <?php if ($row['bothparents']) echo "checked"; ?>>
+<input name="bothparents"  type="checkbox" id="bothparents" value="<?= $row['bothparents'];?>" <?php if ($row['bothparents']) echo "checked"; ?>>
     <label class="labels" for="bothparents" style="font-size: 14px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Both Parents</label>
 </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <div class="checkbox">
-    <input name="livesmother" value="livesmother" type="checkbox" id="mother" value="<?= $row['mother'];?>" <?php if ($row['mother']) echo "checked"; ?>>
+<input name="livesmother"  type="checkbox" id="livesmother" value="<?= $row['livesmother'];?>" <?php if ($row['livesmother']) echo "checked"; ?>>
     <label class="labels" for="livesmother" style="font-size: 14px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mother</label>
 </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <div class="checkbox">
-    <input name="livesfather" value="livesfather" type="checkbox" id="father" value="<?= $row['father'];?>" <?php if ($row['father']) echo "checked"; ?>>
+<input name="livesfather"  type="checkbox" id="livesfather" value="<?= $row['livesfather'];?>" <?php if ($row['livesfather']) echo "checked"; ?>>
     <label class="labels" for="livesfather" style="font-size: 14px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Father</label>
 </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <div class="checkbox">
-    <input name="guardian" value="guardian" type="checkbox" id="guardian" value="<?= $row['guardian'];?>" <?php if ($row['guardian']) echo "checked"; ?>>
+<input name="guardian"  type="checkbox" id="guardian" value="<?= $row['guardian'];?>" <?php if ($row['guardian']) echo "checked"; ?>>
     <label class="labels" for="guardian" style="font-size: 14px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Guardian</label>
 </div>
 <div class="input_form">
@@ -622,72 +625,164 @@ if (mysqli_num_rows($result) > 0) {
         <input name="othersmedical" id ="othersmedical" type="text" placeholder="Other Conditions"  value="<?=$row['othersmedical'];?>" readonly>
     </div>
 
-    <div class="input_form">   
-    <div class="input_wrap">
-        <label for="fullname">Do you have a heart condition? (If yes, please specify.)</label>
-        <input name="heartcondition" id ="language" type="text" value="<?=$row['heartcondition'];?>" readonly>
-    </div>   
+    <br>
+<p>Do you have a heart condition? (If yes, please specify.)</p>
+<div class="row-container">
+  <div class="checkbox">
+      <input name="yesheartcon" value="yesheartcon" type="checkbox" id="yesheartcon" value="<?= $row['yesheartcon'];?>" <?php if ($row['yesheartcon']) echo "checked"; ?>>
+      <label class="labels" for="yesheartcon" style="font-size: 14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yes</label>
+  </div>
+
+  <div class="checkbox">
+    <input name="noheartcon" value="noheartcon" type="checkbox" id="noheartcon" value="<?= $row['noheartcon'];?>" <?php if ($row['noheartcon']) echo "checked"; ?>>
+    <label class="labels" for="noheartcon" style="font-size: 14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No</label>
+  </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+  <div class="input_wrap">
+  <input name="heartcon" id="otherillnesss" type="text" placeholder="If YES, please specify" value="<?=$row['heartcon'];?>" readonly>
+  </div>
 </div>
-    <div class="input_form">   
-    <div class="input_wrap">
-        <label for="fullname">Do you have an Eye problem? (If yes, please specify.)</label>
-        <input name="eyeproblem" id ="language" type="text" value="<?=$row['eyeproblem'];?>" readonly>
-    </div>
+<br>
+<p>Do you have an Eye problem? (If yes, please specify.)</p>
+<div class="row-container">
+  <div class="checkbox">
+  <input name="yeseyeprob" value="yeseyeprob" type="checkbox" id="yeseyeprob" value="<?= $row['yeseyeprob'];?>" <?php if ($row['yeseyeprob']) echo "checked"; ?>>
+    <label class="labels" for="yeseyeprob" style="font-size: 14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yes</label>
+  </div>
+
+  <div class="checkbox">
+  <input name="noeyeprob" value="noeyeprob" type="checkbox" id="noeyeprob" value="<?= $row['noeyeprob'];?>" <?php if ($row['noeyeprob']) echo "checked"; ?>>
+    <label class="labels" for="noeyeprob" style="font-size: 14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No</label>
+  </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+  <div class="input_wrap">
+  <input name="eyeprob" id="otherillnesss" type="text" placeholder="If YES, please specify" value="<?=$row['eyeprob'];?>" readonly>  
 </div>
-<div class="input_form"> 
-    <div class="input_wrap">
-        <label for="fullname">Do you have a history of serious illness and/or hospitalization? (Please specify and include dates.)</label>
-        <input name="illness" id ="language" type="text" value="<?=$row['illness'];?>" readonly>
-    </div>
+</div>
+<br>
+<p>Do you have a history of serious illness and/or hospitalization? (Please specify and include dates.)</p>
+<div class="row-container">
+  <div class="checkbox">
+  <input name="yesseriousillnes" value="yesseriousillnes" type="checkbox" id="yesseriousillnes" value="<?= $row['yesseriousillnes'];?>" <?php if ($row['yesseriousillnes']) echo "checked"; ?>>
+    <label class="labels" for="yesseriousillnes" style="font-size: 14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yes</label>
+  </div>
+
+  <div class="checkbox">
+  <input name="noseriousillnes" value="noseriousillnes" type="checkbox" id="noseriousillnes" value="<?= $row['noseriousillnes'];?>" <?php if ($row['noseriousillnes']) echo "checked"; ?>>
+    <label class="labels" for="noseriousillnes" style="font-size: 14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No</label>
+  </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+  <div class="input_wrap">
+  <input name="seriousillnes" id="otherillnesss" type="text" placeholder="If YES, please specify" value="<?=$row['seriousillnes'];?>" readonly>
+  </div>
 </div>
 
-<div class="input_form"> 
-    <div class="input_wrap">
-        <label for="fullname">Do you have a history of surgeries and/or injuries? (Please specify and include dates.)</label>
-        <input name="injuries" id ="language" type="text" value="<?=$row['injuries'];?>" readonly>
-    </div>
+<br>
+<p>Do you have a history of surgeries and/or injuries? (Please specify and include dates.)</p><div class="row-container">
+  <div class="checkbox">
+  <input name="yessurgeries" value="yessurgeries" type="checkbox" id="yessurgeries" value="<?= $row['yessurgeries'];?>" <?php if ($row['yessurgeries']) echo "checked"; ?>>
+    <label class="labels" for="yesseriousillnes" style="font-size: 14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yes</label>
+  </div>
+
+  <div class="checkbox">
+  <input name="nosurgeries" value="nosurgeries" type="checkbox" id="nosurgeries" value="<?= $row['nosurgeries'];?>" <?php if ($row['nosurgeries']) echo "checked"; ?>>
+    <label class="labels" for="noseriousillnes" style="font-size: 14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No</label>
+  </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+  <div class="input_wrap">
+  <input name="surgeries" id="otherillnesss" type="text" placeholder="If YES, please specify" value="<?=$row['surgeries'];?>" readonly>
+  </div>
 </div>
 
-<div class="input_form"> 
-    <div class="input_wrap">
-        <label for="fullname">Do receive any medication or medical treatment, either regulary or occasionally? (If yes, please explain.)</label>
-        <input name="treatment" id ="language" type="text" value="<?=$row['treatment'];?>" readonly>
-    </div>
+<br>
+<p>Do receive any medication or medical treatment, either regulary or occasionally? (If yes, please explain.)</p>
+<div class="row-container">
+  <div class="checkbox">
+  <input name="yesreceive" value="yesreceive" type="checkbox" id="yesreceive" value="<?= $row['yesreceive'];?>" <?php if ($row['yesreceive']) echo "checked"; ?>>
+    <label class="labels" for="yesseriousillnes" style="font-size: 14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yes</label>
+  </div>
+
+  <div class="checkbox">
+  <input name="noreceive" value="noreceive" type="checkbox" id="noreceive" value="<?= $row['noreceive'];?>" <?php if ($row['noreceive']) echo "checked"; ?>>
+    <label class="labels" for="noseriousillnes" style="font-size: 14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No</label>
+  </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+  <div class="input_wrap">
+  <input name="receive" id="otherillnesss" type="text" placeholder="If YES, please specify" value="<?=$row['receive'];?>" readonly>
+  </div>
+</div>
+<br>
+<p>Do you have any allergies to medication? (If yes, please specify.)</p>
+<div class="row-container">
+  <div class="checkbox">
+  <input name="yesallergiesmed" value="yesallergiesmed" type="checkbox" id="yesallergiesmed" value="<?= $row['yesallergiesmed'];?>" <?php if ($row['yesallergiesmed']) echo "checked"; ?>>
+    <label class="labels" for="yesseriousillnes" style="font-size: 14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yes</label>
+  </div>
+
+  <div class="checkbox">
+  <input name="noallergiesmed" value="noallergiesmed" type="checkbox" id="noallergiesmed" value="<?= $row['noallergiesmed'];?>" <?php if ($row['noallergiesmed']) echo "checked"; ?>>
+    <label class="labels" for="noseriousillnes" style="font-size: 14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No</label>
+  </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+  <div class="input_wrap">
+  <input name="allergiesmed" id="otherillnesss" type="text" placeholder="If YES, please specify" value="<?=$row['allergiesmed'];?>" readonly>
+  </div>
 </div>
 
-<div class="input_form"> 
-    <div class="input_wrap">
-        <label for="fullname">Do you have any allergies to medication? (If yes, please specify.)</label>
-        <input name="medication" id ="language" type="text" value="<?=$row['medication'];?>" readonly>
-    </div>
+<br>
+<p>Do you have any allergies to food? (If yes, please specify.)</p>
+<div class="row-container">
+  <div class="checkbox">
+  <input name="yesallergiesfood" value="yesallergiesfood" type="checkbox" id="yesallergiesfood" value="<?= $row['yesallergiesfood'];?>" <?php if ($row['yesallergiesfood']) echo "checked"; ?>>
+    <label class="labels" for="yesseriousillnes" style="font-size: 14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yes</label>
+  </div>
+
+  <div class="checkbox">
+  <input name="noallergiesfood" value="noallergiesfood" type="checkbox" id="noallergiesfood" value="<?= $row['noallergiesfood'];?>" <?php if ($row['noallergiesfood']) echo "checked"; ?>>
+    <label class="labels" for="noseriousillnes" style="font-size: 14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No</label>
+  </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+  <div class="input_wrap">
+  <input name="allergiesfood" id="otherillnesss" type="text" placeholder="If YES, please specify" value="<?=$row['allergiesfood'];?>" readonly>
+  </div>
 </div>
 
-<div class="input_form"> 
-    <div class="input_wrap">
-        <label for="fullname">Do you have any allergies to food? (If yes, please specify.)</label>
-        <input name="food" id ="language" type="text" value="<?=$row['food'];?>" readonly>
-    </div>
+<br>
+<p>Would you like to receive minor first aid (medication & treatment) given by the nurse in the school clinic?</p>
+<div class="row-container">
+  <div class="checkbox">
+  <input name="yesfirstaid" value="yesfirstaid" type="checkbox" id="yesfirstaid" value="<?= $row['yesfirstaid'];?>" <?php if ($row['yesfirstaid']) echo "checked"; ?>>
+    <label class="labels" for="yesfirstaid" style="font-size: 14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yes</label>
+  </div>
+
+  <div class="checkbox">
+  <input name="nofirstaid" value="nofirstaid" type="checkbox" id="nofirstaid" value="<?= $row['nofirstaid'];?>" <?php if ($row['nofirstaid']) echo "checked"; ?>>
+    <label class="labels" for="noseriousillnes" style="font-size: 14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No</label>
+  </div>
 </div>
 
-<div class="input_form"> 
-    <div class="input_wrap">
-        <label for="fullname">Would you like to receive minor first aid (medication & treatment) given
-            by the nurse in the school clinic?</label>
-        <input name="firstaid" id ="language" type="text" value="<?=$row['firstaid'];?>" readonly>
-    </div>
-                    </div>
-<div class="input_form"> 
-    <div class="input_wrap">
-        <label for="fullname">Do you have any concerns related to your health? (If yes, please explain.)</label>
-        <input name="concernshealth" id ="language" type="text" value="<?=$row['concernshealth'];?>" readonly>
-</div>
-                    </div>
+<br>
+<p>Do you have any concerns related to your health? (If yes, please explain.)</p>
+<div class="row-container">
+  <div class="checkbox">
+  <input name="yesconcerns" value="yesconcerns" type="checkbox" id="yesconcerns" value="<?= $row['yesconcerns'];?>" <?php if ($row['yesconcerns']) echo "checked"; ?>>
+    <label class="labels" for="yesseriousillnes" style="font-size: 14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yes</label>
+  </div>
 
+  <div class="checkbox">
+  <input name="noconcerns" value="noconcerns" type="checkbox" id="noconcerns" value="<?= $row['noconcerns'];?>" <?php if ($row['noconcerns']) echo "checked"; ?>>
+    <label class="labels" for="noconcerns" style="font-size: 14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No</label>
+  </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+  <div class="input_wrap">
+  <input name="concerns" id="otherillnesss" type="text" placeholder="If YES, please specify" value="<?=$row['concerns'];?>" readonly>
+  </div>
+</div>
 				    </div><!--//app-card-body-->
 				</div>			    
 		    </div>
 	    </div>
-    </div>  					
+    </div>  
     <!-- Javascript -->          
     <script src="assets/plugins/popper.min.js"></script>
     <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>  

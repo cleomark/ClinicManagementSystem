@@ -203,8 +203,6 @@
     <div id="submenu-8" class="collapse submenu submenu-8" data-bs-parent="#menu-accordion">
         <ul class="submenu-list list-unstyled">
             <li class="submenu-item"><a class="submenu-link" href="healthprofilegsjhs.php">Health Profile</a></li>
-            <li class="submenu-item"><a class="submenu-link" href="healthdeclarationgsjhs.php">Health Declaration</a></li>
-            <li class="submenu-item"><a class="submenu-link" href="medicalcertificategsjhs.php">Medical Certificate</a></li>
         </ul>
     </div>
 </li>
@@ -248,19 +246,35 @@
                      <form class="form-horizontal mt-4" method="post" action="function/gsjhsrecords.php">
 
                     <div class="row">
-    <div class="col-sm-6">
+    <div class="col-sm-3">
         <div class="form-group">
-            <label for="idnumber" class="col-sm-4 control-label" style="font-size: 16px">Enter the ID Number</label>
-            <div class="col-sm-10">
-                <input type="text" class="form-control" id="idnumber" name="idnumber" placeholder="Enter patient ID number" required>
+            <label for="idnumber" class="col-sm-12 control-label" style="font-size: 16px">Enter the ID Number</label>
+            <div class="col-sm-12">
+                <input type="text" class="form-control" id="idnumber" name="idnumber" placeholder="Enter ID number" required>
             </div>
         </div>
     </div>
-    <div class="col-sm-6">
+    <div class="col-sm-3">
         <div class="form-group">
-            <label for="patient_name" class="col-sm-4 control-label" style="font-size: 16px">Enter the Fullname</label>
-            <div class="col-sm-10">
+            <label for="patient_name" class="col-sm-12 control-label" style="font-size: 16px">Enter the Fullname</label>
+            <div class="col-sm-12">
                 <input type="text" class="form-control" id="fullname" name="fullname" placeholder="Enter the Fullname" required>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3">
+    <div class="form-group">
+            <label for="gradecsection" class="col-sm-12 control-label" style="font-size: 16px">Grade & Section</label>
+            <div class="col-sm-12">
+                <input type="text" class="form-control" id="gradesection" name="gradesection" placeholder="Enter Grade & Section" required>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="form-group">
+            <label for="vitalsigns" class="col-sm-12 control-label" style="font-size: 16px">Vital Signs</label>
+            <div class="col-sm-12">
+                <input type="text" class="form-control" id="vitalsigns" name="vitalsigns" placeholder="Enter Vital Signs" required>
             </div>
         </div>
     </div>
@@ -268,35 +282,23 @@
 
 <br>
 
-<div class="row">
-<div class="col-sm-6">
-        <div class="form-group">
-            <label for="gradecsection" class="col-sm-5 control-label" style="font-size: 16px">Grade & Section/Employee</label>
-            <div class="col-sm-10">
-                <input type="text" class="form-control" id="gradesection" name="gradesection" placeholder="Enter Grade & Section" required>
-            </div>
-        </div>
-    </div>
- 
-
+    <div class="row">
     <div class="col-sm-6">
         <div class="form-group">
-            <label for="vitalsigns" class="col-sm-4 control-label" style="font-size: 16px">Vital Signs</label>
-            <div class="col-sm-10">
-                <input type="text" class="form-control" id="vitalsigns" name="vitalsigns" placeholder="Enter Vital Signs" required>
-            </div>
+            <br>
+            <label for="diagnosis" class="control-label">Diagnosis/Chief Complaints</label>
+            <input type="text" class="form-control" id="diagnosis" name="diagnosis" placeholder="Diagnosis/Chief Complaints">
         </div>
     </div>
-
-<div class="row">
+    <div class="col-sm-6">
     <div class="form-group">
-        <br>
-        <label for="diagnosis" class="col-sm-5 control-label">Diagnosis/Chief Complaints, Management & Treatment/Medicine</label>
-        <div class="col-sm-10">
-            <input type="text" class="form-control" id="diagnosis" name="diagnosis" placeholder="Diagnosis/Chief Complaints, Management & Treatement" required>
+            <br>
+            <label for="diagnosis" class="control-label">Status</label>
+            <input type="text" class="form-control" id="diagnosis" name="status" placeholder="Status">
         </div>
     </div>
 </div>
+
 <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
         <br>
@@ -321,7 +323,7 @@
                   <div class="col-sm-4">
                       <div class="form-group">
                         <br>
-                          <label for="amount" class="col-sm-4 control-label" style="font-size: 16px">Amount</label>
+                          <label for="amount" class="col-sm-4 control-label" style="font-size: 16px">Quantity</label>
                           <div class="col-sm-11">
                               <input type="text" class="form-control" id="amount " name="quantity" placeholder="Enter Amount" required>
                           </div>

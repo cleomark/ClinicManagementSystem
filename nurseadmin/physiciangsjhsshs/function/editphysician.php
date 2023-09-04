@@ -9,10 +9,11 @@ if (isset($_POST['update_physicianrecord'])) {
     $user_id = $_POST['user_id'];
     $idnumber = $_POST['idnumber'];
     $name = $_POST['name'];
-    $phoneno = $_POST['phoneno'];
     $gradesection = $_POST['gradesection'];
-    $role = $_POST['role'];
     $date_time = $_POST['date_time'];
+    $sched_time = $_POST['sched_time'];
+    $phoneno = $_POST['phoneno'];
+    $role = $_POST['role'];
     $is_deleted_on_website = $_POST['is_deleted_on_website'];
 
     // Validate and sanitize inputs here...
@@ -24,8 +25,8 @@ if (isset($_POST['update_physicianrecord'])) {
 
     // Update the record in the database
     $sql = "UPDATE physicianapp SET
-    idnumber='$idnumber', name='$name', phoneno='$phoneno', gradesection = '$gradesection', 
-    role='$role', date_time='$formattedDatetime'
+    idnumber='$idnumber', name='$name',gradesection = '$gradesection',  phoneno='$phoneno',
+    date_time='$formattedDatetime', sched_time='$sched_time', role='$role'
     WHERE phy_id = '$phy_id'";
 
     if (mysqli_query($conn, $sql)) {

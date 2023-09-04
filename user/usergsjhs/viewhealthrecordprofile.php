@@ -43,7 +43,7 @@
     <!-- App CSS -->  
     <link id="theme-style" rel="stylesheet" href="assets/css/portal.css">
 	<link rel="stylesheet" href="assets/style.css">
-	<link rel="stylesheet" href="assets/formstyless.css">
+	<link rel="stylesheet" href="assets/formstyle.css">
 
 </head> 
 
@@ -196,27 +196,12 @@
 								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label>Your Image</label>
 							</div>
 						</div>
-
-    <div class="input_wrap">
-        <label for="gradelevel">Grade Level</label>
-        <input id="gradelevel" name="gradelevel" type="text" value="<?=$row['gradelevel'];?>" readonly >
-    </div>
-    <div class="input_wrap">
-                <label for="fullname">Role</label>
-                <select class="form-select" name="role">
-                <option disabled selected><?= $row['role'];?></option>
-                </select>
-        </div>
 <div class="input_wrap">
         <label for="fullname">Full Name</label>
         <input id="fullname" name="fullname" type="text" value="<?= $fullname; ?>" readonly >
     </div>
-                    </div>
-                    </div>
-                    <br><br>
-<div class="input_form">
+
     <div class="input_wrap">
-    
         <label for="fullname">ID Number</label>
         <input name="idnumber" type="text" value="<?=$row['idnumber'];?>" readonly >
     </div>
@@ -224,9 +209,14 @@
         <label for="fullname">Personal Contact Number</label>
         <input name="cp" type="text" value="<?=$row['cp'];?>" readonly>
     </div>
+ </div>
+</div>
+<br>
+<br>
+ <div class="input_form">
     <div class="input_wrap">
-        <label for="fullname">Age</label>
-        <input name="age" type="text" value="<?=$row['age'];?>" readonly>
+        <label for="fullname">Birthday</label>
+        <input name="birthday" type="text" value="<?=$row['birthday'];?>" readonly>
     </div>
  <div class="input_wrap">
         <label for="fullname">Gender</label>
@@ -236,12 +226,14 @@
     </div>
  </div>
 
-  <div class="input_form">
+
+<div class="input_form">
     <div class="input_wrap">
         <label for="fullname">Home Address</label>
         <input name="address" id ="address" type="text" value="<?=$row['address'];?>" readonly>
     </div>
 </div>
+
                     
 <div class="input_form">
     <div class="input_wrap">
@@ -249,6 +241,7 @@
         <input name="paddress" id="paddress" type="text" value="<?=$row['paddress'];?>" readonly>
     </div>
  </div>
+
 <div class="input_form">
 <div class="input_wrap">
     <label for="fullname">Name of Father</label>
@@ -478,66 +471,161 @@
         <input name="othersmedical" id ="othersmedical" type="text" placeholder="Other Conditions"  value="<?=$row['othersmedical'];?>" readonly>
     </div>
 
-    <div class="input_form">   
-    <div class="input_wrap">
-        <label for="fullname">Do you have a heart condition? (If yes, please specify.)</label>
-        <input name="heartcondition" id ="language" type="text" value="<?=$row['heartcondition'];?>" readonly>
-    </div>   
-</div>
-    <div class="input_form">   
-    <div class="input_wrap">
-        <label for="fullname">Do you have an Eye problem? (If yes, please specify.)</label>
-        <input name="eyeproblem" id ="language" type="text" value="<?=$row['eyeproblem'];?>" readonly>
-    </div>
-</div>
-<div class="input_form"> 
-    <div class="input_wrap">
-        <label for="fullname">Do you have a history of serious illness and/or hospitalization? (Please specify and include dates.)</label>
-        <input name="illness" id ="language" type="text" value="<?=$row['illness'];?>" readonly>
-    </div>
+    <br>
+<p>Do you have a heart condition? (If yes, please specify.)</p>
+<div class="row-container">
+  <div class="checkbox">
+      <input name="yesheartcon" value="yesheartcon" type="checkbox" id="yesheartcon" value="<?= $row['yesheartcon'];?>" <?php if ($row['yesheartcon']) echo "checked"; ?>>
+      <label class="labels" for="yesheartcon" style="font-size: 14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yes</label>
+  </div>
+
+  <div class="checkbox">
+    <input name="noheartcon" value="noheartcon" type="checkbox" id="noheartcon" value="<?= $row['noheartcon'];?>" <?php if ($row['noheartcon']) echo "checked"; ?>>
+    <label class="labels" for="noheartcon" style="font-size: 14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No</label>
+  </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+  <div class="input_wrap">
+  <input name="heartcon" id="otherillnesss" type="text" placeholder="If YES, please specify" value="<?=$row['heartcon'];?>" readonly>
+  </div>
 </div>
 
-<div class="input_form"> 
-    <div class="input_wrap">
-        <label for="fullname">Do you have a history of surgeries and/or injuries? (Please specify and include dates.)</label>
-        <input name="injuries" id ="language" type="text" value="<?=$row['injuries'];?>" readonly>
-    </div>
+<br>
+<p>Do you have an Eye problem? (If yes, please specify.)</p>
+<div class="row-container">
+  <div class="checkbox">
+  <input name="yeseyeprob" value="yeseyeprob" type="checkbox" id="yeseyeprob" value="<?= $row['yeseyeprob'];?>" <?php if ($row['yeseyeprob']) echo "checked"; ?>>
+    <label class="labels" for="yeseyeprob" style="font-size: 14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yes</label>
+  </div>
+
+  <div class="checkbox">
+  <input name="noeyeprob" value="noeyeprob" type="checkbox" id="noeyeprob" value="<?= $row['noeyeprob'];?>" <?php if ($row['noeyeprob']) echo "checked"; ?>>
+    <label class="labels" for="noeyeprob" style="font-size: 14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No</label>
+  </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+  <div class="input_wrap">
+  <input name="eyeprob" id="otherillnesss" type="text" placeholder="If YES, please specify" value="<?=$row['eyeprob'];?>" readonly>  
+</div>
+</div>
+<br>
+<p>Do you have a history of serious illness and/or hospitalization? (Please specify and include dates.)</p>
+<div class="row-container">
+  <div class="checkbox">
+  <input name="yesseriousillnes" value="yesseriousillnes" type="checkbox" id="yesseriousillnes" value="<?= $row['yesseriousillnes'];?>" <?php if ($row['yesseriousillnes']) echo "checked"; ?>>
+    <label class="labels" for="yesseriousillnes" style="font-size: 14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yes</label>
+  </div>
+
+  <div class="checkbox">
+  <input name="noseriousillnes" value="noseriousillnes" type="checkbox" id="noseriousillnes" value="<?= $row['noseriousillnes'];?>" <?php if ($row['noseriousillnes']) echo "checked"; ?>>
+    <label class="labels" for="noseriousillnes" style="font-size: 14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No</label>
+  </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+  <div class="input_wrap">
+  <input name="seriousillnes" id="otherillnesss" type="text" placeholder="If YES, please specify" value="<?=$row['seriousillnes'];?>" readonly>
+  </div>
 </div>
 
-<div class="input_form"> 
-    <div class="input_wrap">
-        <label for="fullname">Do receive any medication or medical treatment, either regulary or occasionally? (If yes, please explain.)</label>
-        <input name="treatment" id ="language" type="text" value="<?=$row['treatment'];?>" readonly>
-    </div>
+<br>
+<p>Do you have a history of surgeries and/or injuries? (Please specify and include dates.)</p><div class="row-container">
+  <div class="checkbox">
+  <input name="yessurgeries" value="yessurgeries" type="checkbox" id="yessurgeries" value="<?= $row['yessurgeries'];?>" <?php if ($row['yessurgeries']) echo "checked"; ?>>
+    <label class="labels" for="yesseriousillnes" style="font-size: 14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yes</label>
+  </div>
+
+  <div class="checkbox">
+  <input name="nosurgeries" value="nosurgeries" type="checkbox" id="nosurgeries" value="<?= $row['nosurgeries'];?>" <?php if ($row['nosurgeries']) echo "checked"; ?>>
+    <label class="labels" for="noseriousillnes" style="font-size: 14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No</label>
+  </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+  <div class="input_wrap">
+  <input name="surgeries" id="otherillnesss" type="text" placeholder="If YES, please specify" value="<?=$row['surgeries'];?>" readonly>
+  </div>
 </div>
 
-<div class="input_form"> 
-    <div class="input_wrap">
-        <label for="fullname">Do you have any allergies to medication? (If yes, please specify.)</label>
-        <input name="medication" id ="language" type="text" value="<?=$row['medication'];?>" readonly>
-    </div>
+<br>
+<p>Do receive any medication or medical treatment, either regulary or occasionally? (If yes, please explain.)</p>
+<div class="row-container">
+  <div class="checkbox">
+  <input name="yesreceive" value="yesreceive" type="checkbox" id="yesreceive" value="<?= $row['yesreceive'];?>" <?php if ($row['yesreceive']) echo "checked"; ?>>
+    <label class="labels" for="yesseriousillnes" style="font-size: 14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yes</label>
+  </div>
+
+  <div class="checkbox">
+  <input name="noreceive" value="noreceive" type="checkbox" id="noreceive" value="<?= $row['noreceive'];?>" <?php if ($row['noreceive']) echo "checked"; ?>>
+    <label class="labels" for="noseriousillnes" style="font-size: 14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No</label>
+  </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+  <div class="input_wrap">
+  <input name="receive" id="otherillnesss" type="text" placeholder="If YES, please specify" value="<?=$row['receive'];?>" readonly>
+  </div>
+</div>
+<br>
+<p>Do you have any allergies to medication? (If yes, please specify.)</p>
+<div class="row-container">
+  <div class="checkbox">
+  <input name="yesallergiesmed" value="yesallergiesmed" type="checkbox" id="yesallergiesmed" value="<?= $row['yesallergiesmed'];?>" <?php if ($row['yesallergiesmed']) echo "checked"; ?>>
+    <label class="labels" for="yesseriousillnes" style="font-size: 14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yes</label>
+  </div>
+
+  <div class="checkbox">
+  <input name="noallergiesmed" value="noallergiesmed" type="checkbox" id="noallergiesmed" value="<?= $row['noallergiesmed'];?>" <?php if ($row['noallergiesmed']) echo "checked"; ?>>
+    <label class="labels" for="noseriousillnes" style="font-size: 14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No</label>
+  </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+  <div class="input_wrap">
+  <input name="allergiesmed" id="otherillnesss" type="text" placeholder="If YES, please specify" value="<?=$row['allergiesmed'];?>" readonly>
+  </div>
 </div>
 
-<div class="input_form"> 
-    <div class="input_wrap">
-        <label for="fullname">Do you have any allergies to food? (If yes, please specify.)</label>
-        <input name="food" id ="language" type="text" value="<?=$row['food'];?>" readonly>
-    </div>
+<br>
+<p>Do you have any allergies to food? (If yes, please specify.)</p>
+<div class="row-container">
+  <div class="checkbox">
+  <input name="yesallergiesfood" value="yesallergiesfood" type="checkbox" id="yesallergiesfood" value="<?= $row['yesallergiesfood'];?>" <?php if ($row['yesallergiesfood']) echo "checked"; ?>>
+    <label class="labels" for="yesseriousillnes" style="font-size: 14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yes</label>
+  </div>
+
+  <div class="checkbox">
+  <input name="noallergiesfood" value="noallergiesfood" type="checkbox" id="noallergiesfood" value="<?= $row['noallergiesfood'];?>" <?php if ($row['noallergiesfood']) echo "checked"; ?>>
+    <label class="labels" for="noseriousillnes" style="font-size: 14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No</label>
+  </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+  <div class="input_wrap">
+  <input name="allergiesfood" id="otherillnesss" type="text" placeholder="If YES, please specify" value="<?=$row['allergiesfood'];?>" readonly>
+  </div>
 </div>
 
-<div class="input_form"> 
-    <div class="input_wrap">
-        <label for="fullname">Would you like to receive minor first aid (medication & treatment) given
-            by the nurse in the school clinic?</label>
-        <input name="firstaid" id ="language" type="text" value="<?=$row['firstaid'];?>" readonly>
-    </div>
-                    </div>
-<div class="input_form"> 
-    <div class="input_wrap">
-        <label for="fullname">Do you have any concerns related to your health? (If yes, please explain.)</label>
-        <input name="concernshealth" id ="language" type="text" value="<?=$row['concernshealth'];?>" readonly>
+<br>
+<p>Would you like to receive minor first aid (medication & treatment) given by the nurse in the school clinic?</p>
+<div class="row-container">
+  <div class="checkbox">
+  <input name="yesfirstaid" value="yesfirstaid" type="checkbox" id="yesfirstaid" value="<?= $row['yesfirstaid'];?>" <?php if ($row['yesfirstaid']) echo "checked"; ?>>
+    <label class="labels" for="yesfirstaid" style="font-size: 14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yes</label>
+  </div>
+
+  <div class="checkbox">
+  <input name="nofirstaid" value="nofirstaid" type="checkbox" id="nofirstaid" value="<?= $row['nofirstaid'];?>" <?php if ($row['nofirstaid']) echo "checked"; ?>>
+    <label class="labels" for="noseriousillnes" style="font-size: 14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No</label>
+  </div>
 </div>
-                    </div>
+
+<br>
+<p>Do you have any concerns related to your health? (If yes, please explain.)</p>
+<div class="row-container">
+  <div class="checkbox">
+  <input name="yesconcerns" value="yesconcerns" type="checkbox" id="yesconcerns" value="<?= $row['yesconcerns'];?>" <?php if ($row['yesconcerns']) echo "checked"; ?>>
+    <label class="labels" for="yesseriousillnes" style="font-size: 14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yes</label>
+  </div>
+
+  <div class="checkbox">
+  <input name="noconcerns" value="noconcerns" type="checkbox" id="noconcerns" value="<?= $row['noconcerns'];?>" <?php if ($row['noconcerns']) echo "checked"; ?>>
+    <label class="labels" for="noconcerns" style="font-size: 14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No</label>
+  </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+  <div class="input_wrap">
+  <input name="concerns" id="otherillnesss" type="text" placeholder="If YES, please specify" value="<?=$row['concerns'];?>" readonly>
+  </div>
+</div>
+
 
 					<?php
 							}

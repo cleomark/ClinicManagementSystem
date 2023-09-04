@@ -51,6 +51,18 @@
 								}
 							?>
 							<div class="email mb-3">
+							<label class="sr-only" for="signup-email">Role</label>
+							<select id="signup-name" name="role" class="form-control signup-role" required="required">
+								<option value="" selected disabled>Select Role</option>
+								<option value="Student in GS/JHS">Student</option>
+								<option value="Employee in GS/JHS">Employee</option>
+							</select>
+      					  </div>
+							<div class="email mb-3">
+								<label class="sr-only" for="signup-email">Grade Level</label>
+								<input id="signup-name" name="gradelevel" type="text" class="form-control signup-idnumber" placeholder="Grade Level" required="required">
+							</div>
+							<div class="email mb-3">
 								<label class="sr-only" for="signup-email">Your ID Number</label>
 								<input id="signup-name" name="idnumber" type="text" class="form-control signup-idnumber" placeholder="ID Number" required="required">
 							</div>

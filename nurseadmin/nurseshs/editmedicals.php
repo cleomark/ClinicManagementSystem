@@ -56,7 +56,7 @@
 
 <body class="app">   	
 <?php
-$sql = "SELECT * FROM medicalapp";
+$sql = "SELECT * FROM medicalappshs";
 $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0) {
@@ -301,7 +301,7 @@ if (mysqli_num_rows($result) > 0) {
                    
     <?php  	
     $medicalapp_id = $_GET['medicalapp_id'];
-    $sql = "SELECT * FROM medicalapp WHERE medicalapp_id='$medicalapp_id'";
+    $sql = "SELECT * FROM medicalappshs WHERE medicalapp_id='$medicalapp_id'";
 
     $result = mysqli_query($conn, $sql);
 
@@ -310,7 +310,7 @@ if (mysqli_num_rows($result) > 0) {
     ?>
                     <form class="form-horizontal mt-4" method="post" action="function/editmedical.php">
  
-  <div class="row">
+                    <div class="row">
   <div class="col-sm-3">
     <div class="form-group">
       <label for="idnumber" class="col-sm-12 control-label" style="font-size: 16px">Student/Employee ID Number</label>
@@ -349,29 +349,38 @@ if (mysqli_num_rows($result) > 0) {
 </div>
 <br>
 <div class="row">
-<div class="col-sm-4">
+<div class="col-sm-3">
         <div class="form-group">
-            <label for="datetime" class="col-sm-12 control-label" style="font-size: 16px">Date & Time</label>
+            <label for="datetime" class="col-sm-12 control-label" style="font-size: 16px">Schedule Date</label>
             <div class="col-sm-12">
-                <input type="datetime-local" class="form-control" id="datetime" name="date_time" value="<?php echo date('Y-m-d\TH:i', strtotime($row['date_time'])); ?>">
+                <input type="date" class="form-control" id="datetime" name="date_time" value="<?php echo date('Y-m-d', strtotime($row['date_time'])); ?>">
             </div>
         </div>
     </div>
-    <div class="col-sm-4">
+
+    <div class="col-sm-3">
+        <div class="form-group">
+            <label for="datetime" class="col-sm-12 control-label" style="font-size: 16px">Schedule Time</label>
+            <div class="col-sm-12">
+            <input type="text" class="form-control" id="datetime" name="sched_time" value="<?php echo date('h:i A', strtotime($row['sched_time'])); ?>">
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3">
         <div class="form-group">
             <label for="role" class="col-sm-12 control-label" style="font-size: 16px">Role</label>
             <div class="col-sm-12">
                 <select id="role" name="role" class="form-control">
                 <option value="" <?php if(empty($row['role'])) echo "selected"; ?>>Select Role</option>
-                <option value="Student in SHS" <?php if($row['role'] == "Student in SHS") echo "selected"; ?>>Student in SHS</option>
-                <option value="Employee in SHS" <?php if($row['role'] == "Employee in SHS") echo "selected"; ?>>Employee in SHS</option>
+                <option value="Student in SHS" <?php if($row['role'] == "Student in SHS") echo "selected"; ?>>Student</option>
+                <option value="Employee in SHS" <?php if($row['role'] == "Employee in SHS") echo "selected"; ?>>Employee</option>
             </select>
             </div>
         </div>
     </div>
-    <div class="col-sm-4">
+    <div class="col-sm-3">
         <div class="form-group">
-            <label for="onoff" class="col-sm-12 control-label" style="font-size: 16px">On-campus Activity or Off-campus Activity</label>
+            <label for="onoff" class="col-sm-12 control-label" style="font-size: 16px">On or Off-campus Activity</label>
             <div class="col-sm-12">
                 <select id="onoff" name="onoff" class="form-control">
                 <option value="" <?php if(empty($row['onoff'])) echo "selected"; ?>>Select</option>

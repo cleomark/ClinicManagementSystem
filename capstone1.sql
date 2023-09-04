@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 31, 2023 at 12:47 PM
+-- Generation Time: Sep 04, 2023 at 04:17 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -29,7 +29,6 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `admins` (
   `admin_id` int(11) NOT NULL,
-  `type` varchar(1) NOT NULL,
   `username` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
   `role` int(5) NOT NULL,
@@ -40,14 +39,21 @@ CREATE TABLE `admins` (
 -- Dumping data for table `admins`
 --
 
-INSERT INTO `admins` (`admin_id`, `type`, `username`, `email`, `role`, `password`) VALUES
-(9, '', 'Nurse GSJHS', 'gsjhs@dwc-legazpi.edu', 1, '$2y$10$GifhpjE5vxy1N8BggO6EFuEIzoPHR8QXKBUkXO8G2HKdfzjcuBAlq'),
-(10, '', 'Nurse SHS', 'shs@dwc-legazpi.edu', 2, '$2y$10$P2sGF1KR.EILlLMSBA.eYu7kXEPcmMxyXKI8n2Sgqd7.sesXYcVSu'),
-(11, '', 'Nurse College', 'college@dwc-legazpi.edu', 3, '$2y$10$vgjsovnMxuz4nNvShLSKeuNSVpfsOswZ56y6yQFsO.MwH4f8BZrVC'),
-(12, '', 'Physician GSJHSSHS', 'physiciangsjhsshs@dwc-legazpi.edu', 6, '$2y$10$/NDUtH.edNX.CfqGUzBl9.c.ares5.WtEot/xRwK8b4AOMRNt05uO'),
-(13, '', 'Physician College', 'physiciancollege@dwc-legazpi.edu', 7, '$2y$10$.FIjfm6oWCXbv5uhGqxcy.N/vtM5UwM8./o50pf0RvH6s7fByJ8q6'),
-(14, '', 'Dentist GSJHSSHS', 'dentistgsjhsshs@dwc-legazpi.edu', 4, '$2y$10$OOdBHtUQF38eWUVr9ZjccOlNO8g6ZmtWxkEZu3jLQyEBAipia.p3i'),
-(15, '', 'Dentist College', 'dentistcollege@dwc-legazpi.edu', 5, '$2y$10$8xuw4mycJZ4f1sQeGiyoeOpV0aDXolN1YjXS3dv.4lqIChbF0Vm7O');
+INSERT INTO `admins` (`admin_id`, `username`, `email`, `role`, `password`) VALUES
+(9, 'Nurse GSJHS', 'gsjhs@dwc-legazpi.edu', 1, '$2y$10$GifhpjE5vxy1N8BggO6EFuEIzoPHR8QXKBUkXO8G2HKdfzjcuBAlq'),
+(10, 'Nurse SHS', 'shs@dwc-legazpi.edu', 2, '$2y$10$P2sGF1KR.EILlLMSBA.eYu7kXEPcmMxyXKI8n2Sgqd7.sesXYcVSu'),
+(11, 'Nurse College', 'college@dwc-legazpi.edu', 3, '$2y$10$vgjsovnMxuz4nNvShLSKeuNSVpfsOswZ56y6yQFsO.MwH4f8BZrVC'),
+(12, 'Physician GSJHSSHS', 'physiciangsjhsshs@dwc-legazpi.edu', 6, '$2y$10$/NDUtH.edNX.CfqGUzBl9.c.ares5.WtEot/xRwK8b4AOMRNt05uO'),
+(13, 'Physician College', 'physiciancollege@dwc-legazpi.edu', 7, '$2y$10$.FIjfm6oWCXbv5uhGqxcy.N/vtM5UwM8./o50pf0RvH6s7fByJ8q6'),
+(14, 'Dentist GSJHSSHS', 'dentistgsjhsshs@dwc-legazpi.edu', 4, '$2y$10$OOdBHtUQF38eWUVr9ZjccOlNO8g6ZmtWxkEZu3jLQyEBAipia.p3i'),
+(15, 'Dentist College', 'dentistcollege@dwc-legazpi.edu', 5, '$2y$10$8xuw4mycJZ4f1sQeGiyoeOpV0aDXolN1YjXS3dv.4lqIChbF0Vm7O'),
+(17, 'Nurse GSJHStwo', 'nursegsjhssecond@dwc-legazpi.edu', 1, '$2y$10$6FxYlq6rdYYc64i1Q5Ha4e9ux6jfjKahHHN5iE607s10A.wmpnG3e'),
+(19, 'Nurse SHStwo', 'nurseshssecond@dwc-legazpi.edu', 2, '$2y$10$qt6WTVphhX7nfHon6O1PueliEiJVCeD9eVg3UpcAU2TCh7RGKoYs6'),
+(20, 'Nurse Collegetwo', 'nursecollegesecond@dwc-legazpi.edu', 3, '$2y$10$o2c4lxPj1VbW3XNOIquS5e0kj81581y5bttDHu.rNT5Hrsjk6KXZm'),
+(21, 'Dentist GSJHSSHStwo', 'dentistgsjhshssecond@dwc-legazpi.edu', 4, '$2y$10$eKa129BjyoBappoyorleb.dqyoDozFIrTwWN8ZQjwUVcYDJfTv1Gy'),
+(22, 'Dentist Collegetwo', 'dentistcollegesecond@dwc-legazpi.edu', 5, '$2y$10$dMYBnpTBO.BPRspZhfkr9.Erm6dEFpWGF.Wd5chHc4ZbnXkw6zvea'),
+(23, 'Physician GSJHSSHStwo', 'physiciangsjshsshssecond@dwc-legazpi.edu', 6, '$2y$10$j91tQSUnrTImksezyXTijuTdX8vCYoD/fQKOQsCIGW6taJPeA6t4K'),
+(24, 'Physician Collegetwo', 'physiciancollegesecond@dwc-legazpi.edu', 7, '$2y$10$lFyYL1OGHGO9TVeyxZEUnefNM0WTcFhOPngpzcSjW2G1TfkbgvBRW');
 
 -- --------------------------------------------------------
 
@@ -71,9 +77,11 @@ CREATE TABLE `consultationformrecord` (
 --
 
 INSERT INTO `consultationformrecord` (`consultform_id`, `admin_id`, `idnumber`, `date`, `fullname`, `gradesection`, `chiefcomplaint`, `treatment`) VALUES
-(1, 10, 909090, '2023-07-31', 'Vicky Robles', 'Grade 12 Grabsch', 'Headache', ''),
+(1, 10, 909090, '2023-07-31', 'Vicky Robles', 'Grade 12 Grabsch', 'Headache', 'bioflu'),
 (2, 10, 6802182, '2023-08-01', 'Joanna Mae Atento', 'Grade 12 Grabsch', 'Headache', 'Bioflu'),
-(3, 11, 999999, '2023-07-28', 'Employee College', 'Employee', 'Menstrual Cramps', 'Advil');
+(3, 11, 999999, '2023-07-28', 'Employee College', 'Employee', 'Menstrual Cramps', 'Advil'),
+(4, 10, 897, '2023-08-03', 'j', 'Grade 12 Grabsch', 'Headache', 'Bioflu'),
+(5, 10, 8976, '2023-09-01', 'Joanna Mae Atento', 'Grade 12 Grabsch', 'Headache', 'Bioflu');
 
 -- --------------------------------------------------------
 
@@ -128,7 +136,9 @@ INSERT INTO `dental` (`dental_id`, `user_id`, `idnumber`, `name`, `dental_servic
 (97, 26, 123123, 'Mae Atento', 'Tooth Extraction', '', '', 'Employee in North Campus', 'ghcivobkhnjtrgfbnh', '2023-07-21 07:37:00', 1, 1),
 (98, 95, 6802182, 'Joanna Mae Atento', 'Cleaning', 'Grade School, JHS or SHS', 'Grade 12', '', 'JDFGHJKIUYHGTRFED', '2023-07-30 02:52:00', 0, 0),
 (99, 95, 6802182, 'Joanna Mae Atento', 'Tooth Extraction', 'Grade School, JHS or SHS', 'Grade 12', '', 'FGHJKLKJYHTGFED', '2023-07-30 02:53:00', 0, 0),
-(100, 95, 6802182, 'Joanna Mae Atento', 'Cleaning', 'Grade School, JHS or SHS', 'Grade 12', '', 'SDSFGHJK', '2023-07-30 02:56:00', 0, 0);
+(100, 95, 6802182, 'Joanna Mae Atento', 'Cleaning', 'Grade School, JHS or SHS', 'Grade 12', '', 'SDSFGHJK', '2023-07-30 02:56:00', 0, 0),
+(101, 94, 1888, 'Joanna Mae Atento', 'Cleaning', 'Grade School, JHS or SHS', 'Grade 12', '', 'XDCFVGBTHJ', '2023-08-03 04:04:00', 0, 0),
+(102, 93, 1888, 'Jonna Marie Atento', 'Cleaning', 'Grade School, JHS or SHS', 'Grade 7', '', 'SERTYUIO', '2023-08-18 09:50:00', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -138,36 +148,29 @@ INSERT INTO `dental` (`dental_id`, `user_id`, `idnumber`, `name`, `dental_servic
 
 CREATE TABLE `dentalapp` (
   `dentalapp_id` int(11) NOT NULL,
-  `admin_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
   `idnumber` int(11) NOT NULL,
   `fullname` varchar(50) NOT NULL,
-  `role` varchar(50) NOT NULL,
-  `cenrolled` varchar(50) NOT NULL,
   `service` varchar(200) NOT NULL,
-  `date_time` datetime NOT NULL,
-  `date_created` datetime NOT NULL
+  `phoneno` varchar(200) NOT NULL,
+  `date_time` varchar(50) NOT NULL,
+  `sched_time` varchar(50) NOT NULL,
+  `gradecourseyear` varchar(200) NOT NULL,
+  `role` varchar(200) NOT NULL,
+  `created_at` varchar(200) NOT NULL,
+  `is_deleted_on_website` tinyint(1) NOT NULL,
+  `availability` int(11) NOT NULL DEFAULT 1,
+  `status` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `dentalapp`
 --
 
-INSERT INTO `dentalapp` (`dentalapp_id`, `admin_id`, `idnumber`, `fullname`, `role`, `cenrolled`, `service`, `date_time`, `date_created`) VALUES
-(21, 11, 6802182, 'Joanna Mae Atento', 'Student', 'BSIT-3', 'Tooth Extraction', '2023-10-30 10:30:00', '2023-06-23 12:52:00'),
-(22, 11, 123456789, 'Camila Salvador', 'Student', 'BSIT - 4', 'Tooth Extraction', '2023-06-29 10:30:00', '2023-06-23 06:24:00'),
-(23, 11, 6802182, 'Joanna Mae Atento', 'Student', 'BSIT - 4', 'Cleaning', '2023-07-01 10:30:00', '2023-06-23 06:30:00'),
-(24, 11, 1234567, 'Camila Salvador', 'Student', 'BSIT - 4', 'Cleaning', '2023-06-30 10:40:00', '2023-06-23 06:33:00'),
-(25, 11, 6802182, 'Joanna Mae Atento', 'Employee', '', 'Tooth Extraction', '2023-07-09 10:30:00', '2023-07-06 08:56:00'),
-(26, 9, 6802182, 'Joanna Mae Atento', 'Student', 'BSIT - 4', 'Cleaning', '2023-07-13 10:30:00', '0000-00-00 00:00:00'),
-(27, 9, 6802182, 'Joanna Mae Atento', 'Student', 'Grade 7', 'Cleaning', '2023-12-15 10:30:00', '2023-07-12 09:21:00'),
-(28, 9, 1234567, 'Camila Salvador', 'Student', 'Grade 8', 'Tooth Extraction', '2023-12-12 10:30:00', '2023-07-12 09:25:00'),
-(29, 10, 1234567, 'Camila Salvador', 'Student', 'Grade 8', 'Cleaning', '2023-10-22 10:30:00', '2023-07-12 09:29:00'),
-(30, 9, 1234567, 'Camila Salvador', 'Student', 'BSIT-3', 'Tooth Extraction', '2023-10-20 10:30:00', '2023-07-12 09:32:00'),
-(31, 10, 1234567, 'Joanna Mae Atento', 'Student', 'BSIT-3', 'Cleaning', '2023-12-13 10:33:00', '2023-07-12 09:36:00'),
-(32, 14, 1234567, 'Camila Salvador', 'Student', 'Grade 7', 'Cleaning', '2023-12-13 10:30:00', '2023-07-18 09:03:00'),
-(33, 15, 123123, 'Mae Atento', 'Student', 'BSIT-3', 'Cleaning', '2023-10-24 10:30:00', '2023-07-21 06:26:00'),
-(34, 14, 123123, 'Mae Atento', 'Student', 'Grade 12', 'Tooth Extraction', '2024-11-06 10:30:00', '2023-07-21 07:45:00'),
-(35, 14, 99090, 'Rica Chan', 'Student', 'Grade 9', 'Cleaning', '2023-10-30 10:00:00', '2023-07-23 02:18:00');
+INSERT INTO `dentalapp` (`dentalapp_id`, `user_id`, `idnumber`, `fullname`, `service`, `phoneno`, `date_time`, `sched_time`, `gradecourseyear`, `role`, `created_at`, `is_deleted_on_website`, `availability`, `status`) VALUES
+(65, 99, 6802182, 'Joanna Mae D. Atento', 'Tooth Extraction', '+639156005165', '2023-09-06 12:00 AM', '10:00 AM', 'Grade 9', 'Student in GS/JHS', '2023-09-03 20:59:23', 0, 1, 'Unavailable'),
+(66, 99, 6802182, 'Joanna Mae D. Atento', 'Cleaning', '+639156005189', '2023-09-05', '10:00 A.M', 'Grade 9', 'Student in GS/JHS', '2023-09-03 21:54:51', 0, 1, 'Unavailable'),
+(67, 99, 6802182, '', '', '+639156005165', '2023-09-06', '10:00 A.M', '', 'Student in GS/JHS', '2023-09-03 22:50:20', 0, 1, 'Unavailable');
 
 -- --------------------------------------------------------
 
@@ -287,8 +290,7 @@ CREATE TABLE `healthrecordformcollege` (
 --
 
 INSERT INTO `healthrecordformcollege` (`healthcollege_id`, `user_id`, `image`, `fullname`, `courseyear`, `role`, `idnumber`, `gender`, `address`, `pcontact`, `nationality`, `birthday`, `religion`, `fguardian`, `occupation1`, `mother`, `occupation2`, `contactemer`, `contactno`, `address2`, `relation`, `referral`, `contactno2`, `physiciannumcall`, `addresshospital`, `td`, `mmr`, `hepab`, `varicella`, `yesasthma`, `noasthma`, `relationasthma`, `yesbleeding`, `nobleeding`, `relationbleeding`, `yescancer`, `nocancer`, `relationcancer`, `yesdiabetes`, `nodiabetes`, `relationdiabetes`, `yesheartdis`, `noheartdis`, `relationheartdis`, `yesbp`, `nobp`, `relationbp`, `yeskidney`, `nokidney`, `relationkidney`, `yesmental`, `nomental`, `relationmental`, `yesobese`, `noobese`, `relationobese`, `yesseizure`, `noseizure`, `relationseizure`, `yesstroke`, `nostroke`, `relationstroke`, `yestb`, `notb`, `relationtb`, `allergy`, `anemia`, `asthma`, `behavioral`, `bleedingprob`, `blood`, `chickenpox`, `convulsion`, `dengue`, `diabetess`, `earproblem`, `eating_disorder`, `epilepsy`, `eyeproblemm`, `fracture`, `hearing_problem`, `heart_disorder`, `hyperacidity`, `indigestion`, `insomia`, `kidney_problem`, `liver_problem`, `measless`, `mumpss`, `parasitism`, `pneumonia`, `primary_complex`, `scoliosis`, `skin_problem`, `tonsillitis`, `typhoid_fever`, `vision_defect`, `yeshospitalization`, `nohospitalization`, `yessurgical`, `nosurgical`, `specialmed`, `allergicdrugs`, `otherrelevant`) VALUES
-(1, 34, '1_20221028_125623_0000.png', 'Vicky Robles', 'BSIT - 3', 'Student in College', 909090, 'Female', 'Guinobatan Albay', '09156005165', 'Filipino', '2001-12-15', 'Roman Catholic', 'Andres Robles', 'Lineman', 'Andrea Robles', 'Housewife', 'Andrea Robles', '09156005165', 'Guinobatan Albay', 'Daugther', 'None', 'None', 'None', 'None', 'None', 'None', 'None', 'None', '', 'noasthma', '', '', 'nobleeding', '', '', 'nocancer', '', '', 'nodiabetes', '', '', 'noheartdis', '', '', 'nobp', '', '', 'nokidney', '', '', 'nomental', '', '', 'noobese', '', '', 'noseizure', '', '', 'nostroke', '', '', 'notb', '', 'allergy', 'anemia', 'asthma', 'behavioral', 'bleedingprob', 'blood', 'chickenpox', 'convulsion', 'dengue', 'diabetess', 'earproblem', 'eating_disorder', 'epilepsy', 'eyeproblemm', 'fracture', 'hearing_problem', 'heart_disorder', 'hyperacidity', 'indigestion', 'insomia', 'kidney_problem', 'liver_problem', 'measless', 'mumpss', 'parasitism', 'pneumonia', 'primary_complex', 'scoliosis', 'skin_problem', 'tonsillitis', 'typhoid_fever', 'vision_defect', '', 'nohospitalization', '', 'nosurgical', 'None', 'None', 'None'),
-(5, 35, '1.png', 'Employee College', '', 'Employee in College', 999999, 'Male', 'Camalig', '09156005165', 'Filipino', '2002-12-15', 'Roman Catholic', 'Jojo Atento', 'Tricycle Driver', 'Rowena Atento', 'OFW', 'Edita Dela Cruz', '09156005165', 'Camalig Albay', 'Granddaughter', '', '', '', '', '', '', '', '', 'yesasthma', '', 'Daughter', 'yesbleeding', '', 'Daughter', 'yescancer', '', 'Daughter', 'yesdiabetes', '', 'Daughter', 'yesheartdis', '', 'Daughter', 'yesbp', '', 'Daughter', 'yeskidney', '', 'Daughter', 'yesmental', '', 'Daughter', 'yesobese', '', 'Daughter', 'yesseizure', '', 'Daughter', 'yesstroke', '', 'Daughter', 'yestb', '', 'Daughter', '', '', '', '', '', '', '', '', '', 'diabetess', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'vision_defect', 'yeshospitalization', '', 'yessurgical', '', 'None', 'None', 'None');
+(7, 35, '2022-10-22 (23).png', 'Employee College', 'BSIT - 4', 'Employee in SHS', 999999, 'Female', '', '+6394596783561', '', '', '', '', '', '', '', '', '+639589798880', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -297,15 +299,13 @@ INSERT INTO `healthrecordformcollege` (`healthcollege_id`, `user_id`, `image`, `
 --
 
 CREATE TABLE `healthrecordformgsjhs` (
-  `healthgsjhs_id` int(11) NOT NULL,
+  `healthnogsjhs_id` int(11) NOT NULL,
   `user_id` int(20) NOT NULL,
-  `image` varchar(255) NOT NULL,
-  `gradelevel` varchar(255) NOT NULL,
-  `role` varchar(255) NOT NULL,
+  `image` text NOT NULL,
   `fullname` varchar(255) NOT NULL,
   `idnumber` int(20) NOT NULL,
   `cp` varchar(255) NOT NULL,
-  `age` varchar(50) NOT NULL,
+  `birthday` varchar(200) NOT NULL,
   `gender` varchar(255) NOT NULL,
   `address` varchar(255) NOT NULL,
   `paddress` varchar(255) NOT NULL,
@@ -352,24 +352,40 @@ CREATE TABLE `healthrecordformgsjhs` (
   `hyperventilation` varchar(50) NOT NULL,
   `mens` varchar(50) NOT NULL,
   `othersmedical` varchar(50) NOT NULL,
-  `heartcondition` text NOT NULL,
-  `eyeproblem` text NOT NULL,
-  `illness` text NOT NULL,
-  `injuries` text NOT NULL,
-  `treatment` text NOT NULL,
-  `medication` text NOT NULL,
-  `food` text NOT NULL,
-  `firstaid` text NOT NULL,
-  `concernshealth` text NOT NULL
+  `yesheartcon` varchar(200) NOT NULL,
+  `noheartcon` varchar(200) NOT NULL,
+  `heartcon` text NOT NULL,
+  `yeseyeprob` varchar(200) NOT NULL,
+  `noeyeprob` varchar(200) NOT NULL,
+  `eyeprob` text NOT NULL,
+  `yesseriousillnes` varchar(200) NOT NULL,
+  `noseriousillnes` varchar(200) NOT NULL,
+  `seriousillnes` text NOT NULL,
+  `yessurgeries` varchar(200) NOT NULL,
+  `nosurgeries` varchar(200) NOT NULL,
+  `surgeries` text NOT NULL,
+  `yesreceive` varchar(200) NOT NULL,
+  `noreceive` varchar(200) NOT NULL,
+  `receive` text NOT NULL,
+  `yesallergiesmed` varchar(200) NOT NULL,
+  `noallergiesmed` varchar(200) NOT NULL,
+  `allergiesmed` text NOT NULL,
+  `yesallergiesfood` varchar(200) NOT NULL,
+  `noallergiesfood` varchar(200) NOT NULL,
+  `allergiesfood` text NOT NULL,
+  `yesfirstaid` varchar(200) NOT NULL,
+  `nofirstaid` varchar(200) NOT NULL,
+  `yesconcerns` varchar(200) NOT NULL,
+  `noconcerns` varchar(200) NOT NULL,
+  `concerns` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `healthrecordformgsjhs`
 --
 
-INSERT INTO `healthrecordformgsjhs` (`healthgsjhs_id`, `user_id`, `image`, `gradelevel`, `role`, `fullname`, `idnumber`, `cp`, `age`, `gender`, `address`, `paddress`, `father`, `cfather`, `mother`, `cmother`, `religion`, `nationality`, `language`, `bothparents`, `livesfather`, `livesmother`, `guardian`, `guardianname`, `guardianrelation`, `cguardian`, `altrelation`, `altrel`, `acontact`, `bcg`, `dpt`, `opv`, `hepa`, `measles`, `others`, `firstdose`, `seconddose`, `boosterdose`, `no`, `imagevac`, `asthma`, `faintingspells`, `allergicrhinitis`, `freqheadache`, `anxietydis`, `g6pd`, `bleedingclotting`, `hearingprob`, `hypergas`, `derma`, `hypertension`, `diabetes`, `hyperventilation`, `mens`, `othersmedical`, `heartcondition`, `eyeproblem`, `illness`, `injuries`, `treatment`, `medication`, `food`, `firstaid`, `concernshealth`) VALUES
-(30, 30, 'WIN_20230203_15_00_21_Pro.jpg', 'Grade 9', 'Student in GS/JHS', 'Rica Chan', 9909, '09156005165', '16', 'Female', 'Calzada Guinobatan Albay', 'Calzada Guinobatan Albay', '', '09467878686654', '', '0924354765848', 'Roman Catholic', 'Filipino', 'Bicol, Tagalog, English', '', '', '', 'guardian', 'Edita Dela Cruz', 'Grandmother', '09156005165', 'N/A', 'N/A', 'N/A', '', '', '', '', '', '', '', 'seconddose', '', '', 'WIN_20230203_15_00_23_Pro.jpg', '', '', '', '', '', '', '', 'hearingprob', '', '', '', '', '', 'mens', '', 'None', 'None', 'None', 'None', 'None', 'None', 'None', 'Yes', 'None'),
-(31, 31, 'WIN_20230203_15_00_08_Pro.jpg', '', 'Employee in GS/JHS', 'Employee GSJHS', 1234, '09156005165', '32', 'Female', 'Guinobatan Albay', 'Guinobatan Albay', '', '09243576847', '', '09156005165', 'Roman Catholic', 'Filipino', 'Bicol, Tagalog, English', '', '', 'livesmother', '', '', '', '09156005165', '', '', '', '', '', '', '', 'measles', '', '', 'seconddose', '', '', 'WIN_20230203_15_00_13_Pro.jpg', '', 'faintingspells', '', '', '', 'g6pd', '', '', '', '', '', '', '', '', '', 'None', 'None', 'None', 'None', 'None', '', 'None', 'Yes', 'None');
+INSERT INTO `healthrecordformgsjhs` (`healthnogsjhs_id`, `user_id`, `image`, `fullname`, `idnumber`, `cp`, `birthday`, `gender`, `address`, `paddress`, `father`, `cfather`, `mother`, `cmother`, `religion`, `nationality`, `language`, `bothparents`, `livesfather`, `livesmother`, `guardian`, `guardianname`, `guardianrelation`, `cguardian`, `altrelation`, `altrel`, `acontact`, `bcg`, `dpt`, `opv`, `hepa`, `measles`, `others`, `firstdose`, `seconddose`, `boosterdose`, `no`, `imagevac`, `asthma`, `faintingspells`, `allergicrhinitis`, `freqheadache`, `anxietydis`, `g6pd`, `bleedingclotting`, `hearingprob`, `hypergas`, `derma`, `hypertension`, `diabetes`, `hyperventilation`, `mens`, `othersmedical`, `yesheartcon`, `noheartcon`, `heartcon`, `yeseyeprob`, `noeyeprob`, `eyeprob`, `yesseriousillnes`, `noseriousillnes`, `seriousillnes`, `yessurgeries`, `nosurgeries`, `surgeries`, `yesreceive`, `noreceive`, `receive`, `yesallergiesmed`, `noallergiesmed`, `allergiesmed`, `yesallergiesfood`, `noallergiesfood`, `allergiesfood`, `yesfirstaid`, `nofirstaid`, `yesconcerns`, `noconcerns`, `concerns`) VALUES
+(40, 99, 'WIN_20230203_15_00_22_Pro.jpg', 'Joanna Mae D. Atento', 6802182, '+639156745846', '2001-12-22', 'Female', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -386,7 +402,7 @@ CREATE TABLE `healthrecordformshs` (
   `role` varchar(255) NOT NULL,
   `idnumber` int(20) NOT NULL,
   `age` varchar(50) NOT NULL,
-  `pcontact` varchar(50) NOT NULL,
+  `phoneno` varchar(50) NOT NULL,
   `gender` varchar(50) NOT NULL,
   `address` varchar(255) NOT NULL,
   `paddress` varchar(255) NOT NULL,
@@ -426,9 +442,8 @@ CREATE TABLE `healthrecordformshs` (
 -- Dumping data for table `healthrecordformshs`
 --
 
-INSERT INTO `healthrecordformshs` (`healthshs_id`, `user_id`, `image`, `gradelevel`, `fullname`, `role`, `idnumber`, `age`, `pcontact`, `gender`, `address`, `paddress`, `father`, `cfather`, `mother`, `cmother`, `polio`, `tetanus`, `chickenpox`, `measles`, `mumps`, `tb`, `asthma`, `hepatitis`, `faintingspells`, `seizure`, `bleeding`, `eyedis`, `heartailment`, `otherillness`, `yesfood`, `nofood`, `food`, `yesmed`, `nomed`, `med`, `allow`, `notallow`, `medpresent`, `notified`, `contact`, `relationship`) VALUES
-(2, 32, 'WIN_20230311_16_23_34_Pro.jpg', 'Grade 12', 'Joanna Mae Atento', 'Student in SHS', 6802182, '19', '093574348673', 'Female', 'Calzada Guinobatan Albay', 'Calzada Guinobatan Albay', 'Jojo Atento', '093458685422', 'Rowena Atento', '094647456337', '', '', '', '', '', '', '', '', 'faintingspells', '', '', 'eyedis', 'None', '', '', 'nofood', '', '', 'nomed', '', 'allow', '', 'No', 'Edita Dela Cruz', '09156005165', 'Grandmother'),
-(3, 33, 'WIN_20230311_16_23_21_Pro.jpg', '', 'Employee SHS', 'Employee in SHS', 1919, '29', '09156005165', 'Female', 'Polangui', 'Polangui', 'Jojo Ateto', '0947533678524', 'Rowena Atento', '092345676586', 'polio', '', '', '', '', '', 'asthma', '', '', '', 'bleeding', '', 'None', 'None', '', 'nofood', '', '', 'nomed', '', 'allow', '', 'None', 'Edita Dela Cruz', '09156005165', 'Auntie');
+INSERT INTO `healthrecordformshs` (`healthshs_id`, `user_id`, `image`, `gradelevel`, `fullname`, `role`, `idnumber`, `age`, `phoneno`, `gender`, `address`, `paddress`, `father`, `cfather`, `mother`, `cmother`, `polio`, `tetanus`, `chickenpox`, `measles`, `mumps`, `tb`, `asthma`, `hepatitis`, `faintingspells`, `seizure`, `bleeding`, `eyedis`, `heartailment`, `otherillness`, `yesfood`, `nofood`, `food`, `yesmed`, `nomed`, `med`, `allow`, `notallow`, `medpresent`, `notified`, `contact`, `relationship`) VALUES
+(9, 94, '2022-11-04 (1).png', 'Grade 12', 'Jonna Marie Atento', 'Student in SHS', 1888, '18', '+639156005165', 'Female', 'Calzada Guinobatan Albay', 'Calzada Guinobatan Albay', 'Jojo Atento', '+639156005165', 'Rowena Atento', '+639156005165', '', '', 'chickenpox', '', '', '', 'asthma', '', '', '', '', 'eyedis', 'N/A', 'N/A', '', 'nofood', '', '', 'nomed', '', 'allow', '', 'No', 'Edita Dela Cruz', '+639156005165', 'Grandmother');
 
 -- --------------------------------------------------------
 
@@ -442,18 +457,7 @@ CREATE TABLE `medical` (
   `idnumber` int(20) NOT NULL,
   `name1` varchar(50) NOT NULL,
   `gradecourseyear1` varchar(50) NOT NULL,
-  `idnumber2` int(11) NOT NULL,
-  `name2` varchar(50) NOT NULL,
-  `gradecourseyear2` varchar(50) NOT NULL,
-  `idnumber3` int(11) NOT NULL,
-  `name3` varchar(50) NOT NULL,
-  `gradecourseyear3` varchar(50) NOT NULL,
-  `idnumber4` int(11) NOT NULL,
-  `name4` varchar(50) NOT NULL,
-  `gradecourseyear4` varchar(50) NOT NULL,
-  `idnumber5` int(11) NOT NULL,
-  `name5` varchar(50) NOT NULL,
-  `gradecourseyear5` varchar(50) NOT NULL,
+  `phoneno` varchar(200) NOT NULL,
   `c_enrolled` varchar(100) NOT NULL,
   `c_employee` varchar(50) NOT NULL,
   `onoff` varchar(50) NOT NULL,
@@ -467,22 +471,29 @@ CREATE TABLE `medical` (
 -- Dumping data for table `medical`
 --
 
-INSERT INTO `medical` (`med_id`, `user_id`, `idnumber`, `name1`, `gradecourseyear1`, `idnumber2`, `name2`, `gradecourseyear2`, `idnumber3`, `name3`, `gradecourseyear3`, `idnumber4`, `name4`, `gradecourseyear4`, `idnumber5`, `name5`, `gradecourseyear5`, `c_enrolled`, `c_employee`, `onoff`, `message`, `date_created`, `is_read`, `is_deleted_on_website`) VALUES
-(1, 24, 6802182, 'Joanna Mae Atento', 'Grade 9', 1234567, 'Camila Salvador', 'Grade 9', 12345678, 'Jan Rica Marchan', 'Grade 9', 1334564, 'Patricia Hinlo', 'Grade 9', 8359465, 'Eric Baraquiel', 'Grade 9', 'Grade School & Junior High School', '', 'On-campus Activity', 'pa sched po for instrams', '2023-07-14 01:43:00', 1, 1),
-(2, 24, 6802182, 'Joanna Mae Atento', '', 0, '', '', 0, '', '', 0, '', '', 0, '', '', '', 'Employee in GS and JHS', 'On-campus Activity', 'Can I request a medical schedule on July 2, 2023 at 9:00 A.M?', '2023-07-14 03:10:00', 1, 1),
-(3, 25, 1234567, 'Camila Salvador', 'Grade 11 - Grabsch', 6802182, 'Joanna Mae Atento', 'Grade 11 - Grabsch', 0, '', '', 0, '', '', 0, '', '', 'Senior High School', '', 'Off-campus Activity', 'Can we have an schedule on July 21, 2023 at 10:30AM?', '2023-07-15 04:09:00', 1, 1),
-(4, 25, 1234567, 'Camila Salvador', '', 0, '', '', 0, '', '', 0, '', '', 0, '', '', '', 'Employee in SHS', 'On-campus Activity', 'Can I a July 29, 2023 at 9:00AM schedule?', '2023-07-15 04:26:00', 1, 1),
-(5, 25, 1234567, 'Camila Salvador', '', 0, '', '', 0, '', '', 0, '', '', 0, '', '', '', 'Employee in SHS', 'Off-campus Activity', 'can i', '2023-07-15 04:43:00', 1, 1),
-(6, 25, 1234567, 'Camila Salvador', '', 0, '', '', 0, '', '', 0, '', '', 0, '', '', '', 'Employee in SHS', 'Off-campus Activity', 'CAN', '2023-07-15 04:50:00', 1, 1),
-(7, 25, 1234567, 'Camila Salvador', 'BSIT - 3', 0, '', '', 0, '', '', 0, '', '', 0, '', '', 'College', '', 'On-campus Activity', 'Pa sched po July 1, 2023 at 10:00 AM', '2023-07-15 05:36:00', 1, 1),
-(8, 25, 1234567, 'Camila Salvador', 'BSIT - 3', 0, '', '', 0, '', '', 0, '', '', 0, '', '', 'College', '', 'On-campus Activity', 'July 1, 2023 8:00AM', '2023-07-15 05:48:00', 1, 1),
-(9, 25, 1234567, 'Camila Salvador', 'BSIT - 3 ', 0, '', '', 0, '', '', 0, '', '', 0, '', '', '', 'Employee in College', 'On-campus Activity', 'July 2, 2023 at 1:30PM', '2023-07-15 05:58:00', 1, 1),
-(10, 26, 123123, 'Mae Atento', 'Grade 9', 0, '', '', 0, '', '', 0, '', '', 0, '', '', 'Grade School & Junior High School', '', 'On-campus Activity', 'SDFGHJKHGFDFGHYJU', '2023-07-20 08:53:00', 1, 1),
-(11, 26, 123123, 'Mae Atento', '', 0, '', '', 0, '', '', 0, '', '', 0, '', '', '', 'Employee in GS and JHS', 'Off-campus Activity', 'ASDSFGHJKJGHFGDFSDAS', '2023-07-20 09:12:00', 1, 1),
-(12, 26, 123123, 'Mae Atento', 'Grade 11', 0, '', '', 0, '', '', 0, '', '', 0, '', '', 'Senior High School', 'Employee in SHS', 'Off-campus Activity', 'awefrtyhuikujythgtrfds', '2023-07-20 10:26:00', 1, 1),
-(13, 26, 123123, 'Mae Atento', 'BSIT - 3', 0, '', '', 0, '', '', 0, '', '', 0, '', '', 'College', '', 'Off-campus Activity', 'ASDFDGHJKKJHGF', '2023-07-20 11:14:00', 1, 1),
-(14, 26, 123123, 'Mae Atento', '', 0, '', '', 0, '', '', 0, '', '', 0, '', '', '', 'Employee in College', 'On-campus Activity', 'ASFSGDHFJGFHGFD', '2023-07-20 11:22:00', 1, 1),
-(15, 94, 1888, 'Jonna Marie Atento', 'Grade 11', 0, '', '', 0, '', '', 0, '', '', 0, '', '', 'Grade School & Junior High School', '', 'Off-campus Activity', 'dnkfghkjkkytgf', '2023-07-31 06:38:00', 0, 0);
+INSERT INTO `medical` (`med_id`, `user_id`, `idnumber`, `name1`, `gradecourseyear1`, `phoneno`, `c_enrolled`, `c_employee`, `onoff`, `message`, `date_created`, `is_read`, `is_deleted_on_website`) VALUES
+(1, 24, 6802182, 'Joanna Mae Atento', 'Grade 9', '', 'Grade School & Junior High School', '', 'On-campus Activity', 'pa sched po for instrams', '2023-07-14 01:43:00', 1, 1),
+(2, 24, 6802182, 'Joanna Mae Atento', '', '', '', 'Employee in GS and JHS', 'On-campus Activity', 'Can I request a medical schedule on July 2, 2023 at 9:00 A.M?', '2023-07-14 03:10:00', 1, 1),
+(3, 25, 1234567, 'Camila Salvador', 'Grade 11 - Grabsch', '', 'Senior High School', '', 'Off-campus Activity', 'Can we have an schedule on July 21, 2023 at 10:30AM?', '2023-07-15 04:09:00', 1, 1),
+(4, 25, 1234567, 'Camila Salvador', '', '', '', 'Employee in SHS', 'On-campus Activity', 'Can I a July 29, 2023 at 9:00AM schedule?', '2023-07-15 04:26:00', 1, 1),
+(5, 25, 1234567, 'Camila Salvador', '', '', '', 'Employee in SHS', 'Off-campus Activity', 'can i', '2023-07-15 04:43:00', 1, 1),
+(6, 25, 1234567, 'Camila Salvador', '', '', '', 'Employee in SHS', 'Off-campus Activity', 'CAN', '2023-07-15 04:50:00', 1, 1),
+(7, 25, 1234567, 'Camila Salvador', 'BSIT - 3', '', 'College', '', 'On-campus Activity', 'Pa sched po July 1, 2023 at 10:00 AM', '2023-07-15 05:36:00', 1, 1),
+(8, 25, 1234567, 'Camila Salvador', 'BSIT - 3', '', 'College', '', 'On-campus Activity', 'July 1, 2023 8:00AM', '2023-07-15 05:48:00', 1, 1),
+(9, 25, 1234567, 'Camila Salvador', 'BSIT - 3 ', '', '', 'Employee in College', 'On-campus Activity', 'July 2, 2023 at 1:30PM', '2023-07-15 05:58:00', 1, 1),
+(10, 26, 123123, 'Mae Atento', 'Grade 9', '', 'Grade School & Junior High School', '', 'On-campus Activity', 'SDFGHJKHGFDFGHYJU', '2023-07-20 08:53:00', 1, 1),
+(11, 26, 123123, 'Mae Atento', '', '', '', 'Employee in GS and JHS', 'Off-campus Activity', 'ASDSFGHJKJGHFGDFSDAS', '2023-07-20 09:12:00', 1, 1),
+(12, 26, 123123, 'Mae Atento', 'Grade 11', '', 'Senior High School', 'Employee in SHS', 'Off-campus Activity', 'awefrtyhuikujythgtrfds', '2023-07-20 10:26:00', 1, 1),
+(13, 26, 123123, 'Mae Atento', 'BSIT - 3', '', 'College', '', 'Off-campus Activity', 'ASDFDGHJKKJHGF', '2023-07-20 11:14:00', 1, 1),
+(14, 26, 123123, 'Mae Atento', '', '', '', 'Employee in College', 'On-campus Activity', 'ASFSGDHFJGFHGFD', '2023-07-20 11:22:00', 1, 1),
+(15, 94, 1888, 'Jonna Marie Atento', 'Grade 11', '', 'Grade School & Junior High School', '', 'Off-campus Activity', 'dnkfghkjkkytgf', '2023-07-31 06:38:00', 0, 0),
+(16, 94, 1888, 'Joanna Mae Atento', 'Grade 12', '', 'Senior High School', '', 'On-campus Activity', 'FCFGHJK', '2023-08-03 04:05:00', 1, 0),
+(17, 93, 1888, 'Jonna Marie Atento', 'Grade 7', '', 'Grade School & Junior High School', '', 'On-campus Activity', 'PVGBFHNJTYHRGRFEDS', '2023-08-13 07:08:00', 0, 0),
+(18, 94, 1888, 'Joanna Mae Atento', 'Grade 7', '', 'Senior High School', '', 'On-campus Activity', 'SDFGHJK', '2023-08-13 07:09:00', 0, 0),
+(19, 93, 1888, 'Jonna Marie Atento', 'Grade 7', '', 'Grade School & Junior High School', '', 'On-campus Activity', 'dfghjk', '2023-08-26 10:12:00', 0, 0),
+(20, 93, 1888, 'Jonna Marie Atento', 'Grade 7', '', 'Grade School & Junior High School', '', 'On-campus Activity', 'dcfvgbhnjmhgfd', '2023-08-26 10:15:00', 0, 0),
+(21, 93, 1888, 'Jonna Marie Atento', 'Grade 9', '09156005165', 'Grade School & Junior High School', '', 'On-campus Activity', 'adcsfvbghjkhgfd', '2023-08-26 10:16:00', 0, 0),
+(22, 93, 1888, 'Jonna Marie Atento', 'Grade 7', '+639156005165', 'Grade School & Junior High School', '', 'On-campus Activity', 'adfghjkk', '2023-08-26 10:20:00', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -492,32 +503,59 @@ INSERT INTO `medical` (`med_id`, `user_id`, `idnumber`, `name1`, `gradecourseyea
 
 CREATE TABLE `medicalapp` (
   `medicalapp_id` int(11) NOT NULL,
-  `admin_id` int(11) NOT NULL,
+  `user_id` int(20) NOT NULL,
   `idnumber` int(20) NOT NULL,
   `name1` varchar(50) NOT NULL,
   `gradecourseyear1` varchar(50) NOT NULL,
-  `role` varchar(50) NOT NULL,
-  `onoff` varchar(100) NOT NULL,
-  `date_time` datetime NOT NULL,
-  `date_created` datetime NOT NULL
+  `phoneno` varchar(50) NOT NULL,
+  `date_time` varchar(200) NOT NULL,
+  `sched_time` varchar(200) NOT NULL,
+  `role` varchar(200) NOT NULL,
+  `onoff` varchar(200) NOT NULL,
+  `created_at` varchar(200) NOT NULL,
+  `is_deleted_on_website` tinyint(1) NOT NULL,
+  `availability` int(11) DEFAULT 1,
+  `status` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `medicalapp`
 --
 
-INSERT INTO `medicalapp` (`medicalapp_id`, `admin_id`, `idnumber`, `name1`, `gradecourseyear1`, `role`, `onoff`, `date_time`, `date_created`) VALUES
-(2, 9, 6802182, 'Joanna Mae Atento', 'Grade 10', 'Student', 'On-campus Activity', '2023-06-19 10:30:00', '2023-07-14 04:39:00'),
-(3, 9, 1234567, 'Camila Salvador', 'Grade 9', 'Student', 'On-campus Activity', '2023-12-15 11:00:00', '2023-07-14 04:50:00'),
-(5, 10, 1234567, 'Camila Salvador', 'Grade 11', 'Student', 'Off-campus Activity', '2023-07-21 10:30:00', '2023-07-15 03:57:00'),
-(6, 11, 1234567, 'Camila Salvador', 'BSIT - 3', 'Student', 'Off-campus Activity', '2023-08-01 08:30:00', '2023-07-15 05:29:00'),
-(7, 11, 1234567, 'Camila Salvador', '', 'Employee', 'Off-campus Activity', '2023-07-02 09:00:00', '2023-07-15 06:06:00'),
-(8, 9, 123123, 'Mae Atento', 'Grade 9', 'Student', 'On-campus Activity', '2023-10-24 10:30:00', '2023-07-20 09:32:00'),
-(9, 10, 123123, 'Mae Atento', 'Grade 11 - Grabsch', 'Student', 'On-campus Activity', '2023-12-15 10:30:00', '2023-07-20 10:43:00'),
-(10, 9, 1234, 'Employee GSJHS', '', 'Employee', 'On-campus Activity', '2023-10-30 16:00:00', '2023-07-23 02:23:00'),
-(11, 9, 909090, 'Vicky Robles', 'BSIT - 3', 'Student', 'On-campus Activity', '2023-10-24 10:00:00', '2023-07-28 10:28:00'),
-(12, 10, 6802182, 'Joanna Mae Atento', 'Grade 11 - Grabsch', 'Student', 'On-campus Activity', '2023-10-11 10:00:00', '2023-07-28 09:15:00'),
-(13, 10, 6802182, 'Joanna Mae Atento', '19', 'Grade 12 Grabsch', '2023-07-29T10:30', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `medicalapp` (`medicalapp_id`, `user_id`, `idnumber`, `name1`, `gradecourseyear1`, `phoneno`, `date_time`, `sched_time`, `role`, `onoff`, `created_at`, `is_deleted_on_website`, `availability`, `status`) VALUES
+(172, 99, 6802182, 'Joanna Mae D. Atento', 'Grade 7', '+639156005165', '2023-09-05 12:00 AM', '10:00 AM', 'Student in GS/JHS', 'On-campus Activity', '2023-09-03 19:35:08', 0, 1, 'Unavailable'),
+(173, 99, 6802182, 'Joanna Mae D. Atento', 'Grade 7', '+639156005165', '2023-09-11', '08:00 A.M ', 'Employee in GS/JHS', 'On-campus Activity', '2023-09-03 20:14:58', 0, 1, 'Unavailable'),
+(174, 99, 6802182, '', '', '+639156005165', '2023-09-04', '09:00 A.M', 'Student in GS/JHS', '', '2023-09-03 20:38:09', 1, 1, 'Unavailable'),
+(175, 99, 6802182, 'Joanna Mae D. Atento', 'Grade 7', '+639156005165', '2023-09-04', '08:00 A.M ', 'Student in GS/JHS', 'On-campus Activity', '2023-09-04 10:16:43', 0, 1, 'Unavailable');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `medicine`
+--
+
+CREATE TABLE `medicine` (
+  `medicine_id` int(11) NOT NULL,
+  `admin_id` int(50) NOT NULL,
+  `medicine_name` varchar(200) NOT NULL,
+  `quantity` varchar(200) NOT NULL,
+  `date_created` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `medicine`
+--
+
+INSERT INTO `medicine` (`medicine_id`, `admin_id`, `medicine_name`, `quantity`, `date_created`) VALUES
+(15, 10, 'Advil', '4', '2024-08-02'),
+(16, 10, 'Medicol', '4', '2023-08-02'),
+(17, 10, 'Amoxicilin', '5', '2023-08-02'),
+(18, 9, 'Dolpinax', '2', '2023-08-06'),
+(19, 9, 'Dolpinax', '2', '2023-08-06'),
+(20, 9, 'Alaxzan', '2', '2023-08-06'),
+(21, 9, 'Bioflu', '2', '2023-08-06'),
+(22, 11, 'Paracetamol', '2', '2023-08-06'),
+(23, 9, 'Bioflu', '1', '2023-08-26');
 
 -- --------------------------------------------------------
 
@@ -562,29 +600,16 @@ CREATE TABLE `patientrecord` (
   `gradesection` varchar(200) NOT NULL,
   `vitalsigns` varchar(200) NOT NULL,
   `diagnosis` varchar(500) NOT NULL,
-  `date_time` datetime NOT NULL
+  `status` varchar(200) NOT NULL,
+  `date_time` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `patientrecord`
 --
 
-INSERT INTO `patientrecord` (`p_id`, `admin_id`, `idnumber`, `fullname`, `gradesection`, `vitalsigns`, `diagnosis`, `date_time`) VALUES
-(5, 0, 0, 'Joanna Mae Atento', 'Grade 7 Saint Paul', '21', 'Advil', '2023-06-13 12:37:00'),
-(6, 0, 0, 'Joanna Mae Atento', 'Grade 7 Saint', '9', 'Advil', '2023-06-13 12:39:00'),
-(7, 9, 6802182, 'Joanna Mae Atento', 'Grade 7 Saint Paul', '12A', 'Advil', '2023-06-13 12:47:00'),
-(8, 9, 1234567, 'Camila Salvador', 'Grade 7 Saint', '3853563', 'Biogesic', '2023-06-13 12:50:00'),
-(9, 9, 1234567, 'Camila Salvador', 'Grade 7 Saint', '1234557', 'Buscopan', '2023-06-13 12:51:00'),
-(10, 9, 6802182, 'Joanna Mae Atento', 'Employee', '24/7', 'Biogesic, Advil, Have Enough sleep', '2023-06-14 01:38:00'),
-(11, 10, 6802182, 'Joanna Mae Atento', 'BSIT - 3', '457-7', 'Rest', '2023-06-14 09:56:00'),
-(12, 9, 6802182, 'Joanna Mae Atento', 'Grade 7 Saint', '60/70', 'Mefinamic', '2023-06-23 11:36:00'),
-(13, 9, 6802182, 'Joanna Mae Atento', 'Grade 8 Saint', '70/80', 'nEOZIP', '2023-06-23 11:38:00'),
-(14, 10, 6802182, 'Joanna Mae Atento', 'Grade 12', '90/120', 'Neozip', '2023-06-23 11:40:00'),
-(15, 10, 1234567, 'Camila Salvador', 'Grade 9', '24/7', 'Rest ', '2023-07-01 09:59:00'),
-(16, 11, 6802182, 'Joanna Mae Atento', 'Employee', 'Not Normal', 'Rest', '2023-07-06 09:02:00'),
-(17, 9, 123123, 'Mae Cruz', 'Grade 9', '60/90', 'Headache', '2023-07-20 09:38:00'),
-(18, 10, 123123, 'Mae Atento', 'Grade 12', '60/90', 'Rest', '2023-07-20 10:49:00'),
-(19, 10, 909090, '2023-07-31', 'Vicky Robles', 'Grade 12 Grabsch', 'Headache', '0000-00-00 00:00:00');
+INSERT INTO `patientrecord` (`p_id`, `admin_id`, `idnumber`, `fullname`, `gradesection`, `vitalsigns`, `diagnosis`, `status`, `date_time`) VALUES
+(24, 9, 6802182, 'Joanna Mae D. Atento', 'Grade 7 Saint', '70/100', 'Vomitting/Headache', 'endorse to other hospital (BRTTH)', '2023-09-03 11:41 PM');
 
 -- --------------------------------------------------------
 
@@ -697,7 +722,11 @@ INSERT INTO `physician` (`physician_id`, `user_id`, `idnumber`, `name`, `gradeco
 (15, 26, 123123, 'Mae Atento', 'Grade 7 Saint', 'Student in North Campus', 'cfgbhnjkjytergvhh', '2023-07-21 09:33:00', 1, 1),
 (16, 26, 123123, 'Mae Atento', 'Grade 12', 'Student in North Campus', 'fvdgfhjkjhgf', '2023-07-21 11:48:00', 1, 1),
 (17, 26, 123123, 'Mae Atento', '', 'Employee in South Campus', 'ASXDCFVGBHNMJ', '2023-07-21 11:59:00', 1, 0),
-(18, 26, 123123, 'Mae Atento', '', 'Student in South Campus', 'SFGHNJMK', '2023-07-21 11:59:00', 0, 0);
+(18, 26, 123123, 'Mae Atento', '', 'Student in South Campus', 'SFGHNJMK', '2023-07-21 11:59:00', 0, 0),
+(19, 91, 242424, 'Camille Mondragon', 'BSIT - 3', 'Student in South Campus', 'CVGBHNJK', '2023-08-13 10:04:00', 0, 0),
+(20, 91, 242424, 'Camille Mondragon', 'Grade 12', 'Student in North Campus', 'scvbghnjkjhg', '2023-08-13 10:05:00', 0, 0),
+(21, 94, 1888, 'Jonna Marie Atento', '', 'Employee in SHS', '', '2023-08-29 10:21:00', 0, 0),
+(22, 94, 1888, 'Jonna Marie Atento', '', 'Employee in SHS', '', '2023-08-29 10:23:00', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -707,25 +736,29 @@ INSERT INTO `physician` (`physician_id`, `user_id`, `idnumber`, `name`, `gradeco
 
 CREATE TABLE `physicianapp` (
   `phy_id` int(11) NOT NULL,
-  `admin_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
   `idnumber` int(11) NOT NULL,
-  `fullname` varchar(50) NOT NULL,
-  `cenrolled` varchar(50) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `gradesection` varchar(200) NOT NULL,
+  `phoneno` varchar(200) NOT NULL,
+  `date_time` varchar(200) NOT NULL,
+  `sched_time` varchar(200) NOT NULL,
   `role` varchar(200) NOT NULL,
-  `date_time` datetime NOT NULL,
-  `date_created` datetime NOT NULL
+  `created_at` varchar(200) NOT NULL,
+  `is_deleted_on_website` tinyint(1) NOT NULL,
+  `availability` int(11) NOT NULL DEFAULT 1,
+  `status` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `physicianapp`
 --
 
-INSERT INTO `physicianapp` (`phy_id`, `admin_id`, `idnumber`, `fullname`, `cenrolled`, `role`, `date_time`, `date_created`) VALUES
-(8, 13, 1234567, 'Camila Salvador', 'BSIT - 3', 'Student in College', '2023-12-15 10:30:00', '2023-07-18 08:27:00'),
-(9, 12, 6802182, 'Joanna Mae Atento', 'Grade 12', 'Student in North Campus', '2023-10-24 10:30:00', '2023-07-18 08:30:00'),
-(10, 12, 123123, 'Mae Atento', 'Grade 12', 'Student in North Campus', '2023-12-15 10:30:00', '2023-07-21 10:39:00'),
-(11, 12, 123123, 'Mae Atento', 'Grade 12', 'Employee in North Campus', '2023-01-16 10:03:00', '2023-07-21 10:44:00'),
-(12, 13, 123123, 'Mae Atento', '', 'Employee in College', '2023-11-12 10:10:00', '2023-07-22 12:14:00');
+INSERT INTO `physicianapp` (`phy_id`, `user_id`, `idnumber`, `name`, `gradesection`, `phoneno`, `date_time`, `sched_time`, `role`, `created_at`, `is_deleted_on_website`, `availability`, `status`) VALUES
+(24, 99, 6802182, 'Joanna Mae D. Atento', 'Grade 7 Saint', '+639156005165', '2023-09-06', '10:00 A.M', 'Student in GS/JHS', '2023-09-03 22:57:25', 0, 1, 'Unavailable'),
+(25, 99, 6802182, 'Joanna Mae D. Atento', 'Grade 7 Saint', '+639156005165', '2023-09-06', '09:00 A.M', 'Student in GS/JHS', '2023-09-03 22:58:32', 0, 1, 'Unavailable'),
+(26, 99, 6802182, 'Joanna Mae D. Atento', 'Grade 7 Saint', '+639156005100', '2023-09-06', '11:00 A.M', 'Student in GS/JHS', '2023-09-03 23:09:20', 0, 1, 'Unavailable'),
+(27, 99, 6802182, 'Joanna Mae D. Atento', 'Employee', '+639156005165', '2023-09-13 12:00 AM', '10:00 AM', 'Student in SHS', '2023-09-03 23:10:27', 0, 1, 'Unavailable');
 
 -- --------------------------------------------------------
 
@@ -839,44 +872,57 @@ INSERT INTO `schoolhealthasses` (`schoolasses_id`, `admin_id`, `idnumber`, `full
 CREATE TABLE `sms_message` (
   `message_id` int(11) NOT NULL,
   `phone` varchar(200) NOT NULL,
-  `message` text NOT NULL
+  `message` text NOT NULL,
+  `date_created` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `sms_message`
 --
 
-INSERT INTO `sms_message` (`message_id`, `phone`, `message`) VALUES
-(1, '639156005165', 'Good Day! Your request for dental cleaning is approved. Your schedule will be on June 30, 2023 at 11:00 A.M'),
-(2, '639156005165', 'Good Day! Your request for dental cleaning is approved. Your schedule will be on June 30, 2023 at 10:30 A.M'),
-(3, '639156005165', 'Good Day! Your request for dental cleaning is approved. Your schedule will be on June 30, 2023 at 10:30 A.M'),
-(4, '639156005165', 'Good Day! Your request for amo po is approved. Your schedule will be on June 30, 2023 at 10:30 A.M'),
-(5, '639156005165', 'Good Day!. Your schedule will be on June 30, 2023 at 10:30 A.M'),
-(6, '639156005165', 'Good Day! Your request for dental cleaning is approved. Your schedule will be on June 30, 2023 at 10:30 A.M'),
-(7, '639156005165', 'Your request for dental cleaning is approved. Your schedule will be on June 30, 2023 at 10:30 A.M');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `status`
---
-
-CREATE TABLE `status` (
-  `status_id` int(11) NOT NULL,
-  `roles` int(1) NOT NULL,
-  `statuses1030_1` varchar(50) NOT NULL,
-  `statuses1130_2` varchar(50) NOT NULL,
-  `statuses230_3` varchar(50) NOT NULL,
-  `statuses330_4` varchar(50) NOT NULL,
-  `statuses430_5` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `status`
---
-
-INSERT INTO `status` (`status_id`, `roles`, `statuses1030_1`, `statuses1130_2`, `statuses230_3`, `statuses330_4`, `statuses430_5`) VALUES
-(8, 0, 'Available', 'Available', 'Available', 'Unavailable', 'Available');
+INSERT INTO `sms_message` (`message_id`, `phone`, `message`, `date_created`) VALUES
+(1, '639156005165', 'Good Day! Your request for dental cleaning is approved. Your schedule will be on June 30, 2023 at 11:00 A.M', ''),
+(2, '639156005165', 'Good Day! Your request for dental cleaning is approved. Your schedule will be on June 30, 2023 at 10:30 A.M', ''),
+(3, '639156005165', 'Good Day! Your request for dental cleaning is approved. Your schedule will be on June 30, 2023 at 10:30 A.M', ''),
+(4, '639156005165', 'Good Day! Your request for amo po is approved. Your schedule will be on June 30, 2023 at 10:30 A.M', ''),
+(5, '639156005165', 'Good Day!. Your schedule will be on June 30, 2023 at 10:30 A.M', ''),
+(6, '639156005165', 'Good Day! Your request for dental cleaning is approved. Your schedule will be on June 30, 2023 at 10:30 A.M', ''),
+(7, '639156005165', 'Your request for dental cleaning is approved. Your schedule will be on June 30, 2023 at 10:30 A.M', ''),
+(8, '639156005165', 'Good Day! Your request for medical appointment is approved. Your schedule will be on June 30, 2023 at 10:30 A.M', ''),
+(9, '639156005165', 'hello', ''),
+(10, '639156005165', 'hellohi', '2023-08-03 04:22 PM'),
+(11, '639156005165', 'We summon you', '2023-08-03 04:23 PM'),
+(12, '639156005165', 'Good Day! Your request for medical appointment is approved. Your schedule will be on June 30, 2023 at 10:30 A.M', '2023-08-08 06:30 PM'),
+(13, '639156005165', 'Your daugther', '2023-08-08 06:36 PM'),
+(14, '639156005165', 'Daughter', '2023-08-08 06:39 PM'),
+(15, '639156005165', 'Hi', '2023-08-08 06:43 PM'),
+(16, '639156005165', 'Good Day! Your request for medical appointment is approved. Your schedule will be on June 30, 2023 at 10:30 A.M', ''),
+(17, '639156005165', 'Good Day! Your request for medical appointment is approved. Your schedule will be on June 30, 2023 at 10:30 A.M', ''),
+(18, '639156005165', 'hahahahaha', ''),
+(19, '639156005165', 'Good Day! Your request for physician consulatation appointment is approved. Your schedule will be on June 30, 2023 at 10:30 A.M', ''),
+(20, '639156005165', 'heyow', ''),
+(21, '639156005165', 'Hi', ''),
+(22, '+639156005165', 'Your choose', '2023-08-26 09:47 AM'),
+(23, '+639156005165', 'Good Day! Your request for medical appointment is approved. Your schedule will be on June 30, 2023 at 10:30 A.M', ''),
+(24, '+639156005165', 'We regret to inform you that your request for medical appointment has been rejected. Please choose another schedule.', ''),
+(25, '+639156005165', 'Good Day! Your request for medical appointment is approved. Your schedule will be on June 30, 2023 at 10:30 A.M', ''),
+(26, '+639156005165', 'Good Day! Your request for medical appointment is approved. Your schedule will be on June 30, 2023 at 10:30 A.M', ''),
+(27, '+639156005165', 'Good Day! Your request for medical appointment is approved. Your schedule will be on June 30, 2023 at 10:30 A.M', ''),
+(28, '+639156005165', 'Good Day! Your request for medical appointment is approved. Your schedule will be on June 30, 2023 at 10:30 A.M', ''),
+(29, '+639156005165', 'Good Day! Your request for medical appointment is approved. Your schedule will be on June 30, 2023 at 10:30 A.M', '2023-08-26 04:54 PM'),
+(30, '+639156005165', 'Good Day! Your request for medical appointment is approved. Your schedule will be on June 30, 2023 at 10:30 A.M', '2023-08-26 07:55 PM'),
+(31, '+639156005165', 'Good Day! Your request for dental appointment is approved. Your schedule will be on June 30, 2023 at 10:30 A.M', '2023-08-26 10:24 PM'),
+(32, '+639156005165', 'Good Day! Your request for dental appointment is approved. Your schedule will be on June 30, 2023 at 10:30 A.M', '2023-08-27 12:29 PM'),
+(33, '+639156005165', 'Good Day! Your request for dental appointment is approved. Your schedule will be on June 30, 2023 at 10:30 A.M', '2023-08-27 04:42 PM'),
+(34, '+639156005165', 'Good Day! Your request for medical appointment is approved. Your schedule will be on August 28, 2023 at 10:30 A.M', '2023-08-27 07:23 PM'),
+(35, '+639156005165', 'We summon you', '2023-08-28 12:35 AM'),
+(36, '+639156005165', 'hi', '2023-08-29 05:18 PM'),
+(37, '+639262345194', 'hello', '2023-08-31 11:26 AM'),
+(38, '+639922863038', 'hello', '2023-08-31 11:27 AM'),
+(39, '+639295127752', 'hello', '2023-08-31 11:27 AM'),
+(40, '+639156005165', 'Good Day! Your request for medical appointment is approved. Your schedule will be on June 30, 2023 at 10:30 A.M', '2023-09-02 10:26 PM'),
+(41, '+639156005165', 'Good Day! Your request for medical appointment is approved. Your schedule will be on June 30, 2023 at 10:30 A.M', '2023-09-02 10:27 PM'),
+(42, '+639156005165', 'Good Day! Your request for medical appointment is approved. Your schedule will be on June 30, 2023 at 10:30 A.M', '2023-09-02 10:29 PM');
 
 -- --------------------------------------------------------
 
@@ -899,6 +945,106 @@ CREATE TABLE `statuscollege` (
 
 INSERT INTO `statuscollege` (`status_id`, `statuses1030_1`, `statuses1130_2`, `statuses230_3`, `statuses330_4`, `statuses430_5`) VALUES
 (1, 'Available', 'Available', 'Available', 'Unavailable', 'Unavailable');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `statusdentalgsjhsshsfriday`
+--
+
+CREATE TABLE `statusdentalgsjhsshsfriday` (
+  `status_id` int(11) NOT NULL,
+  `statusden9_am` varchar(50) NOT NULL,
+  `statusden10_am` varchar(50) NOT NULL,
+  `statusden11_am` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `statusdentalgsjhsshsfriday`
+--
+
+INSERT INTO `statusdentalgsjhsshsfriday` (`status_id`, `statusden9_am`, `statusden10_am`, `statusden11_am`) VALUES
+(8, '09:00 A.M', '10:00 A.M', '11:00 A.M');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `statusdentalgsjhsshsmonday`
+--
+
+CREATE TABLE `statusdentalgsjhsshsmonday` (
+  `status_id` int(11) NOT NULL,
+  `statusden9_am` varchar(50) NOT NULL,
+  `statusden10_am` varchar(50) NOT NULL,
+  `statusden11_am` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `statusdentalgsjhsshsmonday`
+--
+
+INSERT INTO `statusdentalgsjhsshsmonday` (`status_id`, `statusden9_am`, `statusden10_am`, `statusden11_am`) VALUES
+(8, '09:00 A.M', '10:00 A.M', '11:00 A.M');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `statusdentalgsjhsshsthursday`
+--
+
+CREATE TABLE `statusdentalgsjhsshsthursday` (
+  `status_id` int(11) NOT NULL,
+  `statusden9_am` varchar(50) NOT NULL,
+  `statusden10_am` varchar(50) NOT NULL,
+  `statusden11_am` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `statusdentalgsjhsshsthursday`
+--
+
+INSERT INTO `statusdentalgsjhsshsthursday` (`status_id`, `statusden9_am`, `statusden10_am`, `statusden11_am`) VALUES
+(8, '09:00 A.M', '10:00 A.M', '11:00 A.M');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `statusdentalgsjhsshstuesday`
+--
+
+CREATE TABLE `statusdentalgsjhsshstuesday` (
+  `status_id` int(11) NOT NULL,
+  `statusden9_am` varchar(50) NOT NULL,
+  `statusden10_am` varchar(50) NOT NULL,
+  `statusden11_am` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `statusdentalgsjhsshstuesday`
+--
+
+INSERT INTO `statusdentalgsjhsshstuesday` (`status_id`, `statusden9_am`, `statusden10_am`, `statusden11_am`) VALUES
+(8, '09:00 A.M ', '10:00 A.M', '11:00 A.M');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `statusdentalgsjhsshswednesday`
+--
+
+CREATE TABLE `statusdentalgsjhsshswednesday` (
+  `status_id` int(11) NOT NULL,
+  `statusden9_am` varchar(50) NOT NULL,
+  `statusden10_am` varchar(50) NOT NULL,
+  `statusden11_am` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `statusdentalgsjhsshswednesday`
+--
+
+INSERT INTO `statusdentalgsjhsshswednesday` (`status_id`, `statusden9_am`, `statusden10_am`, `statusden11_am`) VALUES
+(8, '09:00 A.M', '10:00 A.M', '11:00 A.M');
 
 -- --------------------------------------------------------
 
@@ -930,29 +1076,127 @@ INSERT INTO `statusmedicalcollege` (`medical_id`, `statusmedmonam_1`, `statusmed
 -- --------------------------------------------------------
 
 --
--- Table structure for table `statusmedicalgsjhs`
+-- Table structure for table `statusmedicalgsjhsfriday`
 --
 
-CREATE TABLE `statusmedicalgsjhs` (
+CREATE TABLE `statusmedicalgsjhsfriday` (
   `medical_id` int(11) NOT NULL,
-  `statusmedmonam_1` varchar(50) NOT NULL,
-  `statusmedtueam_2` varchar(50) NOT NULL,
-  `statusmedwedam_3` varchar(50) NOT NULL,
-  `statusmedthuam_4` varchar(50) NOT NULL,
-  `statusmedfriam_5` varchar(50) NOT NULL,
-  `statusmedmonpm_6` varchar(50) NOT NULL,
-  `statusmedtuepm_7` varchar(50) NOT NULL,
-  `statusmedwedpm_8` varchar(50) NOT NULL,
-  `statusmedthupm_9` varchar(50) NOT NULL,
-  `statusmedfripm_10` varchar(50) NOT NULL
+  `statusmed8_am` varchar(50) NOT NULL,
+  `statusmed9_am` varchar(50) NOT NULL,
+  `statusmed10_am` varchar(50) NOT NULL,
+  `statusmed11_am` varchar(50) NOT NULL,
+  `statusmed1_pm` varchar(50) NOT NULL,
+  `statusmed2_pm` varchar(50) NOT NULL,
+  `statusmed3_pm` varchar(50) NOT NULL,
+  `statusmed4_pm` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `statusmedicalgsjhs`
+-- Dumping data for table `statusmedicalgsjhsfriday`
 --
 
-INSERT INTO `statusmedicalgsjhs` (`medical_id`, `statusmedmonam_1`, `statusmedtueam_2`, `statusmedwedam_3`, `statusmedthuam_4`, `statusmedfriam_5`, `statusmedmonpm_6`, `statusmedtuepm_7`, `statusmedwedpm_8`, `statusmedthupm_9`, `statusmedfripm_10`) VALUES
-(1, 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Unavailable', 'Unavailable', 'Available', 'Available');
+INSERT INTO `statusmedicalgsjhsfriday` (`medical_id`, `statusmed8_am`, `statusmed9_am`, `statusmed10_am`, `statusmed11_am`, `statusmed1_pm`, `statusmed2_pm`, `statusmed3_pm`, `statusmed4_pm`) VALUES
+(2, '08:00 A.M ', '09:00 A.M', '10:00 A.M', '11:00 A.M', '01:00 P.M', '02:00 P.M', '03:00 P.M.', '04:00 P.M');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `statusmedicalgsjhsmonday`
+--
+
+CREATE TABLE `statusmedicalgsjhsmonday` (
+  `medical_id` int(11) NOT NULL,
+  `statusmed8_am` varchar(50) NOT NULL,
+  `statusmed9_am` varchar(50) NOT NULL,
+  `statusmed10_am` varchar(50) NOT NULL,
+  `statusmed11_am` varchar(50) NOT NULL,
+  `statusmed1_pm` varchar(50) NOT NULL,
+  `statusmed2_pm` varchar(50) NOT NULL,
+  `statusmed3_pm` varchar(50) NOT NULL,
+  `statusmed4_pm` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `statusmedicalgsjhsmonday`
+--
+
+INSERT INTO `statusmedicalgsjhsmonday` (`medical_id`, `statusmed8_am`, `statusmed9_am`, `statusmed10_am`, `statusmed11_am`, `statusmed1_pm`, `statusmed2_pm`, `statusmed3_pm`, `statusmed4_pm`) VALUES
+(2, '08:00 A.M ', '09:00 A.M', '10:00 A.M', '11:00 A.M', '01:00 P.M', '02:00 P.M', '03:00 P.M.', '04:00 P.M');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `statusmedicalgsjhsthursday`
+--
+
+CREATE TABLE `statusmedicalgsjhsthursday` (
+  `medical_id` int(11) NOT NULL,
+  `statusmed8_am` varchar(50) NOT NULL,
+  `statusmed9_am` varchar(50) NOT NULL,
+  `statusmed10_am` varchar(50) NOT NULL,
+  `statusmed11_am` varchar(50) NOT NULL,
+  `statusmed1_pm` varchar(50) NOT NULL,
+  `statusmed2_pm` varchar(50) NOT NULL,
+  `statusmed3_pm` varchar(50) NOT NULL,
+  `statusmed4_pm` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `statusmedicalgsjhsthursday`
+--
+
+INSERT INTO `statusmedicalgsjhsthursday` (`medical_id`, `statusmed8_am`, `statusmed9_am`, `statusmed10_am`, `statusmed11_am`, `statusmed1_pm`, `statusmed2_pm`, `statusmed3_pm`, `statusmed4_pm`) VALUES
+(2, '08:00 A.M ', '09:00 A.M', '10:00 A.M', '11:00 A.M', '01:00 P.M', '02:00 P.M', '03:00 P.M.', '04:00 P.M');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `statusmedicalgsjhstuesday`
+--
+
+CREATE TABLE `statusmedicalgsjhstuesday` (
+  `medical_id` int(11) NOT NULL,
+  `statusmed8_am` varchar(50) NOT NULL,
+  `statusmed9_am` varchar(50) NOT NULL,
+  `statusmed10_am` varchar(50) NOT NULL,
+  `statusmed11_am` varchar(50) NOT NULL,
+  `statusmed1_pm` varchar(50) NOT NULL,
+  `statusmed2_pm` varchar(50) NOT NULL,
+  `statusmed3_pm` varchar(50) NOT NULL,
+  `statusmed4_pm` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `statusmedicalgsjhstuesday`
+--
+
+INSERT INTO `statusmedicalgsjhstuesday` (`medical_id`, `statusmed8_am`, `statusmed9_am`, `statusmed10_am`, `statusmed11_am`, `statusmed1_pm`, `statusmed2_pm`, `statusmed3_pm`, `statusmed4_pm`) VALUES
+(2, '08:00 A.M ', '09:00 A.M', '10:00 A.M', '11:00 A.M', '01:00 P.M', '02:00 P.M', '03:00 P.M.', '04:00 P.M');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `statusmedicalgsjhswednesday`
+--
+
+CREATE TABLE `statusmedicalgsjhswednesday` (
+  `medical_id` int(11) NOT NULL,
+  `statusmed8_am` varchar(50) NOT NULL,
+  `statusmed9_am` varchar(50) NOT NULL,
+  `statusmed10_am` varchar(50) NOT NULL,
+  `statusmed11_am` varchar(50) NOT NULL,
+  `statusmed1_pm` varchar(50) NOT NULL,
+  `statusmed2_pm` varchar(50) NOT NULL,
+  `statusmed3_pm` varchar(50) NOT NULL,
+  `statusmed4_pm` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `statusmedicalgsjhswednesday`
+--
+
+INSERT INTO `statusmedicalgsjhswednesday` (`medical_id`, `statusmed8_am`, `statusmed9_am`, `statusmed10_am`, `statusmed11_am`, `statusmed1_pm`, `statusmed2_pm`, `statusmed3_pm`, `statusmed4_pm`) VALUES
+(2, '08:00 A.M ', '09:00 A.M', '10:00 A.M', '11:00 A.M', '01:00 P.M', '02:00 P.M', '03:00 P.M.', '04:00 P.M');
 
 -- --------------------------------------------------------
 
@@ -979,7 +1223,45 @@ CREATE TABLE `statusmedicalshs` (
 --
 
 INSERT INTO `statusmedicalshs` (`medical_id`, `statusmedmonam_1`, `statusmedtueam_2`, `statusmedwedam_3`, `statusmedthuam_4`, `statusmedfriam_5`, `statusmedmonpm_6`, `statusmedtuepm_7`, `statusmedwedpm_8`, `statusmedthupm_9`, `statusmedfripm_10`) VALUES
-(1, 'Unavailable', 'Available', 'Available', 'Available', 'Available', 'Available', 'Unavailable', 'Unavailable', 'Available', 'Available');
+(1, 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Unavailable', 'Unavailable', 'Available', 'Available');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `statusphysiciancollege`
+--
+
+CREATE TABLE `statusphysiciancollege` (
+  `statusphycollege_id` int(11) NOT NULL,
+  `status812` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `statusphysiciancollege`
+--
+
+INSERT INTO `statusphysiciancollege` (`statusphycollege_id`, `status812`) VALUES
+(1, 'Unavailable');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `statusphysiciangsjhsshs`
+--
+
+CREATE TABLE `statusphysiciangsjhsshs` (
+  `statphysician_id` int(11) NOT NULL,
+  `statusphysician9_am` varchar(200) NOT NULL,
+  `statusphysician10_am` varchar(200) NOT NULL,
+  `statusphysician11_am` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `statusphysiciangsjhsshs`
+--
+
+INSERT INTO `statusphysiciangsjhsshs` (`statphysician_id`, `statusphysician9_am`, `statusphysician10_am`, `statusphysician11_am`) VALUES
+(1, '09:00 A.M', '10:00 A.M', '11:00 A.M');
 
 -- --------------------------------------------------------
 
@@ -1005,6 +1287,17 @@ INSERT INTO `statusshs` (`status_id`, `statuses1030_1`, `statuses1130_2`, `statu
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `unavailable_slots`
+--
+
+CREATE TABLE `unavailable_slots` (
+  `id` int(11) NOT NULL,
+  `date_time` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -1012,6 +1305,8 @@ CREATE TABLE `users` (
   `user_id` int(11) NOT NULL,
   `fullname` varchar(50) NOT NULL,
   `leveleduc` int(5) NOT NULL,
+  `role` varchar(200) NOT NULL,
+  `gradelevel` varchar(200) NOT NULL,
   `idnumber` int(50) NOT NULL,
   `email` varchar(50) NOT NULL,
   `password` varchar(255) NOT NULL
@@ -1021,29 +1316,14 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`user_id`, `fullname`, `leveleduc`, `idnumber`, `email`, `password`) VALUES
-(25, 'Camila Salvador', 0, 1234567, 'camille@dwc-legazpi.edu', '$2y$10$Mt817fi.GicLwj8BLTFHg.AR7VvE14ra4eDj8akuBiv1HNlqx3pm.'),
-(26, 'Mae Atento', 0, 123123, '123123@dwc-legazpi.edu', '$2y$10$BKRDIIR3Ppz.qfDw6Gy6NuTbOHwgcwqpRA.MGGJ.LTZvGMMxauV6W'),
-(29, 'Joanna Atento', 1, 2147483647, '12345678910@dwc-legazpi.edu', '$2y$10$abLEHbiWOYxwaDYOaAIA7.MLAJZUAF2DlW8tSbkIp9fY4Rhiubkpe'),
-(31, 'Employee GSJHS', 1, 1234, '1234@dwc-legazpi.edu', '$2y$10$ow7RotJ9skoiZalQ6gFtaOulAQregw0YFU4FepO.TZXiR9a/78BGO'),
-(32, 'Joanna Mae Atento', 2, 6802182, '068021821@dwc-legazpi.edu', '$2y$10$leQ0MHbc2sBPAFd45lomtOAHgsfiLjLDh4sOdeBFHw6XdrHk1NzRm'),
-(33, 'Employee SHS', 2, 1919, '1919@dwc-legazpi.edu', '$2y$10$lkDH3vJNUkC2Y2NbT.OzBOQVXwG/BZa66OYK9M29LkhH8HjIlC9pS'),
-(34, 'Vicky Robles', 3, 909090, '909090@dwc-legazpi.edu', '$2y$10$4wSfYPbUXUFtsY7nX/eYWOCNmaeLRHydyF7ibVBZ0jew4Q9JGzuwm'),
-(35, 'Employee College', 3, 999999, '999999@dwc-legazpi.edu', '$2y$10$yVy9jqWM9CYCzxR.uuRxG.m0jN5QlbZmVXMB/eK22Dk9qV322.CK2'),
-(75, 'Atento', 1, 6802182, 'joannamae@dwc-legazpi.edu', '$2y$10$WSPtzEom.wF7Tiblvyl.xutvL5zFGvTMBsFd7yatuDc/BlG7tfvFi'),
-(78, 'Mayi Atento', 2, 1678, '1678@dwc-legazpi.edu', '$2y$10$JboESFfnPRIzy5TKCk2Ng.SE8ysEf4QXzKCEN6bv3cOgIaxkJ9mDq'),
-(79, 'Maejoanna Atento', 2, 1678, '1678@dwc-legazpi.edu', '$2y$10$Y5n6BnR1CXRw2E55AifNr.5SYK3jPC./RmJnz6lScKTiwnqae.lsu'),
-(81, 'Employee College', 2, 999999, '999999@dwc-legazpi.edu', '$2y$10$GBr1uuN9AbKwrOW2iXtU2Ozvj2n8LToYMg1xgmTAmAew26NYNaYfu'),
-(84, 'Mayi Atento', 3, 1678, '1678@dwc-legazpi.edu', '$2y$10$pctGiA/Ok4gVjxtvfHqQTO6CJ5gkzzzipjgT4eZoFzeoSLknt5jRO'),
-(88, 'Rica Chan', 3, 99090, 'ricachan@dwc-legazpi.edu', '$2y$10$Fndd4nh4uf6cBzWkG.jmfewNeDEIyVcxhMIhqldZkdUv58EpSiP0C'),
-(89, 'Camille Mondragon', 1, 242424, '242424@dwc-legazpi.edu', '$2y$10$ZnBYTyFjWBqa0h5oeehftun8A5/Q.oCg2w5KWcmzDdEE3w3LOhD1O'),
-(90, 'Camille Mondragon', 2, 242424, '242424@dwc-legazpi.edu', '$2y$10$cZxz/Y///CGMQxWe9DMyhe1gW5azhlb6HiQAxkgZwtJuV6TuFXRHu'),
-(91, 'Camille Mondragon', 3, 242424, '242424@dwc-legazpi.edu', '$2y$10$quzVZd/eIxBPjI93DCrSe.Ztm.NnT0Acy/Hd53uq9.5CMP5gk4/2C'),
-(92, 'Joanna Mae Atento', 3, 6802182, '068021821@dwc-legazpi.edu', '$2y$10$iFIFUXT5b/hI25PMwx3ukOOgf./bhIPkbKnV98zHLVWM.Fusp/Q5i'),
-(93, 'Jonna Marie Atento', 1, 1888, '1888@dwc-legazpi.edu', '$2y$10$a3agD4HdNSXUB6Sr70A4G.siK2WJptB7UJ0oTBRlbxi0Cab4PaRpm'),
-(94, 'Jonna Marie Atento', 2, 1888, '1888@dwc-legazpi.edu', '$2y$10$EZHnAqbMQ2SBwi3NdngHeu2SMMM9BxncMwqyeVfU219UYzo1XCbL.'),
-(95, 'Joanna Mae Atento', 1, 6802182, '068021821@dwc-legazpi.edu', '$2y$10$Ge4aOP0wZSFBb/fOR/Dw1.B7lm.Ezmq0JE1wXdcCQ911oAitgeYbu'),
-(96, 'Rica Chan', 1, 99090, 'ricachan@dwc-legazpi.edu', '$2y$10$0RFm7n2nncN7NNnJ0hkfduiR0p85bsAjjTrePlnTA2YLQikwfXyie');
+INSERT INTO `users` (`user_id`, `fullname`, `leveleduc`, `role`, `gradelevel`, `idnumber`, `email`, `password`) VALUES
+(99, 'Joanna Mae D. Atento', 1, 'Student in GS/JHS', 'Grade 4', 6802182, '06802182@dwc-legazpi.edu', '$2y$10$IbOIIa5cIkQpFedajO7EgOB9yrkLZ4pJGdQt7IZVMmLl/XWZ2ihS2'),
+(100, 'Maria Hermosa', 1, 'Student in GS/JHS', 'Grade 9', 1919191, '1919191@dwc-legazpi.edu', '$2y$10$XHd8CCof.SAOOKbVo0SdpeTd3/CMk2VqDaXzwqQmMS5hnLnnJmDHi'),
+(101, 'Baekhyun Byun', 1, 'Student in GS/JHS', 'Grade 10', 11111, '11111@dwc-legazpi.edu', '$2y$10$IYdg3sp9zVTZk8MU6rueSeUpzwtJrNmBwoBFesqNbzI7khNWvZFpK'),
+(102, 'Joanna Mae D. Atento', 2, 'Student in GS/JHS', 'Grade 11', 6802182, '06802182@dwc-legazpi.edu', '$2y$10$W2xAYb4Ucoz3izPOxHoTweViHfw6ASfLhCP2gHBx3rQJQM.kdAQey'),
+(103, 'User GSJHS', 1, 'Student in GS/JHS', 'Grade 10', 1, '000001@dwc-legazpi.edu', '$2y$10$NNpRALaM48DK6fApnN.iFesW2cHFruQR62VH1GQcipjvuplOYNvli'),
+(104, 'User SHS', 2, 'Student in GS/JHS', 'Grade 11', 2, '000002@dwc-legazpi.edu', '$2y$10$Az8EJoDDpddtnMR4gFHWXeWY8DxFKKLEyVKJmAUnBYgSRbwtwfIma'),
+(105, 'User College', 3, 'Student in GS/JHS', 'BSIT - 1', 3, '000003@dwc-legazpi.edu', '$2y$10$XO3vTouQKz6M8muY4RcXMe4h6fd3AzFkMvK6.WnRkrazGL.1.6Ole');
 
 -- --------------------------------------------------------
 
@@ -1138,7 +1418,7 @@ ALTER TABLE `healthrecordformcollege`
 -- Indexes for table `healthrecordformgsjhs`
 --
 ALTER TABLE `healthrecordformgsjhs`
-  ADD PRIMARY KEY (`healthgsjhs_id`);
+  ADD PRIMARY KEY (`healthnogsjhs_id`);
 
 --
 -- Indexes for table `healthrecordformshs`
@@ -1156,7 +1436,14 @@ ALTER TABLE `medical`
 -- Indexes for table `medicalapp`
 --
 ALTER TABLE `medicalapp`
-  ADD PRIMARY KEY (`medicalapp_id`);
+  ADD PRIMARY KEY (`medicalapp_id`),
+  ADD UNIQUE KEY `unique_slot` (`date_time`,`sched_time`);
+
+--
+-- Indexes for table `medicine`
+--
+ALTER TABLE `medicine`
+  ADD PRIMARY KEY (`medicine_id`);
 
 --
 -- Indexes for table `nursenotesshs`
@@ -1219,15 +1506,39 @@ ALTER TABLE `sms_message`
   ADD PRIMARY KEY (`message_id`);
 
 --
--- Indexes for table `status`
---
-ALTER TABLE `status`
-  ADD PRIMARY KEY (`status_id`);
-
---
 -- Indexes for table `statuscollege`
 --
 ALTER TABLE `statuscollege`
+  ADD PRIMARY KEY (`status_id`);
+
+--
+-- Indexes for table `statusdentalgsjhsshsfriday`
+--
+ALTER TABLE `statusdentalgsjhsshsfriday`
+  ADD PRIMARY KEY (`status_id`);
+
+--
+-- Indexes for table `statusdentalgsjhsshsmonday`
+--
+ALTER TABLE `statusdentalgsjhsshsmonday`
+  ADD PRIMARY KEY (`status_id`);
+
+--
+-- Indexes for table `statusdentalgsjhsshsthursday`
+--
+ALTER TABLE `statusdentalgsjhsshsthursday`
+  ADD PRIMARY KEY (`status_id`);
+
+--
+-- Indexes for table `statusdentalgsjhsshstuesday`
+--
+ALTER TABLE `statusdentalgsjhsshstuesday`
+  ADD PRIMARY KEY (`status_id`);
+
+--
+-- Indexes for table `statusdentalgsjhsshswednesday`
+--
+ALTER TABLE `statusdentalgsjhsshswednesday`
   ADD PRIMARY KEY (`status_id`);
 
 --
@@ -1237,16 +1548,46 @@ ALTER TABLE `statusmedicalcollege`
   ADD PRIMARY KEY (`medical_id`);
 
 --
--- Indexes for table `statusmedicalgsjhs`
+-- Indexes for table `statusmedicalgsjhsmonday`
 --
-ALTER TABLE `statusmedicalgsjhs`
+ALTER TABLE `statusmedicalgsjhsmonday`
   ADD PRIMARY KEY (`medical_id`);
+
+--
+-- Indexes for table `statusmedicalgsjhsthursday`
+--
+ALTER TABLE `statusmedicalgsjhsthursday`
+  ADD PRIMARY KEY (`medical_id`);
+
+--
+-- Indexes for table `statusmedicalgsjhstuesday`
+--
+ALTER TABLE `statusmedicalgsjhstuesday`
+  ADD PRIMARY KEY (`medical_id`);
+
+--
+-- Indexes for table `statusmedicalgsjhswednesday`
+--
+ALTER TABLE `statusmedicalgsjhswednesday`
+  ADD PRIMARY KEY (`medical_id`);
+
+--
+-- Indexes for table `statusphysiciangsjhsshs`
+--
+ALTER TABLE `statusphysiciangsjhsshs`
+  ADD PRIMARY KEY (`statphysician_id`);
 
 --
 -- Indexes for table `statusshs`
 --
 ALTER TABLE `statusshs`
   ADD PRIMARY KEY (`status_id`);
+
+--
+-- Indexes for table `unavailable_slots`
+--
+ALTER TABLE `unavailable_slots`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `users`
@@ -1274,55 +1615,61 @@ ALTER TABLE `weightmonitor`
 -- AUTO_INCREMENT for table `admins`
 --
 ALTER TABLE `admins`
-  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `consultationformrecord`
 --
 ALTER TABLE `consultationformrecord`
-  MODIFY `consultform_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `consultform_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `dental`
 --
 ALTER TABLE `dental`
-  MODIFY `dental_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
+  MODIFY `dental_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=103;
 
 --
 -- AUTO_INCREMENT for table `dentalapp`
 --
 ALTER TABLE `dentalapp`
-  MODIFY `dentalapp_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `dentalapp_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
 
 --
 -- AUTO_INCREMENT for table `healthrecordformcollege`
 --
 ALTER TABLE `healthrecordformcollege`
-  MODIFY `healthcollege_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `healthcollege_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `healthrecordformgsjhs`
 --
 ALTER TABLE `healthrecordformgsjhs`
-  MODIFY `healthgsjhs_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `healthnogsjhs_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT for table `healthrecordformshs`
 --
 ALTER TABLE `healthrecordformshs`
-  MODIFY `healthshs_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `healthshs_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `medical`
 --
 ALTER TABLE `medical`
-  MODIFY `med_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `med_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `medicalapp`
 --
 ALTER TABLE `medicalapp`
-  MODIFY `medicalapp_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `medicalapp_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=176;
+
+--
+-- AUTO_INCREMENT for table `medicine`
+--
+ALTER TABLE `medicine`
+  MODIFY `medicine_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `nursenotesshs`
@@ -1334,7 +1681,7 @@ ALTER TABLE `nursenotesshs`
 -- AUTO_INCREMENT for table `patientrecord`
 --
 ALTER TABLE `patientrecord`
-  MODIFY `p_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `p_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `physicalexaminationgsjhs`
@@ -1352,13 +1699,13 @@ ALTER TABLE `physicalexaminationshs`
 -- AUTO_INCREMENT for table `physician`
 --
 ALTER TABLE `physician`
-  MODIFY `physician_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `physician_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `physicianapp`
 --
 ALTER TABLE `physicianapp`
-  MODIFY `phy_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `phy_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `physicianorderprogressgsjhs`
@@ -1382,13 +1729,7 @@ ALTER TABLE `schoolhealthasses`
 -- AUTO_INCREMENT for table `sms_message`
 --
 ALTER TABLE `sms_message`
-  MODIFY `message_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
---
--- AUTO_INCREMENT for table `status`
---
-ALTER TABLE `status`
-  MODIFY `status_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `message_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT for table `statuscollege`
@@ -1397,16 +1738,70 @@ ALTER TABLE `statuscollege`
   MODIFY `status_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT for table `statusdentalgsjhsshsfriday`
+--
+ALTER TABLE `statusdentalgsjhsshsfriday`
+  MODIFY `status_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT for table `statusdentalgsjhsshsmonday`
+--
+ALTER TABLE `statusdentalgsjhsshsmonday`
+  MODIFY `status_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT for table `statusdentalgsjhsshsthursday`
+--
+ALTER TABLE `statusdentalgsjhsshsthursday`
+  MODIFY `status_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT for table `statusdentalgsjhsshstuesday`
+--
+ALTER TABLE `statusdentalgsjhsshstuesday`
+  MODIFY `status_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT for table `statusdentalgsjhsshswednesday`
+--
+ALTER TABLE `statusdentalgsjhsshswednesday`
+  MODIFY `status_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
 -- AUTO_INCREMENT for table `statusmedicalcollege`
 --
 ALTER TABLE `statusmedicalcollege`
   MODIFY `medical_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `statusmedicalgsjhs`
+-- AUTO_INCREMENT for table `statusmedicalgsjhsmonday`
 --
-ALTER TABLE `statusmedicalgsjhs`
-  MODIFY `medical_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+ALTER TABLE `statusmedicalgsjhsmonday`
+  MODIFY `medical_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `statusmedicalgsjhsthursday`
+--
+ALTER TABLE `statusmedicalgsjhsthursday`
+  MODIFY `medical_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `statusmedicalgsjhstuesday`
+--
+ALTER TABLE `statusmedicalgsjhstuesday`
+  MODIFY `medical_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `statusmedicalgsjhswednesday`
+--
+ALTER TABLE `statusmedicalgsjhswednesday`
+  MODIFY `medical_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `statusphysiciangsjhsshs`
+--
+ALTER TABLE `statusphysiciangsjhsshs`
+  MODIFY `statphysician_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `statusshs`
@@ -1415,10 +1810,16 @@ ALTER TABLE `statusshs`
   MODIFY `status_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
+-- AUTO_INCREMENT for table `unavailable_slots`
+--
+ALTER TABLE `unavailable_slots`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=97;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=106;
 
 --
 -- AUTO_INCREMENT for table `vitalsigns`

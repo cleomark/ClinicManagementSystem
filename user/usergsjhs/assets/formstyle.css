@@ -1,7 +1,7 @@
 input[type="text"] {
     border: 2px solid #afbdcf;
     border-radius: 5px;
-    height: 47px;
+    height: 52px;
     width:auto;
     color: #1E1E1E;
     font-size: 14px;
@@ -30,12 +30,38 @@ input[type="number"] {
     padding-left: 20px;
     box-shadow: none;  
 }
+#otherillnesss{
+    width: 700px;
+}
+#languages{
+    width: 400px;
+}
+#languagess{
+    width: 200px;
+}
+#relationship{
+    width: 300px;
+}
+.row-container {
+    display: flex;
+    align-items: center; /* Align items vertically in the center */
+  }
+  
+  .checkbox, .input_wrap {
+    margin-right: 20px; /* Optional: Add some space between each element */
+  }
+  
+  /* Remove the right margin for the last element to prevent extra space */
+  .input_wrap {
+    margin-right: 0;
+  }
+  
 
 select[name="gender"] {
     border: 2px solid #afbdcf;
     border-radius: 5px;
     height: 47px;
-    width:140px;
+    width:240px;
     color: #1E1E1E;
     font-size: 14px;
     padding-left: 20px;
@@ -219,7 +245,7 @@ select[readonly] {
 
 .checkbox label {
     position: relative;
-    font-size: 400px;
+    font-size: 200px;
     padding-left: 25px;
     cursor: pointer;
 }
@@ -235,7 +261,7 @@ select.form-select:not(:disabled) {
     top: 0;
     left: 0;
     width: 18px;
-    height: 18px;
+    height: 20px;
     border: 2px solid #15a362;
     border-radius: 4px;
 }
@@ -311,58 +337,3 @@ select.form-select:not(:disabled) {
     height: 100%;
     object-fit: cover;
 }
-#languagessss{
-    width: 400px;
-}
-#relationship{
-    width: 300px;
-}
-
-/*csssssssss*/
-
-#address1{
-    width: 640px;
-}
-
-#nationality1{
-    width: 240px;
-}
-#fguardian{
-    width: 300px;
-}
-#contactemer{
-    width: 215px;
-}
-#con{
-    width: 250px;
-}
-#referral{
-    width: 500px;
-}
-#vaccine{
-    width: 494px;
-}
-#religion1{
-    width: 240px;
-}
-#physician{
-    width: 494px;
-}
-#birthday{
-    width: 240px;
-}
-
-.row-container {
-    display: flex;
-    align-items: center; /* Align items vertically in the center */
-  }
-  #otherillnesss{
-    width: 300px;
-}
-
-.vaccine{
-    margin-bottom: -5px;
-}
-
-
-

@@ -5,11 +5,9 @@
     if(isset($_POST['submit_data'])){ // pag get ng data 
         $user_id = $_POST['user_id'];
         $image = $_FILES['image']['name'];
-        $gradelevel = trim(mysqli_real_escape_string($conn, $_POST['gradelevel']));
         $fullname = trim(mysqli_real_escape_string($conn, $_POST['fullname']));
-        $role = isset($_POST['role']) ? trim(mysqli_real_escape_string($conn, $_POST['role'])) : "";
         $idnumber = trim(mysqli_real_escape_string($conn, $_POST['idnumber']));
-        $age = trim(mysqli_real_escape_string($conn, $_POST['age']));
+        $birthday = trim(mysqli_real_escape_string($conn, $_POST['birthday']));
         $phoneno = trim(mysqli_real_escape_string($conn, $_POST['phoneno']));
         $gender = isset($_POST['gender']) ? trim(mysqli_real_escape_string($conn, $_POST['gender'])) : "";
         $address = trim(mysqli_real_escape_string($conn, $_POST['address']));
@@ -40,15 +38,17 @@
         $med = trim(mysqli_real_escape_string($conn, $_POST['med']));
         $allow = isset($_POST['allow']) ? trim(mysqli_real_escape_string($conn, $_POST['allow'])) : "";
         $notallow = isset($_POST['notallow']) ? trim(mysqli_real_escape_string($conn, $_POST['notallow'])) : "";
-        $medpresent = trim(mysqli_real_escape_string($conn, $_POST['medpresent']));
+        $yesmedication = isset($_POST['yesmedication']) ? trim(mysqli_real_escape_string($conn, $_POST['yesmedication'])) : "";
+        $nomedication = isset($_POST['nomedication']) ? trim(mysqli_real_escape_string($conn, $_POST['nomedication'])) : "";
+        $medication = trim(mysqli_real_escape_string($conn, $_POST['medication']));
         $notified= trim(mysqli_real_escape_string($conn, $_POST['notified']));
         $contact = trim(mysqli_real_escape_string($conn, $_POST['contact']));
         $relationship = trim(mysqli_real_escape_string($conn, $_POST['relationship']));
 
-        $sql = "INSERT INTO healthrecordformshs VALUES ('','$user_id','$image','$gradelevel','$fullname','$role','$idnumber','$age','$phoneno',
+        $sql = "INSERT INTO healthrecordformshs VALUES ('','$user_id','$image','$fullname','$idnumber','$birthday','$phoneno',
         '$gender','$address','$paddress','$father','$cfather','$mother','$cmother','$polio','$tetanus','$chickenpox','$measles',
         '$mumps','$tb','$asthma','$hepatitis','$faintingspells','$seizure','$bleeding','$eyedis','$heartailment','$otherillness',
-        '$yesfood','$nofood','$food','$yesmed','$nomed','$med','$allow','$notallow','$medpresent','$notified','$contact',
+        '$yesfood','$nofood','$food','$yesmed','$nomed','$med','$allow','$notallow','$yesmedication','$nomedication','$medication','$notified','$contact',
         '$relationship')";
       
       if (mysqli_query($conn, $sql)) {

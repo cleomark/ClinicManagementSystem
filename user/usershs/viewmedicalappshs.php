@@ -54,7 +54,7 @@
 <?php
 
 // Retrieve the health record for the given ID number
-$sql = "SELECT * FROM medicalapp WHERE idnumber= '$idnumber'";
+$sql = "SELECT * FROM medicalappshs WHERE idnumber= '$idnumber'";
 $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0) {
@@ -64,9 +64,10 @@ if (mysqli_num_rows($result) > 0) {
   $gradecourseyear1 = $row['gradecourseyear1'];
   $phoneno = $row['phoneno'];
   $date_time = $row['date_time'];
+  $sched_time = $row['sched_time'];
   $role= $row['role'];
   $onoff= $row['onoff'];
-  $date_created = $row['date_created'];
+  $created_at = $row['created_at'];
     }
  else {
  } 
@@ -201,7 +202,7 @@ if (mysqli_num_rows($result) > 0) {
                 </div><!--//app-card-header-->
                 <div class="app-card-body p-4">
                     <?php
-                    $sql = "SELECT * FROM medicalapp WHERE idnumber = '$idnumber'";
+                    $sql = "SELECT * FROM medicalappshs WHERE idnumber = '$idnumber'";
                     $result = $conn->query($sql);
                     while($row = $result->fetch_array()) {
                     ?>
@@ -236,7 +237,11 @@ if (mysqli_num_rows($result) > 0) {
                             </div>
                         </div>
                         <div class="form-group">
-                           <b> <span>Schedule: <?php echo $row['date_time']; ?></span></b>
+                        <b>
+                            <span>Schedule: <?php echo date('Y-m-d', strtotime($row['date_time'])); ?>
+                            <?php echo date('h:i A', strtotime($row['sched_time'])); ?></span>
+                        </b>
+
                         </div>
                     </div>
                     <?php } ?>

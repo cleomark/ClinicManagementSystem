@@ -66,7 +66,8 @@ if (mysqli_num_rows($result) > 0) {
   $gradecourseyear = $row['gradecourseyear'];
   $role = $row['role'];
   $date_time = $row['date_time'];
-  $date_created = $row['date_created'];
+  $sched_time = $row['sched_time'];
+  $created_at = $row['created_at'];
     }
  else {
  } 

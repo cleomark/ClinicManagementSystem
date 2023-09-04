@@ -32,7 +32,7 @@
 <!DOCTYPE html>
 <html lang="en"> 
 <head>
-    <title>Medical Appointments</title>
+    <title>Dental Appointments</title>
     
     <!-- Meta -->
     <meta charset="utf-8">
@@ -66,6 +66,7 @@ if (mysqli_num_rows($result) > 0) {
   $gradecourseyear = $row['gradecourseyear'];
   $role = $row['role'];
   $date_time = $row['date_time'];
+  $sched_time = $row['sched_time'];
     }
  else {
  } 
@@ -132,31 +133,6 @@ if (mysqli_num_rows($result) > 0) {
             </ul>
         </div>
     </li>
-            <li class="nav-item has-submenu">
-        <a class="nav-link submenu-toggle active" href="#" data-bs-toggle="collapse" data-bs-target="#submenu-1" aria-expanded="false" aria-controls="submenu-1">
-            <span class="nav-icon">
-                <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-files" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" d="M4 2h7a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm0 1a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H4z"/>
-                    <path d="M6 0h7a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2v-1a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H6a1 1 0 0 0-1 1H4a2 2 0 0 1 2-2z"/>
-                </svg>
-            </span>
-            <span class="nav-link-text">Health Profiles</span>
-            <span class="submenu-arrow">
-                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
-                </svg>
-            </span>
-        </a>
-        <div id="submenu-1" class="collapse submenu submenu-1" data-bs-parent="#menu-accordion">
-            <ul class="submenu-list list-unstyled">
-            <li class="submenu-item"><a class="submenu-link" href="gsjhslists.php">Grade School and Junior High School Building</a></li>
-                <li class="submenu-item"><a class="submenu-link" href="shslist.php">Senior High School Building</a></li>
-                <li class="submenu-item"><a class="submenu-link" href="collegelists.php">College Building</a></li>
-            </ul>
-        </div>
-    </li>
-
 <li class="nav-item has-submenu">
     <a class="nav-link submenu-toggle active" href="dentalgsjhsshs.php" data-bs-target="#submenu-4" aria-controls="submenu-4">
         <span class="nav-icon">
@@ -254,15 +230,24 @@ if (mysqli_num_rows($result) > 0) {
 </div>
 <br>
 <div class="row">
-<div class="col-sm-4">
+<div class="col-sm-3">
         <div class="form-group">
-            <label for="datetime" class="col-sm-12 control-label" style="font-size: 16px">Date & Time</label>
+            <label for="datetime" class="col-sm-12 control-label" style="font-size: 16px">Schedule Date</label>
             <div class="col-sm-12">
-                <input type="datetime-local" class="form-control" id="datetime" name="date_time" value="<?php echo date('Y-m-d\TH:i', strtotime($row['date_time'])); ?>">
+                <input type="date" class="form-control" id="datetime" name="date_time" value="<?php echo date('Y-m-d', strtotime($row['date_time'])); ?>">
             </div>
         </div>
     </div>
-    <div class="col-sm-4">
+
+    <div class="col-sm-3">
+        <div class="form-group">
+            <label for="datetime" class="col-sm-12 control-label" style="font-size: 16px">Schedule Time</label>
+            <div class="col-sm-12">
+            <input type="text" class="form-control" id="datetime" name="sched_time" value="<?php echo date('h:i A', strtotime($row['sched_time'])); ?>">
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3">
         <div class="form-group">
             <label for="role" class="col-sm-12 control-label" style="font-size: 16px">Role</label>
             <div class="col-sm-12">
@@ -278,7 +263,7 @@ if (mysqli_num_rows($result) > 0) {
         </div>
     </div>
 
-    <div class="col-sm-4">
+    <div class="col-sm-3">
         <div class="form-group">
             <label for="role" class="col-sm-12 control-label" style="font-size: 16px">Service</label>
             <div class="col-sm-12">

@@ -63,6 +63,7 @@ if (mysqli_num_rows($result) > 0) {
   $role = $row['role'];
   $onoff  = $row['onoff'];
   $date_time = $row['date_time'];
+  $sched_time = $row['sched_time'];
     }
  else {
  } 
@@ -217,8 +218,6 @@ if (mysqli_num_rows($result) > 0) {
     <div id="submenu-8" class="collapse submenu submenu-8" data-bs-parent="#menu-accordion">
         <ul class="submenu-list list-unstyled">
             <li class="submenu-item"><a class="submenu-link" href="healthprofilegsjhs.php">Health Profile</a></li>
-            <li class="submenu-item"><a class="submenu-link" href="healthdeclarationgsjhs.php">Health Declaration</a></li>
-            <li class="submenu-item"><a class="submenu-link" href="medicalcertificategsjhs.php">Medical Certificate</a></li>
         </ul>
     </div>
 </li>
@@ -306,15 +305,24 @@ if (mysqli_num_rows($result) > 0) {
 </div>
 <br>
 <div class="row">
-<div class="col-sm-4">
+<div class="col-sm-3">
         <div class="form-group">
-            <label for="datetime" class="col-sm-12 control-label" style="font-size: 16px">Date & Time</label>
+            <label for="datetime" class="col-sm-12 control-label" style="font-size: 16px">Schedule Date</label>
             <div class="col-sm-12">
-                <input type="datetime-local" class="form-control" id="datetime" name="date_time" value="<?php echo date('Y-m-d\TH:i', strtotime($row['date_time'])); ?>">
+                <input type="date" class="form-control" id="datetime" name="date_time" value="<?php echo date('Y-m-d', strtotime($row['date_time'])); ?>">
             </div>
         </div>
     </div>
-    <div class="col-sm-4">
+
+    <div class="col-sm-3">
+        <div class="form-group">
+            <label for="datetime" class="col-sm-12 control-label" style="font-size: 16px">Schedule Time</label>
+            <div class="col-sm-12">
+            <input type="text" class="form-control" id="datetime" name="sched_time" value="<?php echo date('h:i A', strtotime($row['sched_time'])); ?>">
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3">
         <div class="form-group">
             <label for="role" class="col-sm-12 control-label" style="font-size: 16px">Role</label>
             <div class="col-sm-12">
@@ -326,9 +334,9 @@ if (mysqli_num_rows($result) > 0) {
             </div>
         </div>
     </div>
-    <div class="col-sm-4">
+    <div class="col-sm-3">
         <div class="form-group">
-            <label for="onoff" class="col-sm-12 control-label" style="font-size: 16px">On-campus Activity or Off-campus Activity</label>
+            <label for="onoff" class="col-sm-12 control-label" style="font-size: 16px">On or Off-campus Activity</label>
             <div class="col-sm-12">
                 <select id="onoff" name="onoff" class="form-control">
                 <option value="" <?php if(empty($row['onoff'])) echo "selected"; ?>>Select</option>

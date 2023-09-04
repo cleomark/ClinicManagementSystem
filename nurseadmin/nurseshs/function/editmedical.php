@@ -12,6 +12,7 @@ if (isset($_POST['update_medicalrecord'])) {
     $gradecourseyear1 = $_POST['gradecourseyear1'];
     $phoneno = $_POST['phoneno'];
     $date_time = $_POST['date_time'];
+    $sched_time = $_POST['sched_time'];
     $role = isset($_POST['role']) ? trim(mysqli_real_escape_string($conn, $_POST['role'])) : "";
     $onoff = $_POST['onoff'];
     $is_deleted_on_website = $_POST['is_deleted_on_website'];
@@ -24,9 +25,9 @@ if (isset($_POST['update_medicalrecord'])) {
     $formattedDatetime = $appointmentDateTime->format("Y-m-d h:i A");
 
     // Update the record in the database
-    $sql = "UPDATE medicalapp SET
+    $sql = "UPDATE medicalappshs SET
     idnumber='$idnumber', name1='$name1', gradecourseyear1='$gradecourseyear1',phoneno='$phoneno',
-    role='$role', date_time='$formattedDatetime', onoff='$onoff'
+    role='$role', date_time='$formattedDatetime', sched_time='$sched_time', onoff='$onoff'
     WHERE medicalapp_id = '$medicalapp_id'";
 
     if (mysqli_query($conn, $sql)) {

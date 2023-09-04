@@ -6,6 +6,8 @@
     if (isset($_POST['signup'])) {
         $fullname = $_POST['fullname'];
         $leveleduc = $_POST['leveleduc'];
+        $role = $_POST['role'];
+        $gradelevel = $_POST['gradelevel'];
         $idnumber = $_POST['idnumber'];
         $email = $_POST['email'];
         $password = $_POST['password'];
@@ -31,7 +33,7 @@
                 // Hash the password
                 $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
     
-                $sql_add = "INSERT INTO `users`(`fullname`, `leveleduc`, `idnumber`, `email`, `password`) VALUES ('$fullname','$leveleduc','$idnumber','$email','$hashedPassword')";
+                $sql_add = "INSERT INTO `users`(`fullname`, `leveleduc`, `role`, `gradelevel`,`idnumber`, `email`, `password`) VALUES ('$fullname','$leveleduc','$role','$gradelevel','$idnumber','$email','$hashedPassword')";
                 if ($conn->query($sql_add) === TRUE) {
                     $sql = "SELECT * FROM users WHERE email = '$email'";
                     $result = $conn->query($sql);
@@ -40,6 +42,8 @@
                         $_SESSION['user_id'] = $row['id'];
                         $_SESSION['fullname'] = $row['fullname'];
                         $_SESSION['leveleduc'] = $row['leveleduc'];
+                        $_SESSION['role'] = $row['role'];
+                        $_SESSION['gradelevel'] = $row['gradelevel'];
                         $_SESSION['idnumber'] = $row['idnumber'];
                         $_SESSION['email'] = $row['email'];
                         header('Location: ../login.php');
@@ -77,9 +81,9 @@
     
                 $role = $row['leveleduc'];
                 if ($role == '1') {
-                    header('Location: ../usergsjhs/studentandemployeeingsjhs.php');
+                    header('Location: ../usergsjhs/healthrecordformgsjhs.php');
                 } elseif ($role == '2') {
-                    header('Location: ../usershs/studentandemployeeinshs.php');
+                    header('Location: ../usershs/healthrecordformshs.php');
                 } elseif ($role == '3') {
                     // Handle role 3
                     header('Location: ../usercollege/studentandemployeeincollege.php');

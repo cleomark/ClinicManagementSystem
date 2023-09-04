@@ -64,6 +64,7 @@ if (mysqli_num_rows($result) > 0) {
   $gradesection = $row['gradesection'];
   $vitalsigns = $row['vitalsigns'];
   $diagnosis = $row['diagnosis'];
+  $status = $row['status'];
   $date_time = $row['date_time'];
     }
  else {
@@ -208,60 +209,63 @@ if (mysqli_num_rows($result) > 0) {
 						?>
                         <br>
 				 <div class="row">
-            <div class="col-sm-6">
+            <div class="col-sm-3">
                 <div class="form-group">
-                    <label for="idnumber" class="col-sm-6 control-label">Your ID Number</label>
+                    <label for="idnumber" class="col-sm-12 control-label">Your ID Number</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" id="idnumber" name="idnumber" placeholder="Enter patient ID number" value="<?php echo $row['idnumber']; ?>" readonly>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-6">
+            <div class="col-sm-3">
                 <div class="form-group">
-                    <label for="patient_name" class="col-sm-4 control-label">Your name</label>
-                    <div class="col-sm-10">
+                    <label for="patient_name" class="col-sm-12 control-label">Your name</label>
+                    <div class="col-sm-12">
                         <input type="text" class="form-control" id="fullname" name="fullname" placeholder="Enter your Fullname" value="<?php echo $row['fullname']; ?>" readonly>
                     </div>
                 </div>
             </div>
-        </div>
-
-        <br>
-
-        <div class="row">
-        <div class="col-sm-6">
+            <div class="col-sm-3">
         <div class="form-group">
-                    <label for="gradesection" class="col-sm-4 control-label">Grade & Section/Employee</label>
-                    <div class="col-sm-10">
+                    <label for="gradesection" class="col-sm-12 control-label">Grade & Section/Employee</label>
+                    <div class="col-sm-12">
                         <input type="text" class="form-control" id="gradesection" name="gradesection" placeholder="Enter your Fullname" value="<?php echo $row['gradesection']; ?>" readonly>
                     </div>
                 </div>
             </div>
-
-            <div class="col-sm-6">
+           <div class="col-sm-3">
                 <div class="form-group">
-                    <label for="vitalsigns" class="col-sm-8 control-label">Vital Signs</label>
-                    <div class="col-sm-10">
+                    <label for="vitalsigns" class="col-sm-12 control-label">Vital Signs</label>
+                    <div class="col-sm-12">
                         <input type="text" class="form-control" id="vitalsigns" name="vitalsigns" placeholder="If you are an employee, just type Employee" value="<?php echo $row['vitalsigns']; ?>" readonly>
                     </div>
                 </div>
             </div>
         </div>
-
         <br>
         <div class="row">
+        <div class="col-sm-6">
                 <div class="form-group">
-                    <label for="diagnosis" class="col-sm-8 control-label">Diagnosis/Chief Complaints, Management & Treatement</label>
+                    <label for="diagnosis" class="col-sm-8 control-label">Diagnosis/Chief Complaints</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" id="diagnosis" name="diagnosis" value="<?php echo $row['diagnosis']; ?>" readonly>
                     </div>
                 </div>
             </div>
-
-
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="diagnosis" class="col-sm-8 control-label">Status</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="diagnosis" name="status" value="<?php echo $row['status']; ?>" readonly>
+                    </div>
+                </div>
+            </div>
+   </div>
 
         <div class="form-group">
-            <span><?php echo $row['date_time']; ?></span>
+                <b>
+                    <span>Date Visited: <?php echo date('Y-m-d', strtotime($row['date_time'])); ?></span>
+                </b>
         </div>
   
         <?php } ?>

@@ -19,12 +19,10 @@ include '../../../db.php';
         // If no new image provided, use the existing image name
         $image = $existingImage;
     }
-        $gradelevel = trim(mysqli_real_escape_string($conn, $_POST['gradelevel']));
-        $role = isset($_POST['role']) ? trim(mysqli_real_escape_string($conn, $_POST['role'])) : "";
         $fullname = trim(mysqli_real_escape_string($conn, $_POST['fullname']));
         $idnumber = trim(mysqli_real_escape_string($conn, $_POST['idnumber']));
         $cp = trim(mysqli_real_escape_string($conn, $_POST['cp']));
-        $age = trim(mysqli_real_escape_string($conn, $_POST['age']));
+        $birthday = trim(mysqli_real_escape_string($conn, $_POST['birthday']));
         $gender = isset($_POST['gender']) ? trim(mysqli_real_escape_string($conn, $_POST['gender'])) : "";
         $address = trim(mysqli_real_escape_string($conn, $_POST['address']));
         $paddress = trim(mysqli_real_escape_string($conn, $_POST['paddress']));
@@ -82,20 +80,43 @@ include '../../../db.php';
         $diabetes = isset($_POST['diabetes']) ? trim(mysqli_real_escape_string($conn, $_POST['diabetes'])) : "";
         $hyperventilation  = isset($_POST['hyperventilation']) ? trim(mysqli_real_escape_string($conn, $_POST['hyperventilation'])) : "";
         $mens = isset($_POST['mens']) ? trim(mysqli_real_escape_string($conn, $_POST['mens'])) : "";
-        $othersmedical = isset($_POST['othersmedical']) ? trim(mysqli_real_escape_string($conn, $_POST['othersmedical'])) : "";
-        $heartcondition = trim(mysqli_real_escape_string($conn, $_POST['heartcondition']));
-        $eyeproblem = trim(mysqli_real_escape_string($conn, $_POST['eyeproblem']));
-        $illness = trim(mysqli_real_escape_string($conn, $_POST['illness']));
-        $injuries = trim(mysqli_real_escape_string($conn, $_POST['injuries']));
-        $treatment = trim(mysqli_real_escape_string($conn, $_POST['treatment']));
-        $medication = trim(mysqli_real_escape_string($conn, $_POST['medication']));
-        $food = trim(mysqli_real_escape_string($conn, $_POST['food']));
-        $firstaid = trim(mysqli_real_escape_string($conn, $_POST['firstaid']));
-        $concernshealth = trim(mysqli_real_escape_string($conn, $_POST['concernshealth']));
+        $othersmedical = trim(mysqli_real_escape_string($conn, $_POST['othersmedical']));
+        $yesheartcon = isset($_POST['yesheartcon']) ? trim(mysqli_real_escape_string($conn, $_POST['yesheartcon'])) : "";
+        $noheartcon = isset($_POST['noheartcon']) ? trim(mysqli_real_escape_string($conn, $_POST['noheartcon'])) : "";
+        $heartcon = trim(mysqli_real_escape_string($conn, $_POST['heartcon']));
+        $yesheartcon = isset($_POST['yesheartcon']) ? trim(mysqli_real_escape_string($conn, $_POST['yesheartcon'])) : "";
+        $noheartcon = isset($_POST['noheartcon']) ? trim(mysqli_real_escape_string($conn, $_POST['noheartcon'])) : "";
+        $heartcon = trim(mysqli_real_escape_string($conn, $_POST['heartcon']));
+        $yeseyeprob = isset($_POST['yeseyeprob']) ? trim(mysqli_real_escape_string($conn, $_POST['yeseyeprob'])) : "";
+        $noeyeprob = isset($_POST['noeyeprob']) ? trim(mysqli_real_escape_string($conn, $_POST['noeyeprob'])) : "";
+        $eyeprob = trim(mysqli_real_escape_string($conn, $_POST['eyeprob']));
+        $yeseyeprob = isset($_POST['yeseyeprob']) ? trim(mysqli_real_escape_string($conn, $_POST['yeseyeprob'])) : "";
+        $noeyeprob = isset($_POST['noeyeprob']) ? trim(mysqli_real_escape_string($conn, $_POST['noeyeprob'])) : "";
+        $eyeprob = trim(mysqli_real_escape_string($conn, $_POST['eyeprob']));
+        $yesseriousillnes = isset($_POST['yesseriousillnes']) ? trim(mysqli_real_escape_string($conn, $_POST['yesseriousillnes'])) : "";
+        $noseriousillnes = isset($_POST['noseriousillnes']) ? trim(mysqli_real_escape_string($conn, $_POST['noseriousillnes'])) : "";
+        $seriousillnes = trim(mysqli_real_escape_string($conn, $_POST['seriousillnes']));
+        $yessurgeries = isset($_POST['yessurgeries']) ? trim(mysqli_real_escape_string($conn, $_POST['yessurgeries'])) : "";
+        $nosurgeries = isset($_POST['nosurgeries']) ? trim(mysqli_real_escape_string($conn, $_POST['nosurgeries'])) : "";
+        $surgeries = trim(mysqli_real_escape_string($conn, $_POST['surgeries']));
+        $yesreceive = isset($_POST['yesreceive']) ? trim(mysqli_real_escape_string($conn, $_POST['yesreceive'])) : "";
+        $noreceive = isset($_POST['noreceive']) ? trim(mysqli_real_escape_string($conn, $_POST['noreceive'])) : "";
+        $receive = trim(mysqli_real_escape_string($conn, $_POST['receive']));
+        $yesallergiesmed = isset($_POST['yesallergiesmed']) ? trim(mysqli_real_escape_string($conn, $_POST['yesallergiesmed'])) : "";
+        $noallergiesmed = isset($_POST['noallergiesmed']) ? trim(mysqli_real_escape_string($conn, $_POST['noallergiesmed'])) : "";
+        $allergiesmed = trim(mysqli_real_escape_string($conn, $_POST['allergiesmed']));
+        $yesallergiesfood = isset($_POST['yesallergiesfood']) ? trim(mysqli_real_escape_string($conn, $_POST['yesallergiesfood'])) : "";
+        $noallergiesfood = isset($_POST['noallergiesfood']) ? trim(mysqli_real_escape_string($conn, $_POST['noallergiesfood'])) : "";
+        $allergiesfood = trim(mysqli_real_escape_string($conn, $_POST['allergiesfood']));
+        $yesfirstaid = isset($_POST['yesfirstaid']) ? trim(mysqli_real_escape_string($conn, $_POST['yesfirstaid'])) : "";
+        $nofirstaid = isset($_POST['nofirstaid']) ? trim(mysqli_real_escape_string($conn, $_POST['nofirstaid'])) : "";
+        $yesconcerns = isset($_POST['yesconcerns']) ? trim(mysqli_real_escape_string($conn, $_POST['yesconcerns'])) : "";
+        $noconcerns = isset($_POST['noconcerns']) ? trim(mysqli_real_escape_string($conn, $_POST['noconcerns'])) : "";
+        $concerns = trim(mysqli_real_escape_string($conn, $_POST['concerns']));
 
         $sql = "UPDATE healthrecordformgsjhs SET
-        image='$image', gradelevel='$gradelevel', role='$role', fullname='$fullname', idnumber='$idnumber',
-        cp='$cp', age='$age', gender='$gender', address='$address', paddress='$paddress', father='$father',
+        image='$image', fullname='$fullname', idnumber='$idnumber',
+        cp='$cp', birthday='$birthday', gender='$gender', address='$address', paddress='$paddress', father='$father',
         cfather='$cfather', mother='$mother', cmother='$cmother', religion='$religion', nationality='$nationality',
         language='$language', bothparents='$bothparents', livesmother='$livesmother', livesfather='$livesfather',
         guardian='$guardian', guardianname='$guardianname', guardianrelation='$guardianrelation',
@@ -106,10 +127,14 @@ include '../../../db.php';
         allergicrhinitis='$allergicrhinitis', freqheadache='$freqheadache', anxietydis='$anxietydis',
         g6pd='$g6pd', bleedingclotting='$bleedingclotting', hearingprob='$hearingprob',
         hypergas='$hypergas', derma='$derma', hypertension='$hypertension', diabetes='$diabetes',
-        hyperventilation='$hyperventilation', mens='$mens', othersmedical='$othersmedical',
-        heartcondition='$heartcondition', eyeproblem='$eyeproblem', illness='$illness', injuries='$injuries',
-        treatment='$treatment', medication='$medication', food='$food', firstaid='$firstaid',
-        concernshealth='$concernshealth'
+        hyperventilation='$hyperventilation', mens='$mens', othersmedical='$othersmedical', yesheartcon='$yesheartcon',
+        noheartcon='$noheartcon',heartcon='$heartcon',yeseyeprob='$yeseyeprob',noeyeprob='$noeyeprob',eyeprob='$eyeprob',
+        yesseriousillnes='$yesseriousillnes',noseriousillnes='$noseriousillnes',seriousillnes='$seriousillnes',
+        yessurgeries='$yessurgeries',nosurgeries='$nosurgeries',surgeries='$surgeries',
+        yesreceive='$yesreceive',noreceive='$noreceive',receive='$receive',yesallergiesmed='$yesallergiesmed',noallergiesmed='$noallergiesmed',allergiesmed='$allergiesmed',
+        yesallergiesmed='$yesallergiesmed',noallergiesmed='$noallergiesmed',allergiesmed='$allergiesmed',
+        yesallergiesfood='$yesallergiesfood',noallergiesfood='$noallergiesfood',allergiesfood='$allergiesfood',
+        yesfirstaid='$yesfirstaid',nofirstaid='$nofirstaid',yesconcerns='$yesconcerns',noconcerns ='$noconcerns',concerns='$concerns'
         WHERE healthnogsjhs_id = '$healthnogsjhs_id'";
     
       

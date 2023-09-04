@@ -287,33 +287,21 @@
 							</div>
 						</div>
             <div class="input_wrap">
-                <label for="gradelevel">Grade Level</label>
-                <input id="gradelevel" name="gradelevel" type="text" value="<?=$row['gradelevel'];?>">
-            </div>
-            <div class="input_wrap">
                 <label for="fullname">Full Name</label>
                 <input id="fullname" name="fullname" type="text" value="<?=$row['fullname'];?>" >
             </div>
-            <div class="input_wrap">
-    <label for="fullname">Role</label>
-    <select class="form-select" name="role">
-        <option value="" <?php if(empty($row['role'])) echo "selected"; ?>>Select Role</option>
-        <option value="Student in SHS" <?php if($row['role'] == "Student in SHS") echo "selected"; ?>>Student in SHS</option>
-        <option value="Employee in SHS" <?php if($row['role'] == "Employee in SHS") echo "selected"; ?>>Employee in SHS</option>
-    </select>
-</div>
-       
-                            </div>
-                            </div><br><br>
-        <div class="input_form">
             <div class="input_wrap">
                 <label for="fullname">ID Number</label>
                 <input name="idnumber" type="text" value="<?=$row['idnumber'];?>">
             </div>
             <div class="input_wrap">
-                <label for="fullname">Age</label>
-                <input name="age" type="text" value="<?=$row['age'];?>">
+                <label for="fullname">Birthday</label>
+                <input name="birthday" type="text" value="<?=$row['birthday'];?>">
             </div>
+        </div>
+    </div>
+                <br><br>
+        <div class="input_form">
             <div class="input_wrap">
                 <label for="fullname">Personal Contact No</label>
                 <input name="phoneno" type="text" value="<?=$row['phoneno'];?>">
@@ -485,12 +473,24 @@
         <input name="notallow" value="notallow" type="checkbox" id="notallow" <?php if($row['notallow']=="notallow") {echo "checked";} ?>>
         <label class="labels" for="notallow" style="font-size: 14px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No</label>
     </div>
-   <div class="input_form"> 
-            <div class="input_wrap">
-                <label for="fullname">Is your child taking any medications at present? If YES, please list the name of the medicine/s:</label>
-                <input name="medpresent" id ="language" type="text" value="<?=$row['medpresent'];?>">
-            </div>
-   </div>
+    <div class="input_form"> 
+            <div class="input">
+            <label for="fullname">Is your child taking any medications at present? If YES, please list the name of the medicine/s:</label>  <div class="row-container">
+  <div class="checkbox">
+  <input name="yesmedication" value="yesmedication" type="checkbox" id="yesmedication" <?php if($row['yesmedication']=="yesmedication") {echo "checked";} ?>>
+    <label class="labels" for="yesmedication" style="font-size: 14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yes</label>
+  </div>
+
+  <div class="checkbox">
+  <input name="nomedication" value="nomedication" type="checkbox" id="nomedication" <?php if($row['nomedication']=="nomedication") {echo "checked";} ?>>
+    <label class="labels" for="nomedication" style="font-size: 14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No</label>
+  </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+  <div class="input_wrap">
+  <input name="medication" id="otherillnesss" type="text" placeholder="If YES, please specify" value="<?=$row['medication'];?>">
+  </div>
+</div>
+
 
    <div class="input_form"> 
             <div class="input_wrap">

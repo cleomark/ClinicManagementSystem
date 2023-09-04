@@ -641,11 +641,9 @@ if (mysqli_num_rows($result) > 0) {
   </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
   <div class="input_wrap">
-    <input name="relationheartdis" id="otherillnesss" type="text" placeholder="Relation(s) to student/emloyee" value="<?=$row['relationheartdis'];?>" readonly
->
+    <input name="relationheartdis" id="otherillnesss" type="text" placeholder="Relation(s) to student/emloyee" value="<?=$row['relationheartdis'];?>" readonly>
   </div>
 </div>
-
 
 <div class="input_form">
     </div>
@@ -663,11 +661,9 @@ if (mysqli_num_rows($result) > 0) {
   </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
   <div class="input_wrap">
-    <input name="relationbp" id="otherillnesss" type="text" placeholder="Relation(s) to student/emloyee" value="<?=$row['relationbp'];?>" readonly
->
+    <input name="relationbp" id="otherillnesss" type="text" placeholder="Relation(s) to student/emloyee" value="<?=$row['relationbp'];?>" readonly>
   </div>
 </div>
-
 
 <div class="input_form">
     </div>
@@ -931,9 +927,6 @@ if (mysqli_num_rows($result) > 0) {
             <input name="vision_defect" value="vision_defect" type="checkbox" id="vision_defect" value="<?= $row['vision_defect'];?>" <?php if ($row['vision_defect']) echo "checked"; ?>>
             <label class="label" for="vision_defect" style="font-size: 12px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VISION DEFECT</label>
         </div>
-        
-
-       
     </div>
     <div>
         <br>

@@ -30,6 +30,32 @@ input[type="number"] {
     padding-left: 20px;
     box-shadow: none;  
 }
+#otherillnesss{
+    width: 700px;
+}
+#languages{
+    width: 400px;
+}
+#languagess{
+    width: 200px;
+}
+#relationship{
+    width: 300px;
+}
+.row-container {
+    display: flex;
+    align-items: center; /* Align items vertically in the center */
+  }
+  
+  .checkbox, .input_wrap {
+    margin-right: 20px; /* Optional: Add some space between each element */
+  }
+  
+  /* Remove the right margin for the last element to prevent extra space */
+  .input_wrap {
+    margin-right: 0;
+  }
+  
 
 select[name="gender"] {
     border: 2px solid #afbdcf;

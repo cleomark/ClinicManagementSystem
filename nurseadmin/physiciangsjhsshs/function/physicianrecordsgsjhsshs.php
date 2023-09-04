@@ -231,11 +231,14 @@
     if(isset($_POST['submit_statusphysiciangsjhsshs'])) {
         // Retrieve the submitted form data
         $statphysician_id = $_POST['statphysician_id'];
-        $status811 = $_POST['status811'];
+        $statusphysician9_am = $_POST['statusphysician9_am'];
+        $statusphysician10_am = $_POST['statusphysician10_am'];
+        $statusphysician11_am = $_POST['statusphysician11_am'];
        
     
         // Step 4: Execute the update query
-        $sql = "UPDATE statusphysiciangsjhsshs SET status811='$status811'
+        $sql = "UPDATE statusphysiciangsjhsshs SET statusphysician9_am='$statusphysician9_am', 
+        statusphysician10_am='$statusphysician10_am', statusphysician11_am='$statusphysician11_am'
         WHERE statphysician_id = $statphysician_id";
     
         // Execute the query and handle the result

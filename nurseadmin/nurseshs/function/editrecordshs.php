@@ -19,11 +19,9 @@ include '../../../db.php';
         // If no new image provided, use the existing image name
         $image = $existingImage;
     }
-        $gradelevel = trim(mysqli_real_escape_string($conn, $_POST['gradelevel']));
         $fullname = trim(mysqli_real_escape_string($conn, $_POST['fullname']));
-        $role = isset($_POST['role']) ? trim(mysqli_real_escape_string($conn, $_POST['role'])) : "";
         $idnumber = trim(mysqli_real_escape_string($conn, $_POST['idnumber']));
-        $age = trim(mysqli_real_escape_string($conn, $_POST['age']));
+        $birthday = trim(mysqli_real_escape_string($conn, $_POST['birthday']));
         $phoneno = trim(mysqli_real_escape_string($conn, $_POST['phoneno']));
         $gender = isset($_POST['gender']) ? trim(mysqli_real_escape_string($conn, $_POST['gender'])) : "";
         $address = trim(mysqli_real_escape_string($conn, $_POST['address']));
@@ -54,7 +52,9 @@ include '../../../db.php';
         $med = trim(mysqli_real_escape_string($conn, $_POST['med']));
         $allow = isset($_POST['allow']) ? trim(mysqli_real_escape_string($conn, $_POST['allow'])) : "";
         $notallow = isset($_POST['notallow']) ? trim(mysqli_real_escape_string($conn, $_POST['notallow'])) : "";
-        $medpresent = trim(mysqli_real_escape_string($conn, $_POST['medpresent']));
+        $yesmedication = isset($_POST['yesmedication']) ? trim(mysqli_real_escape_string($conn, $_POST['yesmedication'])) : "";
+        $nomedication = isset($_POST['nomedication']) ? trim(mysqli_real_escape_string($conn, $_POST['nomedication'])) : "";
+        $medication = trim(mysqli_real_escape_string($conn, $_POST['medication']));
         $notified = trim(mysqli_real_escape_string($conn, $_POST['notified']));
         $contact = trim(mysqli_real_escape_string($conn, $_POST['contact']));
         $relationship = trim(mysqli_real_escape_string($conn, $_POST['relationship']));
@@ -63,14 +63,14 @@ include '../../../db.php';
         // Get the existing image name from the database
 
         $sql = "UPDATE healthrecordformshs SET
-        image='$image', gradelevel='$gradelevel', fullname='$fullname', role='$role', idnumber='$idnumber',
-        age='$age', phoneno='$phoneno', gender='$gender', address='$address', paddress='$paddress', father='$father',
+        image='$image', fullname='$fullname', idnumber='$idnumber',
+        birthday='$birthday', phoneno='$phoneno', gender='$gender', address='$address', paddress='$paddress', father='$father',
         cfather='$cfather', mother='$mother', cmother='$cmother', polio='$polio', tetanus='$tetanus', chickenpox='$chickenpox',
         measles='$measles', mumps='$mumps', tb='$tb', asthma='$asthma', hepatitis='$hepatitis',
         faintingspells='$faintingspells', seizure='$seizure', bleeding='$bleeding', eyedis='$eyedis', 
         bleeding='$bleeding', eyedis='$eyedis', heartailment='$heartailment', yesfood='$yesfood',
         nofood='$nofood', food='$food', yesmed='$yesmed', nomed='$nomed', med='$med', allow='$allow', 
-        notallow='$notallow', medpresent ='$medpresent', notified='$notified', contact='$contact',
+        notallow='$notallow', yesmedication ='$yesmedication',nomedication ='$nomedication', medication ='$medication', notified='$notified', contact='$contact',
         relationship='$relationship' WHERE healthshs_id = '$healthshs_id'";
     
       

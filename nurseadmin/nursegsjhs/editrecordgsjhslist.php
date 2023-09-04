@@ -28,8 +28,7 @@
     <!-- App CSS -->  
     <link id="theme-style" rel="stylesheet" href="assets/css/portal.css">
 	<link rel="stylesheet" href="assets/style.css">
-    <link rel="stylesheet" href="assets/formstyle.css">
-
+    <link rel="stylesheet" href="assets/formstyles.css">
 
 </head> 
 
@@ -184,8 +183,6 @@
     <div id="submenu-8" class="collapse submenu submenu-8" data-bs-parent="#menu-accordion">
         <ul class="submenu-list list-unstyled">
             <li class="submenu-item"><a class="submenu-link" href="healthprofilegsjhs.php">Health Profile</a></li>
-            <li class="submenu-item"><a class="submenu-link" href="healthdeclarationgsjhs.php">Health Declaration</a></li>
-            <li class="submenu-item"><a class="submenu-link" href="medicalcertificategsjhs.php">Medical Certificate</a></li>
         </ul>
     </div>
 </li>
@@ -246,38 +243,56 @@
 							</div>
 						</div>
                         
-            <div class="input_wrap">
-
-                <label for="gradelevel">Grade Level</label>
-                <input id="gradelevel" name="gradelevel" type="text" value="<?=$row['gradelevel'];?>">
-            </div>
-            <div class="input_wrap">
-    <label for="fullname">Role</label>
-    <select class="form-select" name="role">
-        <option value="" <?php if(empty($row['role'])) echo "selected"; ?>>Select Role</option>
-        <option value="Student in GS/JHS" <?php if($row['role'] == "Student in GS/JHS") echo "selected"; ?>>Student in GS/JHS</option>
-        <option value="Employee in GS/JHS" <?php if($row['role'] == "Employee in GS/JHS") echo "selected"; ?>>Employee in GS/JHS</option>
-    </select>
-</div>
 
         <div class="input_wrap">
                 <label for="fullname">Full Name</label>
                 <input id="fullname" name="fullname" type="text" value="<?=$row['fullname'];?>">
             </div>
-                            </div>
-                            </div><br><br>
-        <div class="input_form">
+       
             <div class="input_wrap">
                 <label for="fullname">ID Number</label>
                 <input name="idnumber" type="text" value="<?=$row['idnumber'];?>">
             </div>
             <div class="input_wrap">
                 <label for="fullname">Personal Contact Number</label>
-                <input name="cp" type="text" value="<?=$row['cp'];?>">
-            </div>
+        <input id="personalContactInput" name="cp" type="text" placeholder="+63" class="contactInput" value="<?=$row['cp'];?>">
+    <p id="personalContactError" class="errorMessage" style="color: red; display: none;">Invalid Phone Number</p>
+</div>
+
+<script>
+    const personalContactInput = document.getElementById('personalContactInput');
+    const personalContactError = document.getElementById('personalContactError');
+
+    personalContactInput.addEventListener('input', function() {
+        let inputValue = personalContactInput.value.trim();
+
+        // Ensure that the input always starts with "+63"
+        if (!inputValue.startsWith('+63')) {
+            inputValue = '+63' + inputValue;
+        }
+
+        // Remove any extra characters beyond the maximum length
+        if (inputValue.length > 13) {
+            inputValue = inputValue.slice(0, 13);
+        }
+
+        // Check if the input is valid
+        if (inputValue === '+63' || (inputValue.startsWith('+63') && inputValue.length <= 13 && inputValue[3] === '9')) {
+            personalContactInput.value = inputValue;
+            personalContactError.style.display = 'none'; // Hide the error message
+        } else {
+            personalContactInput.value = ''; // Clear the input if it's invalid
+            personalContactError.style.display = 'block'; // Show the error message for invalid input
+        }
+    });
+</script>
+</div>
+   </div>
+            <br><br>
+<div class="input_form">
             <div class="input_wrap">
-                <label for="fullname">Age</label>
-                <input name="age" type="text" value="<?=$row['age'];?>">
+                <label for="fullname">Birthday</label>
+                <input name="birthday" type="date" value="<?=$row['birthday'];?>">
             </div>
          <div class="input_wrap">
                 <label for="fullname">Gender</label>
@@ -310,9 +325,38 @@
 
         <div class="input_wrap">
             <label for="fullname">Contact</label>
-            <input name="cfather" id="cfather" type="text" value="<?=$row['cfather'];?>">
+            <input id="contactInput_one" name="cfather" type="text" placeholder="+63" class="contactInput" value="<?=$row['cfather'];?>">
+    <p id="contactInputOneError" class="errorMessage" style="color: red; display: none;">Invalid Phone Number</p>
+</div>
+
+<script>
+    const contactInput_one = document.getElementById('contactInput_one');
+    const contactInputOneError = document.getElementById('contactInputOneError');
+
+        contactInput_one.addEventListener('input', function() {
+        let inputValue = contactInput_one.value.trim();
+
+        // Ensure that the input always starts with "+63"
+        if (!inputValue.startsWith('+63')) {
+            inputValue = '+63' + inputValue;
+        }
+
+        // Remove any extra characters beyond the maximum length
+        if (inputValue.length > 13) {
+            inputValue = inputValue.slice(0, 13);
+        }
+
+        // Check if the input is valid
+        if (inputValue === '+63' || (inputValue.startsWith('+63') && inputValue.length <= 13 && inputValue[3] === '9')) {
+            contactInput_one.value = inputValue;
+            contactInputOneError.style.display = 'none'; // Hide the error message
+        } else {
+            contactInput_one.value = ''; // Clear the input if it's invalid
+            contactInputOneError.style.display = 'block'; // Show the error message for invalid input
+        }
+    });
+</script>
         </div>
-    </div>
 
     <div class="input_form">
         <div class="input_wrap">
@@ -322,9 +366,38 @@
 
         <div class="input_wrap">
             <label for="fullname">Contact</label>
-            <input name="cmother" id="cmother" type="text" value="<?=$row['cmother'];?>">
+            <input id="contactInput_two" name="cmother" type="text" placeholder="+63" class="contactInput" value="<?=$row['cmother'];?>">            
+            <p id="contactInputTwoError" class="errorMessage" style="color: red; display: none;">Invalid Phone Number</p>
+</div>
+
+<script>
+    const contactInput_two = document.getElementById('contactInput_two');
+    const contactInputTwoError = document.getElementById('contactInputTwoError');
+
+        contactInput_two.addEventListener('input', function() {
+        let inputValue = contactInput_two.value.trim();
+
+        // Ensure that the input always starts with "+63"
+        if (!inputValue.startsWith('+63')) {
+            inputValue = '+63' + inputValue;
+        }
+
+        // Remove any extra characters beyond the maximum length
+        if (inputValue.length > 13) {
+            inputValue = inputValue.slice(0, 13);
+        }
+
+        // Check if the input is valid
+        if (inputValue === '+63' || (inputValue.startsWith('+63') && inputValue.length <= 13 && inputValue[3] === '9')) {
+            contactInput_two.value = inputValue;
+            contactInputTwoError.style.display = 'none'; // Hide the error message
+        } else {
+            contactInput_two.value = ''; // Clear the input if it's invalid
+            contactInputTwoError.style.display = 'block'; // Show the error message for invalid input
+        }
+    });
+</script>
         </div>
-    </div>
 
     <div class="input_form">
         <div class="input_wrap">
@@ -377,8 +450,36 @@
     <div class="input_form">
         <div class="input_wrap">
             <label for="fullname">Contact</label>
-            <input name="cguardian" id="cguardian" type="text" value="<?=$row['cguardian'];?>">
-        </div>
+            <input id="contactInput_cguardian" name="cguardian" type="text" placeholder="+63" class="contactInput" value="<?=$row['cguardian'];?>">                        <p id="contactguardianError" class="errorMessage" style="color: red; display: none;">Invalid Phone Number</p>
+</div>
+
+<script>
+    const contactInput_cguardian = document.getElementById('contactInput_cguardian');
+    const contactguardianError = document.getElementById('contactguardianError');
+
+        contactInput_cguardian.addEventListener('input', function() {
+        let inputValue = contactInput_cguardian.value.trim();
+
+        // Ensure that the input always starts with "+63"
+        if (!inputValue.startsWith('+63')) {
+            inputValue = '+63' + inputValue;
+        }
+
+        // Remove any extra characters beyond the maximum length
+        if (inputValue.length > 13) {
+            inputValue = inputValue.slice(0, 13);
+        }
+
+        // Check if the input is valid
+        if (inputValue === '+63' || (inputValue.startsWith('+63') && inputValue.length <= 13 && inputValue[3] === '9')) {
+            contactInput_cguardian.value = inputValue;
+            contactguardianError.style.display = 'none'; // Hide the error message
+        } else {
+            contactInput_cguardian.value = ''; // Clear the input if it's invalid
+            contactguardianError.style.display = 'block'; // Show the error message for invalid input
+        }
+    });
+</script>
     </div>
     <div class="input_form">
         <div class="input_wrap">
@@ -391,8 +492,37 @@
         </div>
         <div class="input_wrap">
             <label for="fullname">Contact</label>
-            <input name="acontact" id="acontact" type="text" value="<?=$row['acontact'];?>">
-        </div>
+            <input id="contactInput_acontact" name="acontact" type="text" placeholder="+63" class="contactInput" value="<?=$row['acontact'];?>"> 
+            <p id="contactarelationError" class="errorMessage" style="color: red; display: none;">Invalid Phone Number</p>
+</div>
+
+<script>
+    const contactInput_acontact = document.getElementById('contactInput_acontact');
+    const contactarelationError = document.getElementById('contactarelationError');
+
+        contactInput_acontact.addEventListener('input', function() {
+        let inputValue = contactInput_acontact.value.trim();
+
+        // Ensure that the input always starts with "+63"
+        if (!inputValue.startsWith('+63')) {
+            inputValue = '+63' + inputValue;
+        }
+
+        // Remove any extra characters beyond the maximum length
+        if (inputValue.length > 13) {
+            inputValue = inputValue.slice(0, 13);
+        }
+
+        // Check if the input is valid
+        if (inputValue === '+63' || (inputValue.startsWith('+63') && inputValue.length <= 13 && inputValue[3] === '9')) {
+            contactInput_acontact.value = inputValue;
+            contactarelationError.style.display = 'none'; // Hide the error message
+        } else {
+            contactInput_acontact.value = ''; // Clear the input if it's invalid
+            contactarelationError.style.display = 'block'; // Show the error message for invalid input
+        }
+    });
+</script>
     </div>
 
     <div>
@@ -448,12 +578,17 @@
         <label class="labels" for="no" style="font-size: 14px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No</label>
     </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <div class="input_wrap">
-                <label for="imagevac">Please Attach the screenshot of yor Vaccination Card</label>
-                <img src="<?php echo "/CAPSTONE1/upload_image/".$row['imagevac'];?>">
-                <input type="file" name="imagevac" id="imagevac">
+							<label></label>
+							<div class="image_container">
+							<br>
+								<img src="<?php echo "/CAPSTONE1/upload_image/".$row['imagevac'];?>">
+                                <input type="file" name="imagevac" id="imagevac">
 
-			</div>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label>Your Image</label>
+							</div>
+						</div>
 
+<br><br><br>
     <div>
         <p class="title_">Medical History</p>
     </div>
@@ -530,66 +665,163 @@
                 <input name="othersmedical" id ="othersmedical" type="text" value="<?=$row['othersmedical'];?>">
             </div>
    
-            <div class="input_form">   
-            <div class="input_wrap">
-                <label for="fullname">Do you have a heart condition? (If yes, please specify.)</label>
-                <input name="heartcondition" id ="language" type="text" value="<?=$row['heartcondition'];?>">
-            </div>   
- </div>
-            <div class="input_form">   
-            <div class="input_wrap">
-                <label for="fullname">Do you have an Eye problem? (If yes, please specify.)</label>
-                <input name="eyeproblem" id ="language" type="text" value="<?=$row['eyeproblem'];?>">
-            </div>
+            <br>
+<p>Do you have a heart condition? (If yes, please specify.)</p>
+<div class="row-container">
+  <div class="checkbox">
+  <input name="yesheartcon" type="checkbox" id="yesheartcon" value="yesheartcon" <?php if($row['yesheartcon']=="yesheartcon") {echo "checked";} ?>>
+      <label class="labels" for="yesheartcon" style="font-size: 14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yes</label>
   </div>
-  <div class="input_form"> 
-            <div class="input_wrap">
-                <label for="fullname">Do you have a history of serious illness and/or hospitalization? (Please specify and include dates.)</label>
-                <input name="illness" id ="language" type="text" value="<?=$row['illness'];?>">
-            </div>
-   </div>
 
-   <div class="input_form"> 
-            <div class="input_wrap">
-                <label for="fullname">Do you have a history of surgeries and/or injuries? (Please specify and include dates.)</label>
-                <input name="injuries" id ="language" type="text" value="<?=$row['injuries'];?>">
-            </div>
-   </div>
+  <div class="checkbox">
+  <input name="noheartcon" type="checkbox" id="noheartcon" value="noheartcon" <?php if($row['noheartcon']=="noheartcon") {echo "checked";} ?>>
+    <label class="labels" for="noheartcon" style="font-size: 14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No</label>
+  </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-   <div class="input_form"> 
-            <div class="input_wrap">
-                <label for="fullname">Do receive any medication or medical treatment, either regulary or occasionally? (If yes, please explain.)</label>
-                <input name="treatment" id ="language" type="text" value="<?=$row['treatment'];?>">
-            </div>
-   </div>
+  <div class="input_wrap">
+  <input name="heartcon" id ="othersmedical" type="text" value="<?=$row['heartcon'];?>">
+  </div>
+</div>
 
-   <div class="input_form"> 
-            <div class="input_wrap">
-                <label for="fullname">Do you have any allergies to medication? (If yes, please specify.)</label>
-                <input name="medication" id ="language" type="text" value="<?=$row['medication'];?>">
-            </div>
-   </div>
+<br>
+<p>Do you have an Eye problem? (If yes, please specify.)</p>
+<div class="row-container">
+  <div class="checkbox">
+  <input name="yeseyeprob" type="checkbox" id="yeseyeprob" value="yeseyeprob" <?php if($row['yeseyeprob']=="yeseyeprob") {echo "checked";} ?>>
+      <label class="labels" for="yeseyeprob" style="font-size: 14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yes</label>
+  </div>
 
-   <div class="input_form"> 
-            <div class="input_wrap">
-                <label for="fullname">Do you have any allergies to food? (If yes, please specify.)</label>
-                <input name="food" id ="language" type="text" value="<?=$row['food'];?>">
-            </div>
-   </div>
+  <div class="checkbox">
+  <input name="noeyeprob" type="checkbox" id="noeyeprob" value="noeyeprob" <?php if($row['noeyeprob']=="noeyeprob") {echo "checked";} ?>>
+    <label class="labels" for="noheartcon" style="font-size: 14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No</label>
+  </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-   <div class="input_form"> 
-            <div class="input_wrap">
-                <label for="fullname">Would you like to receive minor first aid (medication & treatment) given
-                    by the nurse in the school clinic?</label>
-                <input name="firstaid" id ="language" type="text" value="<?=$row['firstaid'];?>">
-            </div>
-                            </div>
- <div class="input_form"> 
-            <div class="input_wrap">
-                <label for="fullname">Do you have any concerns related to your health? (If yes, please explain.)</label>
-                <input name="concernshealth" id ="language" type="text" value="<?=$row['concernshealth'];?>">
- </div>
-                            </div>
+  <div class="input_wrap">
+  <input name="eyeprob" id ="othersmedical" type="text" value="<?=$row['eyeprob'];?>">
+  </div>
+</div>
+
+<br>
+<p>Do you have a history of serious illness and/or hospitalization? (Please specify and include dates.)</p>
+<div class="row-container">
+  <div class="checkbox">
+  <input name="yesseriousillnes" type="checkbox" id="yesseriousillnes" value="yesseriousillnes" <?php if($row['yesseriousillnes']=="yesseriousillnes") {echo "checked";} ?>>
+      <label class="labels" for="yesseriousillnes" style="font-size: 14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yes</label>
+  </div>
+
+  <div class="checkbox">
+  <input name="noseriousillnes" type="checkbox" id="noseriousillnes" value="noseriousillnes" <?php if($row['noseriousillnes']=="noseriousillnes") {echo "checked";} ?>>
+    <label class="labels" for="noheartcon" style="font-size: 14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No</label>
+  </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+  <div class="input_wrap">
+  <input name="seriousillnes" id ="othersmedical" type="text" value="<?=$row['seriousillnes'];?>">
+  </div>
+</div>
+
+<br>
+<p>Do you have a history of surgeries and/or injuries? (Please specify and include dates.)</p>
+<div class="row-container">
+  <div class="checkbox">
+  <input name="yessurgeries" type="checkbox" id="yessurgeries" value="yessurgeries" <?php if($row['yessurgeries']=="yessurgeries") {echo "checked";} ?>>
+      <label class="labels" for="yessurgeries" style="font-size: 14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yes</label>
+  </div>
+
+  <div class="checkbox">
+  <input name="nosurgeries" type="checkbox" id="nosurgeries" value="nosurgeries" <?php if($row['nosurgeries']=="nosurgeries") {echo "checked";} ?>>
+    <label class="labels" for="nosurgeries" style="font-size: 14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No</label>
+  </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+  <div class="input_wrap">
+  <input name="surgeries" id ="othersmedical" type="text" value="<?=$row['surgeries'];?>">
+  </div>
+</div>
+
+<br>
+<p>Do receive any medication or medical treatment, either regulary or occasionally? (If yes, please explain.)</p>
+<div class="row-container">
+  <div class="checkbox">
+  <input name="yesreceive" type="checkbox" id="yesreceive" value="yesreceive" <?php if($row['yesreceive']=="yesreceive") {echo "checked";} ?>>
+      <label class="labels" for="yesreceive" style="font-size: 14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yes</label>
+  </div>
+
+  <div class="checkbox">
+  <input name="noreceive" type="checkbox" id="noreceive" value="noreceive" <?php if($row['noreceive']=="noreceive") {echo "checked";} ?>>
+    <label class="labels" for="noreceive" style="font-size: 14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No</label>
+  </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+  <div class="input_wrap">
+  <input name="receive" id ="othersmedical" type="text" value="<?=$row['receive'];?>">
+  </div>
+</div>
+
+<br>
+<p>Do you have any allergies to medication? (If yes, please specify.)</p>
+<div class="row-container">
+  <div class="checkbox">
+  <input name="yesallergiesmed" type="checkbox" id="yesallergiesmed" value="yesallergiesmed" <?php if($row['yesallergiesmed']=="yesallergiesmed") {echo "checked";} ?>>
+      <label class="labels" for="yesallergiesmed" style="font-size: 14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yes</label>
+  </div>
+
+  <div class="checkbox">
+  <input name="noallergiesmed" type="checkbox" id="noallergiesmed" value="noallergiesmed" <?php if($row['noallergiesmed']=="noallergiesmed") {echo "checked";} ?>>
+    <label class="labels" for="noallergiesmed" style="font-size: 14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No</label>
+  </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+  <div class="input_wrap">
+  <input name="allergiesmed" id ="othersmedical" type="text" value="<?=$row['allergiesmed'];?>">
+  </div>
+</div>
+
+<br>
+<p>Do you have any allergies to food? (If yes, please specify.)</p>
+<div class="row-container">
+  <div class="checkbox">
+  <input name="yesallergiesfood" type="checkbox" id="yesallergiesfood" value="yesallergiesfood" <?php if($row['yesallergiesfood']=="yesallergiesfood") {echo "checked";} ?>>
+      <label class="labels" for="yesallergiesfood" style="font-size: 14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yes</label>
+  </div>
+
+  <div class="checkbox">
+  <input name="noallergiesfood" type="checkbox" id="noallergiesfood" value="noallergiesfood" <?php if($row['noallergiesfood']=="noallergiesfood") {echo "checked";} ?>>
+    <label class="labels" for="noallergiesfood" style="font-size: 14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No</label>
+  </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+  <div class="input_wrap">
+  <input name="allergiesfood" id ="othersmedical" type="text" value="<?=$row['allergiesfood'];?>">
+  </div>
+</div>
+
+<br>
+<p>Would you like to receive minor first aid (medication & treatment) given by the nurse in the school clinic?</p>
+<div class="row-container">
+  <div class="checkbox">
+  <input name="yesfirstaid" type="checkbox" id="yesfirstaid" value="yesfirstaid" <?php if($row['yesfirstaid']=="yesfirstaid") {echo "checked";} ?>>
+      <label class="labels" for="yesfirstaid" style="font-size: 14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yes</label>
+  </div>
+
+  <div class="checkbox">
+  <input name="nofirstaid" type="checkbox" id="nofirstaid" value="nofirstaid" <?php if($row['nofirstaid']=="nofirstaid") {echo "checked";} ?>>
+    <label class="labels" for="nofirstaid" style="font-size: 14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No</label>
+  </div>
+</div>
+
+<br>
+<p>Do you have any concerns related to your health? (If yes, please explain.)</p>
+<div class="row-container">
+  <div class="checkbox">
+  <input name="yesconcerns" type="checkbox" id="yesconcerns" value="yesconcerns" <?php if($row['yesconcerns']=="yesconcerns") {echo "checked";} ?>>
+      <label class="labels" for="yesconcerns" style="font-size: 14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yes</label>
+  </div>
+
+  <div class="checkbox">
+  <input name="noconcerns" type="checkbox" id="noconcerns" value="noconcerns" <?php if($row['noconcerns']=="noconcerns") {echo "checked";} ?>>
+    <label class="labels" for="noconcerns" style="font-size: 14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No</label>
+  </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+  <div class="input_wrap">
+  <input name="concerns" id ="othersmedical" type="text" value="<?=$row['concerns'];?>">
+  </div>
+</div>
                             <input type="hidden" id ="language" name="hidden" value="<?=$row['user_id'];?>">
                             <input type="hidden" name="healthnogsjhs_id" value="<?php echo $healthnogsjhs_id; ?>">
                     <input type="submit" name="update_record" value="Update">
