@@ -107,6 +107,8 @@
                 <label for="image">Upload Image</label>
                 <input type="file" name="image" id="image" required>
             </div>
+        </div>
+        <div class="input_form">
             <div class="input_wrap">
                 <label for="fullname">Full Name</label>
                 <input name="fullname" type="text" class="input-box" value="<?= $fullname; ?>" readonly>
