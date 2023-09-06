@@ -48,121 +48,94 @@
     <link id="theme-style" rel="stylesheet" href="assets/css/portal.css">
 	<link rel="stylesheet" href="assets/style.css">
 
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href="../../assets/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="../../assets/plugins/fontawesome/css/fontawesome.min.css">
+<link rel="stylesheet" href="../../assets/plugins/fontawesome/css/all.min.css">
+
+<link rel="stylesheet" type="text/css" href="../../assets/css/select2.min.css">
+
+<link rel="stylesheet" href="../../assets/plugins/simple-calendar/simple-calendar.css">
+
+<link rel="stylesheet" href="../../assets/plugins/datatables/datatables.min.css">
+
+<link rel="stylesheet" type="text/css" href="../../assets/plugins/slick/slick.css">
+<link rel="stylesheet" type="text/css" href="../../assets/plugins/slick/slick-theme.css">
+
+<link rel="stylesheet" href="../../assets/plugins/feather/feather.css">
+
+<link rel="stylesheet" type="text/css" href="../../assets/css/style.css">
+
+
+
 </head> 
 
 <body class="app">   	
-<header class="app-header fixed-top">	   	            
-        <div class="app-header-inner">  
-	        <div class="container-fluid py-2">
-		        <div class="app-header-content"> 
-		            <div class="row justify-content-between align-items-center">
-				    <div class="col-auto">
-					    <a id="sidepanel-toggler" class="sidepanel-toggler d-inline-block d-xl-none" href="#">
-						    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" role="img"><title>Menu</title><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg>
-					    </a>
-				    </div><!--//col-->
-		            <div class="app-utilities col-auto">		            
-			            <div class="app-utility-item app-user-dropdown dropdown">
-
-				            <a class="dropdown-toggle" id="user-dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><img src="assets/images/user.png"><?= $fullname;?></a>
-				            <ul class="dropdown-menu" aria-labelledby="user-dropdown-toggle">
-								<li><a class="dropdown-item" href="function/logout.php">Log Out</a></li>
-							</ul>
-			            </div>
-		            </div>
-		        </div>
-	            </div>
-	        </div>
-        </div>
-        <div id="app-sidepanel" class="app-sidepanel sidepanel-hidden"> 
-			<div id="sidepanel-drop" class="sidepanel-drop"></div>
-				<div class="sidepanel-inner d-flex flex-column">
-		        <a href="#" id="sidepanel-close" class="sidepanel-close d-xl-none">&times;</a>
-		        <div class="app_logo">
-					<img style="width: 150px; display:flex; margin-left: 50px; margin-top: 10px;" src="assets/images/dwcl.png" alt="logo">
-		        </div>
-			    <nav id="app-nav-main" class="app-nav app-nav-main flex-grow-1">
-				<ul class="app-menu list-unstyled accordion" id="menu-accordion">
-                <nav id="app-nav-main" class="app-nav app-nav-main flex-grow-1">
-				<ul class="app-menu list-unstyled accordion" id="menu-accordion">
-                <li class="nav-item has-submenu">
-
-    <a class="nav-link submenu-toggle active" href="healthrecordformgsjhs.php" data-bs-target="#submenu-4" aria-controls="submenu-4">
-        <span class="nav-icon">
-            <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-           <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-files" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" d="M4 2h7a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm0 1a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H4z"/>
-                    <path d="M6 0h7a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2v-1a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H6a1 1 0 0 0-1 1H4a2 2 0 0 1 2-2z"/>
-                </svg>
-        </span>
-        <span class="nav-link-text">Health Profile</span>
-    </a>
+   
+<header class="app-header fixed-top">	   	
+    
+<div class="main-wrapper">
+<div class="header">
+<div class="header-left">
+<a href="#" class="logo">
+<img src="../assets/images/dwcl.png" width="35" height="35" alt> <span>DWCL Clinic</span>
+</a>
+</div>
+<a id="toggle_btn" href="javascript:void(0);"><img src="../../assets/img/icons/bar-icon.svg" alt></a>
+<a id="mobile_btn" class="mobile_btn float-start" href="#sidebar"><img src="../../assets/img/icons/bar-icon.svg" alt></a>
+<ul class="nav user-menu float-end">
+<li class="nav-item dropdown d-none d-md-block">
+<li class="nav-item dropdown has-arrow user-profile-list">
+<a href="#" class="dropdown-toggle nav-link user-link" data-bs-toggle="dropdown">
+<div class="user-names">
+<h5><?= $fullname;?></h5>
+</div>
+<span class="user-img">
+<img src="assets/images/user.png">
+</span>
+</a>
+<div class="dropdown-menu">
+<a class="dropdown-item" href="function/logout.php">Log Out</a>
+</div>
 </li>
+</ul>
+</div>
+        <div class="sidebar" id="sidebar">
+<div class="sidebar-inner slimscroll">
+<div id="sidebar-menu" class="sidebar-menu">
+<ul>
+<li class="menu-title">Main</li>
 
-
-
-	<li class="nav-item has-submenu">
-								<a class="nav-link submenu-toggle active" href="#" data-bs-toggle="collapse" data-bs-target="#submenu-2" aria-expanded="false" aria-controls="submenu-2">
-									<span class="nav-icon">
-										<!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-plus" viewBox="0 0 16 16">
-											<path d="M2 2a2 2 0 0 0-2 2v8.01A2 2 0 0 0 2 14h5.5a.5.5 0 0 0 0-1H2a1 1 0 0 1-.966-.741l5.64-3.471L8 9.583l7-4.2V8.5a.5.5 0 0 0 1 0V4a2 2 0 0 0-2-2H2Zm3.708 6.208L1 11.105V5.383l4.708 2.825ZM1 4.217V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v.217l-7 4.2-7-4.2Z"/>
-											<path d="M16 12.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Zm-3.5-2a.5.5 0 0 0-.5.5v1h-1a.5.5 0 0 0 0 1h1v1a.5.5 0 0 0 1 0v-1h1a.5.5 0 0 0 0-1h-1v-1a.5.5 0 0 0-.5-.5Z"/>
-											</svg>
-									</span>
-									<span class="nav-link-text">Request Scheduling Appointment</span>
-									<span class="submenu-arrow">
-										<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-											<path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
-										</svg>
-									</span>
-								</a>
-								<div id="submenu-2" class="collapse submenu submenu-2" data-bs-parent="#menu-accordion">
-									<ul class="submenu-list list-unstyled">
+<li>
+<a href="healthrecordformgsjhs.php"><span class="menu-side"><img src="../../assets/img/icons/menu-icon-13.svg" alt></span> <span>Health Profile</span></a>
+</li>
+<li class="submenu">
+<a href="#"><span class="menu-side"><img src="../../assets/img/icons/menu-icon-04.svg" alt></span> <span> Appointment </span> <span class="menu-arrow"></span></a>
+<ul style="display: none;">
 										<li class="submenu-item"><a class="submenu-link" href="adddentalmessagegsjhs.php">Request Dental Scheduling</a></li>
 										<li class="submenu-item"><a class="submenu-link" href="addmedicalmessagegsjhs.php">Request Medical Scheduling</a></li>
 										<li class="submenu-item"><a class="submenu-link" href="addphysicianmessagegsjhs.php">Request Physician Scheduling</a></li>
-									</ul>
-								</div>
-							</li>
-
-
-							<li class="nav-item has-submenu">
-								<a class="nav-link submenu-toggle active" href="#" data-bs-toggle="collapse" data-bs-target="#submenu-3" aria-expanded="false" aria-controls="submenu-3">
-									<span class="nav-icon">
-										<!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-stickies" viewBox="0 0 16 16">
-										<path d="M1.5 0A1.5 1.5 0 0 0 0 1.5V13a1 1 0 0 0 1 1V1.5a.5.5 0 0 1 .5-.5H14a1 1 0 0 0-1-1H1.5z"/>
-										<path d="M3.5 2A1.5 1.5 0 0 0 2 3.5v11A1.5 1.5 0 0 0 3.5 16h6.086a1.5 1.5 0 0 0 1.06-.44l4.915-4.914A1.5 1.5 0 0 0 16 9.586V3.5A1.5 1.5 0 0 0 14.5 2h-11zM3 3.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 .5.5V9h-4.5A1.5 1.5 0 0 0 9 10.5V15H3.5a.5.5 0 0 1-.5-.5v-11zm7 11.293V10.5a.5.5 0 0 1 .5-.5h4.293L10 14.793z"/>
-										</svg>
-									</span>
-									<span class="nav-link-text">Clinic Records</span>
-									<span class="submenu-arrow">
-										<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-											<path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
-										</svg>
-									</span>
-								</a>
-								<div id="submenu-3" class="collapse submenu submenu-3" data-bs-parent="#menu-accordion">
-									<ul class="submenu-list list-unstyled">
-									<li class="submenu-item"> <a class="submenu-link" href="viewhealthrecordprofile.php">Health Profile Record</a>
+</ul>
+</li>
+<li class="submenu">
+<a href="#"><span class="menu-side"><img src="../../assets/img/icons/menu-icon-15.svg" alt></span>  <span> Clinic Records </span> <span class="menu-arrow"></span></a>
+<ul style="display: none;">
+<li class="submenu-item"> <a class="submenu-link" href="viewhealthrecordprofile.php">Health Profile Record</a>
 									<li class="submenu-item"> <a class="submenu-link" href="viewdentalappgsjhs.php">Dental Record</a>
-                  <li class="submenu-item"> <a class="submenu-link" href="viewmedicalappgsjhs.php">Medical Record</a>
-                  <li class="submenu-item"> <a class="submenu-link" href="viewphysicianappgsjhs.php">Physician Record</a>
+                                    <li class="submenu-item"> <a class="submenu-link" href="viewmedicalappgsjhs.php">Medical Record</a>
+                                    <li class="submenu-item"> <a class="submenu-link" href="viewphysicianappgsjhs.php">Physician Record</a>
 									<li class="submenu-item"> <a class="submenu-link" href="viewdiagnosisgsjhs.php">Diagnosis/Chief Complaints, Management & Treatment Record</a>
-									<li class="submenu-item"> <a class="submenu-link active" href="viewschoolassesgsjhs.php">School Health Assessment</a>
-                  <li class="submenu-item"> <a class="submenu-link" href="viewphysicalexaminationrecordgsjhs.php">Physical Examination Record</a>
-                  <li class="submenu-item"> <a class="submenu-link" href="viewphysicianorderandprogressnotesgsjhs.php">Physician's Order Sheet and Progress Notes Record</a>
-                </li>
-									</ul>
-								</div>
-							</li>
-				    </ul>
-			    </nav>
-	        </div>
-	    </div>
+									<li class="submenu-item"> <a class="active" class="submenu-link" href="viewschoolassesgsjhs.php">School Health Assessment Record</a>
+									<li class="submenu-item"> <a class="submenu-link" href="viewphysicalexaminationrecordgsjhs.php">Physical Examination Record</a>
+									<li class="submenu-item"> <a class="submenu-link" href="viewphysicianorderandprogressnotesgsjhs.php">Physician's Order Sheet and Progress Notes Record</a>
+</ul>
+</li>
+</div>
+</div>
     </header>
-    
+
     
     <div class="app-wrapper">
 	    
@@ -478,6 +451,32 @@
 		}, 5000);
 	</script>
 
+<div class="sidebar-overlay" data-reff></div>
+
+<script src="../../assets/js/jquery-3.6.1.min.js"></script>
+
+<script src="../../assets/js/bootstrap.bundle.min.js"></script>
+
+<script src="../../assets/js/feather.min.js"></script>
+
+<script src="../../assets/js/jquery.slimscroll.js"></script>
+
+<script src="../../assets/js/select2.min.js"></script>
+
+<script src="../../assets/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="../../assets/plugins/datatables/datatables.min.js"></script>
+
+<script src="../../assets/plugins/simple-calendar/jquery.simple-calendar.js"></script>
+<script src="../../assets/js/calander.js"></script>
+
+<script src="../../assets/plugins/apexchart/apexcharts.min.js"></script>
+<script src="../../assets/plugins/apexchart/chart-data.js"></script>
+
+<script src="../../assets/js/circle-progress.min.js"></script>
+
+<script src="../../assets/plugins/slick/slick.js"></script>
+
+<script src="../../assets/js/app.js"></script>
 </body>
 </html> 
 

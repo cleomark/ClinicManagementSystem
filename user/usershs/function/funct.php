@@ -52,7 +52,7 @@
         '$relationship')";
       
       if (mysqli_query($conn, $sql)) {
-        if (move_uploaded_file($_FILES["image"]["tmp_name"], "/xampp/htdocs/CAPSTONE1/upload_image/" . $_FILES["image"]["name"])) {
+        if (move_uploaded_file($_FILES["image"]["tmp_name"], "/xampp/htdocs/divineclinic/upload_image/" . $_FILES["image"]["name"])) {
             $_SESSION['success'] = "
                 <div id='success-message' style='position:absolute; right:30px; background-color:#15a362; padding: 10px 10px; width:auto; border-radius: 10px;'>
                     <h2 style='color: #fff; font-size: 16px; margin-left: 10px;'>Your health record has been submitted.</h2>
