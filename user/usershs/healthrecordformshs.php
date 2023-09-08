@@ -197,7 +197,6 @@
 
     <div class="align_form">
 
-	
         <div class="input_form">
 
             <div class="input_wrap">
@@ -270,8 +269,6 @@
         </div>
 
     </div>
-
-    <!-- DIGDI NA AKO -->
    
         <div class="input_form">
             <div class="input_wrap">
@@ -429,26 +426,23 @@
     </div>
     
     <div class="input_form">
-
         <div class="input_wrap">
             <label for="fullname">Heart Ailmen</label>
             <input name="heartailment" class="input-box" id ="heartailment" type="text" placeholder="Please specify">
         </div>
     </div>
     <div class="input_form">
-
         <div class="input_wrap">
             <label for="fullname">Other Illness</label>
             <input name="otherillness" class="input-box" id ="otherillness" type="text" placeholder="Please specify">
         </div>
-
     </div>
             
         <br>
         <p style="color: #000;">Do you have any allergy to:</p>
 
         <div class="row-container">
-        <p><b>Food:</b></p>
+            <p><b>Food:</b></p>
 
             <div>
                 <input class="checkbox" name="yesfood" value="yesfood" type="checkbox" id="yesfood">
@@ -539,7 +533,7 @@
             
         <div class="input_wrap">
             <label for="fullname">Contact</label>
-            <input id="contact_Input" name="contact" type="text" placeholder="+63" class="input-box"> 
+            <input name="contact" class="input-box" type="text" placeholder="+63"> 
             <p id="contactError" class="error-message">Invalid Phone Number</p>
         </div>
 
@@ -576,7 +570,7 @@
             <input class="input-box" name="relationship" id ="relationship" type="text">
         </div>
 
-   </div>
+    </div>
 
     <div class="app-card-footer px-4 py-3" style="display: flex; justify-content: center;">
         <input type="text" name="user_id" style="display: none;" value="<?= $_SESSION['user_id'];?>">
