@@ -721,7 +721,7 @@
     
     <div class="app-card-footer px-4 py-3" style="display: flex; justify-content: center;">
         <input type="text" name="user_id" style="display: none;" value="<?= $_SESSION['user_id'];?>">
-        <button name="submit_data" class="btn btn-success custom-button" style="margin-bottom: 15px; background-color: #1a14cc;">SUBMIT</button>
+        <button name="submit_data" class="btn btn-success" style="margin-bottom: 15px; background-color: #1a14cc;">SUBMIT</button>
     </div>
     
 </form>
