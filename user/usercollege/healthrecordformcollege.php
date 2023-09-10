@@ -225,7 +225,7 @@
           <div class="input_wrap">
             <label for="fullname">Role</label>
             <select class="form-select" name="role">
-              <option value=""disabled selected>Select Role</option>
+              <option value="" disabled selected>Select Role</option>
               <option value="Student in College">Student in College</option>
               <option value="Employee in College">Employee in College</option>
             </select>
@@ -253,18 +253,18 @@
 
         </div>
                             
-     <div class="input_form">
+    <div class="input_form">
 
       <div class="input_wrap">
         <label for="pcontact">Phone Number</label>
-        <input type="text" class="form-control contactInput input-box" name="pcontact" placeholder="+63">
+        <input type="text" class="input-box" id="form-control contactInput" name="pcontact" placeholder="+63">
         <p class="errorMessage" style="color: red; display: none;">Invalid Phone Number</p>
       </div>
 
 
 <script>
   function validateForm() {
-    var contactInputs = document.getElementsByClassName("contactInput");
+    var contactInputs = document.getElementsById("contactInput");
     var isValid = true;
 
     for (var i = 0; i < contactInputs.length; i++) {
@@ -282,16 +282,16 @@
   }
 </script>
    
-        <div class="input_wrap">
-          <div style="margin-left: 65px;">
-            <label for="fullname">Nationality</label>
-            <input class="input-box" name="nationality" id="nationality" type="text">
-          </div>
-            
-        </div>
-     </div>
+      <div class="input_wrap">
+        <div style="margin-left: 65px;">
+          <label for="fullname">Nationality</label>
+          <input class="input-box" name="nationality" id="nationality" type="text">
+        </div>   
+      </div>
 
-     <div class="input_form">
+    </div>
+
+    <div class="input_form">
 
         <div class="input_wrap">
             <label for="fullname">Birthday</label>
@@ -299,12 +299,10 @@
         </div>
 
         <div class="input_wrap">
-
           <div style="margin-left: 65px;">
             <label for="fullname">Religion</label>
             <input class="input-box" name="religion" id="religion" type="text">
           </div>
-            
         </div>
 
     </div>
@@ -333,17 +331,18 @@
 
     </div>
 
-   <div class="input_form">
+    <div class="input_form">
+
         <div class="input_wrap">
-            <label for="fullname">Contact in case of emergency</label>
-            <input class="input-box" name="contactemer" id="contactemer" type="text">
+          <label for="fullname">Contact in case of emergency</label>
+          <input class="input-box" name="contactemer" id="contactemer" type="text">
         </div>
 
-  <div class="input_wrap">
-            <label for="fullname">Contact Numbers</label>
-            <input type="text" id="form-control contactInput input-box" name="contactno" placeholder="+63">
-      <p class="errorMessage" style="color: red; display: none;">Invalid Phone Number</p>
-    </div>
+        <div class="input_wrap">
+          <label for="fullname">Contact Numbers</label>
+          <input type="text" class="input-box" id="form-control contactInput" name="contactno" placeholder="+63">
+          <p class="errorMessage" style="color: red; display: none;">Invalid Phone Number</p>
+        </div>
 
 
 <script>
@@ -375,7 +374,8 @@
             <label for="fullname">Relation to student/employee</label>
             <input class="input-box" name="relation" id="con" type="text">
         </div>
-   </div>
+
+    </div>
 
   <div class="input_form">
 
@@ -394,7 +394,7 @@
   <div class="input_form">
 
         <div class="input_wrap">
-            <label for="fullname">Physician and number to call</label>
+            <label for="fullname">Physician and Number to call</label>
             <input class="input-box" name="physiciannumcall" id="physician" type="text">
         </div>
 
@@ -416,15 +416,15 @@
     
     <div class="input_form">
 
-    <div class="input_wrap">
-      <label for="fullname">Tetanus & Diphtheria (Td) of Tetanus Toxoid</label>
-      <input name="td" id="vaccine" type="text" placeholder="Write WHEN and WHERE administered" style="width: 500px;">
-    </div>
+      <div class="input_wrap">
+        <label for="fullname">Tetanus & Diphtheria (Td) of Tetanus Toxoid</label>
+        <input class="input-box" name="td" id="vaccine" type="text" placeholder="Write WHEN and WHERE administered" style="width: 500px;">
+      </div>
 
 
       <div class="input_wrap">
         <label for="fullname">Measles, Mumps, Rubella (MMR) </label>
-        <input name="mmr" id="vaccine" type="text" placeholder="Write WHEN and WHERE administered" style="width: 500px;">
+        <input class="input-box" name="mmr" id="vaccine" type="text" placeholder="Write WHEN and WHERE administered" style="width: 500px;">
       </div>
 
     </div>
@@ -466,7 +466,7 @@
         </div>
 
         <div class="input_wrap">
-          <input class="input-box" name="relationasthma" id="otherillnesss" type="text" placeholder="Relation(s) to student/emloyee">
+          <input class="input-box" name="relationasthma" id="otherillnesss" type="text" placeholder="Relation(s) to student/employee">
         </div>
 
       </div>
@@ -477,7 +477,6 @@
 
       <div class="row-container">
 
-    
         <div>
           <input class="checkbox" name="yesbleeding" value="yesbleeding" type="checkbox" id="yesbleeding">
           <label class="checkbox-label" for="yesbleeding" style="font-size: 14px; padding-left: 30px;">Yes</label>
@@ -489,7 +488,7 @@
         </div>
 
         <div class="input_wrap">
-          <input name="relationbleeding" class="input-box" id="otherillnesss" type="text" placeholder="Relation(s) to student/emloyee">
+          <input name="relationbleeding" class="input-box" id="otherillnesss" type="text" placeholder="Relation(s) to student/employee">
         </div>
 
       </div>
@@ -511,7 +510,7 @@
         </div>
 
         <div class="input_wrap">
-          <input class="input-box" name="relationcancer" id="otherillnesss" type="text" placeholder="Relation(s) to student/emloyee">
+          <input class="input-box" name="relationcancer" id="otherillnesss" type="text" placeholder="Relation(s) to student/employee">
         </div>
 
       </div>
@@ -533,7 +532,7 @@
         </div>
       
         <div class="input_wrap">
-          <input class="input-box" name="relationdiabetes" id="otherillnesss" type="text" placeholder="Relation(s) to student/emloyee">
+          <input class="input-box" name="relationdiabetes" id="otherillnesss" type="text" placeholder="Relation(s) to student/employee">
         </div>
 
       </div>
@@ -555,7 +554,7 @@
         </div>
       
         <div class="input_wrap">
-          <input class="input-box" name="relationheartdis" id="otherillnesss" type="text" placeholder="Relation(s) to student/emloyee">
+          <input class="input-box" name="relationheartdis" id="otherillnesss" type="text" placeholder="Relation(s) to student/employee">
         </div>
 
       </div>
@@ -577,7 +576,7 @@
         </div>
       
         <div class="input_wrap">
-          <input class="input-box" name="relationbp" id="otherillnesss" type="text" placeholder="Relation(s) to student/emloyee">
+          <input class="input-box" name="relationbp" id="otherillnesss" type="text" placeholder="Relation(s) to student/employee">
         </div>
 
       </div>
@@ -598,7 +597,7 @@
         </div>
 
         <div class="input_wrap">
-          <input class="input-box" name="relationkidney" id="otherillnesss" type="text" placeholder="Relation(s) to student/emloyee">
+          <input class="input-box" name="relationkidney" id="otherillnesss" type="text" placeholder="Relation(s) to student/employee">
         </div>
 
       </div>
@@ -619,7 +618,7 @@
         </div>
 
         <div class="input_wrap">
-          <input class="input-box" name="relationmental" id="otherillnesss" type="text" placeholder="Relation(s) to student/emloyee">
+          <input class="input-box" name="relationmental" id="otherillnesss" type="text" placeholder="Relation(s) to student/employee">
         </div>
 
       </div>
@@ -641,7 +640,7 @@
         </div>
       
         <div class="input_wrap">
-          <input class="input-box" name="relationobese" id="otherillnesss" type="text" placeholder="Relation(s) to student/emloyee">
+          <input class="input-box" name="relationobese" id="otherillnesss" type="text" placeholder="Relation(s) to student/employee">
         </div>
 
       </div>
@@ -663,7 +662,7 @@
         </div>
 
         <div class="input_wrap">
-          <input class="input-box" name="relationseizure" id="otherillnesss" type="text" placeholder="Relation(s) to student/emloyee">
+          <input class="input-box" name="relationseizure" id="otherillnesss" type="text" placeholder="Relation(s) to student/employee">
         </div>
 
       </div>
@@ -685,7 +684,7 @@
         </div>
 
         <div class="input_wrap">
-          <input class="input-box" name="relationstroke" id="otherillnesss" type="text" placeholder="Relation(s) to student/emloyee">
+          <input class="input-box" name="relationstroke" id="otherillnesss" type="text" placeholder="Relation(s) to student/employee">
         </div>
 
       </div>
@@ -707,7 +706,7 @@
         </div>
 
         <div class="input_wrap">
-          <input class="input-box" name="relationtb" id="otherillnesss" type="text" placeholder="Relation(s) to student/emloyee">
+          <input class="input-box" name="relationtb" id="otherillnesss" type="text" placeholder="Relation(s) to student/employee">
         </div>
 
       </div>
@@ -856,7 +855,7 @@
         </div>
  
     </div>
-<!-- I'm -->
+
     <div>
         <br>
         <p><i>The student/employee has a history of</i></p>
@@ -877,6 +876,7 @@
       </div>
       
       <b><p>Surgical Operation</p></b>
+      
       <div>
         <input class="checkbox" name="yessurgical" value="yessurgical" type="checkbox" id="yessurgical">
         <label class="checkbox-label" for="yessurgical" style="font-size: 14px; padding-left: 30px;">Yes</label>
