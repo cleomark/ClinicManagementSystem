@@ -37,7 +37,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="assets/images/dwcl.png"> 
-<<<<<<< HEAD
     
     <!-- FontAwesome JS-->
     <script defer src="assets/plugins/fontawesome/js/all.min.js"></script>
@@ -47,7 +46,6 @@
 	<link rel="stylesheet" href="assets/formstyle.css">
 
     <script src="assets/js/script.js"></script>
-=======
 
 
     <script defer src="assets/plugins/fontawesome/js/all.min.js"></script>
@@ -56,7 +54,6 @@
 	<link rel="stylesheet" href="assets/formstyle.css"> 
   
 
->>>>>>> 234eab6b7c132d155d699b2320a670a7ea970a02
 </head> 
 
 <body class="app">   	
