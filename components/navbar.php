@@ -19,27 +19,7 @@
 <link rel="stylesheet" type="text/css" href="../../assets/css/style.css">
 
 <?php 
-    $items = array(
-        "Health Profile" => array('healthrecordformgsjhs.php', 'menu-icon-13'),
-        "Appointment" => array('#', 'menu-icon-04', 
-            [
-                "Request Dental Scheduling" => "adddentalmessagegsjhs.php",
-                "Request Medical Scheduling" => "addmedicalmessagegsjhs.php",
-                "Request Physician Scheduling" => "addphysicianmessagegsjhs.php",
-            ]),
-        "Clinic Records" => array('#', 'menu-icon-15', 
-            [
-                "Health Profile Record" => "viewhealthrecordprofile.php",
-                "Dental Record" => "viewdentalappgsjhs.php",
-                "Medical Record" => "viewmedicalappgsjhs.php",
-                "Physician Record" => "viewphysicianappgsjhs.php",
-                "Diagnosis/Chief Complaints, Management & Treatment Record" => "viewdiagnosisgsjhs.php",
-                "Medical Record" => "viewschoolassesgsjhs.php",
-                "Physical Examination Record" => "viewphysicalexaminationrecordgsjhs.php",
-                "Physician's Order Sheet and Progress Notes" => "viewphysicianorderandprogressnotesgsjhs.php",
-            ])
-    );
-    $active = "0";
+    include './function/navcontent.php';
 ?>
 
 <header class="app-header fixed-top">	   	 
@@ -79,18 +59,18 @@
             if($content[0] != "#"){
                 ?>
                 <li>
-                    <a href="<?php echo $content[0] ?>" class="active"><span class="menu-side"><img src="../../assets/img/icons/<?php echo $content[1] ?>.svg" alt></span> <span><?php echo$title ?></span></a>
+                    <a href="<?php echo $content[0] ?>" <?php if(basename($_SERVER["SCRIPT_FILENAME"]) == $content[0]) echo 'class=\'active\''?>><span class="menu-side"><img src="../../assets/img/icons/<?php echo $content[1] ?>.svg" alt></span> <span><?php echo$title ?></span></a>
                 </li>
                 <?php
             }else{
                 ?>
                     <li class="submenu">
-                        <a href="#"><span class="menu-side"><img src="../../assets/img/icons/<?php echo $content[1] ?>.svg" alt></span> <span> <?php echo $title ?> </span> <span class="menu-arrow"></span></a>
+                        <a href="#" class='<?php if(in_array(basename($_SERVER["SCRIPT_FILENAME"]), $content[2])) echo 'active'  ?>'><span class="menu-side"><img src="../../assets/img/icons/<?php echo $content[1] ?>.svg" alt></span> <span> <?php echo $title ?> </span> <span class="menu-arrow"></span></a>
                         <ul style="display: none;">
                             <?php
                                 foreach($content[2] as $sub => $link){
                                     ?> 
-                                        <li class="submenu-item"><a class="submenu-link" href="<?php echo $link ?>"><?php echo $sub ?></a></li>
+                                        <li class="submenu-item"><a class="submenu-link <?php if(basename($_SERVER["SCRIPT_FILENAME"]) == $link) echo 'active'?>" href="<?php echo $link ?>"><?php echo $sub ?></a></li>
                                     <?php
                                 }
                             ?>
@@ -128,24 +108,5 @@
     -->
     </div>
     </div>
-</header><link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-<link rel="stylesheet" type="text/css" href="../../assets/css/bootstrap.min.css">
-
-<link rel="stylesheet" href="../../assets/plugins/fontawesome/css/fontawesome.min.css">
-<link rel="stylesheet" href="../../assets/plugins/fontawesome/css/all.min.css">
-
-<link rel="stylesheet" type="text/css" href="../../assets/css/select2.min.css">
-
-<link rel="stylesheet" href="../../assets/plugins/simple-calendar/simple-calendar.css">
-
-<link rel="stylesheet" href="../../assets/plugins/datatables/datatables.min.css">
-
-<link rel="stylesheet" type="text/css" href="../../assets/plugins/slick/slick.css">
-<link rel="stylesheet" type="text/css" href="../../assets/plugins/slick/slick-theme.css">
-
-<link rel="stylesheet" href="../../assets/plugins/feather/feather.css">
-
-<link rel="stylesheet" type="text/css" href="../../assets/css/style.css">
-
+</header>
 
