@@ -1,3 +1,5 @@
+
+
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 <link rel="stylesheet" type="text/css" href="../../assets/css/bootstrap.min.css">
@@ -18,16 +20,22 @@
 
 <link rel="stylesheet" type="text/css" href="../../assets/css/style.css">
 
+
 <?php 
+    if(!isset($fullname)){
+        if (isset($_SESSION['username'])){
+            $fullname = $_SESSION['username'];
+        }
+    }
     include './function/navcontent.php';
 ?>
 
 <header class="app-header fixed-top">	   	 
-    <div class="main-wrapper">
+    <div class="main-wrapper"></div>
     <div class="header">
     <div class="header-left">
     <a href="#" class="logo">
-    <img src="../assets/images/dwcl.png" width="35" height="35" alt> <span>DWCL Clinic</span>
+    <img src="../../assets/img/dwcl.png" width="35" height="35" alt> <span>DWCL Clinic</span>
     </a>
     </div>
     <a id="toggle_btn" href="javascript:void(0);"><img src="../../assets/img/icons/bar-icon.svg" alt></a>
@@ -40,7 +48,7 @@
     <h5><?= $fullname;?></h5>
     </div>
     <span class="user-img">
-    <img src="assets/images/user.png">
+    <img src="../../assets/img/user.png">
     </span>
     </a>
     <div class="dropdown-menu">
@@ -110,3 +118,30 @@
     </div>
 </header>
 
+
+<div class="sidebar-overlay" data-reff></div>
+
+<script src="../../assets/js/jquery-3.6.1.min.js"></script>
+
+<!-- <script src="../../assets/js/bootstrap.bundle.min.js"></script> -->
+
+<script src="../../assets/js/feather.min.js"></script>
+
+<script src="../../assets/js/jquery.slimscroll.js"></script>
+
+<script src="../../assets/js/select2.min.js"></script>
+
+<script src="../../assets/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="../../assets/plugins/datatables/datatables.min.js"></script>
+
+<script src="../../assets/plugins/simple-calendar/jquery.simple-calendar.js"></script>
+<script src="../../assets/js/calander.js"></script>
+
+<script src="../../assets/plugins/apexchart/apexcharts.min.js"></script>
+<script src="../../assets/plugins/apexchart/chart-data.js"></script>
+
+<script src="../../assets/js/circle-progress.min.js"></script>
+
+<script src="../../assets/plugins/slick/slick.js"></script>
+
+<script src="../../assets/js/app.js"></script>

@@ -32,7 +32,7 @@
 </head> 
 
 <body class="app app-login p-0">   
-	
+	<!-- digdi -->  
 <div class="main-wrapper login-body">
 <div class="container-fluid px-0">
 <div class="row">
@@ -41,13 +41,21 @@
 <div class="login-sec">
 <style>
     .log-img {
-      margin-top: 650px;
+      margin-top: -100px;
       width: 810px;
       height: 350px;
       background-image: url('../assets/img/gege.gif');
       background-size: cover; /* Adjust the sizing of the background image */
-      mix-blend-mode: overlay; /* Add position relative to position child elements */
+
+      /* mix-blend-mode: luminosity; Add position relative to position child elements */
     }
+
+	.logo-crop{
+	  margin-top: 750px;
+      width: 810px;
+      height: 350px;
+	  overflow: hidden;
+	}
 
 	.overlay-img img {
   width: 650px; /* Adjust the width to make the image smaller or larger */
@@ -67,9 +75,11 @@
 }
 
   </style>
- <div class="log-img">
-    <!-- Background Image -->
-  </div>
+ <div class="logo-crop">
+	<div class="log-img">
+	<!-- Background Image -->
+	</div>
+ </div>
   <div class="overlay-img">
     <img src="../assets/img/asdd.png" alt="Overlay Image">
   </div>
@@ -81,7 +91,6 @@
         <div class="loginbox">
             <div class="login-right">
                 <div class="login-right-wrap">
-
 	      <style>
                         .account-logo {
 							margin-top:-75px;
@@ -135,6 +144,11 @@
                         }
                     </style>
 	</style>
+
+
+
+
+	
 	<div class="account-logo">
                         <a href="index.html"><img src="../assets/img/login-logo.png" alt></a>
                     </div>
@@ -152,13 +166,13 @@
 								}
 							?>
 							<div class="email mb-3">
-							<label class="sr-only" for="signup-email">Level of Education</label>
-							<select id="signup-name" name="leveleduc" class="form-control signup-role" required="required">
-								<option value="" selected disabled>--Select--</option>
-								<option value="1">Grade School/Junior High School</option>
-								<option value="2">Senior High School</option>
-								<option value="3">College</option>
-							</select>
+								<label class="sr-only" for="signup-email">Level of Education</label>
+								<select id="signup-name" name="leveleduc" class="form-control signup-role" required="required">
+									<option value="" selected disabled>--Select--</option>
+									<option value="1">Grade School/Junior High School</option>
+									<option value="2">Senior High School</option>
+									<option value="3">College</option>
+								</select>
 							</div>
 								<div class="password mb-3">
 								<label class="sr-only" for="signin-password">Password</label>
@@ -219,10 +233,10 @@
 								<input id="signin-email" name="email" type="email" class="form-control signin-email" placeholder="Email address" required="required">
 							</div>
 							<?php
-								if(isset($_SESSION['failed'])){
-									echo $_SESSION['failed'];
-									unset($_SESSION['failed']);
-								}
+								// if(isset($_SESSION['failed'])){
+								// 	echo $_SESSION['failed'];
+								// 	unset($_SESSION['failed']);
+								// }
 							?>
 							<div class="email mb-3">
 							<label class="sr-only" for="signup-email">Level of Education</label>
@@ -237,10 +251,10 @@
 								<label class="sr-only" for="signin-password">Password</label>
 								<input id="signin-password" name="password" type="password" class="form-control signin-password" placeholder="Password" required="required">
 								<?php
-									if(isset($_SESSION['failed'])){
-										echo $_SESSION['failed'];
-										unset($_SESSION['failed']);
-									}
+									// if(isset($_SESSION['failed'])){
+									// 	echo $_SESSION['failed'];
+									// 	unset($_SESSION['failed']);
+									// }
 								?>
 								
 								<div class="extra mt-3 row justify-content-between">

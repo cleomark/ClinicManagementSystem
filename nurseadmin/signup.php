@@ -30,7 +30,27 @@
 				    <div class="app-auth-branding mb-4"><a class="app-logo"><img class="logo-icon me-2" src="assets/images/dwcl.png" alt="logo"></a></div>
 					<h2 class="auth-heading text-center mb-4">Sign up to Portal</h2>					
 					<div class="auth-form-container text-start mx-auto">
-						<form class="auth-form auth-signup-form" action="function/funct.php" method="POST">         
+						<form class="auth-form auth-signup-form" action="function/funct.php" method="POST">    
+							<div class="email mb-3">
+								<label class="sr-only" for="signup-email">Your Name</label>
+								<input id="signup-name" name="fullname" type="text" class="form-control signup-name" placeholder="Full name" required="required">
+							</div>
+							<div class="email mb-3">
+							<label class="sr-only" for="signup-email">Role</label>
+							<select id="role" name="role" class="form-control role" required="required">
+								<option value="" selected disabled>Select role</option>
+								<option value="1">Nurse in GS and JHS</option>
+								<option value="2">Nurse in SHS</option>
+								<option value="3">Nurse in College</option>
+								<option value="4">Dentist in GS, JHS & SHS</option>
+								<option value="5">Dentist in College</option>
+								<option value="6">Physician in GS, JHS & SHS</option>
+								<option value="7">Physician in College</option>
+								
+								<!-- Add more options for different email types if needed -->
+							</select>
+							</div>
+
 							<div class="email mb-3">
 								<label class="sr-only" for="signup-email">Username</label>
 								<input id="signup-name" name="username" type="text" class="form-control signup-name" placeholder="Username" required="required">
@@ -45,21 +65,7 @@
 									unset($_SESSION['failed']);
 								}
 							?>
-							<div class="email mb-3">
-							<label class="sr-only" for="signup-email">Role</label>
-							<select id="role" name="role" class="form-control role" required="required">
-								<option value="" selected disabled>Select your role</option>
-								<option value="1">Nurse in GS and JHS</option>
-								<option value="2">Nurse in SHS</option>
-								<option value="3">Nurse in College</option>
-								<option value="4">Dentist in GS, JHS & SHS</option>
-								<option value="5">Dentist in College</option>
-								<option value="6">Physician in GS, JHS & SHS</option>
-								<option value="7">Physician in College</option>
-								
-								<!-- Add more options for different email types if needed -->
-							</select>
-							</div>
+							
 
 							<div class="password mb-3">
 								<label class="sr-only" for="signup-password">Password</label>

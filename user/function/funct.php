@@ -105,11 +105,11 @@
                 }
             } else {
                 $_SESSION['failed'] = "Invalid email or password. Please try again.";
-                header('Location: ../../login.php');
+                header('Location: ../login.php');
             }
         } else {
             $_SESSION['failed'] = "Invalid email or password. Please try again.";
-            header('Location: ../../login.php');
+            header('Location: ../login.php');
         }
     }
    

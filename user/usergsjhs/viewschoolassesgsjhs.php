@@ -74,7 +74,7 @@
 
 <body class="app">   	
    
-<?php 
+    <?php 
         include $_SERVER['DOCUMENT_ROOT'] . "/DivineClinic/components/navbar.php";
     ?>
 
