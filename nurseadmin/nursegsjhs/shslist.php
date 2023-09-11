@@ -38,6 +38,24 @@
 <?php 
         include $_SERVER['DOCUMENT_ROOT'] . "/DivineClinic/components/navbar.php";
     ?>
+
+
+<style> 
+
+.app-card-header {
+  background-color: #1a14cc;
+  color: white;
+}
+
+td {
+    text-align: left; 
+}
+
+thead{
+    background-color: #2E37A4;
+    color: #fff;
+}
+</style>
     <div class="app-wrapper">
 	    
 	    <div class="app-content pt-3 p-md-3 p-lg-4">
