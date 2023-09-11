@@ -1,339 +1,266 @@
-input[type="text"] {
-    border: 2px solid #afbdcf;
-    border-radius: 5px;
-    height: 52px;
-    width:auto;
-    color: #1E1E1E;
-    font-size: 14px;
-    padding-left: 20px;
-    box-shadow: none;  
+/* Common styles for input elements */
+label{
+  color: #000;
+}
+select:hover {
+  border: 3px solid #4e5864;
+  border-color: #4e5864;
+  background-color: #e0e0e0;
 }
 
-input[type="date"] {
-    border: 2px solid #afbdcf;
-    border-radius: 5px;
-    height: 47px;
-    width:240px;
-    color: #1E1E1E;
-    font-size: 14px;
-    padding-left: 20px;
-    box-shadow: none;  
-}
-
-input[type="number"] {
-    border: 2px solid #afbdcf;
-    border-radius: 5px;
-    height: 47px;
-    width:240px;
-    color: #1E1E1E;
-    font-size: 14px;
-    padding-left: 20px;
-    box-shadow: none;  
-}
-#otherillnesss{
-    width: 700px;
-}
-#languages{
-    width: 400px;
-}
-#languagess{
-    width: 200px;
-}
-#relationship{
-    width: 300px;
-}
-.row-container {
-    display: flex;
-    align-items: center; /* Align items vertically in the center */
-  }
-  
-  .checkbox, .input_wrap {
-    margin-right: 20px; /* Optional: Add some space between each element */
-  }
-  
-  /* Remove the right margin for the last element to prevent extra space */
-  .input_wrap {
-    margin-right: 0;
-  }
-  
-
-select[name="gender"] {
-    border: 2px solid #afbdcf;
-    border-radius: 5px;
-    height: 47px;
-    width:240px;
-    color: #1E1E1E;
-    font-size: 14px;
-    padding-left: 20px;
-    box-shadow: none;  
-}
-
-select[name="role"] {
-    border: 2px solid #afbdcf;
-    border-radius: 5px;
-    height: 47px;
-    width:240px;
-    color: #1E1E1E;
-    font-size: 14px;
-    padding-left: 20px;
-    box-shadow: none;  
-}
-
-select[name="leveleduc"] {
-    border: 2px solid #afbdcf;
-    border-radius: 5px;
-    height: 47px;
-    width:240px;
-    color: #1E1E1E;
-    font-size: 14px;
-    padding-left: 20px;
-    box-shadow: none;  
-}
-
-
+input[type="text"],
+input[type="date"],
+input[type="number"],
 select {
-    border: 2px solid #afbdcf;
-    border-radius: 5px;
-    height: 47px;
-    width:240px;
-    color: #1E1E1E;
-    font-size: 14px;
-    padding-left: 20px;
-    box-shadow: none;  
+  border: 2px solid #afbdcf;
+  border-radius: 5px;
+  height: 47px;
+  width: 240px;
+  color: #1E1E1E;
+  font-size: 14px;
+  padding-left: 20px;
+  box-shadow: none;
+  transition: background-color 0.3s ease;
 }
 
-  /* Label style after Input feild is in focus. Can also use input:focus ~ label to select sibling. */
-
-  input:focus + label, input:valid + label{
-    font-size: 10px;
-    color: #1E1E1E;
-    top: -5px;
-    left:10px;
-    background: #ffffff;
-    padding: 0px 5px 0px 5px;
+select[name="gender"],
+select[name="role"],
+select[name="leveleduc"] {
+  width: 240px;
 }
 
-.input_wrap select:focus + label,
-.input_wrap select:valid + label,
-.input_wrap select.has-value + label {
-    font-size: 15px;
-    color: #1E1E1E;
-    top: -5px;
-    left: 10px;
-    background: #ffffff;
-    width: 250px;
-    padding: 0px 5px 0px 5px;
-    transform: translateY(0);
-}
-/* .input_wrap {width:auto; height:auto; position:relative;
-} */
+/* Label style after Input field is in focus. Can also use input:focus ~ label to select sibling. */
 
-.input_wrap label {
-    font-family:arial;
-    font-size:15px;
-    color: #1E1E1E;
-    padding: -1px;
-    top:0;
-    left: 0;
-    transition:0.2s ease all; 
-    -moz-transition:0.2s ease all; 
-    -webkit-transition:0.2s ease all;
-    pointer-events: none;
+input:focus + label, input:valid + label, select:focus + label, select:valid + label, select.has-value + label {
+  font-size: 10px;
+  color: #1E1E1E;
+  top: -5px;
+  left: 10px;
+  background: #ffffff;
+  padding: 0px 5px 0px 5px;
 }
 
-input[type="text"]:focus {outline:none;}
+/* Input Form Styles */
 .input_wrap {
     display: flex;
     flex-direction: column;
+    margin-right: 20px;
+    margin-right: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-color: #1a14cc !important;
 }
 
-#address{
-    width: 999px;
+/* Specific element widths */
+#otherillnesss,
+#languages,
+#languagess,
+#relationship,
+#address,
+#paddress,
+#father,
+#cfather,
+#mother,
+#cmother,
+#religion,
+#nationality,
+#language,
+#guardianrelation,
+#cguardian,
+#altrelation,
+#altrel,
+#acontact,
+#others,
+#othersmedical,
+#guardianname {
+  width: 999px;
 }
-#paddress{
-    width: 999px;
+
+#cfather,
+#cguardian {
+  width: 300px;
 }
-#father{
-    width: 500px;
+
+#languages,
+#languagess,
+#relationship {
+  width: 400px;
 }
-#cfather{
-    width: 300px;
+
+#father,
+#mother,
+#religion,
+#nationality,
+#guardianrelation,
+#altrelation,
+#altrel,
+#acontact,
+#others,
+#othersmedical,
+#guardianname {
+  width: 500px;
 }
-#mother{
-    width: 500px;
-}
-#cmother{
-    width: 300px;
-}
-#religion{
-    width: 500px;
-}
-#nationality{
-    width: 300px;
-}
-#language{
-    width: 999px;
-}
-#guardianrelation{
-    width: 400px;
-}
-#cguardian{
-    width: 300px;
-}
-#altrelation{
-    width: 350px;
-}
-#altrel{
-    width: 300px;
-}
-#acontact{
-    width: 300px;
-}
-#others{
-    width: 400px;
-}
-#othersmedical{
-    width: 400px;
-}
-#guardianname{
-    width: 400px;
-}
-.input_form {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 10px;
-    
-}
+
+/* Grid Layout */
+.input_form,
 .input_form_2 {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 10px;
-    margin-top: 5px;
-    margin-bottom: 5px;
+  display: grid;
+  grid-gap: 10px;
 }
 
-.input_wrap {
-    padding-top: 10px; 
-    padding-bottom: 10px; 
+.input_form {
+  grid-template-columns: repeat(4, 1fr);
 }
 
-.align_form{
-    display: flex;
-    flex-direction: row;
-    margin-top: 10px;
-    grid-template-rows: repeat(4, minmax(0, 1fr));
+.input_form_2 {
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
-select[readonly] {
-    color: black; /* You can change the color to your preferred text color */
-  }
-.title_{
-    font-size: 20px;
-    font-weight: bold;
-    margin-top: 10px;
-    color: #000;
-}
-
+/* Checkbox Styles */
 .checkbox {
-    display: inline-block;
-    vertical-align: middle;
+  margin-right: 20px;
 }
 
 .checkbox input[type="checkbox"] {
-    display: none;
+  display: none;
 }
 
 .checkbox label {
-    position: relative;
-    font-size: 200px;
-    padding-left: 25px;
-    cursor: pointer;
+  position: relative;
+  font-size: 20px;
+  padding-left: 25px;
+  cursor: pointer;
 }
-select.form-select:not(:disabled) {
-    color: black; /* Change the text color to your preferred color */
-    background-color: white; /* Change the background color to your preferred color */
-    cursor: pointer; /* Change the cursor style to pointer to indicate it's clickable */
-  }
 
 .checkbox label:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 18px;
-    height: 20px;
-    border: 2px solid #15a362;
-    border-radius: 4px;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 18px;
+  height: 20px;
+  border-radius: 4px;
 }
 
 .checkbox label:after {
-    content: "";
-    position: absolute;
-    top: 4px;
-    left: 4px;
-    width: 10px;
-    height: 10px;
-    border-radius: 2px;
-    background-color: #15a362;
-    opacity: 0;
-    transition: opacity 0.2s ease;
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
 }
 
 .checkbox input[type="checkbox"]:checked + label:after {
-    opacity: 1;
+  opacity: 1;
 }
 
-
-/* input_form_2 */
-
-.input_wrap_2 {
-    position: relative;
-    width: 3450px;
+/* Miscellaneous Styles */
+.select.form-select:not(:disabled) {
+  color: black;
+  background-color: white;
+  cursor: pointer;
 }
 
-.input_wrap_2 select:focus + label,
-.input_wrap_2 select:valid + label,
-.input_wrap_2 select.has-value + label {
-    font-size: 10px;
-    color: #1E1E1E;
-    top: 5px;
-    left: 10px;
-    background: #ffffff;
-    width: 4550px;
-    padding: 0px 5px 0px 5px;
-    transform: translateY(0);
-    z-index: 1;
+.title_ {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
 }
 
-.input_wrap_2 label {
-    font-family: arial;
-    font-size: 15px;
-    color: #1E1E1E;
-    padding: 10px;
-    position: absolute;
-    top: 5px;
-    left: 5px;
-    transition: 0.2s ease all;
-    pointer-events: none;
-}
-.input_form_2 > .input_wrap_2{
-    width: 350px;
+.btn {
+  width: 350px;
+  color: #fff;
 }
 
-.btn{
-    width: 350px;
-    color: #fff;
+.btn:hover {
+  color: #15a362;
 }
-.btn:hover{
-    color: #15a362;
-}
+
 .image_container {
-    width: 200px;
-    height: 200px;
+  width: 200px;
+  height: 200px;
 }
 
 .image_container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
+/* Additional CSS */
+.app-card-header{
+    background-color: #1a14cc;
+}
+.notification-title{
+    color: #fff;
+}
+.input-box:focus::placeholder{
+    color: transparent;
+}
+.error-message{
+    color: red; 
+    display: none;
+}
+.indent{
+    margin-left: 20px;
+}
+.checkbox-group {
+    list-style: none;
+    padding: 0;
+}
+
+.checkbox-group div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.checkbox {
+    display: none;
+}
+.checkbox + label {
+    position: relative;
+    padding-left: 30px; 
+    cursor: pointer;
+}
+
+.checkbox + label:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #800000;
+    background-color: #fff;
+    border-radius: 4px;
+}
+.checkbox:checked + label:before {
+    background-color: #800000;
+    border-color: #800000;
+}
+.checkbox-label {
+    font-size: 30px;
+    margin-left: 10px;
+}
+.checkbox + label:hover {
+    text-decoration: underline;
+}
+input {
+    border: 3px solid transparent;
+}
+input:focus {
+    border: 3px solid #4e5864;
+    outline: none;
+}
+input:hover {
+    border: 3px solid #4e5864;
+    border-color: #4e5864;
+    background-color: #e0e0e0;
+}
+
+  

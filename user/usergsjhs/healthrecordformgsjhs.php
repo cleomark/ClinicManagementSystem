@@ -48,6 +48,7 @@
 
     <script src="assets/js/script.js"></script>
 =======
+>>>>>>> 51080f86f8a2907c4091c548a56482824fe1de2e
 
 
     <script defer src="assets/plugins/fontawesome/js/all.min.js"></script>
@@ -56,7 +57,6 @@
 	<link rel="stylesheet" href="assets/formstyle.css"> 
   
 
->>>>>>> 234eab6b7c132d155d699b2320a670a7ea970a02
 </head> 
 
 <body class="app">   	
@@ -82,7 +82,7 @@
 				    <div class="app-card-header px-4 py-3">
 				        <div class="row g-3 align-items-center">
 					        <div class="col-12 col-lg-auto text-center text-lg-start">
-						        <h4 class="notification-title mb-1" >Please fill-up honestly.</h4>
+						        <h4 class="notification-title mb-1">Please fill-up honestly.</h4>
 					        </div>
 							<?php
 								if(isset($_SESSION['success'])){
@@ -107,8 +107,10 @@
                 <label for="image">Upload Image</label>
                 <input type="file" name="image" id="image" required>
             </div>
+
         </div>
         <div class="input_form">
+
             <div class="input_wrap">
                 <label for="fullname">Full Name</label>
                 <input name="fullname" type="text" class="input-box" value="<?= $fullname; ?>" readonly>
@@ -118,10 +120,10 @@
                 <input name="idnumber" type="text" class="input-box" value="<?= $idnumber; ?>" readonly>
             </div>
             <div class="input_wrap">
-            <label for="personal_contact">Personal Contact Number</label>
-            <input id="personalContactInput" class="input-box" name="cp" type="text" placeholder="+63" >
-            <p id="personalContactError" class="error-message">Invalid Phone Number</p>
-        </div>
+                <label for="personal_contact">Personal Contact Number</label>
+                <input id="personalContactInput" class="input-box" name="cp" type="text" placeholder="+63" >
+                <p id="personalContactError" class="error-message">Invalid Phone Number</p>
+            </div>
 
 <script>
     const personalContactInput = document.getElementById('personalContactInput');
@@ -168,30 +170,31 @@
             </div>
          </div>
    
-          <div class="input_form">
+        <div class="input_form">
             <div class="input_wrap">
                 <label for="fullname">Home Address</label>
                 <input class="input-box" name="address" id ="address" type="text">
             </div>
-     </div>
+        </div>
                             
-    <div class="input_form">
+        <div class="input_form">
             <div class="input_wrap">
                 <label for="fullname">Present Address</label>
                 <input name="paddress" id="paddress" type="text">
             </div>
-    </div>
-    <div class="input_form">
-        <div class="input_wrap">
-            <label for="fullname">Name of Father</label>
-            <input name="father" id="father" type="text">
         </div>
 
-        <div class="input_wrap">
-            <label for="fullname">Contact</label>
-            <input id="contactInput_one" class="input-box" name="cfather" type="text" placeholder="+63" >
-            <p id="contactInputOneError" class="error-message">Invalid Phone Number</p>
-        </div>
+        <div class="input_form">
+            <div class="input_wrap">
+                <label for="fullname">Name of Father</label>
+                <input name="father" id="father" type="text">
+            </div>
+
+            <div class="input_wrap">
+                <label for="fullname">Contact</label>
+                <input id="contactInput_one" class="input-box" name="cfather" type="text" placeholder="+63" >
+                <p id="contactInputOneError" class="error-message">Invalid Phone Number</p>
+            </div>
     
 
 <script>
@@ -233,7 +236,7 @@
             <label for="fullname">Contact</label>
             <input id="contactInput_two" class="input-box" name="cmother" type="text" placeholder="+63">
             <p id="contactInputTwoError" class="error-message">Invalid Phone Number</p>
-</div>
+        </div>
 
 <script>
     const contactInput_two = document.getElementById('contactInput_two');
@@ -262,7 +265,7 @@
         }
     });
 </script>
-    </div>
+</div>
 
     <div class="input_form">
         <div class="input_wrap">
@@ -558,7 +561,7 @@
             </div>
 
             <div class="input_wrap">
-                <p>Do you have a heart condition? (If yes, please specify.)</p>
+                <p>Do you have a heart condition?</p>
                 <div class="row-container">
                     <div>
                         <input class="checkbox" name="yesheartcon" value="yesheartcon" type="checkbox" id="yesheartcon">
@@ -577,7 +580,7 @@
             </div>
 
     <div class="question">
-        <p>Do you have an Eye problem? (If yes, please specify.)</p>
+        <p>Do you have an Eye problem?</p>
         <div class="row-container">
             <div>
                 <input class="checkbox" name="yeseyeprob" value="yeseyeprob" type="checkbox" id="yeseyeprob">
@@ -634,7 +637,7 @@
     </div>
 
     <div class="question">
-        <p>Do receive any medication or medical treatment, either regularly or occasionally? (If yes, please explain.)</p>
+        <p>Do receive any medication or medical treatment, either regularly or occasionally?</p>
         <div class="row-container">
             <div>
                 <input class="checkbox" name="yesreceive" value="yesreceive" type="checkbox" id="yesreceive">
@@ -652,7 +655,7 @@
         </div>
     </div>
 <div class="question">
-        <p>Do you have any allergies to medication? (If yes, please specify.)</p>
+        <p>Do you have any allergies to medication?</p>
         <div class="row-container">
             <div>
                 <input class="checkbox" name="yesallergiesmed" value="yesallergiesmed" type="checkbox" id="yesallergiesmed">
@@ -671,7 +674,7 @@
     </div>
 
     <div class="question">
-        <p>Do you have any allergies to food? (If yes, please specify.)</p>
+        <p>Do you have any allergies to food?</p>
         <div class="row-container">
             <div>
                 <input class="checkbox" name="yesallergiesfood" value="yesallergiesfood" type="checkbox" id="yesallergiesfood">
@@ -705,8 +708,10 @@
     </div>
 
     <div class="question">
-        <p>Do you have any concerns related to your health? (If yes, please explain.)</p>
+
+        <p>Do you have any concerns related to your health?</p>
         <div class="row-container">
+
             <div>
                 <input class="checkbox" name="yesconcerns" value="yesconcerns" type="checkbox" id="yesconcerns">
                 <label class="checkbox-label" style="font-size: 14px; padding-left: 30px;" for="yesconcerns">Yes</label>
@@ -721,14 +726,16 @@
                 <input class="input-box" name="concerns" id="otherillnesss" type="text" placeholder="If YES, please specify">
             </div>
         </div>
+
     </div>
-    </div>
+</div>
 
     
- <div class="app-card-footer px-4 py-3" style="display: flex; justify-content: center;">
-	<input type="text" name="user_id" style="display: none;" value="<?= $_SESSION['user_id'];?>">
-   <button name="submit_data" class="btn btn-success custom-button" style="margin-bottom: 15px; background-color: #1a14cc;">SUBMIT</button>
+    <div class="app-card-footer px-4 py-3" style="display: flex; justify-content: center;">
+        <input type="text" name="user_id" style="display: none;" value="<?= $_SESSION['user_id'];?>">
+        <button name="submit_data" class="btn btn-success" style="margin-bottom: 15px; background-color: #1a14cc;">SUBMIT</button>
     </div>
+    
 </form>
 
 				    </div><!--//app-card-body-->
