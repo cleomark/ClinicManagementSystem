@@ -100,14 +100,14 @@
           <input class="input-box" name="fullname" type="text" value="<?= $fullname; ?>"readonly>
         </div>
 
-        <div class="input_wrap">
+        <div class="input_wrap" style="margin-left: 65px;">
           <label for="fullname">ID Number</label>
           <input name="idnumber" class="input-box" type="text" value="<?= $idnumber; ?>" readonly>
         </div>
 
-        <div class="input_wrap">
+        <div class="input_wrap" style="margin-left: 65px;">
           <label for="courseyear">Course & Year</label>
-          <input class="input-box" id="courseyear" name="courseyear" type="text">
+          <input class="input-box" id="courseyear" name="courseyear" type="text" style="width:  553px;">
         </div>
        
       </div>
@@ -136,12 +136,9 @@
                 
             </div>
 
-            <div class="input_wrap">
-              <div style="margin-left: 65px;">
+            <div class="input_wrap" style="margin-left: 65px;">
                 <label for="fullname">Address</label>
-                <input name="address" id ="address" type="text" style="width: 500px;">
-              </div>
-                
+                <input name="address" id ="address" type="text" style="width:  553px;">
             </div>
 
         </div>
@@ -176,15 +173,9 @@
 </script>
    
       <div class="input_wrap">
-        <div style="margin-left: 65px;">
           <label for="fullname">Nationality</label>
-          <input class="input-box" name="nationality" id="nationality" type="text">
-        </div>   
+          <input class="input-box" name="nationality" id="nationality" type="text" style="width: 240px;">   
       </div>
-
-    </div>
-
-    <div class="input_form">
 
         <div class="input_wrap">
             <label for="fullname">Birthday</label>
@@ -192,10 +183,8 @@
         </div>
 
         <div class="input_wrap">
-          <div style="margin-left: 65px;">
             <label for="fullname">Religion</label>
-            <input class="input-box" name="religion" id="religion" type="text">
-          </div>
+            <input class="input-box" name="religion" id="religion" type="text" style="width: 240px;">
         </div>
 
     </div>
@@ -270,21 +259,17 @@
 
     </div>
 
-  <div class="input_form">
+      <div class="input_form">
 
-    <div class="input_wrap">
-      <label for="fullname">Hospital of Choice of referral</label>
-      <input class="input-box" name="referral" id="referral" type="text">
-    </div>
+        <div class="input_wrap">
+          <label for="fullname">Hospital of Choice of referral</label>
+          <input class="input-box" name="referral" id="referral" type="text">
+        </div>
 
-    <div class="input_wrap">
-      <label for="fullname">Contact Numbers</label>
-      <input class="input-box" name="contactno2" id="con" type="text" placeholder="+63">
-    </div>
-    
-  </div>
-
-  <div class="input_form">
+        <div class="input_wrap">
+          <label for="fullname">Contact Numbers</label>
+          <input class="input-box" name="contactno2" id="con" type="text" placeholder="+63">
+        </div>
 
         <div class="input_wrap">
             <label for="fullname">Physician and Number to call</label>
@@ -292,10 +277,8 @@
         </div>
 
         <div class="input_wrap">
-          <div style="margin-left: 65px;">
             <label for="fullname">Address of Hospital</label>
-            <input class="input-box" name="addresshospital" id="physician" type="text" style="width: 500px;">
-          </div>
+            <input class="input-box" name="addresshospital" id="physician" type="text">
         </div>
 
   </div>
@@ -311,13 +294,13 @@
 
       <div class="input_wrap">
         <label for="fullname">Tetanus & Diphtheria (Td) of Tetanus Toxoid</label>
-        <input class="input-box" name="td" id="vaccine" type="text" placeholder="Write WHEN and WHERE administered" style="width: 500px;">
+        <input class="input-box" name="td" id="vaccine" type="text" placeholder="Write WHEN and WHERE administered" style="width: 555px;">
       </div>
 
 
-      <div class="input_wrap">
+      <div class="input_wrap" style="margin-left: 65px;">
         <label for="fullname">Measles, Mumps, Rubella (MMR) </label>
-        <input class="input-box" name="mmr" id="vaccine" type="text" placeholder="Write WHEN and WHERE administered" style="width: 500px;">
+        <input class="input-box" name="mmr" id="vaccine" type="text" placeholder="Write WHEN and WHERE administered" style="width: 555px;">
       </div>
 
     </div>
@@ -326,12 +309,12 @@
 
         <div class="input_wrap">
             <label for="fullname">Hepatitis B</label>
-            <input class="input-box" name="hepab" id="vaccine" type="text" placeholder="Write WHEN and WHERE administered" style="width: 500px;">
+            <input class="input-box" name="hepab" id="vaccine" type="text" placeholder="Write WHEN and WHERE administered" style="width: 555px;">
         </div>
 
-        <div class="input_wrap">
+        <div class="input_wrap" style="margin-left: 65px;">
             <label for="fullname">Varicella</label>
-            <input class="input-box" name="varicella" id="vaccine" type="text" placeholder="Write WHEN and WHERE administered" style="width: 500px;">
+            <input class="input-box" name="varicella" id="vaccine" type="text" placeholder="Write WHEN and WHERE administered" style="width: 555px;">
         </div>
 
     </div>
@@ -786,21 +769,21 @@
   <div class="input_form">
     <div class="input_wrap">
       <label>The student/employee is on special medication</label>
-      <input name="specialmed" type="text" style="width: 700px;">
+      <input name="specialmed" type="text" style="width: 1185px;">
     </div>
   </div>
 
   <div class="input_form">
     <div class="input_wrap">
       <label>The student/employee is allergic to the following drugs</label>
-      <input name="allergicdrugs" type="text" style="width: 700px;">
+      <input name="allergicdrugs" type="text" style="width: 1185px;">
     </div>
   </div>
           
   <div class="input_form">
     <div class="input_wrap">
       <label>Other relevant information</label>
-      <input name="otherrelevant" type="text" style="width: 700px;">
+      <input name="otherrelevant" type="text" style="width: 1185px;">
     </div>
   </div>   
         

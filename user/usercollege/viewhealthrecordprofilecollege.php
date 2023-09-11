@@ -106,14 +106,14 @@
               <input id="fullname" class="input-box" name="fullname" type="text" value="<?= $fullname; ?>" >
             </div>
 
-            <div class="input_wrap">
+            <div class="input_wrap" style="margin-left: 65px;">
                 <label for="fullname">ID Number</label>
                 <input name="idnumber" class="input-box" type="text" value="<?=$row['idnumber'];?>" readonly>
             </div>
 
-            <div class="input_wrap">
+            <div class="input_wrap" style="margin-left: 65px;">
               <label for="courseyear">Course & Year</label>
-              <input class="input-box" id="courseyear" name="courseyear" type="text" value="<?=$row['courseyear'];?>" readonly>
+              <input class="input-box" id="courseyear" name="courseyear" type="text" style="width:  553px;" value="<?=$row['courseyear'];?>" readonly>
             </div>
 
           </div>
@@ -136,11 +136,9 @@
               </div>
             </div>
 
-            <div class="input_wrap">
-              <div style="margin-left: 65px;">
+            <div class="input_wrap" style="margin-left: 65px;">
                 <label for="fullname">Address</label>
-                <input name="address" id ="address" type="text" style="width: 500px;" value="<?=$row['address'];?>" readonly>
-              </div>
+                <input name="address" id ="address" type="text" style="width:  553px;" value="<?=$row['address'];?>" readonly>
             </div>
 
           </div>
@@ -153,14 +151,9 @@
       </div>
     
       <div class="input_wrap">
-        <div style="margin-left: 65px;">
           <label for="fullname">Nationality</label>
-          <input class="input-box" name="nationality" id="nationality" type="text" value="<?=$row['nationality'];?>" readonly>
+          <input class="input-box" name="nationality" id="nationality" type="text" style="width: 240px;" value="<?=$row['nationality'];?>" readonly>
         </div>
-        
-    </div>
-
-    <div class="input_form">
 
       <div class="input_wrap">
         <label for="fullname">Birthday</label>
@@ -168,10 +161,8 @@
       </div>
 
       <div class="input_wrap">
-        <div style="margin-left: 65px;">
           <label for="fullname">Religion</label>
-          <input name="religion" class="input-box" id="religion" type="text" value="<?=$row['religion'];?>" readonly>
-        </div>
+          <input name="religion" class="input-box" id="religion" type="text" style="width: 240px;" value="<?=$row['religion'];?>" readonly>
       </div>
 
     </div>
@@ -236,20 +227,14 @@
           <input class="input-box" name="contactno2" id="con" type="text" value="<?=$row['contactno2'];?>" readonly>
         </div>
 
-      </div>
-
-      <div class="input_form">
-
         <div class="input_wrap">
             <label for="fullname">Physician and Number to call</label>
             <input class="input-box" name="physiciannumcall" id="physician" type="text" value="<?=$row['physiciannumcall'];?>" readonly>
         </div>
 
         <div class="input_wrap">
-          <div style="margin-left: 65px;">
-            <label for="fullname">Address of hospital</label>
-            <input class="input-box" name="addresshospital" id="physician" type="text" style="width: 500px;" value="<?=$row['addresshospital'];?>" readonly>
-          </div>
+            <label for="fullname">Address of Hospital</label>
+            <input class="input-box" name="addresshospital" id="physician" type="text" value="<?=$row['addresshospital'];?>" readonly>
         </div>
 
       </div>
@@ -265,12 +250,12 @@
 
       <div class="input_wrap">
         <label for="fullname">Tetanus & Diphtheria (Td) of Tetanus Toxoid</label>
-        <input class="input-box" name="td" id="vaccine" type="text" placeholder="Write WHEN and WHERE administered" style="width: 500px;" value="<?=$row['td'];?>" readonly>
+        <input class="input-box" name="td" id="vaccine" type="text" placeholder="Write WHEN and WHERE administered" style="width: 555px;" value="<?=$row['td'];?>" readonly>
       </div>
 
-      <div class="input_wrap">
+      <div class="input_wrap" style="margin-left: 65px;">
         <label for="fullname">Measles, Mumps, Rubella (MMR) </label>
-        <input class="input-box" name="mmr" id="vaccine" type="text" placeholder="Write WHEN and WHERE administered" style="width: 500px;" value="<?=$row['mmr'];?>" readonly>
+        <input class="input-box" name="mmr" id="vaccine" type="text" placeholder="Write WHEN and WHERE administered" style="width: 555px;" value="<?=$row['mmr'];?>" readonly>
       </div>
 
     </div>
@@ -279,12 +264,12 @@
 
       <div class="input_wrap">
         <label for="fullname">Hepatitis B</label>
-        <input class="input-box" name="hepab" id="vaccine" type="text" placeholder="Write WHEN and WHERE administered" style="width: 500px;" value="<?=$row['hepab'];?>" readonly>
+        <input class="input-box" name="hepab" id="vaccine" type="text" placeholder="Write WHEN and WHERE administered" style="width: 555px;" value="<?=$row['hepab'];?>" readonly>
       </div>
 
-      <div class="input_wrap">
+      <div class="input_wrap" style="margin-left: 65px;">
         <label for="fullname">Varicella</label>
-        <input class="input-box" name="varicella" id="vaccine" type="text" placeholder="Write WHEN and WHERE administered" style="width: 500px;" value="<?=$row['varicella'];?>" readonly>
+        <input class="input-box" name="varicella" id="vaccine" type="text" placeholder="Write WHEN and WHERE administered" style="width: 555px;" value="<?=$row['varicella'];?>" readonly>
       </div>
 
     </div>
@@ -749,19 +734,19 @@
         <div class="input_form">
           <div class="input_wrap">
             <label>The student/employee is on special medication</label>
-            <input name="specialmed" type="text" style="width: 700px;" value="<?=$row['specialmed'];?>" readonly>
+            <input name="specialmed" type="text" style="width: 1185px;" value="<?=$row['specialmed'];?>" readonly>
           </div>
         </div>
         <div class="input_form">
           <div class="input_wrap">
             <label>The student/employee is allergic to the following drugs</label>
-            <input name="allergicdrugs" type="text" style="width: 700px;" value="<?=$row['allergicdrugs'];?>" readonly>
+            <input name="allergicdrugs" type="text" style="width: 1185px;" value="<?=$row['allergicdrugs'];?>" readonly>
           </div>
         </div>
         <div class="input_form">
           <div class="input_wrap">
             <label>Other relevant information</label>
-            <input name="otherrelevant" type="text" style="width: 700px;" value="<?=$row['otherrelevant'];?>" readonly>
+            <input name="otherrelevant" type="text" style="width: 1185px;" value="<?=$row['otherrelevant'];?>" readonly>
           </div>
         </div>
         
