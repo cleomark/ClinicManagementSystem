@@ -28,7 +28,6 @@
 	<link rel="stylesheet" type="text/css" href="../assets/css/style.css">
 
 </head> 
-<<<<<<< HEAD
 <body class="app app-login p-0">   
 	<!-- digdi -->  
 <div class="main-wrapper login-body">
@@ -105,90 +104,6 @@
                 <div class="login-right-wrap">
 	      <style>
                         .account-logo {
-=======
-<style> 
-
-</style>
-<body class="app app-signup p-0">    	
-    <div class="row g-0 main-wrapper">
-	    <div class="col-12 col-md-7 col-lg-6">
-		    <div>
-			    <div class="login-wrap-form col-md-7 col-lg-6">	
-				<div class="login-wrapper">
-        <div class="loginbox">
-            <div class="login-right">
-                <div class="login-right-wrap">
-
-				<style>
-
-					a.app-link {
-						color: green;
-					}
-
-					
-					a.text-link {
-						color: #15a362;
-					}
-
-
-					.login-wrap-form {
-						position: absolute;
-						/* margin-left: 130px; */
-						/* padding: 15px 90px 15px; */
-						height: 100%;	
-					}
-
-					.app-btn-primary {
-						padding: 10px 15px!important;
-						font-size: 16px;
-						border-radius: 12px;
-						font-weight: 100;
-					}
-
-
-					.login-wrapper .loginbox {
-						width: fit-content!important;
-					}
-
-					.login-wrapper .loginbox .login-right {
-						height: fit-content!important;
-						width: fit-content!important;
-						padding: 50px 50px 50px 50px;
-						
-					}
-
-
-					
-					
-					.app-signup .auth-background-holder {
-						/* position: fixed;
-  						top: 0;
-						right: 0;
-						bottom: 0;
-						left: 700px; */
-						border-radius: 0px 65px 65px 0px!important;
-						transform: scaleX(-1);
-						z-index: -1;
-						height: 100vh!important;
-						
-						}
-
-
-					.auth-background-mask {
-						border-radius: 0px 65px 65px 0px!important;
-						transform: scaleX(-1);
-					}			
-					.ton {
-						
-    					box-shadow: 0px 80px 80px rgba(46, 55, 164, 0.03);
-    					border-radius: 24px;
-   						display: flex;
-    					max-width: 830px;
-    					width: 100%;
-					}
-
-					.account-logo {
->>>>>>> eb0922f4293c013898532eba3fbb52ebf212c233
 							margin-top:-75px;
                             height: 150px;
                             width: 150px;
@@ -238,7 +153,6 @@
                                 opacity: 0;
                             }
                         }
-<<<<<<< HEAD
                     </style>
 	</style>
 
@@ -253,21 +167,6 @@
 <h2>Sign up to Portal</h2>
 <form class="auth-form login-form" action="function/funct.php" method="POST">         
 <div class="email mb-3">
-=======
-
-						
-
-					
-				</style>
-				    <div class="account-logo">
-                        <a href="index.html"><img src="../assets/img/login-logo.png" alt></a>
-                    </div>
-					<br><br>
-					<h2>Sign up to Portal</h2>					
-					<div class="auth-form-container text-start mx-auto">
-						<form class="auth-form auth-signup-form" action="function/funct.php" method="POST">         
-							<div class="email mb-3">
->>>>>>> eb0922f4293c013898532eba3fbb52ebf212c233
 								<label class="sr-only" for="signup-email">Your Name</label>
 								<input id="signup-name" name="fullname" type="text" class="form-control signup-name" placeholder="Full name" required="required">
 							</div>
@@ -407,14 +306,14 @@
 			    </div>
 		    </div>   
 	    </div>
-<<<<<<< HEAD
+
 	    <div class="col-12 col-md-5 col-lg-6 h-100 auth-background-col">
 		    <div class="auth-background-holder">
 		    </div>
 		    <div class="auth-background-mask"></div>
 		    <div class="auth-background-overlay p-3 p-lg-5">
 		    </div>
-=======
+
 				</div>
 				</div>
 			</div>
@@ -424,7 +323,7 @@
 		    </div>
 		
 			    
->>>>>>> eb0922f4293c013898532eba3fbb52ebf212c233
+
 	    </div>
     
     </div -->
