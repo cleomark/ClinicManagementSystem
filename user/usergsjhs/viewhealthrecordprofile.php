@@ -250,7 +250,6 @@
 
 </div>
 
-<div class="indent">
   <div>
     <p class="title" style="font-size: 20px; font-weight: bold;">IMMUNIZATION</p>
   </div>
@@ -292,7 +291,7 @@
 </div>
 
 <br>
-<p>Does your child/ward have COVID-19 Vacination? (If with First, Second or Booster dose, please attach a screenshot of Vaccination Card). The Employee is required to answer this.</p>
+<p>Does your child/ward have COVID-19 Vacination? (If with First, Second or Booster dose, please attach a screenshot of Vaccination Card).</p> <p>The Employee is required to answer this.</p>
 
 
 
@@ -429,7 +428,7 @@
     </div>
 
     <div class="input_wrap">
-      input name="heartcon" id="otherillnesss" type="text" placeholder="If YES, please specify" value="<?=$row['heartcon'];?>" readonly>
+      <input name="heartcon" id="otherillnesss" type="text" placeholder="If YES, please specify" value="<?=$row['heartcon'];?>" readonly>
     </div>
   </div>
 </div>
@@ -470,7 +469,7 @@
 
     <div>
       <input class="checkbox" name="noseriousillnes" value="noseriousillnes" type="checkbox" id="noseriousillnes" value="<?= $row['noseriousillnes'];?>" <?php if ($row['noseriousillnes']) echo "checked"; ?>>
-      <label class="lcheckbox-label" style="font-size: 14px; padding-left: 30px;" for="noseriousillnes">No</label>
+      <label class="checkbox-label" style="font-size: 14px; padding-left: 30px;" for="noseriousillnes">No</label>
     </div>
 
     <div class="input_wrap">
@@ -617,7 +616,7 @@
 				    </div><!--//app-card-body-->
 				</div>			    
 		    </div>
-	    </div>
+
     </div>  					
     <!-- Javascript -->          
     <script src="assets/plugins/popper.min.js"></script>

@@ -48,7 +48,56 @@
     <link id="theme-style" rel="stylesheet" href="assets/css/portal.css">
 	<link rel="stylesheet" href="assets/style.css">
 
-	
+	<style>
+        /* Define custom styles here */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            color: #4c54b1;
+        }
+
+        input.form-control {
+            border: 3px solid #4c54b1;
+            padding: 10px;
+            border-radius: 10px;
+            transition: border-color 0.3s ease;
+        }
+
+        input.form-control:hover {
+            color: #fff;
+            background-color: #4c54b1;
+            border-color: #4c54b1;
+        }
+        .sched{
+            color: #800000;
+        }
+        /* Hide placeholder text on hover and focus */
+        input.form-control:hover::placeholder,
+        input.form-control:focus::placeholder {
+            color: transparent !important;
+        }
+
+
+
+
+        /* Additional styling can be added as needed */
+
+        /* Define your color scheme */
+        .primary-color {
+            color: #4c54b1;
+        }
+
+        .secondary-color {
+            color: #4e5864;
+        }
+
+        .accent-color {
+            color: #800000;
+        }
+    </style>
 
 
 
@@ -106,44 +155,42 @@ if (mysqli_num_rows($result) > 0) {
     						while($row = $result->fetch_array()){
 						?>
                         <br>
-				 <div class="row">
-                 <div class="col-sm-4">
+                        <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
                 <div class="form-group">
-                    <label for="idnumber" class="col-sm-6 control-label">Your ID Number</label>
-                        <input type="text" class="form-control" id="idnumber" name="idnumber" placeholder="Enter patient ID number" value="<?php echo $row['idnumber']; ?>" readonly>
+                    <label for="idnumber" class="control-label secondary-color">Your ID Number</label>
+                    <input type="text" class="form-control" id="idnumber" name="idnumber" placeholder="Enter patient ID number" value="<?php echo $row['idnumber']; ?>" readonly>
                 </div>
             </div>
             <div class="col-sm-4">
                 <div class="form-group">
-                    <label for="patient_name" class="col-sm-4 control-label">Your name</label>
-                        <input type="text" class="form-control" id="fullname" name="fullname" placeholder="Enter your Fullname" value="<?php echo $row['fullname']; ?>" readonly>
+                    <label for="patient_name" class="control-label secondary-color">Your name</label>
+                    <input type="text" class="form-control" id="fullname" name="fullname" placeholder="Enter your Fullname" value="<?php echo $row['fullname']; ?>" readonly>
                 </div>
             </div>
             <div class="col-sm-4">
                 <div class="form-group">
-                    <label for="gradecourseyear " class="col-sm-8 control-label">Grade & Section</label>
-                        <input type="text" class="form-control" id="gradecourseyear " name="gradecourseyear " placeholder="If you are an employee, just type Employee" value="<?php echo $row['gradecourseyear']; ?>" readonly>
+                    <label for="gradecourseyear" class="control-label secondary-color">Grade & Section</label>
+                    <input type="text" class="form-control" id="gradecourseyear" name="gradecourseyear" placeholder="If you are an employee, just type Employee" value="<?php echo $row['gradecourseyear']; ?>" readonly>
                 </div>
             </div>
-      </div>
-      <br>
-            <div class="row">
-
-      
-        <div class="col-sm-4">
-                <div class="form-group">
-                    <label for="service" class="col-sm-8 control-label">Service</label>
-                        <input type="text" class="form-control" id="service" name="service" value="<?php echo $row['service']; ?>" readonly>
-                    </div>
-                </div>
-            </div>
-
-        <div class="form-group">
-				<b>
-                    <span>Schedule: <?php echo date('Y-m-d', strtotime($row['date_time'])); ?>
-                    <?php echo date('h:i A', strtotime($row['sched_time'])); ?></span>
-                </b>
         </div>
+        <br>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label for="service" class="control-label secondary-color">Service</label>
+                    <input type="text" class="form-control" id="service" name="service" value="<?php echo $row['service']; ?>" readonly>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <b class="primary-color">
+                <span class="sched">Schedule: <?php echo date('Y-m-d', strtotime($row['date_time'])); ?> <?php echo date('h:i A', strtotime($row['sched_time'])); ?></span>
+            </b>
+        </div>
+    </div>
   
         <?php } ?>
 				    </div><!--//app-card-body-->
