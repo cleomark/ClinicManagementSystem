@@ -1,187 +1,150 @@
-input[type="text"] {
-    border: 2px solid #afbdcf;
-    border-radius: 5px;
-    height: 52px;
-    width:auto;
-    color: #1E1E1E;
-    font-size: 14px;
-    padding-left: 20px;
-    box-shadow: none;  
-}
-
-input[type="date"] {
-    border: 2px solid #afbdcf;
-    border-radius: 5px;
-    height: 47px;
-    width:240px;
-    color: #1E1E1E;
-    font-size: 14px;
-    padding-left: 20px;
-    box-shadow: none;  
-}
-
-input[type="number"] {
+/* Common styles for input elements */
+label{
+    color: #000;
+  }
+  select:hover {
+    border: 3px solid #4e5864;
+    border-color: #4e5864; /* Set the background color for hover effect */
+    background-color: #e0e0e0;
+  }
+  
+  input[type="text"],
+  input[type="date"],
+  input[type="number"],
+  select {
     border: 2px solid #afbdcf;
     border-radius: 5px;
     height: 47px;
-    width:240px;
+    width: 240px;
     color: #1E1E1E;
     font-size: 14px;
     padding-left: 20px;
-    box-shadow: none;  
-}
-
-select[name="gender"] {
-    border: 2px solid #afbdcf;
-    border-radius: 5px;
-    height: 47px;
-    width:240px;
-    color: #1E1E1E;
-    font-size: 14px;
-    padding-left: 20px;
-    box-shadow: none;  
-}
-
-select[name="role"] {
-    border: 2px solid #afbdcf;
-    border-radius: 5px;
-    height: 47px;
-    width:240px;
-    color: #1E1E1E;
-    font-size: 14px;
-    padding-left: 20px;
-    box-shadow: none;  
-}
-
-select[name="leveleduc"] {
-    border: 2px solid #afbdcf;
-    border-radius: 5px;
-    height: 47px;
-    width:240px;
-    color: #1E1E1E;
-    font-size: 14px;
-    padding-left: 20px;
-    box-shadow: none;  
-}
-
-
-select {
-    border: 2px solid #afbdcf;
-    border-radius: 5px;
-    height: 47px;
-    width:240px;
-    color: #1E1E1E;
-    font-size: 14px;
-    padding-left: 20px;
-    box-shadow: none;  
-}
-
-  /* Label style after Input feild is in focus. Can also use input:focus ~ label to select sibling. */
-
-  input:focus + label, input:valid + label{
+    box-shadow: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  select[name="gender"],
+  select[name="role"],
+  select[name="leveleduc"] {
+    width: 240px;
+  }
+  
+  /* Label style after Input field is in focus. Can also use input:focus ~ label to select sibling. */
+  
+  input:focus + label, input:valid + label, select:focus + label, select:valid + label, select.has-value + label {
     font-size: 10px;
-    color: #1E1E1E;
-    top: -5px;
-    left:10px;
-    background: #ffffff;
-    padding: 0px 5px 0px 5px;
-}
-
-.input_wrap select:focus + label,
-.input_wrap select:valid + label,
-.input_wrap select.has-value + label {
-    font-size: 15px;
     color: #1E1E1E;
     top: -5px;
     left: 10px;
     background: #ffffff;
-    width: 250px;
     padding: 0px 5px 0px 5px;
-    transform: translateY(0);
-}
-/* .input_wrap {width:auto; height:auto; position:relative;
-} */
-
-.input_wrap label {
-    font-family:arial;
-    font-size:15px;
-    color: #1E1E1E;
-    padding: -1px;
-    top:0;
-    left: 0;
-    transition:0.2s ease all; 
-    -moz-transition:0.2s ease all; 
-    -webkit-transition:0.2s ease all;
-    pointer-events: none;
-}
-
-input[type="text"]:focus {outline:none;}
-.input_wrap {
-    display: flex;
-    flex-direction: column;
-}
-
-.input_form {
+  }
+  
+  /* Input Form Styles */
+  .input_wrap {
+      display: flex;
+      flex-direction: column;
+      margin-right: 20px;
+      margin-right: 0;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      border-color: #1a14cc !important;
+  }
+  
+  /* Specific element widths */
+  #otherillnesss,
+  #languages,
+  #languagess,
+  #relationship,
+  #address,
+  #paddress,
+  #father,
+  #cfather,
+  #mother,
+  #cmother,
+  #religion,
+  #nationality,
+  #language,
+  #guardianrelation,
+  #cguardian,
+  #altrelation,
+  #altrel,
+  #acontact,
+  #others,
+  #othersmedical,
+  #guardianname {
+    width: 999px;
+  }
+  
+  #cfather,
+  #cguardian {
+    width: 300px;
+  }
+  
+  #languages,
+  #languagess,
+  #relationship {
+    width: 400px;
+  }
+  
+  #father,
+  #mother,
+  #religion,
+  #nationality,
+  #guardianrelation,
+  #altrelation,
+  #altrel,
+  #acontact,
+  #others,
+  #othersmedical,
+  #guardianname {
+    width: 500px;
+  }
+  
+  /* Grid Layout */
+  .input_form,
+  .input_form_2 {
     display: grid;
+    grid-gap: 10px;
+  }
+  
+  .input_form {
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: 10px;
-}
-.input_form_2 {
-    display: grid;
+  }
+  
+  .input_form_2 {
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 10px;
     margin-top: 5px;
     margin-bottom: 5px;
-}
-
-.input_wrap {
-    padding-top: 10px; 
-    padding-bottom: 10px; 
-}
-
-.align_form{
-    display: flex;
-    flex-direction: row;
-    margin-top: 10px;
-    grid-template-rows: repeat(4, minmax(0, 1fr));
-}
-
-
-.title_{
-    font-size: 20px;
-    font-weight: bold;
-    margin-top: 10px;
-    color: #000;
-}
-
-.checkbox {
-    display: inline-block;
-    vertical-align: middle;
-}
-
-.checkbox input[type="checkbox"] {
+  }
+  
+  /* Checkbox Styles */
+  .checkbox {
+    margin-right: 20px;
+  }
+  
+  .checkbox input[type="checkbox"] {
     display: none;
-}
-
-.checkbox label {
+  }
+  
+  .checkbox label {
     position: relative;
-    font-size: 15px;
+    font-size: 20px;
     padding-left: 25px;
     cursor: pointer;
-}
-
-.checkbox label:before {
+  }
+  
+  .checkbox label:before {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 18px;
-    height: 18px;
-    border: 2px solid #15a362;
+    height: 20px;
     border-radius: 4px;
-}
-
-.checkbox label:after {
+  }
+  
+  .checkbox label:after {
     content: "";
     position: absolute;
     top: 4px;
@@ -189,66 +152,140 @@ input[type="text"]:focus {outline:none;}
     width: 10px;
     height: 10px;
     border-radius: 2px;
-    background-color: #15a362;
     opacity: 0;
     transition: opacity 0.2s ease;
-}
-
-.checkbox input[type="checkbox"]:checked + label:after {
+  }
+  
+  .checkbox input[type="checkbox"]:checked + label:after {
     opacity: 1;
-}
-
-
-/* input_form_2 */
-
-.input_wrap_2 {
-    position: relative;
-    width: 3450px;
-}
-
-.input_wrap_2 select:focus + label,
-.input_wrap_2 select:valid + label,
-.input_wrap_2 select.has-value + label {
-    font-size: 10px;
-    color: #1E1E1E;
-    top: 5px;
-    left: 10px;
-    background: #ffffff;
-    width: 4550px;
-    padding: 0px 5px 0px 5px;
-    transform: translateY(0);
-    z-index: 1;
-}
-
-.input_wrap_2 label {
-    font-family: arial;
-    font-size: 15px;
-    color: #1E1E1E;
-    padding: 10px;
-    position: absolute;
-    top: 5px;
-    left: 5px;
-    transition: 0.2s ease all;
-    pointer-events: none;
-}
-.input_form_2 > .input_wrap_2{
-    width: 350px;
-}
-
-.btn{
+  }
+  
+  /* Miscellaneous Styles */
+  .select.form-select:not(:disabled) {
+    color: black;
+    background-color: white;
+    cursor: pointer;
+  }
+  
+  .title_ {
+      font-size: 20px;
+      font-weight: bold;
+      margin-top: 10px;
+  }
+  
+  .btn {
     width: 350px;
     color: #fff;
-}
-.btn:hover{
+  }
+  
+  .btn:hover {
     color: #15a362;
-}
-.image_container {
+  }
+  
+  .image_container {
     width: 200px;
     height: 200px;
-}
-
-.image_container img {
+  }
+  
+  .image_container img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-}
+  }
+  
+  /* Additional CSS */
+  .app-card-header{
+      background-color: #1a14cc;
+  }
+  .notification-title{
+      color: #fff;
+  }
+  .input-box:focus::placeholder{
+      color: transparent;
+  }
+  .error-message{
+      color: red; 
+      display: none;
+  }
+  .indent{
+      margin-left: 20px;
+  }
+  /* Reset default browser styles for lists and checkboxes */
+  .checkbox-group {
+      list-style: none;
+      padding: 0;
+  }
+  
+  .checkbox-group div {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+  }
+  
+  /* Style the checkboxes */
+  .checkbox {
+      display: none; /* Hide the default checkboxes */
+  }
+  
+  .checkbox + label {
+      position: relative;
+      padding-left: 30px; /* Space for the custom checkbox */
+      cursor: pointer;
+  }
+  
+  /* Custom checkbox design */
+  .checkbox + label:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #800000; /* Border color for unchecked state */
+      background-color: #fff; /* Background color for unchecked state */
+      border-radius: 4px;
+  }
+  
+  /* Style the custom checkbox when checked */
+  .checkbox:checked + label:before {
+      background-color: #800000; /* Background color for checked state */
+      border-color: #800000; /* Border color for checked state */
+  }
+  
+  /* Style the label text */
+  .checkbox-label {
+      font-size: 30px;
+      margin-left: 10px; /* Space between checkbox and label */
+  }
+  
+  /* Optional hover effect for labels */
+  .checkbox + label:hover {
+      text-decoration: underline;
+  }
+  input {
+      border: 3px solid transparent;
+  }
+  
+  /* Style when input is focused */
+  input:focus {
+      border: 3px solid #4e5864; /* Set border color to match the background color */
+      outline: none; /* Remove the default focus outline */
+  }
+  input:hover {
+      border: 3px solid #4e5864;
+      border-color: #4e5864; /* Set the background color for hover effect */
+      background-color: #e0e0e0;
+  }
+  /* Normal state styles for your button */
+  .custom-button {
+      background-color: #1a14cc; /* Red background color */
+      /* Other styles for your button */
+    }
+    
+    /* Hover state styles for your button */
+    .custom-button:hover {
+      color: #fff;
+      background-color: #1a14cc; /* Darker red color on hover */
+      /* Other hover styles for your button */
+    }
+    

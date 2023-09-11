@@ -100,14 +100,16 @@
 							$result = $conn->query($sql);
     						while($row = $result->fetch_array()){
 						?>
-							  <div class="input_form">
-								  <div class="input_wrap">
-							      <div class="image_container">
-							      <br>
-								      <img src="<?php echo "/CAPSTONE1/upload_image/".$row['image'];?>">
-								      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label>Your Image</label>
-							      </div>
-						      </div>
+							<div class="input_form">
+                
+                <div class="input_wrap" style="text-align: center;">
+                  <div class="image_container" style="display: inline-block; text-align: center;">
+                      <br>
+                      <img src="<?php echo "/CAPSTONE1/upload_image/".$row['image'];?>" style="display: block; margin: 0 auto;">
+                      <label style="text-align: center; display: block;">Your Image</label>
+                  </div>
+                </div>
+
                   <div class="input_wrap">
                     <label for="fullname">Full Name</label>
                     <input id="fullname" name="fullname" type="text" class="input-box" value="<?= $fullname; ?>" readonly >
@@ -117,11 +119,13 @@
                     <label for="fullname">ID Number</label>
                     <input name="idnumber" type="text" class="input-box" value="<?=$row['idnumber'];?>" readonly >
                   </div>
+
                   <div class="input_wrap">
                     <label for="fullname">Personal Contact Number</label>
                     <input name="cp" type="text" class="input-box" value="<?=$row['cp'];?>" readonly>
                   </div>
-                </div>
+
+              </div>
 <br>
 <br>
 <div class="input_form">
