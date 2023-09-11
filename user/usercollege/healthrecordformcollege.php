@@ -342,7 +342,7 @@
         </div>
 
         <div class="input_wrap">
-          <input class="input-box" name="relationasthma" id="otherillnesss" type="text" placeholder="Relation(s) to student/employee">
+          <input class="input-box" name="relationasthma" id="otherillnesss" type="text" style="width: 400px;" placeholder="Relation(s) to student/employee">
         </div>
 
       </div>
@@ -364,7 +364,7 @@
         </div>
 
         <div class="input_wrap">
-          <input name="relationbleeding" class="input-box" id="otherillnesss" type="text" placeholder="Relation(s) to student/employee">
+          <input name="relationbleeding" class="input-box" id="otherillnesss" type="text" style="width: 400px;" placeholder="Relation(s) to student/employee">
         </div>
 
       </div>
@@ -386,7 +386,7 @@
         </div>
 
         <div class="input_wrap">
-          <input class="input-box" name="relationcancer" id="otherillnesss" type="text" placeholder="Relation(s) to student/employee">
+          <input class="input-box" name="relationcancer" id="otherillnesss" type="text" style="width: 400px;" placeholder="Relation(s) to student/employee">
         </div>
 
       </div>
@@ -408,7 +408,7 @@
         </div>
       
         <div class="input_wrap">
-          <input class="input-box" name="relationdiabetes" id="otherillnesss" type="text" placeholder="Relation(s) to student/employee">
+          <input class="input-box" name="relationdiabetes" id="otherillnesss" type="text" style="width: 400px;" placeholder="Relation(s) to student/employee">
         </div>
 
       </div>
@@ -430,7 +430,7 @@
         </div>
       
         <div class="input_wrap">
-          <input class="input-box" name="relationheartdis" id="otherillnesss" type="text" placeholder="Relation(s) to student/employee">
+          <input class="input-box" name="relationheartdis" id="otherillnesss" type="text" style="width: 400px;" placeholder="Relation(s) to student/employee">
         </div>
 
       </div>
@@ -452,7 +452,7 @@
         </div>
       
         <div class="input_wrap">
-          <input class="input-box" name="relationbp" id="otherillnesss" type="text" placeholder="Relation(s) to student/employee">
+          <input class="input-box" name="relationbp" id="otherillnesss" type="text" style="width: 400px;" placeholder="Relation(s) to student/employee">
         </div>
 
       </div>
@@ -473,7 +473,7 @@
         </div>
 
         <div class="input_wrap">
-          <input class="input-box" name="relationkidney" id="otherillnesss" type="text" placeholder="Relation(s) to student/employee">
+          <input class="input-box" name="relationkidney" id="otherillnesss" type="text" style="width: 400px;" placeholder="Relation(s) to student/employee">
         </div>
 
       </div>
@@ -494,7 +494,7 @@
         </div>
 
         <div class="input_wrap">
-          <input class="input-box" name="relationmental" id="otherillnesss" type="text" placeholder="Relation(s) to student/employee">
+          <input class="input-box" name="relationmental" id="otherillnesss" type="text" style="width: 400px;" placeholder="Relation(s) to student/employee">
         </div>
 
       </div>
@@ -516,7 +516,7 @@
         </div>
       
         <div class="input_wrap">
-          <input class="input-box" name="relationobese" id="otherillnesss" type="text" placeholder="Relation(s) to student/employee">
+          <input class="input-box" name="relationobese" id="otherillnesss" type="text" style="width: 400px;" placeholder="Relation(s) to student/employee">
         </div>
 
       </div>
@@ -538,7 +538,7 @@
         </div>
 
         <div class="input_wrap">
-          <input class="input-box" name="relationseizure" id="otherillnesss" type="text" placeholder="Relation(s) to student/employee">
+          <input class="input-box" name="relationseizure" id="otherillnesss" type="text" style="width: 400px;" placeholder="Relation(s) to student/employee">
         </div>
 
       </div>
@@ -560,7 +560,7 @@
         </div>
 
         <div class="input_wrap">
-          <input class="input-box" name="relationstroke" id="otherillnesss" type="text" placeholder="Relation(s) to student/employee">
+          <input class="input-box" name="relationstroke" id="otherillnesss" type="text" style="width: 400px;" placeholder="Relation(s) to student/employee">
         </div>
 
       </div>
@@ -582,7 +582,7 @@
         </div>
 
         <div class="input_wrap">
-          <input class="input-box" name="relationtb" id="otherillnesss" type="text" placeholder="Relation(s) to student/employee">
+          <input class="input-box" name="relationtb" id="otherillnesss" type="text" style="width: 400px;" placeholder="Relation(s) to student/employee">
         </div>
 
       </div>

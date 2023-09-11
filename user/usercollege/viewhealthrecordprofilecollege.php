@@ -297,7 +297,7 @@
         </div>
 
         <div class="input_wrap">
-          <input class="input-box" name="relationasthma" id="otherillnesss" type="text" placeholder="Relation(s) to student/employee" value="<?=$row['relationasthma'];?>" readonly>
+          <input class="input-box" name="relationasthma" id="otherillnesss" type="text" style="width: 400px;" placeholder="Relation(s) to student/employee" value="<?=$row['relationasthma'];?>" readonly>
         </div>
 
       </div>
@@ -319,7 +319,7 @@
         </div>
       
         <div class="input_wrap">
-          <input class="input-box" name="relationbleeding" id="otherillnesss" type="text" placeholder="Relation(s) to student/employee" value="<?=$row['relationbleeding'];?>" readonly>
+          <input class="input-box" name="relationbleeding" id="otherillnesss" type="text" style="width: 400px;" placeholder="Relation(s) to student/employee" value="<?=$row['relationbleeding'];?>" readonly>
         </div>
 
       </div>
@@ -343,7 +343,7 @@
         </div>
       
         <div class="input_wrap">
-          <input class="input-box" name="relationcancer" id="otherillnesss" type="text" placeholder="Relation(s) to student/employee" value="<?=$row['relationcancer'];?>" readonly>
+          <input class="input-box" name="relationcancer" id="otherillnesss" type="text" style="width: 400px;" placeholder="Relation(s) to student/employee" value="<?=$row['relationcancer'];?>" readonly>
         </div>
 
       </div>
@@ -366,7 +366,7 @@
         </div>
       
         <div class="input_wrap">
-          <input class="input-box" name="relationdiabetes" id="otherillnesss" type="text" placeholder="Relation(s) to student/employee" value="<?=$row['relationdiabetes'];?>" readonly>
+          <input class="input-box" name="relationdiabetes" id="otherillnesss" type="text" style="width: 400px;" placeholder="Relation(s) to student/employee" value="<?=$row['relationdiabetes'];?>" readonly>
         </div>
 
       </div>
@@ -390,7 +390,7 @@
         </div>
       
         <div class="input_wrap">
-          <input class="input-box" name="relationheartdis" id="otherillnesss" type="text" placeholder="Relation(s) to student/employee" value="<?=$row['relationheartdis'];?>" readonly>
+          <input class="input-box" name="relationheartdis" id="otherillnesss" type="text" style="width: 400px;" placeholder="Relation(s) to student/employee" value="<?=$row['relationheartdis'];?>" readonly>
         </div>
 
       </div>
@@ -414,7 +414,7 @@
         </div>
 
         <div class="input_wrap">
-          <input class="input-box" name="relationbp" id="otherillnesss" type="text" placeholder="Relation(s) to student/employee" value="<?=$row['relationbp'];?>" readonly>
+          <input class="input-box" name="relationbp" id="otherillnesss" type="text" style="width: 400px;" placeholder="Relation(s) to student/employee" value="<?=$row['relationbp'];?>" readonly>
         </div>
 
       </div>
@@ -437,7 +437,7 @@
         </div>
 
         <div class="input_wrap">
-          <input class="input-box" name="relationkidney" id="otherillnesss" type="text" placeholder="Relation(s) to student/employee" value="<?=$row['relationkidney'];?>" readonly>
+          <input class="input-box" name="relationkidney" id="otherillnesss" type="text" style="width: 400px;" placeholder="Relation(s) to student/employee" value="<?=$row['relationkidney'];?>" readonly>
         </div>
 
       </div>
@@ -460,7 +460,7 @@
         </div>
 
         <div class="input_wrap">
-          <input class="input-box" name="relationmental" id="otherillnesss" type="text" placeholder="Relation(s) to student/employee" value="<?=$row['relationmental'];?>" readonly>
+          <input class="input-box" name="relationmental" id="otherillnesss" type="text" style="width: 400px;" placeholder="Relation(s) to student/employee" value="<?=$row['relationmental'];?>" readonly>
         </div>
 
       </div>
@@ -483,7 +483,7 @@
         </div>
 
         <div class="input_wrap">
-          <input class="input-box" name="relationobese" id="otherillnesss" type="text" placeholder="Relation(s) to student/employee" value="<?=$row['relationobese'];?>" readonly>
+          <input class="input-box" name="relationobese" id="otherillnesss" type="text" style="width: 400px;" placeholder="Relation(s) to student/employee" value="<?=$row['relationobese'];?>" readonly>
         </div>
 
       </div>
@@ -507,7 +507,7 @@
       </div>
 
       <div class="input_wrap">
-        <input class="input-box" name="relationseizure" id="otherillnesss" type="text" placeholder="Relation(s) to student/employee" value="<?=$row['relationseizure'];?>" readonly>
+        <input class="input-box" name="relationseizure" id="otherillnesss" type="text" style="width: 400px;" placeholder="Relation(s) to student/employee" value="<?=$row['relationseizure'];?>" readonly>
       </div>
     </div>
 
@@ -527,7 +527,7 @@
         </div>
 
         <div class="input_wrap">
-          <input class="input-box" name="relationstroke" id="otherillnesss" type="text" placeholder="Relation(s) to student/employee" value="<?=$row['relationstroke'];?>" readonly>
+          <input class="input-box" name="relationstroke" id="otherillnesss" type="text" style="width: 400px;" placeholder="Relation(s) to student/employee" value="<?=$row['relationstroke'];?>" readonly>
         </div>
 
       </div>
@@ -549,7 +549,7 @@
         </div>
 
         <div class="input_wrap">
-          <input class="input-box" name="relationtb" id="otherillnesss" type="text" placeholder="Relation(s) to student/employee" value="<?=$row['relationtb'];?>" readonly>
+          <input class="input-box" name="relationtb" id="otherillnesss" type="text" style="width: 400px;" placeholder="Relation(s) to student/employee" value="<?=$row['relationtb'];?>" readonly>
         </div>
 
       </div>
