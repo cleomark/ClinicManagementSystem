@@ -109,11 +109,16 @@
 	<link rel="stylesheet" href="assets/generate.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
+
+
+
+
         /* Style the container to have fixed size and enable scrolling */
         .chart-container {
             width: 800px;
             height: 400px;
             overflow: auto;
+            
         }
 
         #reportForm {
@@ -125,11 +130,11 @@
     }
 
     #generateReport {
-        background-color: #007bff; /* Clinic blue */
+        background-color: #2E37A4; /* Clinic blue */
         color: #fff;
-        padding: 10px 20px;
+        padding: 10px 15px;
         border: none;
-        border-radius: 5px;
+        border-radius: 6px;
         cursor: pointer;
     }
 
@@ -147,6 +152,7 @@
         border: 1px solid #ccc;
         border-radius: 5px;
         padding: 20px;
+       
     }
 
     </style>
@@ -180,7 +186,7 @@
 							<!--//generate report-->
 				        </div><!--//row-->
 				    </div><!--//app-card-header-->
-				    <div class="app-card-body p-4">
+				    <div class="app-card-body p-3">
                         
                     <form id="reportForm">
         <select id="tableSelect" name="report_type">
@@ -201,9 +207,10 @@
         </select>
 
         <!-- Replace the submit button with a regular button -->
-        <button type="button" id="generateReport">Generate Report</button>
+        <button class="blue-btn" type="button" id="generateReport">Generate Report</button>
     </form>
     <br>
+    
     <p>Total Medical Appointments Report</p>
     <!-- Fixed-sized container for the graph -->
     <div class="chart-container">
@@ -248,12 +255,12 @@
                         {
                             label: "Total of Student",
                             data: data.total_student,
-                            backgroundColor: "rgba(0, 0, 128, 0.5)", // You can change the color here
+                            backgroundColor: "rgba(46, 55, 164)", // You can change the color here
                         },
                         {
                             label: "Total of Employees",
                             data: data.total_employee,
-                            backgroundColor: "rgba(139, 0, 0, 0.5)", // You can change the color here
+                            backgroundColor: "rgba(255,87,87)", // You can change the color here
                         },
                     ],
                 };

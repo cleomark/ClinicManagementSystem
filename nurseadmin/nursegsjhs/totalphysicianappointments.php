@@ -122,13 +122,12 @@
         gap: 10px;
         margin-bottom: 20px;
     }
-
     #generateReport {
-        background-color: #007bff; /* Clinic blue */
+        background-color: #2E37A4; /* Clinic blue */
         color: #fff;
-        padding: 10px 20px;
+        padding: 10px 15px;
         border: none;
-        border-radius: 5px;
+        border-radius: 6px;
         cursor: pointer;
     }
 
@@ -247,12 +246,12 @@
                         {
                             label: "Total of Student in GS/JHS",
                             data: data.total_student_gs_jhs,
-                            backgroundColor: "rgba(0, 0, 128, 0.5)", // You can change the color here
+                            backgroundColor: "rgba(46, 55, 164)", // You can change the color here
                         },
                         {
                             label: "Total of Employees in GS/JHS",
                             data: data.total_employee_gs_jhs,
-                            backgroundColor: "rgba(139, 0, 0, 0.5)", // You can change the color here
+                            backgroundColor: "rgba(255,87,87)", // You can change the color here
                         },
                     ],
                 };

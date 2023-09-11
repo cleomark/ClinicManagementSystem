@@ -45,7 +45,7 @@
     <link rel="stylesheet" href="assets/css/portal.css">
 	<link rel="stylesheet" href="assets/formstyle.css">
 
-    <script src="assets/js/script.js"></script>
+    <script src="assets/js/script.js"></s   cript>
 
 
 
