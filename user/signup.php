@@ -38,6 +38,8 @@
 <div class="login-sec">
 <style>
 
+
+	
 	.signup-btn {
 		padding: 10px 15px;
 		font-weight: 100;
@@ -306,14 +308,14 @@
 			    </div>
 		    </div>   
 	    </div>
-<<<<<<< HEAD
+
 	    <div class="col-12 col-md-5 col-lg-6 h-100 auth-background-col">
 		    <div class="auth-background-holder">
 		    </div>
 		    <div class="auth-background-mask"></div>
 		    <div class="auth-background-overlay p-3 p-lg-5">
 		    </div>
-=======
+
 				</div>
 				</div>
 			</div>
@@ -323,7 +325,7 @@
 		    </div>
 		
 			    
->>>>>>> eb0922f4293c013898532eba3fbb52ebf212c233
+
 	    </div>
     
     </div -->

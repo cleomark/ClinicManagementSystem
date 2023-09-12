@@ -157,10 +157,6 @@
                         }
                     </style>
 	</style>
-
-
-
-
 	
 	<div class="account-logo">
                         <a href="index.html"><img src="../assets/img/login-logo.png" alt></a>

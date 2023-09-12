@@ -48,25 +48,56 @@
     <link id="theme-style" rel="stylesheet" href="assets/css/portal.css">
 	<link rel="stylesheet" href="assets/style.css">
 
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<style>
+        /* Define custom styles here */
+        .form-group {
+            margin-bottom: 20px;
+        }
 
-<link rel="stylesheet" type="text/css" href="../../assets/css/bootstrap.min.css">
+        label {
+            font-weight: bold;
+            color: #4c54b1;
+        }
 
-<link rel="stylesheet" href="../../assets/plugins/fontawesome/css/fontawesome.min.css">
-<link rel="stylesheet" href="../../assets/plugins/fontawesome/css/all.min.css">
+        input.form-control {
+            border: 3px solid #4c54b1;
+            padding: 10px;
+            border-radius: 10px;
+            transition: border-color 0.3s ease;
+        }
 
-<link rel="stylesheet" type="text/css" href="../../assets/css/select2.min.css">
+        input.form-control:hover {
+            color: #fff;
+            background-color: #4c54b1;
+            border-color: #4c54b1;
+        }
+        .sched{
+            color: #800000;
+        }
+        /* Hide placeholder text on hover and focus */
+        input.form-control:hover::placeholder,
+        input.form-control:focus::placeholder {
+            color: transparent !important;
+        }
 
-<link rel="stylesheet" href="../../assets/plugins/simple-calendar/simple-calendar.css">
 
-<link rel="stylesheet" href="../../assets/plugins/datatables/datatables.min.css">
 
-<link rel="stylesheet" type="text/css" href="../../assets/plugins/slick/slick.css">
-<link rel="stylesheet" type="text/css" href="../../assets/plugins/slick/slick-theme.css">
 
-<link rel="stylesheet" href="../../assets/plugins/feather/feather.css">
+        /* Additional styling can be added as needed */
 
-<link rel="stylesheet" type="text/css" href="../../assets/css/style.css">
+        /* Define your color scheme */
+        .primary-color {
+            color: #4c54b1;
+        }
+
+        .secondary-color {
+            color: #4e5864;
+        }
+
+        .accent-color {
+            color: #800000;
+        }
+    </style>
 
 
 
@@ -124,44 +155,42 @@ if (mysqli_num_rows($result) > 0) {
     						while($row = $result->fetch_array()){
 						?>
                         <br>
-				 <div class="row">
-                 <div class="col-sm-4">
+                        <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
                 <div class="form-group">
-                    <label for="idnumber" class="col-sm-6 control-label">Your ID Number</label>
-                        <input type="text" class="form-control" id="idnumber" name="idnumber" placeholder="Enter patient ID number" value="<?php echo $row['idnumber']; ?>" readonly>
+                    <label for="idnumber" class="control-label secondary-color">Your ID Number</label>
+                    <input type="text" class="form-control" id="idnumber" name="idnumber" placeholder="Enter patient ID number" value="<?php echo $row['idnumber']; ?>" readonly>
                 </div>
             </div>
             <div class="col-sm-4">
                 <div class="form-group">
-                    <label for="patient_name" class="col-sm-4 control-label">Your name</label>
-                        <input type="text" class="form-control" id="fullname" name="fullname" placeholder="Enter your Fullname" value="<?php echo $row['fullname']; ?>" readonly>
+                    <label for="patient_name" class="control-label secondary-color">Your name</label>
+                    <input type="text" class="form-control" id="fullname" name="fullname" placeholder="Enter your Fullname" value="<?php echo $row['fullname']; ?>" readonly>
                 </div>
             </div>
             <div class="col-sm-4">
                 <div class="form-group">
-                    <label for="gradecourseyear " class="col-sm-8 control-label">Grade & Section</label>
-                        <input type="text" class="form-control" id="gradecourseyear " name="gradecourseyear " placeholder="If you are an employee, just type Employee" value="<?php echo $row['gradecourseyear']; ?>" readonly>
+                    <label for="gradecourseyear" class="control-label secondary-color">Grade & Section</label>
+                    <input type="text" class="form-control" id="gradecourseyear" name="gradecourseyear" placeholder="If you are an employee, just type Employee" value="<?php echo $row['gradecourseyear']; ?>" readonly>
                 </div>
             </div>
-      </div>
-      <br>
-            <div class="row">
-
-      
-        <div class="col-sm-4">
-                <div class="form-group">
-                    <label for="service" class="col-sm-8 control-label">Service</label>
-                        <input type="text" class="form-control" id="service" name="service" value="<?php echo $row['service']; ?>" readonly>
-                    </div>
-                </div>
-            </div>
-
-        <div class="form-group">
-				<b>
-                    <span>Schedule: <?php echo date('Y-m-d', strtotime($row['date_time'])); ?>
-                    <?php echo date('h:i A', strtotime($row['sched_time'])); ?></span>
-                </b>
         </div>
+        <br>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label for="service" class="control-label secondary-color">Service</label>
+                    <input type="text" class="form-control" id="service" name="service" value="<?php echo $row['service']; ?>" readonly>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <b class="primary-color">
+                <span class="sched">Schedule: <?php echo date('Y-m-d', strtotime($row['date_time'])); ?> <?php echo date('h:i A', strtotime($row['sched_time'])); ?></span>
+            </b>
+        </div>
+    </div>
   
         <?php } ?>
 				    </div><!--//app-card-body-->
@@ -186,32 +215,6 @@ if (mysqli_num_rows($result) > 0) {
 		}, 5000);
 	</script>
 
-<div class="sidebar-overlay" data-reff></div>
-
-<script src="../../assets/js/jquery-3.6.1.min.js"></script>
-
-<script src="../../assets/js/bootstrap.bundle.min.js"></script>
-
-<script src="../../assets/js/feather.min.js"></script>
-
-<script src="../../assets/js/jquery.slimscroll.js"></script>
-
-<script src="../../assets/js/select2.min.js"></script>
-
-<script src="../../assets/plugins/datatables/jquery.dataTables.min.js"></script>
-<script src="../../assets/plugins/datatables/datatables.min.js"></script>
-
-<script src="../../assets/plugins/simple-calendar/jquery.simple-calendar.js"></script>
-<script src="../../assets/js/calander.js"></script>
-
-<script src="../../assets/plugins/apexchart/apexcharts.min.js"></script>
-<script src="../../assets/plugins/apexchart/chart-data.js"></script>
-
-<script src="../../assets/js/circle-progress.min.js"></script>
-
-<script src="../../assets/plugins/slick/slick.js"></script>
-
-<script src="../../assets/js/app.js"></script>
 
 </body>
 </html> 

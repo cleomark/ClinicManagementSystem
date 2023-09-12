@@ -11,6 +11,6 @@ $items = array(
             "Senior High School Building" => "shslist.php",
             "College Building" => "collegelists.php",
     ]),
-    "Appointments" => array('dentalgsjhsshs.php', 'menu-icon-04', ),
+    "Appointments" => array('dentalcollege.php', 'menu-icon-04', ),
 );
     

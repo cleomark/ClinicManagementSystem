@@ -48,26 +48,6 @@
     <link id="theme-style" rel="stylesheet" href="assets/css/portal.css">
 	<link rel="stylesheet" href="assets/style.css">
 
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-<link rel="stylesheet" type="text/css" href="../../assets/css/bootstrap.min.css">
-
-<link rel="stylesheet" href="../../assets/plugins/fontawesome/css/fontawesome.min.css">
-<link rel="stylesheet" href="../../assets/plugins/fontawesome/css/all.min.css">
-
-<link rel="stylesheet" type="text/css" href="../../assets/css/select2.min.css">
-
-<link rel="stylesheet" href="../../assets/plugins/simple-calendar/simple-calendar.css">
-
-<link rel="stylesheet" href="../../assets/plugins/datatables/datatables.min.css">
-
-<link rel="stylesheet" type="text/css" href="../../assets/plugins/slick/slick.css">
-<link rel="stylesheet" type="text/css" href="../../assets/plugins/slick/slick-theme.css">
-
-<link rel="stylesheet" href="../../assets/plugins/feather/feather.css">
-
-<link rel="stylesheet" type="text/css" href="../../assets/css/style.css">
-
 
 
 </head> 
@@ -204,32 +184,6 @@ if (mysqli_num_rows($result) > 0) {
 	</script>
 
 
-<div class="sidebar-overlay" data-reff></div>
-
-<script src="../../assets/js/jquery-3.6.1.min.js"></script>
-
-<script src="../../assets/js/bootstrap.bundle.min.js"></script>
-
-<script src="../../assets/js/feather.min.js"></script>
-
-<script src="../../assets/js/jquery.slimscroll.js"></script>
-
-<script src="../../assets/js/select2.min.js"></script>
-
-<script src="../../assets/plugins/datatables/jquery.dataTables.min.js"></script>
-<script src="../../assets/plugins/datatables/datatables.min.js"></script>
-
-<script src="../../assets/plugins/simple-calendar/jquery.simple-calendar.js"></script>
-<script src="../../assets/js/calander.js"></script>
-
-<script src="../../assets/plugins/apexchart/apexcharts.min.js"></script>
-<script src="../../assets/plugins/apexchart/chart-data.js"></script>
-
-<script src="../../assets/js/circle-progress.min.js"></script>
-
-<script src="../../assets/plugins/slick/slick.js"></script>
-
-<script src="../../assets/js/app.js"></script>
 </body>
 </html> 
 

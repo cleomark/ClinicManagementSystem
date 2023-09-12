@@ -51,12 +51,26 @@
     
     <style>
 
+#generateReport {
+        background-color: #2E37A4; /* Clinic blue */
+        color: #fff;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+
+    }
+
+
+
 /* Clinic-themed CSS */
 .clinic-table {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 20px;
 }
+
+
 
 .clinic-table th, .clinic-table td {
     border: 1px solid #ccc;
@@ -173,7 +187,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 <table class="clinic-table">
         <thead>
-            <tr>
+            <tr class="tr-color">
                 <th><?php echo $report_label; ?></th>
                 <th>Medicine Name</th>
                 <th>Total Quantity</th>
@@ -207,7 +221,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <option value="2025" <?php echo $selected_year === '2025' ? 'selected' : ''; ?>>2025</option>
         </select>
 
-        <button type="submit">Generate Report</button>
+        <button type="submit" id="generateReport">Generate Report</button>
     </form>
 
     <!-- Include your JavaScript dependencies here -->

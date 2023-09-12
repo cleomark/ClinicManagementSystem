@@ -45,26 +45,6 @@
 	<link rel="stylesheet" href="assets/style.css">
 	<link rel="stylesheet" href="assets/formstyle.css">
 
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-<link rel="stylesheet" type="text/css" href="../../assets/css/bootstrap.min.css">
-
-<link rel="stylesheet" href="../../assets/plugins/fontawesome/css/fontawesome.min.css">
-<link rel="stylesheet" href="../../assets/plugins/fontawesome/css/all.min.css">
-
-<link rel="stylesheet" type="text/css" href="../../assets/css/select2.min.css">
-
-<link rel="stylesheet" href="../../assets/plugins/simple-calendar/simple-calendar.css">
-
-<link rel="stylesheet" href="../../assets/plugins/datatables/datatables.min.css">
-
-<link rel="stylesheet" type="text/css" href="../../assets/plugins/slick/slick.css">
-<link rel="stylesheet" type="text/css" href="../../assets/plugins/slick/slick-theme.css">
-
-<link rel="stylesheet" href="../../assets/plugins/feather/feather.css">
-
-<link rel="stylesheet" type="text/css" href="../../assets/css/style.css">
-
 </head> 
 
 <body class="app">   	
@@ -73,7 +53,6 @@
         include $_SERVER['DOCUMENT_ROOT'] . "/DivineClinic/components/navbar.php";
     ?>
 
-    
     <div class="app-wrapper">
 	    
 	    <div class="app-content pt-3 p-md-3 p-lg-4">
@@ -271,7 +250,6 @@
 
 </div>
 
-<div class="indent">
   <div>
     <p class="title" style="font-size: 20px; font-weight: bold;">IMMUNIZATION</p>
   </div>
@@ -313,7 +291,7 @@
 </div>
 
 <br>
-<p>Does your child/ward have COVID-19 Vacination? (If with First, Second or Booster dose, please attach a screenshot of Vaccination Card). The Employee is required to answer this.</p>
+<p>Does your child/ward have COVID-19 Vacination? (If with First, Second or Booster dose, please attach a screenshot of Vaccination Card).</p> <p>The Employee is required to answer this.</p>
 
 
 
@@ -450,7 +428,7 @@
     </div>
 
     <div class="input_wrap">
-      input name="heartcon" id="otherillnesss" type="text" placeholder="If YES, please specify" value="<?=$row['heartcon'];?>" readonly>
+      <input name="heartcon" id="otherillnesss" type="text" placeholder="If YES, please specify" value="<?=$row['heartcon'];?>" readonly>
     </div>
   </div>
 </div>
@@ -491,7 +469,7 @@
 
     <div>
       <input class="checkbox" name="noseriousillnes" value="noseriousillnes" type="checkbox" id="noseriousillnes" value="<?= $row['noseriousillnes'];?>" <?php if ($row['noseriousillnes']) echo "checked"; ?>>
-      <label class="lcheckbox-label" style="font-size: 14px; padding-left: 30px;" for="noseriousillnes">No</label>
+      <label class="checkbox-label" style="font-size: 14px; padding-left: 30px;" for="noseriousillnes">No</label>
     </div>
 
     <div class="input_wrap">
@@ -638,7 +616,7 @@
 				    </div><!--//app-card-body-->
 				</div>			    
 		    </div>
-	    </div>
+
     </div>  					
     <!-- Javascript -->          
     <script src="assets/plugins/popper.min.js"></script>
@@ -646,34 +624,5 @@
     
     <!-- Page Specific JS -->
     <script src="assets/js/app.js"></script> 
-
-
-    <div class="sidebar-overlay" data-reff></div>
-
-<script src="../../assets/js/jquery-3.6.1.min.js"></script>
-
-<script src="../../assets/js/bootstrap.bundle.min.js"></script>
-
-<script src="../../assets/js/feather.min.js"></script>
-
-<script src="../../assets/js/jquery.slimscroll.js"></script>
-
-<script src="../../assets/js/select2.min.js"></script>
-
-<script src="../../assets/plugins/datatables/jquery.dataTables.min.js"></script>
-<script src="../../assets/plugins/datatables/datatables.min.js"></script>
-
-<script src="../../assets/plugins/simple-calendar/jquery.simple-calendar.js"></script>
-<script src="../../assets/js/calander.js"></script>
-
-<script src="../../assets/plugins/apexchart/apexcharts.min.js"></script>
-<script src="../../assets/plugins/apexchart/chart-data.js"></script>
-
-<script src="../../assets/js/circle-progress.min.js"></script>
-
-<script src="../../assets/plugins/slick/slick.js"></script>
-
-<script src="../../assets/js/app.js"></script>
-
 </body>
 </html> 

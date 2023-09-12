@@ -3,7 +3,7 @@
 $items = array(
     "Report Generation" => array('#', 'menu-icon-04', 
         [
-            "Total Dental Appointment Reports" => "totalappointments.php",
+            "Total Medical Appointment Reports" => "totalappointments.php",
     ]),
     "Health Profiles" => array('#', 'menu-icon-04', 
     [
@@ -11,6 +11,11 @@ $items = array(
             "Senior High School Building" => "shslist.php",
             "College Building" => "collegelists.php",
     ]),
-    "Appointments" => array('dentalgsjhsshs.php', 'menu-icon-04', ),
+    "Consultation Requests" => array('#', 'menu-icon-15', 
+        [
+            "Student" => "physicianstudentcollege.php",
+            "Employee" => "physicianemployeecollege.php",
+        ]),
+    "Appointments" => array('physicianapprovedcollege.php', 'menu-icon-04', ),
 );
     

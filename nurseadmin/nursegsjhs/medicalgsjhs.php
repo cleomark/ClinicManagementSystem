@@ -73,6 +73,27 @@ if (mysqli_num_rows($result) > 0) {
 <?php 
         include $_SERVER['DOCUMENT_ROOT'] . "/DivineClinic/components/navbar.php";
     ?>
+
+<style> 
+.styled-table thead tr {
+   
+    background-color: #2E37A4;
+
+}
+
+.btn-secondary {
+    background-color: #2E37A4;
+   
+}
+
+.btn:hover {
+    background-color: #2E37A4;
+}
+
+
+</style>
+
+
     <div class="app-wrapper">
 	    
 	    <div class="app-content pt-3 p-md-3 p-lg-4">
@@ -103,7 +124,7 @@ if (mysqli_num_rows($result) > 0) {
 				    <div class="app-card-body p-4">
   
   
-<div style="text-align: right; margin-right: 48px;">
+<div style="text-align: right;">
 <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#updateScheduleModal">
     Update Medical Schedule
 </button>
