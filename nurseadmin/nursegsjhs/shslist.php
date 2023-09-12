@@ -42,10 +42,7 @@
 
 <style> 
 
-.app-card-header {
-  background-color: #1a14cc;
-  color: white;
-}
+
 
 td {
     text-align: left; 
