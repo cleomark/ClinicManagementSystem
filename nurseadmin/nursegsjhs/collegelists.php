@@ -40,6 +40,12 @@
 
 
 <style> 
+
+.app-search-form .search-btn {
+    padding: 0.7rem 1rem;
+  
+}
+
 td {
     text-align: left; 
 }

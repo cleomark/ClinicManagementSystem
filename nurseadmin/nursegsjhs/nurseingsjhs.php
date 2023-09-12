@@ -109,57 +109,25 @@
     <link id="theme-style" rel="stylesheet" href="assets/css/portal.css">
 	<link rel="stylesheet" href="assets/generate.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <style>
-        /* Style the container to have fixed size and enable scrolling */
-        .chart-container {
-            width: 800px;
-            height: 400px;
-            overflow: auto;
-        }
-
-        #reportForm {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 10px;
-        margin-bottom: 20px;
-    }
-
-    #generateReport {
-        background-color: #2E37A4; /* Clinic blue */
-        color: #fff;
-        padding: 10px 15px;
-        border: none;
-        border-radius: 6px;
-        cursor: pointer;
-
-    }
-
-    /* Clinic chart title styling */
-    .chart-title {
-        font-size: 24px;
-        font-weight: bold;
-        color: #007bff; /* Clinic blue */
-        margin-bottom: 10px;
-    }
-
-    /* Clinic chart container styling */
-    .chart-container {
-        background-color: #f8f9fa; /* Clinic light gray */
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        padding: 20px;
-    }
-
-    </style>
-    
+   
 
 </head> 
 
 <body class="app">   	
+
+
+
+
 <?php 
         include $_SERVER['DOCUMENT_ROOT'] . "/DivineClinic/components/navbar.php";
     ?>
+
+    
+<div class="spinner-wrapper">
+<img src="/DivineClinic/assets/3D/divineloader.gif" alt="">
+</div>
+
+
     <div class="app-wrapper">
 	    
 	    <div class="app-content pt-3 p-md-3 p-lg-4">
@@ -310,7 +278,115 @@ window.myChart = new Chart(ctx, {
 		    </div>
 	    </div>
     </div>  					
-    <!-- Javascript -->          
+    <!-- Javascript -->    
+    
+    <style>
+        /* Style the container to have fixed size and enable scrolling */
+
+        .spinner-wrapper {
+      background-color: #F5F6FE;
+      position: fixed;
+      top: 0;
+      left: 0; 
+      width: 100%;
+      height: 100%;
+      z-index: 9999;
+      display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s;
+    }
+
+
+.spinner-wrapper img{
+      width: 20%;
+      height: 20%;
+    }
+
+
+                        .spinner-wrapper:before,
+                        .spinner-wrapper:after {
+                            content: "";
+                            position: absolute;
+                            height: 100px;
+                            width: 100px;
+                            background-color: #3330ca;
+                            border-radius: 80%;
+                            z-index: -1;
+                            opacity: 0.7;
+							
+                        }
+
+                        .spinner-wrapper:before {
+                            animation: pulse 2s ease-out infinite;
+                        }
+
+                        .spinner-wrapper:after {
+                            animation: pulse 2s 1s ease-out infinite;
+                        }
+
+                        @keyframes pulse {
+                            100% {
+                                transform: scale(2.6);
+                                opacity: 0;
+                            }
+                        }
+
+
+
+        .chart-container {
+            width: 800px;
+            height: 400px;
+            overflow: auto;
+        }
+
+        #reportForm {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+    #generateReport {
+        background-color: #2E37A4; /* Clinic blue */
+        color: #fff;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+
+    }
+
+    /* Clinic chart title styling */
+    .chart-title {
+        font-size: 24px;
+        font-weight: bold;
+        color: #007bff; /* Clinic blue */
+        margin-bottom: 10px;
+    }
+
+    /* Clinic chart container styling */
+    .chart-container {
+        background-color: #f8f9fa; /* Clinic light gray */
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 20px;
+    }
+
+    </style>
+    
+    <script> 
+const spinnerWrapperEl = document.querySelector('.spinner-wrapper');
+
+window.addEventListener('load', () => {
+  spinnerWrapperEl.style.opacity = '1';
+
+  setTimeout(() => {
+    spinnerWrapperEl.style.display = 'none';
+  }, 2500);
+})
+</script>
     <script src="assets/plugins/popper.min.js"></script>
     <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>  
     

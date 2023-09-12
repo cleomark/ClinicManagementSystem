@@ -48,7 +48,7 @@
     <link id="theme-style" rel="stylesheet" href="assets/css/portal.css">
 	<link rel="stylesheet" href="assets/table.css">
     
-    
+   
 
 </head> 
 
@@ -148,7 +148,7 @@
     <div class="col-sm-offset-2 col-sm-10">
         <br>
         <input type="text" name="admin_id" style="display: none;" value="<?= $_SESSION['admin_id'];?>">
-        <button name="submit_patientmngmt" class="btn btn-success">Submit</button>
+        <button name="submit_patientmngmt" class="btn btn-submit">Submit</button>
     </div>
 </div>
 </form>
@@ -181,7 +181,7 @@
 <div class="col-sm-offset-2 col-sm-10">
     <br>
     <input type="text" name="admin_id" style="display: none;" value="<?= $_SESSION['admin_id'];?>">
-    <button name="submit_medicine" class="btn btn-success">Submit</button>
+    <button name="submit_medicine" class="btn btn-submit">Submit</button>
 </div>
 </div>
 </form>
@@ -190,7 +190,25 @@
 		    </div>
 	    </div>
     </div>  					
-    <!-- Javascript -->          
+    <!-- Javascript -->      
+    
+    <style> 
+    .btn-submit { 
+    background-color: #2E37A4;
+    color: #fff;
+    padding: 6px 12px;
+    font-size: 14px;
+
+    }
+
+    .btn-submit:hover { 
+    background-color: #28308f;
+    color: #fff;
+   
+    }
+</style>
+
+
     <script src="assets/plugins/popper.min.js"></script>
     <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>  
     
