@@ -45,6 +45,25 @@
 	<link rel="stylesheet" href="assets/style.css">
 	<link rel="stylesheet" href="assets/formstyle.css">
 
+    <style>
+        /* Define custom styles here */
+        .form-container {
+            background-color: #fff;
+            box-shadow: 4px 4px 4px 4px rgba(76, 84, 177, 0.5);
+            padding: 20px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-title {
+            text-align: center;
+            color: #4c54b1;
+            font-weight: bold;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+    </style>
+
 </head> 
 
 <body class="app">   	
@@ -53,39 +72,37 @@
     ?>
     <div class="app-wrapper">
 	    
-	    <div class="app-content pt-3 p-md-3 p-lg-4">
+    <div class="app-content pt-3 p-md-3 p-lg-4">
 		    <div class="container-xl">
 			    <div class="position-relative mb-3">
 				    <div class="row g-3 justify-content-between">
-					    <div class="col-auto">
-					        <h1 class="app-page-title mb-0">Fill-up Health Record Form</h1>
-					    </div>
 						
 				    </div>
 			    </div>
 			    
                 <div class="app-card app-card-notification shadow-sm mb-4">
-				    <div class="app-card-header px-4 py-3">
 				        <div class="row g-3 align-items-center">
-					        <div class="col-12 col-lg-auto text-center text-lg-start">
-						        <h4 class="notification-title mb-1">Please fill-up honestly.</h4>
-					        </div>
+
 							<?php
 								if(isset($_SESSION['success'])){
 									echo $_SESSION['success'];
 									unset($_SESSION['success']);
 								}
 							?>
-							
-				        </div><!--//row-->
-				    </div><!--//app-card-header-->
+                            </div>
 				    <div class="app-card-body p-4">
                     <?php
 							$sql = "SELECT * FROM healthrecordformshs WHERE user_id = '$user_id'";
 							$result = $conn->query($sql);
     						while($row = $result->fetch_array()){
 						?>
-					<p class="title_">Personal Information</p>
+					
+                    <div class="container">
+
+    <div class="form-container">
+        <div class="form-title">
+        Health Record Form
+        </div>
 					
 				
                     <div class="align_form">
@@ -322,7 +339,6 @@
 
         <div class="input_wrap">
             <label for="fullname">Is your child taking any medications at present?</label>  
-
         <div>
             <input class="checkbox" name="yesmedication" value="yesmedication" type="checkbox" id="yesmedication" value="<?= $row['yesmedication'];?>" <?php if ($row['yesmedication']) echo "checked"; ?>>
             <label class="checkbox-label" for="yesmedication" style="font-size: 14px; padding-left: 30px;">Yes</label>
@@ -362,6 +378,8 @@
 
 
                             ?>
+</div>
+    </div>
 
 				    </div><!--//app-card-body-->
 				</div>			    
