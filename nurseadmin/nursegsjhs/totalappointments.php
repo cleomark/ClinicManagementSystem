@@ -190,7 +190,7 @@
                         
                     <form id="reportForm">
         <select id="tableSelect" name="report_type">
-            <option value="week">Week</option>
+            <option value="week">Week</option>  <!-- ken ma sleep na ako GNNNNN-->
             <option value="month">Month</option>
             <option value="year">Year</option>
         </select>
