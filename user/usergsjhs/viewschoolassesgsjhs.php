@@ -373,12 +373,11 @@
         </div>
 
       </div>
-
-      <br>
+      <hr>
       <div class="row">
         <div class="col-md-4">
           <div class="form-group">
-            <label for="remarks">Remarks</label>
+            <label for="remarks" style="color: #800000 !important;"><b>Remarks</b></label>
             <input type="text" class="form-control" id="remarks" name="remarks" value="<?php echo $row['remarks']; ?>" readonly>
           </div>
         </div>
