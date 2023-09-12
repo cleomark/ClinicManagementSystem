@@ -55,11 +55,10 @@
 </head> 
 
 <body class="app">   
+    
     <?php 
         include $_SERVER['DOCUMENT_ROOT'] . "/DivineClinic/components/navbar.php";
     ?>
-    
-    
     <div class="app-wrapper">
 	    
 	    <div class="app-content pt-3 p-md-3 p-lg-4">
@@ -644,8 +643,9 @@
 </div>
 </div>  					
 <!-- Javascript -->          
-<!-- <script src="assets/plugins/popper.min.js"></script>
-<script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>   -->
+<script src="assets/plugins/popper.min.js"></script>
+<script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>  
+
 
 <!-- Page Specific JS -->
 <script src="assets/js/app.js"></script> 

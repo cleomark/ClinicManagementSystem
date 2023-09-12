@@ -35,10 +35,11 @@
 
 <!-- s -->
 <div class="spinner-wrapper">
-<div class="spinner-border text-primary" role="status">
-  <span class="visually-hidden">Loading...</span>
+<div src="../assets/img/gege.gif" alt="Custom Logo Spinner"></div>
 </div>
 </div>
+
+
 
 
 	<!-- digdi -->  
@@ -69,12 +70,15 @@
   justify-content: center;
   align-items: center;
   transition: all 0.2s;
+ 
     }
 
     .spinner-border {
       height: 60px;
       width: 60px;
     }
+
+  
 
     .text-primary {
       color: #2E37A4!important;
