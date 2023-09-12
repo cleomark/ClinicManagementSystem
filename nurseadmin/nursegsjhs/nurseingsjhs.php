@@ -309,7 +309,20 @@ window.myChart = new Chart(ctx, {
 				</div>			    
 		    </div>
 	    </div>
-    </div>  					
+    </div>  		
+    
+    
+    <script> 
+const spinnerWrapperEl = document.querySelector('.spinner-wrapper');
+
+window.addEventListener('load', () => {
+  spinnerWrapperEl.style.opacity = '1';
+
+  setTimeout(() => {
+    spinnerWrapperEl.style.display = 'none';
+  }, 2000);
+})
+</script>
     <!-- Javascript -->          
     <script src="assets/plugins/popper.min.js"></script>
     <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>  
