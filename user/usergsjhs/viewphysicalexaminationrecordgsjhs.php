@@ -181,18 +181,21 @@ if (mysqli_num_rows($result) > 0) {
     </div>
 
     <div class="row">
-      <div class="col-sm-5">
-        <div class="form-group">
-          <label for="idnumber" class="control-label">Patient ID Number</label>
-          <input type="text" class="form-control" id="idnumber" name="idnumber" value="<?=$row['idnumber'];?>" readonly>
-        </div>
-      </div>
-      <div class="col-sm-6">
+
+    <div class="col-sm-6">
         <div class="form-group">
           <label for="fullname" class="control-label">Name</label>
           <input type="text" class="form-control" id="fullname" name="fullname" value="<?=$row['fullname'];?>" readonly>
         </div>
       </div>
+
+      <div class="col-sm-2">
+        <div class="form-group">
+          <label for="idnumber" class="control-label">Patient ID Number</label>
+          <input type="text" class="form-control" id="idnumber" name="idnumber" value="<?=$row['idnumber'];?>" readonly>
+        </div>
+      </div>
+      
       <div class="col-sm-1">
         <div class="form-group">
           <label for="age" class="control-label">Age</label>

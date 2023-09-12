@@ -45,6 +45,25 @@
 	<link rel="stylesheet" href="assets/style.css">
 	<link rel="stylesheet" href="assets/formstyle.css">
 
+  <style>
+        /* Define custom styles here */
+        .form-container {
+            background-color: #fff;
+            box-shadow: 4px 4px 4px 4px rgba(76, 84, 177, 0.5);
+            padding: 20px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-title {
+            text-align: center;
+            color: #4c54b1;
+            font-weight: bold;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+    </style>
+
 </head> 
 
 <body class="app">   	
@@ -59,27 +78,27 @@
 		    <div class="container-xl">
 			    <div class="position-relative mb-3">
 				    <div class="row g-3 justify-content-between">
-					    <div class="col-auto">
-					        <h1 class="app-page-title mb-0">Fill-up Health Record Form</h1>
-					    </div>
 				    </div>
 			    </div>
 			    
-                <div class="app-card app-card-notification shadow-sm mb-4">
-				    <div class="app-card-header px-4 py-3">
-				        <div class="row g-3 align-items-center">
-					        <div class="col-12 col-lg-auto text-center text-lg-start">
-						        <h4 class="notification-title mb-1">Please fill-up honestly.</h4>
-					        </div><!--//col-->
-				        </div><!--//row-->
-				    </div><!--//app-card-header-->
-				    <div class="app-card-body p-4">
-                    <?php
-							$sql = "SELECT * FROM healthrecordformgsjhs WHERE user_id = '$user_id'";
-							$result = $conn->query($sql);
-    						while($row = $result->fetch_array()){
-						?>
-							<div class="input_form">
+          <div class="app-card app-card-notification shadow-sm mb-4">
+				    <div class="row g-3 align-items-center"></div>
+				    
+<div class="app-card-body p-4">
+    <?php
+			$sql = "SELECT * FROM healthrecordformgsjhs WHERE user_id = '$user_id'";
+			$result = $conn->query($sql);
+    		while($row = $result->fetch_array()){
+		?>
+
+<div class="container">
+
+  <div class="form-container">
+    <div class="form-title">
+    Health Record Form
+    </div>
+    
+      <div class="input_form">
                 
                 <div class="input_wrap" style="text-align: center;">
                   <div class="image_container" style="display: inline-block; text-align: center;">
@@ -137,18 +156,21 @@
  </div>
 
 <div class="input_form">
-<div class="input_wrap">
+
+  <div class="input_wrap">
     <label for="fullname">Name of Father</label>
     <input name="fathername" id="father" type="text" value="<?=$row['father'];?>" readonly>
-</div>
+  </div>
 
-<div class="input_wrap">
+  <div class="input_wrap">
     <label for="fullname">Contact</label>
     <input class="input-box" name="cfather" id="cfather" type="text" value="<?=$row['cfather'];?>" readonly>
-</div>
+  </div>
+
 </div>
 
 <div class="input_form">
+
   <div class="input_wrap">
       <label for="fullname">Name of Mother</label>
       <input name="mothername" id="mother" type="text" value="<?=$row['mother'];?>" readonly>
@@ -158,6 +180,7 @@
       <label for="fullname">Contact</label>
       <input class="input-box" name="cmother" id="cmother" type="text" value="<?=$row['cmother'];?>" readonly>
   </div>
+
 </div>
 
 <div class="input_form">

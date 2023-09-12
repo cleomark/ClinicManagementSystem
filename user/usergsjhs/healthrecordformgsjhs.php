@@ -54,6 +54,24 @@
     <link id="theme-style" rel="stylesheet" href="assets/css/portal.css">
 	<link rel="stylesheet" href="assets/formstyle.css"> 
   
+    <style>
+        /* Define custom styles here */
+        .form-container {
+            background-color: #fff;
+            box-shadow: 4px 4px 4px 4px rgba(76, 84, 177, 0.5);
+            padding: 20px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-title {
+            text-align: center;
+            color: #4c54b1;
+            font-weight: bold;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+    </style>
 
 </head> 
 
@@ -69,44 +87,42 @@
 		    <div class="container-xl">
 			    <div class="position-relative mb-3">
 				    <div class="row g-3 justify-content-between">
-					    <div class="col-auto">
-					        <h1 class="app-page-title mb-0" >Fill-up Health Record Form</h1>
-					    </div>
 						
 				    </div>
 			    </div>
 			    
                 <div class="app-card app-card-notification shadow-sm mb-4">
-				    <div class="app-card-header px-4 py-3">
 				        <div class="row g-3 align-items-center">
-					        <div class="col-12 col-lg-auto text-center text-lg-start">
-						        <h4 class="notification-title mb-1">Please fill-up honestly.</h4>
-					        </div>
+
 							<?php
 								if(isset($_SESSION['success'])){
 									echo $_SESSION['success'];
 									unset($_SESSION['success']);
 								}
 							?>
-							
-				        </div><!--//row-->
-				    </div><!--//app-card-header-->
-				    <div class="app-card-body p-4">
-					<p class="title_" style="color: #800000;">Personal Information</p>
-					
-                    <form class="form-horizontal mt-4" action="function/funct.php" method="POST" enctype="multipart/form-data">    
-                    
-                    <div class="align_form">
+                            </div>
+<div class="app-card-body p-4">
 
-	
-        <div class="input_form">
+    <div class="container">
+
+        <div class="form-container">
+            <div class="form-title">
+            Health Record Form
+            </div>
+					
+            <form class="form-horizontal mt-4" action="function/funct.php" method="POST" enctype="multipart/form-data">    
+                    
+<div class="align_form">
+
+    <div class="input_form">
 
             <div class="input_wrap">
-                <label for="image">Upload Image</label>
+                <label for="image" >Upload Image</label>
                 <input type="file" name="image" id="image" required>
             </div>
 
-        </div>
+    </div>
+
         <div class="input_form">
 
             <div class="input_wrap">
@@ -409,7 +425,7 @@
         }
     });
 </script>
-    </div>
+
 
     <div class="indent">
         <div>
@@ -735,6 +751,8 @@
     </div>
     
 </form>
+    </div>
+</div>
 
 				    </div><!--//app-card-body-->
 				</div>			    
