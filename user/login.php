@@ -32,6 +32,16 @@
 </head> 
 
 <body class="app app-login p-0">   
+
+<!-- s -->
+<div class="spinner-wrapper">
+<div src="../assets/img/gege.gif" alt="Custom Logo Spinner"></div>
+</div>
+</div>
+
+
+
+
 	<!-- digdi -->  
 <div class="main-wrapper login-body">
 <div class="container-fluid px-0">
@@ -39,9 +49,41 @@
 
 <div class="col-lg-6 login-wrap">
 <div class="login-sec">
+
+
+
+
 <style>
 
 
+/* preloader */
+
+    .spinner-wrapper {
+      background-color: #F5F6FE;
+      position: fixed;
+      top: 0;
+      left: 0; 
+      width: 100%;
+      height: 100%;
+      z-index: 9999;
+      display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s;
+ 
+    }
+
+    .spinner-border {
+      height: 60px;
+      width: 60px;
+    }
+
+  
+
+    .text-primary {
+      color: #2E37A4!important;
+    }
+    
     .log-img {
       margin-top: -100px;
       width: 810px;
@@ -214,6 +256,18 @@
 </div>
 </div>
 
+
+<script> 
+const spinnerWrapperEl = document.querySelector('.spinner-wrapper');
+
+window.addEventListener('load', () => {
+  spinnerWrapperEl.style.opacity = '1';
+
+  setTimeout(() => {
+    spinnerWrapperEl.style.display = 'none';
+  }, 1000);
+})
+</script>
 
 <script src="../assets/js/jquery-3.6.1.min.js"></script>
 
