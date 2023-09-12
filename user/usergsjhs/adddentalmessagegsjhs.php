@@ -42,6 +42,9 @@
     <!-- FontAwesome JS-->
     <script defer src="assets/plugins/fontawesome/js/all.min.js"></script>
     
+    <!-- Google Font Link for Icons (CALENDAR)-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+
     <!-- App CSS -->  
     <link id="theme-style" rel="stylesheet" href="assets/css/portal.css">
 	<link rel="stylesheet" href="assets/style.css">
@@ -55,11 +58,10 @@
 </head> 
 
 <body class="app">   
+    
     <?php 
         include $_SERVER['DOCUMENT_ROOT'] . "/DivineClinic/components/navbar.php";
     ?>
-    
-    
     <div class="app-wrapper">
 	    
 	    <div class="app-content pt-3 p-md-3 p-lg-4">
@@ -205,7 +207,7 @@
 
 <br><br>
 <style>
-    /* Calendar container */
+    /* Calendar container
 #calendar {
   font-family: Arial, sans-serif;
   width: 300px;
@@ -292,6 +294,161 @@
 #calendar .mask {
   color: #ccc;
 }
+ */
+
+
+
+/* CALENDAR-NEW */
+/* Import Google font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body{
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  justify-content: center;
+  min-height: 100vh;
+  background: #ddd;
+}
+.wrapper{
+  width: 550px;
+  height:520px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+  margin:0px 120px;
+}
+.wrapper header{
+  display: flex;
+  align-items: center;
+  padding: 25px 30px 10px;
+  justify-content: space-between;
+}
+header .icons{
+  display: flex;
+}
+header .icons span{
+  height: 38px;
+  width: 38px;
+  margin: 0 1px;
+  cursor: pointer;
+  color: #878787;
+  text-align: center;
+  line-height: 38px;
+  font-size: 1.9rem;
+  user-select: none;
+  border-radius: 50%;
+}
+.icons span:last-child{
+  margin-right: -10px;
+}
+header .icons span:hover{
+  background: #f2f2f2;
+}
+header .current-date{
+  font-size: 1.45rem;
+  font-weight: 500;
+  padding-left:35px;
+}
+.calendar{
+  padding: 20px;
+}
+.calendar ul{
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  text-align: center;
+}
+.calendar .days{
+  margin-bottom: 20px;
+}
+.calendar li{
+  color: #333;
+  width: calc(100% / 7);
+  font-size: 1.07rem;
+}
+.calendar .weeks li{
+  font-weight: 500;
+  cursor: default;
+}
+.calendar .days li{
+  z-index: 1;
+  cursor: pointer;
+  position: relative;
+  margin-top: 30px;
+}
+.days li.inactive{
+  color: #aaa;
+}
+.days li.inactive:hover{
+  color: #281818;
+  
+}
+.days li.active{
+  color: #fff;
+}
+.days li::before{
+  position: absolute;
+  content: "";
+  left: 50%;
+  top: 50%;
+  height: 40px;
+  width: 40px;
+  z-index: -1;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+.days li.active::before{
+  background: #f78536;
+}
+.days li:not(.active):hover::before{
+  background: #e7a4a4;
+}
+
+
+/* Modal Content */
+.modal{
+   
+    top:50%;
+    left:4%;
+}
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 450px;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
 
 </style>
 <?php
@@ -509,20 +666,160 @@
             echo $calendarHTML;
         }
     }
-
     // Create an instance of the Calendar class
     $calendar = new Calendar();
     ?>
 
 
-    <div id="calendar-container">
+
+
+
+
+ <!-- --------------------------------------------------CALENDAR-NEW--------------------------------------------------------------------- -->
+
+    <!-- This hold the entire calendar -->
+    <div class="wrapper"> 
+      <header>
+        <p class="current-date"></p>
+        <!-- This act as next and previous button -->
+        <div class="icons">
+          <span id="prev" class="material-symbols-rounded">chevron_left</span>
+          <span id="next" class="material-symbols-rounded">chevron_right</span>
+        </div>
+      </header>
+      <!--  -->
+      <div class="calendar">
+        <ul class="weeks">
+          <li>Sun</li>
+          <li>Mon</li>
+          <li>Tue</li>
+          <li>Wed</li>
+          <li>Thu</li>
+          <li>Fri</li>
+          <li>Sat</li>
+        </ul>
+        <ul class="days" id="myBtn"></ul>
+      </div>
+    </div>
+      <!-- The Modal -->
+      <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times; </span>
+          <p>THIS FUCKING SHIT IS SAMPLE BITCHES</p>
+          <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit tenetur totam vel rem perspiciatis, dolore ad, quam qui dicta odio, et repellendus molestiae non officiis. Magnam et laudantium exercitationem earum.
+          </p>
+        </div>
+      </div>
+    
+
+<!-- ------------------------------------------------------------------------------------------------------------------------ -->
+
+<script>
+
+const daysTag = document.querySelector(".days"),
+currentDate = document.querySelector(".current-date"),
+prevNextIcon = document.querySelectorAll(".icons span");
+
+// getting new date, current year and month
+let date = new Date(),
+currYear = date.getFullYear(),
+currMonth = date.getMonth();
+
+// storing full name of all months in array
+const months = ["January", "February", "March", "April", "May", "June", "July",
+              "August", "September", "October", "November", "December"];
+
+const renderCalendar = () => {
+    let firstDayofMonth = new Date(currYear, currMonth, 1).getDay(), // getting first day of month
+    lastDateofMonth = new Date(currYear, currMonth + 1, 0).getDate(), // getting last date of month
+    lastDayofMonth = new Date(currYear, currMonth, lastDateofMonth).getDay(), // getting last day of month
+    lastDateofLastMonth = new Date(currYear, currMonth, 0).getDate(); // getting last date of previous month
+    let liTag = "";
+
+    for (let i = firstDayofMonth; i > 0; i--) { // creating li of previous month last days
+        liTag += `<li class="inactive">${lastDateofLastMonth - i + 1}</li>`;
+    }
+
+    for (let i = 1; i <= lastDateofMonth; i++) { // creating li of all days of current month
+        // adding active class to li if the current day, month, and year matched
+        let isToday = i === date.getDate() && currMonth === new Date().getMonth() 
+                     && currYear === new Date().getFullYear() ? "active" : "";
+        liTag += `<li class="${isToday}">${i}</li>`;
+    }
+
+    for (let i = lastDayofMonth; i < 6; i++) { // creating li of next month first days
+        liTag += `<li class="inactive">${i - lastDayofMonth + 1}</li>`
+    }
+    currentDate.innerText = `${months[currMonth]} ${currYear}`; // passing current mon and yr as currentDate text
+    daysTag.innerHTML = liTag;
+}
+renderCalendar();
+
+prevNextIcon.forEach(icon => { // getting prev and next icons
+    icon.addEventListener("click", () => { // adding click event on both icons
+        // if clicked icon is previous icon then decrement current month by 1 else increment it by 1
+        currMonth = icon.id === "prev" ? currMonth - 1 : currMonth + 1;
+
+        if(currMonth < 0 || currMonth > 11) { // if current month is less than 0 or greater than 11
+            // creating a new date of current year & month and pass it as date value
+            date = new Date(currYear, currMonth, new Date().getDate());
+            currYear = date.getFullYear(); // updating current year with new date year
+            currMonth = date.getMonth(); // updating current month with new date month
+        } else {
+            date = new Date(); // pass the current date as date value
+        }
+        renderCalendar(); // calling renderCalendar function
+    });
+});
+
+
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+</script>
+
+
+
+
+
+<!-- ------------------------------------------------------------------------------------------------------------------------ -->
+
+    <!-- ALION MO YADI BOSS WARA YADI SILBI MWAH -->
+   <!-- <div id="calendar-container">
         <?php
         // Generate and display the calendar
         $calendar->generateCalendar();
         ?>
-    </div>
-    <br>
+    </div>  -->
 
+
+    <br>
+<!-- --------------------------------------------------------UPPER MAINTENANCE---------------------------------------------- -->
     <?php
     $sql1 = "SELECT * FROM statusdentalgsjhsshsmonday";
     $result1 = mysqli_query($conn, $sql1);
@@ -536,7 +833,7 @@
     }
     ?>
 
-<table class="schedule-table" id="monday-table">
+ <table class="schedule-table" id="monday-table">
 <th colspan="4" id="selected-day-header"><span id="selected-date-display"></span></th>
   <tr>
     <td class="<?php echo ($statusden9_am == 'Unavailable') ? 'unavailable' : 'available'; ?>" onclick="handleLabelClick('<?php echo $statusden9_am; ?>')"><?php echo $statusden9_am; ?></td>
@@ -628,6 +925,16 @@
     <td class="<?php echo ($statusden11_am == 'Unavailable') ? 'unavailable' : 'available'; ?>" onclick="handleLabelClick('<?php echo $statusden11_am; ?>')"><?php echo $statusden11_am; ?></td>
   </tr>
 </table>
+
+
+
+
+<!-- -------------------------------------------------UNDER MAINTENANCE-------------------------------------------------- -->
+
+
+
+
+
 <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
         <br>
@@ -644,8 +951,9 @@
 </div>
 </div>  					
 <!-- Javascript -->          
-<!-- <script src="assets/plugins/popper.min.js"></script>
-<script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>   -->
+<script src="assets/plugins/popper.min.js"></script>
+<script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>  
+
 
 <!-- Page Specific JS -->
 <script src="assets/js/app.js"></script> 

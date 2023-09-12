@@ -48,6 +48,56 @@
     <link id="theme-style" rel="stylesheet" href="assets/css/portal.css">
 	<link rel="stylesheet" href="assets/style.css">
 
+    <style>
+        /* Define custom styles here */
+        .form-container {
+            background-color: #fff;
+            box-shadow: 4px 4px 4px 4px rgba(76, 84, 177, 0.5);
+            padding: 20px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-title {
+            text-align: center;
+            color: #4c54b1;
+            font-weight: bold;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            color: #000 !important;
+        }
+
+        input.form-control {
+            border: 3px solid #4e5864;
+            background-color: #fff !important;
+            padding: 10px;
+            border-radius: 10px;
+            transition: border-color 0.3s ease;
+        }
+
+        input.form-control:hover {
+            background-color: #e0e0e0 !important;
+            border-color: #4e5864 !important;
+        }
+        input.form-control:focus{
+            background-color: #e0e0e0 !important;
+        }
+        .sched{
+            color: #800000;
+            font-size: 17px !important;
+        }
+        /* Hide placeholder text on hover and focus */
+        input.form-control:hover::placeholder,
+        input.form-control:focus::placeholder {
+            color: transparent !important;
+        }
+    </style>
 
 </head> 
 
@@ -101,37 +151,35 @@ if (mysqli_num_rows($result) > 0) {
     						while($row = $result->fetch_array()){
 						?>
                         <br>
-				 <div class="row">
+<div class="container">
+    <div class="form-container">
+        <div class="form-title">
+            Diagnosis, Management, and Treatment Record Form
+        </div>
+
+		<div class="row">
             <div class="col-sm-3">
                 <div class="form-group">
-                    <label for="idnumber" class="col-sm-12 control-label">Your ID Number</label>
-                    <div class="col-sm-10">
+                    <label for="idnumber" class="control-label">Your ID Number</label>
                         <input type="text" class="form-control" id="idnumber" name="idnumber" placeholder="Enter patient ID number" value="<?php echo $row['idnumber']; ?>" readonly>
-                    </div>
                 </div>
             </div>
             <div class="col-sm-3">
                 <div class="form-group">
-                    <label for="patient_name" class="col-sm-12 control-label">Your name</label>
-                    <div class="col-sm-12">
+                    <label for="patient_name" class="control-label">Your name</label>
                         <input type="text" class="form-control" id="fullname" name="fullname" placeholder="Enter your Fullname" value="<?php echo $row['fullname']; ?>" readonly>
-                    </div>
                 </div>
             </div>
             <div class="col-sm-3">
-        <div class="form-group">
-                    <label for="gradesection" class="col-sm-12 control-label">Grade & Section/Employee</label>
-                    <div class="col-sm-12">
-                        <input type="text" class="form-control" id="gradesection" name="gradesection" placeholder="Enter your Fullname" value="<?php echo $row['gradesection']; ?>" readonly>
-                    </div>
+                <div class="form-group">
+                    <label for="gradesection" class="control-label">Grade & Section/Employee</label>
+                    <input type="text" class="form-control" id="gradesection" name="gradesection" placeholder="Enter your Fullname" value="<?php echo $row['gradesection']; ?>" readonly>
                 </div>
             </div>
            <div class="col-sm-3">
                 <div class="form-group">
-                    <label for="vitalsigns" class="col-sm-12 control-label">Vital Signs</label>
-                    <div class="col-sm-12">
+                    <label for="vitalsigns" class="control-label">Vital Signs</label>
                         <input type="text" class="form-control" id="vitalsigns" name="vitalsigns" placeholder="If you are an employee, just type Employee" value="<?php echo $row['vitalsigns']; ?>" readonly>
-                    </div>
                 </div>
             </div>
         </div>
@@ -139,28 +187,25 @@ if (mysqli_num_rows($result) > 0) {
         <div class="row">
         <div class="col-sm-6">
                 <div class="form-group">
-                    <label for="diagnosis" class="col-sm-8 control-label">Diagnosis/Chief Complaints</label>
-                    <div class="col-sm-10">
+                    <label for="diagnosis" class="control-label">Diagnosis/Chief Complaints</label>
                         <input type="text" class="form-control" id="diagnosis" name="diagnosis" value="<?php echo $row['diagnosis']; ?>" readonly>
-                    </div>
                 </div>
             </div>
             <div class="col-sm-6">
                 <div class="form-group">
-                    <label for="diagnosis" class="col-sm-8 control-label">Status</label>
-                    <div class="col-sm-10">
+                    <label for="diagnosis" class="control-label">Status</label>
                         <input type="text" class="form-control" id="diagnosis" name="status" value="<?php echo $row['status']; ?>" readonly>
-                    </div>
                 </div>
             </div>
    </div>
 
         <div class="form-group">
                 <b>
-                    <span>Date Visited: <?php echo date('Y-m-d', strtotime($row['date_time'])); ?></span>
+                    <span class="sched">Date Visited: <?php echo date('Y-m-d', strtotime($row['date_time'])); ?></span>
                 </b>
         </div>
-  
+    </div>
+</div>  
         <?php } ?>
 				    </div><!--//app-card-body-->
 				</div>			    

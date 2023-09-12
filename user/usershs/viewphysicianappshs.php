@@ -48,6 +48,57 @@
     <link id="theme-style" rel="stylesheet" href="assets/css/portal.css">
 	<link rel="stylesheet" href="assets/style.css">
 
+    <style>
+        /* Define custom styles here */
+        .form-container {
+            background-color: #fff;
+            box-shadow: 4px 4px 4px 4px rgba(76, 84, 177, 0.5);
+            padding: 20px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-title {
+            text-align: center;
+            color: #4c54b1;
+            font-weight: bold;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            color: #000 !important;
+        }
+
+        input.form-control {
+            border: 3px solid #4e5864;
+            background-color: #fff !important;
+            padding: 10px;
+            border-radius: 10px;
+            transition: border-color 0.3s ease;
+        }
+
+        input.form-control:hover {
+            background-color: #e0e0e0 !important;
+            border-color: #4e5864 !important;
+        }
+        input.form-control:focus{
+            background-color: #e0e0e0 !important;
+        }
+        .sched{
+            color: #800000;
+            font-size: 17px !important;
+        }
+        /* Hide placeholder text on hover and focus */
+        input.form-control:hover::placeholder,
+        input.form-control:focus::placeholder {
+            color: transparent !important;
+        }
+    </style>
+
 </head> 
 
 <body class="app">   	
@@ -78,53 +129,63 @@ if (mysqli_num_rows($result) > 0) {
 		    <div class="container-xl">
 			    <div class="position-relative mb-3">
 				    <div class="row g-3 justify-content-between">
-					   
-					       
-						
 				    </div>
 			    </div>
 			    
                 <div class="app-card app-card-notification shadow-sm mb-4">
 				    <div class="app-card-header px-4 py-3">
-				        <div class="row g-3 align-items-center">
-					       
+				        <div class="row g-3 align-items-center"> 
 				        </div><!--//row-->
 				    </div><!--//app-card-header-->
+
 				    <div class="app-card-body p-4">
 
                     <?php
-							$sql = "SELECT * FROM physicianapp WHERE idnumber = '$idnumber'";
-							$result = $conn->query($sql);
-    						while($row = $result->fetch_array()){
-						?>
-                        <br>
-                        <div class="row">
-                        <div class="col-sm-4">
-                            <div class="form-group">
-                            <label for="idnumber" class="col-sm-10 control-label">ID Number</label>
-                            <input type="text" class="form-control" id="idnumber" name="idnumber" placeholder="Enter patient ID number" value="<?php echo $row['idnumber']; ?>" readonly>
-                            </div>
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="form-group">
-                            <label for="name" class="col-sm-10 control-label">Name</label>
-                            <input type="text" class="form-control" id="name" name="name" placeholder="Enter patient name" value="<?php echo $row['name']; ?>" readonly>
-                            </div>
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="form-group">
-                            <label for="gradesection" class="col-sm-10 control-label">Grade & Section</label>
-                            <input type="text" class="form-control" id="gradesection" name="gradesection" placeholder="Enter patient name" value="<?php echo $row['gradesection']; ?>" readonly>
-                        </div>
-                        </div>
-                  </div>
+						$sql = "SELECT * FROM physicianapp WHERE idnumber = '$idnumber'";
+						$result = $conn->query($sql);
+    					while($row = $result->fetch_array()){
+					?>
+<br>
+
+<div class="container">
+    <div class="form-container">
+        <div class="form-title">
+            Physician Record Form
+        </div>    
+
+        <div class="row">
+                        
+        <div class="col-sm-4">
+            <div class="form-group">
+                <label for="idnumber" class=col-sm-10 control-label">ID Number</label>
+                <input type="text" class="form-control" id="idnumber" name="idnumber" placeholder="Enter patient ID number" value="<?php echo $row['idnumber']; ?>" readonly>
+            </div>
+        </div>
+
+        <div class="col-sm-4">
+            <div class="form-group">
+                <label for="name" class="control-label">Name</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Enter patient name" value="<?php echo $row['name']; ?>" readonly>
+            </div>
+        </div>
+                        
+        <div class="col-sm-4">
+            <div class="form-group">
+                <label for="gradesection" class="control-label">Grade & Section</label>
+                <input type="text" class="form-control" id="gradesection" name="gradesection" placeholder="Enter patient name" value="<?php echo $row['gradesection']; ?>" readonly>
+            </div>
+        </div>
+
+    </div>
                   
         <div class="form-group">
-          <b><span>Schedule: <?php echo $row['date_time']; ?></span></b>
+          <b><span class="sched">Schedule: <?php echo $row['date_time']; ?></span></b>
         </div>
-  
-        <?php } ?>
-				    </div><!--//app-card-body-->
+    
+    </div>
+</div>
+
+    <?php } ?>
 				</div>			    
 		    </div>
 	    </div>

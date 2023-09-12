@@ -71,8 +71,43 @@
   <div style="display: flex; justify-content: center; align-items: center;">
     <div class="app-card-body p-4">
 
-    <button id="printButton">Print</button>
+    <button id="printButton" class= "btn btn-submit">Print</button>
 <div id="pdfContainer"></div>
+
+<style> 
+    .btn-submit { 
+    background-color: #2E37A4;
+    color: #fff;
+    padding: 6px 12px;
+    font-size: 14px;
+
+    }
+
+    .btn-submit:hover { 
+    background-color: #28308f;
+    color: #fff;
+   
+    }
+
+
+    .btn-submit:active { 
+    background-color: #28308f;
+    color: #fff;
+   
+    }
+    
+    .btn-submit:focus { 
+    background-color: #28308f;
+    color: #fff;
+   
+    }
+
+    .btn-submit[disabled] { 
+    background-color: #28308f;
+    color: #fff;
+   
+    }
+</style>
 
 <script>
     var pdfLink = "healthrecordgs_jhs.pdf";

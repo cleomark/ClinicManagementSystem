@@ -85,6 +85,9 @@
             background-color: #e0e0e0 !important;
             border-color: #4e5864 !important;
         }
+        input.form-control:focus{
+            background-color: #e0e0e0 !important;
+        }
         .sched{
             color: #800000;
             font-size: 17px !important;
@@ -93,24 +96,6 @@
         input.form-control:hover::placeholder,
         input.form-control:focus::placeholder {
             color: transparent !important;
-        }
-
-
-
-
-        /* Additional styling can be added as needed */
-
-        /* Define your color scheme */
-        .primary-color {
-            color: #4c54b1;
-        }
-
-        .secondary-color {
-            color: #4e5864;
-        }
-
-        .accent-color {
-            color: #800000;
         }
     </style>
 
@@ -156,7 +141,6 @@ if (mysqli_num_rows($result) > 0) {
                 <div class="app-card app-card-notification shadow-sm mb-4">
 				    <div class="app-card-header px-4 py-3">
 				        <div class="row g-3 align-items-center">
-                            <div class="col-12 col-lg-auto text-center text-lg-start">
 				        </div><!--//row-->
 				    </div><!--//app-card-header-->
 				    <div class="app-card-body p-4">
@@ -176,19 +160,19 @@ if (mysqli_num_rows($result) > 0) {
         <div class="row">
             <div class="col-sm-4">
                 <div class="form-group">
-                    <label for="idnumber" class="control-label secondary-color">Your ID Number</label>
+                    <label for="idnumber" class="control-label ">Your ID Number</label>
                     <input type="text" class="form-control" id="idnumber" name="idnumber" placeholder="Enter patient ID number" value="<?php echo $row['idnumber']; ?>" readonly>
                 </div>
             </div>
             <div class="col-sm-4">
                 <div class="form-group">
-                    <label for="patient_name" class="control-label secondary-color">Your name</label>
+                    <label for="patient_name" class="control-label ">Your name</label>
                     <input type="text" class="form-control" id="fullname" name="fullname" placeholder="Enter your Fullname" value="<?php echo $row['fullname']; ?>" readonly>
                 </div>
             </div>
             <div class="col-sm-4">
                 <div class="form-group">
-                    <label for="gradecourseyear" class="control-label secondary-color">Grade & Section</label>
+                    <label for="gradecourseyear" class="control-label ">Grade & Section</label>
                     <input type="text" class="form-control" id="gradecourseyear" name="gradecourseyear" placeholder="If you are an employee, just type Employee" value="<?php echo $row['gradecourseyear']; ?>" readonly>
                 </div>
             </div>
@@ -197,13 +181,13 @@ if (mysqli_num_rows($result) > 0) {
         <div class="row">
             <div class="col-sm-4">
                 <div class="form-group">
-                    <label for="service" class="control-label secondary-color">Service</label>
+                    <label for="service" class="control-label ">Service</label>
                     <input type="text" class="form-control" id="service" name="service" value="<?php echo $row['service']; ?>" readonly>
                 </div>
             </div>
         </div>
         <div class="form-group">
-            <b class="primary-color">
+            <b>
                 <span class="sched">Schedule: <?php echo date('Y-m-d', strtotime($row['date_time'])); ?> <?php echo date('h:i A', strtotime($row['sched_time'])); ?></span>
             </b>
         </div>

@@ -130,6 +130,36 @@
                         }
 
 
+.spinner-wrapper:before,
+                        .spinner-wrapper:after {
+                            content: "";
+                            position: absolute;
+                            height: 100px;
+                            width: 100px;
+                            background-color: #3330ca;
+                            border-radius: 80%;
+                            z-index: -1;
+                            opacity: 0.7;
+							
+                        }
+
+                        .spinner-wrapper:before {
+                            animation: pulse 2s ease-out infinite;
+                        }
+
+                        .spinner-wrapper:after {
+                            animation: pulse 2s 1s ease-out infinite;
+                        }
+
+                        @keyframes pulse {
+                            100% {
+                                transform: scale(2.6);
+                                opacity: 0;
+                            }
+                        }
+
+
+
   </style>
  <div class="log-img">
     <!-- Background Image -->

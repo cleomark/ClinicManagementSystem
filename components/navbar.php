@@ -96,8 +96,17 @@
 <div class="sidebar-overlay" data-reff></div>
 
 <script src="../../assets/js/jquery-3.6.1.min.js"></script>
+<?php 
+if(in_array( basename($_SERVER["SCRIPT_FILENAME"]), 
+["adddentalmessageshs.php", "adddentalmessageshs.php",
+ "adddentalmessagecollege.php", "addmedicalmessagecollege.php", ])
+){
+    ?>
+    <script src="../../assets/js/bootstrap.bundle.min.js"></script>
+    <?php
+}
+?>
 
-<!-- <script src="../../assets/js/bootstrap.bundle.min.js"></script> -->
 
 <script src="../../assets/js/feather.min.js"></script>
 
