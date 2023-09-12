@@ -50,29 +50,44 @@
 
 	<style>
         /* Define custom styles here */
+        .form-container {
+            background-color: #fff;
+            box-shadow: 4px 4px 4px 4px rgba(76, 84, 177, 0.5);
+            padding: 20px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-title {
+            text-align: center;
+            color: #4c54b1;
+            font-weight: bold;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
         .form-group {
             margin-bottom: 20px;
         }
 
         label {
-            font-weight: bold;
-            color: #4c54b1;
+            color: #000 !important;
         }
 
         input.form-control {
-            border: 3px solid #4c54b1;
+            border: 3px solid #4e5864;
+            background-color: #fff !important;
             padding: 10px;
             border-radius: 10px;
             transition: border-color 0.3s ease;
         }
 
         input.form-control:hover {
-            color: #fff;
-            background-color: #4c54b1;
-            border-color: #4c54b1;
+            background-color: #e0e0e0 !important;
+            border-color: #4e5864 !important;
         }
         .sched{
             color: #800000;
+            font-size: 17px !important;
         }
         /* Hide placeholder text on hover and focus */
         input.form-control:hover::placeholder,
@@ -135,16 +150,13 @@ if (mysqli_num_rows($result) > 0) {
 		    <div class="container-xl">
 			    <div class="position-relative mb-3">
 				    <div class="row g-3 justify-content-between">
-					   
-					       
-						
 				    </div>
 			    </div>
 			    
                 <div class="app-card app-card-notification shadow-sm mb-4">
 				    <div class="app-card-header px-4 py-3">
 				        <div class="row g-3 align-items-center">
-					       
+                            <div class="col-12 col-lg-auto text-center text-lg-start">
 				        </div><!--//row-->
 				    </div><!--//app-card-header-->
 				    <div class="app-card-body p-4">
@@ -155,7 +167,12 @@ if (mysqli_num_rows($result) > 0) {
     						while($row = $result->fetch_array()){
 						?>
                         <br>
-                        <div class="container">
+<div class="container">
+    <div class="form-container">
+        <div class="form-title">
+            Dental Record Form
+        </div>
+        
         <div class="row">
             <div class="col-sm-4">
                 <div class="form-group">
@@ -190,7 +207,9 @@ if (mysqli_num_rows($result) > 0) {
                 <span class="sched">Schedule: <?php echo date('Y-m-d', strtotime($row['date_time'])); ?> <?php echo date('h:i A', strtotime($row['sched_time'])); ?></span>
             </b>
         </div>
+
     </div>
+</div>
   
         <?php } ?>
 				    </div><!--//app-card-body-->
