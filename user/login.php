@@ -76,8 +76,8 @@
 
  
     .spinner-wrapper img{
-      width:30%;
-      height: 30%;
+      width: 20%;
+      height: 20%;
     }
 
 
@@ -85,8 +85,8 @@
                         .spinner-wrapper:after {
                             content: "";
                             position: absolute;
-                            height: 200px;
-                            width: 200px;
+                            height: 100px;
+                            width: 100px;
                             background-color: #3330ca;
                             border-radius: 80%;
                             z-index: -1;
