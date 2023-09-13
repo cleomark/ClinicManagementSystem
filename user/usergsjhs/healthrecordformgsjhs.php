@@ -45,7 +45,7 @@
     <link rel="stylesheet" href="assets/css/portal.css">
 	<link rel="stylesheet" href="assets/formstyle.css">
 
-    <script src="assets/js/script.js"></s   cript>
+    <script src="assets/js/script.js"></script>
 
 
 
@@ -71,6 +71,8 @@
             font-size: 24px;
             margin-bottom: 20px;
         }
+
+        
     </style>
 
 </head> 
@@ -762,8 +764,8 @@
     
   
     <!-- Javascript -->          
-    <!-- <script src="assets/plugins/popper.min.js"></script>
-    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>   -->
+    <script src="assets/plugins/popper.min.js"></script>
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>  
     
     <!-- Page Specific JS -->
     <script src="assets/js/app.js"></script> 

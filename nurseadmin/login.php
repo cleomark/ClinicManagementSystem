@@ -33,7 +33,7 @@
 <body class="app app-login p-0">    	
 
 <div class="spinner-wrapper">
-<img src="../assets/img/div-logo.gif"  alt="../assets/3D/divineSeal3d.gif">
+<img src="../assets/3D/divineloader.gif"  alt="../assets/3D/divineSeal3d.gif">
   
 </div>
 
