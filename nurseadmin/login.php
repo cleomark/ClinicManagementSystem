@@ -74,12 +74,7 @@
       height: 20%;
     }
 
-    .text-primary {
-      color: #2E37A4!important;
-    }
-
-    .
-
+  
     .log-img {
       margin-top: 650px;
       width: 810px;
