@@ -318,7 +318,7 @@ body{
 .wrapper{
   width: 550px;
   height:520px;
-  background: #fff;
+  background: #fff;`
   border-radius: 10px;
   box-shadow: 0 15px 40px rgba(0,0,0,0.12);
   margin:0px 120px;

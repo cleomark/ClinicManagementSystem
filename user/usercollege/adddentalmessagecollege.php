@@ -28,7 +28,7 @@
 <!DOCTYPE html>
 <html lang="en"> 
 <head>
-    <title>CAPSTONE</title>
+    <title>Dental Schedule</title>
     
     <!-- Meta -->
     <meta charset="utf-8">
@@ -46,7 +46,57 @@
     <link id="theme-style" rel="stylesheet" href="assets/css/portal.css">
 	<link rel="stylesheet" href="assets/styless.css">
 
-   
+    <style>
+        /* Define custom styles here */
+        .form-container {
+            background-color: #fff;
+            box-shadow: 4px 4px 4px 4px rgba(76, 84, 177, 0.5);
+            padding: 20px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-title {
+            text-align: center;
+            color: #4c54b1;
+            font-weight: bold;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            color: #000 !important;
+        }
+
+        input.form-control {
+            border: 3px solid #4e5864;
+            background-color: #fff !important;
+            padding: 10px;
+            border-radius: 10px;
+            transition: border-color 0.3s ease;
+        }
+
+        input.form-control:hover {
+            background-color: #e0e0e0 !important;
+            border-color: #4e5864 !important;
+        }
+        input.form-control:focus{
+            background-color: #e0e0e0 !important;
+        }
+        .sched{
+            color: #800000;
+            font-size: 17px !important;
+        }
+        /* Hide placeholder text on hover and focus */
+        input.form-control:hover::placeholder,
+        input.form-control:focus::placeholder {
+            color: transparent !important;
+        }
+    </style>
+
 </style>
 </head> 
 
@@ -69,9 +119,6 @@
                 <div class="app-card app-card-notification shadow-sm mb-4">
 				    <div class="app-card-header px-4 py-3">
 				        <div class="row g-3 align-items-center">
-                        <div class="col-12 col-lg-auto text-center text-lg-start">
-						        <h4 class="notification-title mb-1">Request Dental Schedule</h4>
-					        </div>
                             <?php
 								if(isset($_SESSION['success'])){
 									echo $_SESSION['success'];
@@ -80,82 +127,81 @@
 							?>
 				        </div><!--//row-->
 				    </div><!--//app-card-header-->
-				    <div class="app-card-body p-4">
-                    <form class="form-horizontal mt-4" method="post" action="function/functions.php">
-
-                    <div class="row">
-    <div class="col-sm-6">
-        <div class="form-group">
-            <label for="idnumber" class="col-sm-4 control-label" style="font-size: 16px">Enter your ID Number</label>
-            <div class="col-sm-10">
-                <input type="text" class="form-control" id="idnumber" name="idnumber" placeholder="Enter patient ID number" required>
+<div class="app-card-body p-4">
+                
+    <div class="container">
+        <div class="form-container">
+            <div class="form-title">
+            Request Dental Schedule
             </div>
-        </div>
-    </div>
-    <div class="col-sm-6">
-        <div class="form-group">
-            <label for="patient_name" class="col-sm-4 control-label" style="font-size: 16px">Enter your Fullname</label>
-            <div class="col-sm-10">
-                <input type="text" class="form-control" id="name" name="name" placeholder="Enter your Fullname" required>
+
+            <div class="row">
+
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="idnumber" class="control-label">Enter your ID Number</label>
+                        <input type="text" class="form-control" id="idnumber" name="idnumber" placeholder="Enter patient ID number" required>
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="patient_name" class="control-label">Enter your Fullname</label>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Enter your Fullname" required>
+                    </div>
+                </div>
+
             </div>
-        </div>
-    </div>
-</div>
+            <br>
 
-<br>
+            <div class="row">
+                
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="dental_service" class="control-label">Dental Services</label>
+                        <select id="dental_service" name="dental_service" class="form-control" required>
+                            <option value="">Select Service</option>
+                            <option value="Cleaning">Cleaning</option>
+                            <option value="Tooth Extraction">Tooth Extraction</option>
+                        </select>
+                    </div>
+                </div>
 
-<div class="row">
-    <div class="col-sm-6">
-        <div class="form-group">
-            <label for="dental_service" class="col-sm-4 control-label" style="font-size: 16px">Dental Services</label>
-            <div class="col-sm-10">
-                <select id="dental_service" name="dental_service" class="form-control" required>
-                    <option value="">Select Service</option>
-                    <option value="Cleaning">Cleaning</option>
-                    <option value="Tooth Extraction">Tooth Extraction</option>
-                </select>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="fullname">Year level that you currently enrolled</label>
+                        <select id="c_enrolled" name="c_enrolled" class="form-control">
+                            <option value="">Select Level of Education</option>
+                            <option value="Grade School, JHS or SHS">Grade School/Junior High School/Senior High School</option>
+                            <option value="College">College</option>
+                        </select>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
+            <br>
 
-    <div class="col-sm-6">
-        <div class="form-group">
-            <label for="fullname" style="font-size: 16px">Year level that you currently enrolled</label>
-            <select id="c_enrolled" name="c_enrolled" class="form-control">
-                <option value="">Select Level of Education</option>
-                <option value="Grade School, JHS or SHS">Grade School/Junior High School/Senior High School</option>
-                <option value="College">College</option>
-            </select>
-        </div>
-    </div>
-</div>
+            <div class="row">
 
-<!-- Inserted Code Starts -->
-<br>
-<div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="gradecourseyear" class="control-label">Grade & Section/Course & Year</label>
+                        <input type="text" class="form-control" id="igradecourseyear" name="gradecourseyear" placeholder="Enter Grade & Section/Course & Year">
+                    </div>
+                </div>
 
-<div class="col-sm-6">
-        <div class="form-group">
-            <label for="gradecourseyear" class="col-sm-8 control-label" style="font-size: 16px">Grade & Section/Course & Year</label>
-            <div class="col-sm-10">
-                <input type="text" class="form-control" id="igradecourseyear" name="gradecourseyear" placeholder="Enter Grade & Section/Course & Year">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="fullname">For Employee</label>
+                        <select id="c_employee" name="c_employee" class="form-control">
+                            <option value="">--Select--</option>
+                            <option value="Employee in North Campus">Employee in North Campus</option>
+                            <option value="Employee in South Campus">Employee in South Campus</option>
+                        </select>
+                    </div>
+                </div>
+
             </div>
-        </div>
-    </div>
-
-    <div class="col-sm-6">
-        <div class="form-group">
-            <label for="fullname" style="font-size: 16px">For Employee</label>
-            <select id="c_employee" name="c_employee" class="form-control">
-                <option value="">--Select--</option>
-                <option value="Employee in North Campus">Employee in North Campus</option>
-                <option value="Employee in South Campus">Employee in South Campus</option>
-            </select>
-        </div>
-    </div>
-</div>
-
-<br>
+            <br>
 
 <div class="container">
   <div class="text-box">
@@ -264,7 +310,7 @@
         <button name="submit_dental" class="btn btn-success">Send Dental Appointment</button>
     </div>
 </div>
-</form>
+
 </div><!--//app-card-body-->
 </div>			    
 </div>

@@ -1,8 +1,7 @@
 
 :root{
-    --ternary : blue;
+    --ternary: blue;
 }
-
 .app-card-body p {
     text-align: center;
 }
@@ -19,20 +18,62 @@
     width: 100%!important;
 }
 
-input:focus{
-    border: 2px solid var(--ternary);
+
+.app-card-body .form-horizontal p{
+    text-align: left;
 }
 
-input:hover{
+input, select{
+    border: 2px solid rgba(183, 183, 207, 0.596);
+}
+
+input:hover,select:hover{
+    border: 2px solid var(--ternary);
     background-color: transparent;
+}
+
+input:read-only:hover , input:read-only:focus{
+    border: 2px solid rgba(183, 183, 207, 0.788);
+}
+
+
+input:focus, select:focus{
     border: 2px solid var(--ternary);
 }
 
-input{
-    border: 2px solid #afbdcf;
+input[type="file"]{
+    border-radius: 10px;
 }
 
+::file-selector-button{
+    background-color: rgb(82, 82, 146);
+    color: white;
+    border-radius: 30px;
+}
 
-.check-box::before{
+.checkbox-label::before{
+    border: 2px solid var(--ternary) !important;
+}
+
+.checkbox:checked + label:before{
+    background-color: var(--ternary);
+}
+
+.checkbox-label::before:checked {
+    background-color: var(--ternary);
+}
+
+.btn-success {
+    background-color: var(--ternary);
     border: 2px solid var(--ternary);
+}
+
+.btn-success:hover{
+    background-color: var(--ternary);
+    border: 2px solid var(--ternary);
+}
+
+.btn-success:active{
+    background-color: var(--ternary)!important;
+    border: 3px solid var(--ternary)!important;
 }
