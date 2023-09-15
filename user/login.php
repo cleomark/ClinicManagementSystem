@@ -35,9 +35,9 @@
 
 <!-- s -->
 <div class="spinner-wrapper">
-<img src="../assets/3D/divineloader.gif" alt="">
- 
+<img src="/DivineClinic/assets/3D/divineloader.gif" alt="">
 </div>
+
 
 
 

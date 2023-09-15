@@ -61,6 +61,59 @@
             font-size: 24px;
             margin-bottom: 20px;
         }
+
+
+        .spinner-wrapper {
+      background-color: #F5F6FE;
+      position: fixed;
+      top: 0;
+      left: 0; 
+      width: 100%;
+      height: 100%;
+      z-index: 9999;
+      display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s;
+ 
+    }
+
+ 
+    .spinner-wrapper img{
+      width: 20%;
+      height: 20%;
+    }
+
+
+                        .spinner-wrapper:before,
+                        .spinner-wrapper:after {
+                            content: "";
+                            position: absolute;
+                            height: 100px;
+                            width: 100px;
+                            background-color: #3330ca;
+                            border-radius: 80%;
+                            z-index: -1;
+                            opacity: 0.7;
+							
+                        }
+
+                        .spinner-wrapper:before {
+                            animation: pulse 2s ease-out infinite;
+                        }
+
+                        .spinner-wrapper:after {
+                            animation: pulse 2s 1s ease-out infinite;
+                        }
+
+                        @keyframes pulse {
+                            100% {
+                                transform: scale(2.6);
+                                opacity: 0;
+                            }
+                        }
+
+
     </style>
 
 </head> 
@@ -69,6 +122,13 @@
     <?php 
         include $_SERVER['DOCUMENT_ROOT'] . "/DivineClinic/components/navbar.php";
     ?>
+
+<div class="spinner-wrapper">
+<img src="\DivineClinic\assets\3D\divineloader.gif" alt="">
+ 
+</div>
+
+
     <div class="app-wrapper">
 	    
     <div class="app-content pt-3 p-md-3 p-lg-4">
@@ -493,7 +553,17 @@
 		    </div>
 	    </div>
     </div>  					
-    <!-- Javascript -->          
+    <!-- Javascript -->   <script> 
+const spinnerWrapperEl = document.querySelector('.spinner-wrapper');
+
+window.addEventListener('load', () => {
+  spinnerWrapperEl.style.opacity = '1';
+
+  setTimeout(() => {
+    spinnerWrapperEl.style.display = 'none';
+  }, 1000);
+})
+</script>       
     <script src="assets/plugins/popper.min.js"></script>
     <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>  
     
