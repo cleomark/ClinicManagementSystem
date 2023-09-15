@@ -235,7 +235,7 @@
         </select>
 
         <!-- Replace the submit button with a regular button -->
-        <button type="button" id="generateReport">Generate Report</button>
+        <button class="blue-btn" type="button" id="generateReport">Generate Report</button>
     </form>
     <br>
     <p>Total Medical Appointments Report</p>
@@ -346,6 +346,47 @@ window.myChart = new Chart(ctx, {
     
 <style> 
 
+#generateReport {
+        background-color: #2E37A4; /* Clinic blue */
+        color: #fff;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+
+    .chart-title {
+        font-size: 24px;
+        font-weight: bold;
+        color: #007bff; /* Clinic blue */
+        margin-bottom: 10px;
+    }
+
+    /* Clinic chart container styling */
+    .chart-container {
+        background-color: #f8f9fa; /* Clinic light gray */
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 20px;
+        
+       
+    }
+
+    .chart-container {
+            width: 800px;
+            height: 400px;
+            overflow: auto;
+            
+            
+        }
+
+        #reportForm {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
 
 .spinner-wrapper {
       background-color: #F5F6FE;

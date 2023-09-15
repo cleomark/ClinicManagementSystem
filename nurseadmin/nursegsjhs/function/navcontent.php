@@ -18,7 +18,7 @@ $items = array(
     "Appointments" => array('medicalgsjhs.php', 'menu-icon-12', ),
     "Patient's Record" => array('patientmanagementrecordgsjhs.php', 'menu-icon-13', ),
     "Health Assessment" => array('schoolhealthassessmentformgsjhs.php', 'menu-icon-10', ),
-    "Printable Papers" => array('#', 'menu-icon-13', 
+    "Printable Papers" => array('#', 'menu-icon-15', 
         [
             "Health Profile" => "healthprofilegsjhs.php",
         ])

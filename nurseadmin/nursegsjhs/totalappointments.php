@@ -110,7 +110,26 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
 
+#tableSelectYear {
+    font-size: 16px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100px;
+}
 
+
+#tableSelectYear option {
+    font-size: 14px;
+    padding: 4px;
+    background-color: #f7f7f7;
+}
+
+
+#tableSelectYear option:checked {
+    background-color: #007bff;
+    color: #fff;
+}
 
 
         /* Style the container to have fixed size and enable scrolling */
@@ -195,7 +214,7 @@
             <option value="year">Year</option>
         </select>
 
-        <select id="yearSelect" name="selected_year">
+        <select id="tableSelectYear" name="selected_year">
             <option value="2023">2023</option>
             <option value="2024">2024</option>
             <option value="2025">2025</option>

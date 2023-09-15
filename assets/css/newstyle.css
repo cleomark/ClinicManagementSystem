@@ -1,0 +1,16 @@
+
+.app-card-body p {
+    text-align: center;
+}
+.chart-container{
+    margin-left: auto;
+    margin-right: auto;
+    width: 65%;
+    aspect-ratio : 1 / 1 ; 
+    display: flex;
+    justify-content: center;
+}
+
+.chart-container #barChart{ 
+    width: 100%!important;
+}

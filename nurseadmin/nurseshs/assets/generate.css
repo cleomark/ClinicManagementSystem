@@ -39,3 +39,25 @@ tr:nth-child(even) {
     background-color: #007bff;
     color: #fff;
 }
+
+
+#tableSelectYear {
+    font-size: 16px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100px;
+}
+
+
+#tableSelectYear option {
+    font-size: 14px;
+    padding: 4px;
+    background-color: #f7f7f7;
+}
+
+
+#tableSelectYear option:checked {
+    background-color: #007bff;
+    color: #fff;
+}
