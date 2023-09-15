@@ -98,19 +98,23 @@
     Health Record Form
     </div>
     
-      <div class="input_form">
+              <div class="input_form">
                 
                 <div class="input_wrap" style="text-align: center;">
                   <div class="image_container" style="display: inline-block; text-align: center;">
-                      <br>
                       <img src="<?php echo "/CAPSTONE1/upload_image/".$row['image'];?>" style="display: block; margin: 0 auto;">
                       <label style="text-align: center; display: block;">Your Image</label>
                   </div>
                 </div>
 
+              </div>
+              <br>
+
+                <div class="input_form">
+
                   <div class="input_wrap">
                     <label for="fullname">Full Name</label>
-                    <input id="fullname" name="fullname" type="text" class="input-box" value="<?= $fullname; ?>" readonly >
+                    <input name="fullname" type="text" class="input-box" value="<?= $fullname; ?>" readonly >
                   </div>
 
                   <div class="input_wrap">
@@ -123,20 +127,22 @@
                     <input name="cp" type="text" class="input-box" value="<?=$row['cp'];?>" readonly>
                   </div>
 
-              </div>
-<br>
-<br>
+                </div>
+
 <div class="input_form">
+
   <div class="input_wrap">
     <label for="fullname">Birthday</label>
     <input name="birthday" type="text" class="input-box" value="<?=$row['birthday'];?>" readonly>
   </div>
+
   <div class="input_wrap">
     <label for="fullname">Gender</label>
     <select class="form-select" name="gender">
       <option disabled selected><?= $row['gender'];?></option>
     </select>
   </div>
+
 </div>
 
 
@@ -164,7 +170,7 @@
 
   <div class="input_wrap">
     <label for="fullname">Contact</label>
-    <input class="input-box" name="cfather" id="cfather" type="text" value="<?=$row['cfather'];?>" readonly>
+    <input class="input-box" name="cfather" id="contactInput_one" type="text" value="<?=$row['cfather'];?>" readonly>
   </div>
 
 </div>
@@ -178,7 +184,7 @@
 
   <div class="input_wrap">
       <label for="fullname">Contact</label>
-      <input class="input-box" name="cmother" id="cmother" type="text" value="<?=$row['cmother'];?>" readonly>
+      <input class="input-box" name="cmother" id="contactInput_two" type="text" value="<?=$row['cmother'];?>" readonly>
   </div>
 
 </div>
@@ -254,13 +260,13 @@
 <div class="input_form">
 
   <div class="input_wrap">
-      <label for="fullname">Alternation Person to Contact in Case of Emergency</label>
-      <input name="altrelation" id="altrelation" type="text" value="<?=$row['altrelation'];?>" readonly>
+    <label for="fullname">Alternation Person to Contact in Case of Emergency</label>
+    <input name="altrelation" id="altrelation" type="text" value="<?= isset($row['altrelation']) ? htmlspecialchars($row['altrelation']) : ''; ?>" readonly>
   </div>
 
   <div class="input_wrap">
       <label for="fullname">Relationship to the student/employee</label>
-      <input name="altrel" id="altrel" type="text" value="<?=$row['altrel'];?>" readonly>
+      <input name="altrel" id="altrel" type="text" value="<?= isset($row['altrel']) ? htmlspecialchars($row['altrel']) : ''; ?>" readonly>
   </div>
 </div>
 
@@ -268,7 +274,7 @@
 
   <div class="input_wrap">
       <label for="fullname">Contact</label>
-      <input id="contactInput_acontact" class="input-box" name="acontact" type="text" value="<?=$row['acontact'];?>" readonly>
+      <input id="contactInput_acontact" class="input-box" name="acontact" type="text" value="<?= isset($row['acontact']) ? htmlspecialchars($row['acontact']) : ''; ?>" readonly>
   </div>
 
 </div>

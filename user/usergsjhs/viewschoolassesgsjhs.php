@@ -128,7 +128,6 @@
         $result = $conn->query($sql);
         while($row = $result->fetch_array()){
       ?>
-      <br>
 
 <div class="container">
   <div class="form-container">
@@ -138,26 +137,21 @@
                         
       <div class="row">
                      
-        <div class="col-sm-6">
+        <div class="col-sm-5">
+          <div class="form-group">
+            <label for="patient_name" class="control-label">Your Fullname</label>
+            <input type="text" class="form-control" id="fullname" name="fullname" value="<?php echo $row['fullname']; ?>" readonly>
+          </div>
+        </div>
+      
+        <div class="col-sm-2">
           <div class="form-group">
             <label for="idnumber" class="control-label">Your ID Number</label>
             <input type="text" class="form-control" id="idnumber" name="idnumber" value="<?php echo $row['idnumber']; ?>" readonly>
           </div>
         </div>
 
-        <div class="col-sm-6">
-          <div class="form-group">
-            <label for="patient_name" class="control-label">Your Fullname</label>
-            <input type="text" class="form-control" id="fullname" name="fullname" value="<?php echo $row['fullname']; ?>" readonly>
-          </div>
-        </div>
-
-      </div>
-      <br>
-
-      <div class="row">
-
-        <div class="col-sm-6">
+        <div class="col-sm-2">
           <div class="form-group">
             <label for="birthday" class="control-label">Birthday</label>
             <input type="date" class="form-control" id="birthday" name="birthday" value="<?php echo $row['birthday']; ?>" readonly>
@@ -165,7 +159,7 @@
         </div>
  
 
-        <div class="col-sm-6">
+        <div class="col-sm-3">
           <div class="form-group">
             <label for="gender" class="control-label">Gender</label>
             <select class="form-control" id="gender" name="gender" readonly>
@@ -358,6 +352,11 @@
           </div>
         </div>
 
+      </div>
+      <br>
+
+      <div class="row">
+
         <div class="col-md-4">
           <div class="form-group">
             <label for="screening">Screening, Risk Taking Behavior</label>
@@ -374,6 +373,7 @@
 
       </div>
       <hr>
+
       <div class="row">
         <div class="col-md-4">
           <div class="form-group">

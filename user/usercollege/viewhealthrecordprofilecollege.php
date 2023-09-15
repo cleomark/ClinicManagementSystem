@@ -43,6 +43,25 @@
     <link id="theme-style" rel="stylesheet" href="assets/css/portal.css">
 	  <link rel="stylesheet" href="assets/formstyle.css">
 
+    <style>
+        /* Define custom styles here */
+        .form-container {
+            background-color: #fff;
+            box-shadow: 4px 4px 4px 4px rgba(76, 84, 177, 0.5);
+            padding: 20px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-title {
+            text-align: center;
+            color: #4c54b1;
+            font-weight: bold;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+    </style>
+
 </head> 
 
 <body class="app">   	
@@ -55,27 +74,18 @@
 		    <div class="container-xl">
 			    <div class="position-relative mb-3">
 				    <div class="row g-3 justify-content-between">
-					    <div class="col-auto">
-					        <h1 class="app-page-title mb-0">Fill-up Health Record Form</h1>
-					    </div>
-						
+
 				    </div>
 			    </div>
 			    
-                <div class="app-card app-card-notification shadow-sm mb-4">
-				    <div class="app-card-header px-4 py-3" style="background-color: #1a14cc;">
-				        <div class="row g-3 align-items-center">
-					        <div class="col-12 col-lg-auto text-center text-lg-start">
-						        <h4 class="notification-title mb-1" style="color: #fff;">Please fill-up honestly.</h4>
-					        </div>
+          <div class="app-card app-card-notification shadow-sm mb-4">
+				    <div class="row g-3 align-items-center">
 							<?php
 								if(isset($_SESSION['success'])){
 									echo $_SESSION['success'];
 									unset($_SESSION['success']);
 								}
 							?>
-							
-				        </div><!--//row-->
 				    </div><!--//app-card-header-->
 				    <div class="app-card-body p-4">
               <?php
@@ -83,60 +93,66 @@
 							$result = $conn->query($sql);
     						while($row = $result->fetch_array()){
 						?>
-					<p class="title_" style="color: #800000;">Personal Information</p>
+
+<div class="container">
+
+  <div class="form-container">
+            <div class="form-title">
+            Health Record Form
+            </div>
 					
-					<form class="form-horizontal mt-4" action="function/funct.php" method="POST" enctype="multipart/form-data">
+					  <form class="form-horizontal mt-4" action="function/funct.php" method="POST" enctype="multipart/form-data">
 
 				<div class="input_form">
 
 					<div class="input_wrap" style="text-align: center;">
 						<div class="image_container" style="display: inline-block; text-align: center;">
-							<br>
 							<img src="<?php echo "/CAPSTONE1/upload_image/".$row['image'];?>" style="display: block; margin: 0 auto;">
 							<label style="text-align: center; display: block;">Your Image</label>
 						</div>
 					</div>
 
         </div>
+        <br>
 
           <div class="input_form">
 
             <div class="input_wrap">
               <label for="fullname">Full Name</label>
-              <input id="fullname" class="input-box" name="fullname" type="text" value="<?= $fullname; ?>" >
+              <input class="input-box" name="fullname" type="text" value="<?= $fullname; ?>" >
             </div>
 
-            <div class="input_wrap" style="margin-left: 65px;">
+            <div class="input_wrap">
                 <label for="fullname">ID Number</label>
                 <input name="idnumber" class="input-box" type="text" value="<?=$row['idnumber'];?>" readonly>
             </div>
 
-            <div class="input_wrap" style="margin-left: 65px;">
+            <div class="input_wrap">
               <label for="courseyear">Course & Year</label>
-              <input class="input-box" id="courseyear" name="courseyear" type="text" style="width:  553px;" value="<?=$row['courseyear'];?>" readonly>
+              <input class="input-box" id="courseyear" name="courseyear" type="text" style="width: 553px;" value="<?= isset($row['courseyear']) ? htmlspecialchars($row['courseyear']) : ''; ?>" readonly>
             </div>
+
 
           </div>
 
           <div class="input_form">
             
-            <div class="input_wrap">
-              <label for="fullname">Role</label>
-              <select class="form-select" name="role">
-                <option disabled selected><?= $row['role'];?></option>
-              </select>
-            </div>
+          <div class="input_wrap">
+            <label for="fullname">Role</label>
+            <select class="form-select" name="role">
+              <option disabled selected><?= isset($row['role']) ? htmlspecialchars($row['role']) : ''; ?></option>
+            </select>
+          </div>
+
 
             <div class="input_wrap">
-              <div style="margin-left: 65px;">
                 <label for="fullname">Gender</label>
                 <select class="form-select" name="gender">
                     <option disabled selected><?= $row['gender'];?></option>
                 </select>
-              </div>
             </div>
 
-            <div class="input_wrap" style="margin-left: 65px;">
+            <div class="input_wrap">
                 <label for="fullname">Address</label>
                 <input name="address" id ="address" type="text" style="width:  553px;" value="<?=$row['address'];?>" readonly>
             </div>
@@ -751,11 +767,12 @@
         </div>
         
     </div>
-
-                     <?php
+            <?php
 							}
 						?>
 </form>
+</div>
+</div>
 
 				    </div><!--//app-card-body-->
 				</div>			    

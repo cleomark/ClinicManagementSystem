@@ -44,6 +44,25 @@
     <link id="theme-style" rel="stylesheet" href="assets/css/portal.css">
 	  <link rel="stylesheet" href="assets/formstyle.css">
 
+    <style>
+        /* Define custom styles here */
+        .form-container {
+            background-color: #fff;
+            box-shadow: 4px 4px 4px 4px rgba(76, 84, 177, 0.5);
+            padding: 20px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-title {
+            text-align: center;
+            color: #4c54b1;
+            font-weight: bold;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+    </style>
+
 </head> 
 
 <body class="app">   	
@@ -56,34 +75,29 @@
 		    <div class="container-xl">
 			    <div class="position-relative mb-3">
 				    <div class="row g-3 justify-content-between">
-					    <div class="col-auto">
-					        <h1 class="app-page-title mb-0">Fill-up Health Record Form</h1>
-					    </div>
 						
 				    </div>
 			    </div>
 			    
-                <div class="app-card app-card-notification shadow-sm mb-4">
-				    <div class="app-card-header px-4 py-3" style="background-color: #1a14cc;">
+          <div class="app-card app-card-notification shadow-sm mb-4">
 				        <div class="row g-3 align-items-center">
-					        <div class="col-12 col-lg-auto text-center text-lg-start">
-						        <h4 class="notification-title mb-1" style="color: #fff;">Please fill-up honestly.</h4>
-					        </div>
 							<?php
 								if(isset($_SESSION['success'])){
 									echo $_SESSION['success'];
 									unset($_SESSION['success']);
 								}
 							?>
-							
-				        </div><!--//row-->
 				    </div><!--//app-card-header-->
 				    <div class="app-card-body p-4">
-					<p class="title_" style="color: #800000;">Personal Information</p>
+
+<div class="container">
+
+  <div class="form-container">
+            <div class="form-title">
+            Health Record Form
+            </div>
 					
 					<form class="form-horizontal mt-4" action="function/funct.php" method="POST" enctype="multipart/form-data" onsubmit="return validateForm()">
-
-
 
       <div class="input_form">
 
@@ -100,12 +114,12 @@
           <input class="input-box" name="fullname" type="text" value="<?= $fullname; ?>"readonly>
         </div>
 
-        <div class="input_wrap" style="margin-left: 65px;">
+        <div class="input_wrap">
           <label for="fullname">ID Number</label>
           <input name="idnumber" class="input-box" type="text" value="<?= $idnumber; ?>" readonly>
         </div>
 
-        <div class="input_wrap" style="margin-left: 65px;">
+        <div class="input_wrap">
           <label for="courseyear">Course & Year</label>
           <input class="input-box" id="courseyear" name="courseyear" type="text" style="width:  553px;">
         </div>
@@ -125,18 +139,15 @@
           </div>
 
             <div class="input_wrap">
-              <div style="margin-left: 65px;">
                 <label for="fullname">Gender</label>
                   <select class="form-select" name="gender">
                       <option value="" disabled selected>Select Gender</option>
                       <option value="Female">Female</option>
                       <option value="Male">Male</option>
                   </select>
-              </div>
-                
             </div>
 
-            <div class="input_wrap" style="margin-left: 65px;">
+            <div class="input_wrap">
                 <label for="fullname">Address</label>
                 <input name="address" id ="address" type="text" style="width:  553px;">
             </div>
@@ -794,6 +805,8 @@
    <button name="submit_data" class="btn btn-success" style="margin-bottom: 15px; background-color: #1a14cc;">SUBMIT</button>
     </div>
 </form>
+  </div>
+</div>
 
 				    </div><!--//app-card-body-->
 				</div>			    
