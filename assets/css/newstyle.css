@@ -41,6 +41,16 @@ input:focus, select:focus{
     border: 2px solid var(--ternary);
 }
 
+input[type="file"]{
+    border-radius: 10px;
+}
+
+::file-selector-button{
+    background-color: rgb(82, 82, 146);
+    color: white;
+    border-radius: 30px;
+}
+
 .checkbox-label::before{
     border: 2px solid var(--ternary) !important;
 }
