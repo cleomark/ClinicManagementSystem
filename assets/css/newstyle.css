@@ -32,6 +32,11 @@ input:hover,select:hover{
     background-color: transparent;
 }
 
+input:read-only:hover , input:read-only:focus{
+    border: 2px solid rgba(183, 183, 207, 0.788);
+}
+
+
 input:focus, select:focus{
     border: 2px solid var(--ternary);
 }
