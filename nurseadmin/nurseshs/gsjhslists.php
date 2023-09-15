@@ -32,6 +32,32 @@
     <!-- App CSS -->  
     <link id="theme-style" rel="stylesheet" href="assets/css/portal.css">
     <link rel="stylesheet" href="assets/tables.css">
+
+    <style> 
+
+.app-search-form .search-btn {
+    padding: 0.7rem 1rem;  
+}
+
+/* <style>  */
+
+.app-search-form .search-btn {
+    padding: 0.7rem 1rem;  
+}
+
+td {
+    text-align: left; 
+}
+
+thead{
+    background-color: #2E37A4;
+    color: #fff;
+}
+
+
+</style>
+
+
 </head> 
 
 <body class="app">   	

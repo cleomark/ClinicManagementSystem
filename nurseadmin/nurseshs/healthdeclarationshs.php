@@ -51,6 +51,23 @@
   <link rel="stylesheet" href="assets/printable.css">
 
  
+  <style> 
+
+.btn-submit { 
+background-color: #2E37A4!important;
+color: #fff!important;
+padding: 6px 12px!important;
+font-size: 14px!important;
+
+}
+
+.btn-submit:hover { 
+background-color: #28308f!important;
+color: #fff!important;
+
+}
+</style>
+
 </head> 
 
 <body class="app">   	
@@ -72,7 +89,7 @@
   <div style="display: flex; justify-content: center; align-items: center;">
     <div class="app-card-body p-4">
 
-    <button id="printButton">Print</button>
+    <button class="btn btn-submit"id="printButton">Print</button>
 <div id="pdfContainer"></div>
 
 <script>
