@@ -48,6 +48,57 @@
     <link id="theme-style" rel="stylesheet" href="assets/css/portal.css">
 	<link rel="stylesheet" href="assets/style.css">
 
+    <style>
+        /* Define custom styles here */
+        .form-container {
+            background-color: #fff;
+            box-shadow: 4px 4px 4px 4px rgba(76, 84, 177, 0.5);
+            padding: 20px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-title {
+            text-align: center;
+            color: #4c54b1;
+            font-weight: bold;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            color: #000 !important;
+        }
+
+        input.form-control {
+            border: 3px solid #4e5864;
+            background-color: #fff !important;
+            padding: 10px;
+            border-radius: 10px;
+            transition: border-color 0.3s ease;
+        }
+
+        input.form-control:hover {
+            background-color: #e0e0e0 !important;
+            border-color: #4e5864 !important;
+        }
+        input.form-control:focus{
+            background-color: #e0e0e0 !important;
+        }
+        .sched{
+            color: #800000;
+            font-size: 17px !important;
+        }
+        /* Hide placeholder text on hover and focus */
+        input.form-control:hover::placeholder,
+        input.form-control:focus::placeholder {
+            color: transparent !important;
+        }
+    </style>
+
 </head> 
 
 <body class="app">   	
@@ -75,7 +126,8 @@ if (mysqli_num_rows($result) > 0) {
 <?php 
         include $_SERVER['DOCUMENT_ROOT'] . "/DivineClinic/components/navbar.php";
     ?>
-    <div class="app-wrapper">
+<div class="app-wrapper">
+
     <div class="app-content pt-3 p-md-3 p-lg-4">
         <div class="container-xl">
             <div class="position-relative mb-3">
@@ -86,11 +138,9 @@ if (mysqli_num_rows($result) > 0) {
             <div class="app-card app-card-notification shadow-sm mb-4">
                 <div class="app-card-header px-4 py-3">
                     <div class="row g-3 align-items-center">
-                    <div class="col-12 col-lg-auto text-center text-lg-start">
-						        <h4 class="notification-title mb-1">Vital Signs Monitoring Records</h4>
-					        </div>
                     </div><!--//row-->
                 </div><!--//app-card-header-->
+
                 <div class="app-card-body p-4">
                     <?php
                     $sql = "SELECT * FROM vitalsigns WHERE idnumber = '$idnumber'";
@@ -99,89 +149,84 @@ if (mysqli_num_rows($result) > 0) {
                     ?>
                     <br>
         
-                    <div class="row">
+<div class="container">
+    <div class="form-container">
+        <div class="form-title">
+            Vital Signs Monitoring Record
+        </div>
+
+                <div class="row">
+
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label for="idnumber" class="control-label">ID Number</label>
+                                <input type="text" class="form-control" id="idnumber" name="idnumber" value="<?php echo $row['idnumber']; ?>" readonly>
+                        </div>
+                    </div>
+
                   <div class="col-sm-4">
                       <div class="form-group">
-                          <label for="idnumber" class="col-sm-7 control-label" style="font-size: 16px">ID Number</label>
-                          <div class="col-sm-11">
-                              <input type="text" class="form-control" id="idnumber" name="idnumber" value="<?php echo $row['idnumber']; ?>" readonly>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="col-sm-4">
-                      <div class="form-group">
-                          <label for="fullname" class="col-sm-4 control-label" style="font-size: 16px">Name</label>
-                          <div class="col-sm-11">
+                          <label for="fullname" class="control-label">Name</label>
                               <input type="text" class="form-control" id="fullname" name="fullname" value="<?php echo $row['fullname']; ?>" readonly>
-                          </div>
                       </div>
                   </div>
+
                   <div class="col-sm-4">
                       <div class="form-group">
-                          <label for="age" class="col-sm-4 control-label" style="font-size: 16px">Age</label>
-                          <div class="col-sm-11">
+                          <label for="age" class="control-label">Age</label>
                               <input type="age" class="form-control" id="age" name="age" value="<?php echo $row['age']; ?>" readonly>
-                          </div>
                       </div>
                   </div>
-              </div>
-            
-              <div class="row">
+
+                </div>
+                
+                <br>
+                <div class="row">
+
                   <div class="col-sm-2">
-                    <br>
                       <div class="form-group">
-                          <label for="date" class="col-sm-12 control-label" style="font-size: 16px">Date</label>
-                          <div class="col-sm-12">
+                          <label for="date" class="control-label">Date</label>
                               <input type="date" class="form-control" id="date" name="date" value="<?php echo $row['date']; ?>" readonly>
-                          </div>
                       </div>
                   </div>
+
                   <div class="col-sm-2">
-                    <br>
                       <div class="form-group">
-                          <label for="time" class="col-sm-12 control-label" style="font-size: 16px">Time</label>
+                          <label for="time" class="control-label">Time</label>
                           <div class="col-sm-12">
                               <input type="time" class="form-control" id="time" name="time" value="<?php echo $row['time']; ?>" readonly>
                           </div>
                       </div>
                   </div>
+
                   <div class="col-sm-2">
-                    <br>
                       <div class="form-group">
-                          <label for="bp" class="col-sm-12 control-label" style="font-size: 16px">BP</label>
-                          <div class="col-sm-12">
+                          <label for="bp" class="control-label">BP</label>
                               <input type="bp" class="form-control" id="bp" name="bp" value="<?php echo $row['bp']; ?>" readonly>
-                          </div>
                       </div>
                   </div>
                   <div class="col-sm-2">
-                    <br>
                       <div class="form-group">
-                          <label for="t" class="col-sm-12 control-label" style="font-size: 16px">T</label>
-                          <div class="col-sm-12">
+                          <label for="t" class="control-label">T</label>
                               <input type="t" class="form-control" id="t" name="t" value="<?php echo $row['t']; ?>" readonly>
-                          </div>
                       </div>
                   </div>
+
                   <div class="col-sm-2">
-                    <br>
                       <div class="form-group">
-                          <label for="p" class="col-sm-12 control-label" style="font-size: 16px">P</label>
-                          <div class="col-sm-12">
+                          <label for="p" class="control-label">P</label>
                               <input type="p" class="form-control" id="p" name="p" value="<?php echo $row['p']; ?>" readonly>
-                          </div>
                       </div>
                   </div>
                   <div class="col-sm-2">
-                    <br>
                       <div class="form-group">
-                          <label for="r" class="col-sm-12 control-label" style="font-size: 16px">R</label>
-                          <div class="col-sm-12">
+                          <label for="r" class="control-label">R</label>
                               <input type="r" class="form-control" id="r" name="r" value="<?php echo $row['r']; ?>" readonly>
-                          </div>
                       </div>
                   </div>
+
               </div>
+              
                     <?php } ?>
                 </div><!--//app-card-body-->
             </div>
