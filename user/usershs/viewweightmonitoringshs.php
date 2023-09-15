@@ -48,6 +48,57 @@
     <link id="theme-style" rel="stylesheet" href="assets/css/portal.css">
 	<link rel="stylesheet" href="assets/style.css">
 
+    <style>
+        /* Define custom styles here */
+        .form-container {
+            background-color: #fff;
+            box-shadow: 4px 4px 4px 4px rgba(76, 84, 177, 0.5);
+            padding: 20px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-title {
+            text-align: center;
+            color: #4c54b1;
+            font-weight: bold;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            color: #000 !important;
+        }
+
+        input.form-control {
+            border: 3px solid #4e5864;
+            background-color: #fff !important;
+            padding: 10px;
+            border-radius: 10px;
+            transition: border-color 0.3s ease;
+        }
+
+        input.form-control:hover {
+            background-color: #e0e0e0 !important;
+            border-color: #4e5864 !important;
+        }
+        input.form-control:focus{
+            background-color: #e0e0e0 !important;
+        }
+        .sched{
+            color: #800000;
+            font-size: 17px !important;
+        }
+        /* Hide placeholder text on hover and focus */
+        input.form-control:hover::placeholder,
+        input.form-control:focus::placeholder {
+            color: transparent !important;
+        }
+    </style>
+
 </head> 
 
 <body class="app">   	
@@ -73,7 +124,8 @@ if (mysqli_num_rows($result) > 0) {
 <?php 
         include $_SERVER['DOCUMENT_ROOT'] . "/DivineClinic/components/navbar.php";
     ?>
-    <div class="app-wrapper">
+<div class="app-wrapper">
+
     <div class="app-content pt-3 p-md-3 p-lg-4">
         <div class="container-xl">
             <div class="position-relative mb-3">
@@ -86,6 +138,7 @@ if (mysqli_num_rows($result) > 0) {
                     <div class="row g-3 align-items-center">
                     </div><!--//row-->
                 </div><!--//app-card-header-->
+
                 <div class="app-card-body p-4">
                     <?php
                     $sql = "SELECT * FROM weightmonitor WHERE idnumber = '$idnumber'";
@@ -93,66 +146,71 @@ if (mysqli_num_rows($result) > 0) {
                     while($row = $result->fetch_array()) {
                     ?>
                     <br>
+
+<div class="container">
+    <div class="form-container">
+        <div class="form-title">
+            Weight Monitoring Record
+        </div>
         
-<div class="row">
-                  <div class="col-sm-3">
-                      <div class="form-group">
-                          <label for="idnumber" class="col-sm-7 control-label" style="font-size: 16px">ID Number</label>
-                          <div class="col-sm-11">
-                              <input type="text" class="form-control" id="idnumber" name="idnumber" value="<?php echo $row['idnumber']; ?>" readonly>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="col-sm-3">
-                      <div class="form-group">
-                          <label for="fullname" class="col-sm-4 control-label" style="font-size: 16px">Name</label>
-                          <div class="col-sm-11">
-                              <input type="text" class="form-control" id="fullname" name="fullname" value="<?php echo $row['fullname']; ?>" readonly>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="col-sm-3">
-                      <div class="form-group">
-                          <label for="age" class="col-sm-4 control-label" style="font-size: 16px">Age</label>
-                          <div class="col-sm-11">
-                              <input type="age" class="form-control" id="age" name="age" value="<?php echo $row['age']; ?>" readonly>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="col-sm-3">
-                      <div class="form-group">
-                          <label for="gradesection" class="col-sm-10 control-label" style="font-size: 16px">Employee/Grade & Section</label>
-                          <div class="col-sm-11">
-                              <input type="text" class="form-control" id="gradesection" name="gradesection" value="<?php echo $row['gradesection']; ?>" readonly>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-            
-              <div class="row">
-                  
-                  <div class="col-sm-3">
-                    <br>
-                      <div class="form-group">
-                          <label for="weight" class="col-sm-5 control-label" style="font-size: 16px">Weight (kg)</label>
-                          <div class="col-sm-11">
+        <div class="row">
+
+                <div class="col-sm-2">
+                    <div class="form-group">
+                        <label for="idnumber" class="control-label">ID Number</label>
+                        <input type="text" class="form-control" id="idnumber" name="idnumber" value="<?php echo $row['idnumber']; ?>" readonly>
+                    </div>
+                </div>
+
+                <div class="col-sm-3">
+                    <div class="form-group">
+                        <label for="fullname" class="control-label">Name</label>
+                        <input type="text" class="form-control" id="fullname" name="fullname" value="<?php echo $row['fullname']; ?>" readonly>
+                    </div>
+                </div>
+
+                <div class="col-sm-3">
+                    <div class="form-group">
+                        <label for="gradesection" class="col-sm-10 control-label" style="font-size: 16px">Employee/Grade & Section</label>
+                        <input type="text" class="form-control" id="gradesection" name="gradesection" value="<?php echo $row['gradesection']; ?>" readonly>
+                    </div>
+                </div>
+
+                <div class="col-sm-1">
+                    <div class="form-group">
+                        <label for="age" class="control-label">Age</label>
+                        <input type="age" class="form-control" id="age" name="age" value="<?php echo $row['age']; ?>" readonly>
+                    </div>
+                </div>
+
+                
+
+                <div class="col-sm-2">
+                    <div class="form-group">
+                          <label for="weight" class="control-label">Weight (kg)</label>
                               <input type="text" class="form-control" id="weight" name="weight" value="<?php echo $row['weight']; ?>" readonly>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="col-sm-8">
-                    <br>
-                      <div class="form-group">
-                          <label for="remarks" class="col-sm-4 control-label" style="font-size: 16px">Remarks</label>
-                          <div class="col-sm-15">
-                              <input type="text" class="form-control" id="remarks" name="remarks" value="<?php echo $row['remarks']; ?>" readonly>
-                          </div>
-                      </div>
-                  </div>
-              </div>
+                    </div>
+                </div>
+
+        </div>
+            <hr>
+            <div class="row">
+                  
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <label for="remarks" class="control-label">Remarks</label>
+                        <input type="text" class="form-control" id="remarks" name="remarks" value="<?php echo $row['remarks']; ?>" readonly>
+                    </div>
+                </div>
+
+            </div>
+
               <div class="form-group">
-                            <span><b>Date & Time:</b> <?php echo $row['date_time']; ?></span>
+                            <span class="sched"><b>Date & Time:</b> <?php echo $row['date_time']; ?></span>
                         </div>
+
+    </div>
+</div>
 
                     <?php } ?>
                 </div><!--//app-card-body-->
