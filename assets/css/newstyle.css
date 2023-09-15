@@ -47,3 +47,18 @@ input:focus, select:focus{
 .checkbox-label::before:checked {
     background-color: var(--ternary);
 }
+
+.btn-success {
+    background-color: var(--ternary);
+    border: 2px solid var(--ternary);
+}
+
+.btn-success:hover{
+    background-color: var(--ternary);
+    border: 2px solid var(--ternary);
+}
+
+.btn-success:active{
+    background-color: var(--ternary)!important;
+    border: 3px solid var(--ternary)!important;
+}
