@@ -49,6 +49,58 @@
     <link id="theme-style" rel="stylesheet" href="assets/css/portal.css">
 	<link rel="stylesheet" href="assets/dentalstyles.css">
     
+    <style>
+        /* Define custom styles here */
+        .form-container {
+            background-color: #fff;
+            box-shadow: 4px 4px 4px 4px rgba(76, 84, 177, 0.5);
+            padding: 20px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-title {
+            text-align: center;
+            color: #4c54b1;
+            font-weight: bold;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            color: #000 !important;
+        }
+        input.form-control {
+            border: 3px solid #4e5864;
+            background-color: #fff !important;
+            padding: 10px;
+            border-radius: 10px;
+            transition: border-color 0.3s ease;
+        }
+        input.form-control:hover {
+            background-color: #e0e0e0 !important;
+            border-color: #4e5864 !important;
+        }
+        input.form-control:focus{
+            background-color: #e0e0e0 !important;
+        }
+        .sched{
+            color: #800000;
+            font-size: 17px !important;
+        }
+        textarea{
+          border: 3px solid #4e5864 !important;
+          background-color: #fff !important;
+        }
+        /* Hide placeholder text on hover and focus */
+        input.form-control:hover::placeholder,
+        input.form-control:focus::placeholder {
+            color: transparent !important;
+        }
+    </style>
 
 </head> 
 
@@ -79,11 +131,6 @@ if (mysqli_num_rows($result) > 0) {
 		    <div class="container-xl">
 			    <div class="position-relative mb-3">
 				    <div class="row g-3 justify-content-between">
-					    <div class="col-auto">
-					        <h1 class="app-page-title mb-0"></h1>
-					    </div>
-
-
 						
 				    </div>
 			    </div>
@@ -91,9 +138,6 @@ if (mysqli_num_rows($result) > 0) {
                 <div class="app-card app-card-notification shadow-sm mb-4">
 				    <div class="app-card-header px-4 py-3">
 				        <div class="row g-3 align-items-center">
-					        <div class="col-12 col-lg-auto text-center text-lg-start">
-						        <h4 class="notification-title mb-1">Nurse's Notes</h4>
-					        </div>
                             <?php
 								if(isset($_SESSION['success'])){
 									echo $_SESSION['success'];
@@ -103,73 +147,78 @@ if (mysqli_num_rows($result) > 0) {
 							<!--//generate report-->
 				        </div><!--//row-->
 				    </div><!--//app-card-header-->
+
 				    <div class="app-card-body p-4">
                     <?php
 							$sql = "SELECT * FROM nursenotesshs WHERE idnumber = '$idnumber'";
 							$result = $conn->query($sql);
     						while($row = $result->fetch_array()){
 						?>
+
+<div class="container">
+  <div class="form-container">
+
+    <div class="form-title">
+      Nurse's Notes Record
+    </div>
+
     <div class="row">
-                      <div class="col-sm-4">
-                          <div class="form-group">
-                              <label for="idnumber" class="col-sm-4 control-label" style="font-size: 16px">ID Number</label>
-                              <div class="col-sm-11">
-                                  <input type="text" class="form-control" id="idnumber" name="idnumber" placeholder="Enter patient ID number" value="<?php echo $row['idnumber']; ?>" readonly>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="col-sm-4">
-                          <div class="form-group">
-                              <label for="fullname" class="col-sm-4 control-label" style="font-size: 16px">Name</label>
-                              <div class="col-sm-11">
-                                  <input type="text" class="form-control" id="fullname" name="fullname" placeholder="Enter Name" value="<?php echo $row['fullname']; ?>" readonly>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="col-sm-4">
-                          <div class="form-group">
-                              <label for="gradesection" class="col-sm-6 control-label" style="font-size: 16px">Grade & Section</label>
-                              <div class="col-sm-11">
-                                  <input type="text" class="form-control" id="gradesection" name="gradesection" value="<?php echo $row['gradesection']; ?>" readonly>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-                  
-     <div class="row">
-                      <div class="col-sm-4">
-                          <div class="form-group">
-                            <br>
-                              <label for="datetime" class="col-sm-8 control-label" style="font-size: 16px">Date/Time</label>
-                              <div class="col-sm-11">
-                                  <input type="datetime-local" class="form-control" id="datetime" name="datetime" value="<?php echo $row['datetime']; ?>" readonly>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="col-sm-4">
-                          <div class="form-group">
-                            <br>
-                              <label for="vitalsigns" class="col-sm-8 control-label" style="font-size: 16px">Vital Signs</label>
-                              <div class="col-sm-11">
-                                  <input type="text" class="form-control" id="vitalsigns" name="vitalsigns" placeholder="Enter Vital Signs" value="<?php echo $row['vitalsigns']; ?>" readonly>
-                              </div>
-                          </div>
-                      </div>
-                </div>
-         <div class="row">
-                      <div class="col-sm-17">
-                          <div class="form-group">
-                            <br>
-                              <label for="nursenotes" class="col-sm-8 control-label" style="font-size: 16px">Nurse's Notes</label>
-                              <div class="col-sm-11">
-                                  <textarea class="form-control" id="nursenotes" name="nursenotes" readonly><?php echo $row['nursenotes']; ?>"</textarea>
-                    
+
+        <div class="col-sm-4">
+            <div class="form-group">
+                <label for="idnumber" class="control-label" style="font-size: 16px">ID Number</label>
+                <input type="text" class="form-control" id="idnumber" name="idnumber" placeholder="Enter patient ID number" value="<?php echo $row['idnumber']; ?>" readonly>
+            </div>
+        </div>
+                      
+        <div class="col-sm-4">
+            <div class="form-group">
+                <label for="fullname" class="control-label">Name</label>
+                <input type="text" class="form-control" id="fullname" name="fullname" placeholder="Enter Name" value="<?php echo $row['fullname']; ?>" readonly>
+            </div>
+        </div>
+
+        <div class="col-sm-4">
+            <div class="form-group">
+                <label for="gradesection" class="control-label">Grade & Section</label>
+                <input type="text" class="form-control" id="gradesection" name="gradesection" value="<?php echo $row['gradesection']; ?>" readonly>
+            </div>
+        </div>
    
-                                  </div>
-                          </div>
-                      </div>
-                </div>
-                                  <br><br>
+    </div>
+                  
+    <div class="row">
+
+        <div class="col-sm-4">
+            <div class="form-group">
+                <label for="datetime" class="control-label">Date/Time</label>
+                <input type="datetime-local" class="form-control" id="datetime" name="datetime" value="<?php echo $row['datetime']; ?>" readonly>
+            </div>
+        </div>
+
+        <div class="col-sm-4">
+            <div class="form-group">
+                <label for="vitalsigns" class="control-label">Vital Signs</label>
+                <input type="text" class="form-control" id="vitalsigns" name="vitalsigns" placeholder="Enter Vital Signs" value="<?php echo $row['vitalsigns']; ?>" readonly>
+            </div>
+        </div>
+
+    </div>
+    <hr>
+
+    <div class="row">
+
+        <div class="col-sm-4">
+            <div class="form-group">
+                <label for="nursenotes" class="control-label">Nurse's Notes</label>
+                    <textarea class="form-control" id="nursenotes" name="nursenotes" readonly><?php echo $row['nursenotes']; ?>"</textarea>
+            </div>
+        </div>
+
+    </div>
+
+    </div>
+</div>
                                   <?php } ?>
                                   </div><!--//app-card-body-->
 				</div>			    

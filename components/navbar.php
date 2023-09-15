@@ -21,6 +21,8 @@
 <link rel="stylesheet" type="text/css" href="../../assets/css/style.css">
 
 
+
+
 <?php 
     if(!isset($fullname)){
         if (isset($_SESSION['username'])){
@@ -28,6 +30,7 @@
         }
     }
     include './function/navcontent.php';
+    include $_SERVER['DOCUMENT_ROOT'] . "/DivineClinic/components/icons.php";
 ?>
 
 <header class="app-header fixed-top">	   	 
@@ -67,13 +70,31 @@
             if($content[0] != "#"){
                 ?>
                 <li>
-                    <a href="<?php echo $content[0] ?>" <?php if(basename($_SERVER["SCRIPT_FILENAME"]) == $content[0]) echo 'class=\'active\''?>><span class="menu-side"><img src="../../assets/img/icons/<?php echo $content[1] ?>.svg" alt></span> <span><?php echo$title ?></span></a>
+                    <a href="<?php echo $content[0] ?>" <?php if(basename($_SERVER["SCRIPT_FILENAME"]) == $content[0]) echo 'class=\'active\''?>><span class="menu-side"><img src="../../assets/img/icons/<?php
+                        $selectedIcon = $content[1];
+                        foreach($icons as $key => $icon){
+                            if(str_contains(strtolower($title), $key)){
+                                $selectedIcon =  $icon;
+                                break;
+                            }
+                        }
+                        echo $selectedIcon;
+                    ?>.svg" alt></span> <span><?php echo$title ?></span></a>
                 </li>
                 <?php
             }else{
                 ?>
                     <li class="submenu">
-                        <a href="#" class='<?php if(in_array(basename($_SERVER["SCRIPT_FILENAME"]), $content[2])) echo 'active'  ?>'><span class="menu-side"><img src="../../assets/img/icons/<?php echo $content[1] ?>.svg" alt></span> <span> <?php echo $title ?> </span> <span class="menu-arrow"></span></a>
+                        <a href="#" class='<?php if(in_array(basename($_SERVER["SCRIPT_FILENAME"]), $content[2])) echo 'active'  ?>'><span class="menu-side"><img src="../../assets/img/icons/<?php
+                            $selectedIcon = $content[1];
+                            foreach($icons as $key => $icon){
+                                if(str_contains(strtolower($title), $key)){
+                                    $selectedIcon =  $icon;
+                                    break;
+                                }
+                            }
+                            echo $selectedIcon;
+                        ?>.svg" alt></span> <span> <?php echo $title ?> </span> <span class="menu-arrow"></span></a>
                         <ul style="display: none;">
                             <?php
                                 foreach($content[2] as $sub => $link){
@@ -98,11 +119,11 @@
 <script src="../../assets/js/jquery-3.6.1.min.js"></script>
 <?php 
 if(in_array( basename($_SERVER["SCRIPT_FILENAME"]), 
-["adddentalmessageshs.php", "adddentalmessageshs.php",
+["addmedicalmessageshs.php", "adddentalmessageshs.php",
  "adddentalmessagecollege.php", "addmedicalmessagecollege.php", ])
 ){
     ?>
-    <script src="../../assets/js/bootstrap.bundle.min.js"></script>
+        <script src="../../assets/js/bootstrap.bundle.min.js"></script>
     <?php
 }
 ?>
@@ -128,3 +149,5 @@ if(in_array( basename($_SERVER["SCRIPT_FILENAME"]),
 <script src="../../assets/plugins/slick/slick.js"></script>
 
 <script src="../../assets/js/app.js"></script>
+
+<link rel="stylesheet" href="../../assets/css/newstyle.css">

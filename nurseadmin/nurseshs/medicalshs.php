@@ -51,6 +51,56 @@
     <link id="theme-style" rel="stylesheet" href="assets/css/portal.css">
     <link rel="stylesheet" href="assets/dentalstyles.css">
 
+    <style> 
+
+.styled-table thead tr {
+    background-color: #2E37A4;
+    color: #ffffff;
+    text-align: left;
+}
+
+.styled-table td {
+    padding: 12px 13px;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #2E37A4;
+}
+
+.btn-secondary {
+    background-color: #2E37A4!important;
+   
+   
+}
+
+.btn:hover {
+    background-color: #2E37A4!important;
+}
+
+.btn:active {
+    background-color: #2E37A4!important;
+}
+
+.btn:disabled {
+    background-color: #2E37A4!important;
+}
+
+.modal-body {
+    justify-content: center!important;
+    text-align: center!important;
+    
+}
+ 
+.modal-btnn {
+    width: 50%!important;
+    margin-bottom: 10px!important;
+}
+
+</style>
+
+
+
+
 </head> 
 
 <body class="app">   	
@@ -105,7 +155,7 @@ if (mysqli_num_rows($result) > 0) {
 				    <div class="app-card-body p-4">
   
   
-<div style="text-align: right; margin-right: 48px;">
+<div style="text-align: right;">
 <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#updateScheduleModal">
     Update Medical Schedule
 </button>
@@ -162,7 +212,7 @@ if (mysqli_num_rows($result) > 0) {
                     <td><?php echo $row['onoff']; ?></td>
 
                     <td>
-                    <center> 
+                  
                     <a href="#openModal<?= $medicalapp_id; ?>" class="modal-link" data-bs-toggle="modal" data-bs-target="#openModal<?= $medicalapp_id; ?>">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-send" viewBox="0 0 16 16">
                     <path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z"/>
@@ -181,7 +231,7 @@ if (mysqli_num_rows($result) > 0) {
                                 <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z"/>
                             </svg>
                         </a>
-                        </center>
+                        
                         </td>
                 </tr>
             <?php endforeach; ?>
@@ -227,23 +277,23 @@ if (mysqli_num_rows($result) > 0) {
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-            <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#updateMondayModal">
+            <button type="button" class="btn btn-secondary modal-btnn" data-bs-toggle="modal" data-bs-target="#updateMondayModal">
                 Monday Schedule
             </button>
 
-            <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#updateTuesdayModal">
+            <button type="button" class="btn btn-secondary modal-btnn" data-bs-toggle="modal" data-bs-target="#updateTuesdayModal">
                 Tuesday Schedule
             </button>
 
-            <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#updateWednesdayModal">
+            <button type="button" class="btn btn-secondary modal-btnn" data-bs-toggle="modal" data-bs-target="#updateWednesdayModal">
                 Wednesday Schedule
             </button>
-<br><br>
-            <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#updateThursdayModal">
+
+            <button type="button" class="btn btn-secondary modal-btnn" data-bs-toggle="modal" data-bs-target="#updateThursdayModal">
                 Thursday Schedule
             </button>
 
-            <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#updateFridayModal">
+            <button type="button" class="btn btn-secondary modal-btnn" data-bs-toggle="modal" data-bs-target="#updateFridayModal">
                 Friday Schedule
             </button>
             </div>

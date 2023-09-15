@@ -97,30 +97,30 @@
     						while($row = $result->fetch_array()){
 						?>
 					
-                    <div class="container">
+<div class="container">
 
     <div class="form-container">
         <div class="form-title">
         Health Record Form
         </div>
-					
-				
-                    <div class="align_form">
-						<div class="input_form">
-							<div class="input_wrap">
-							    <label></label>
 
-							<div class="image_container">
-							<br>
-								<img src="<?php echo "/CAPSTONE1/upload_image/".$row['image'];?>">
-                                <input type="file" name="image" id="image">
-							</div>
-						</div>
+			<div class="input_form">
+
+                <div class="input_wrap" style="text-align: center;">
+                    <div class="image_container" style="display: inline-block; text-align: center;">
+							<img src="<?php echo "/CAPSTONE1/upload_image/".$row['image'];?>"style="display: block; margin: 0 auto;">
+                            <label style="text-align: center; display: block;">Your Image</label>
+					</div>
+                </div>
+
+			</div>
+            <br>
+
         <div class="input_form">
 
             <div class="input_wrap">
                 <label for="fullname">Full Name</label>
-                <input class="input-box" id="fullname" name="fullname" type="text" value="<?=$row['fullname'];?>" readonly>
+                <input class="input-box" name="fullname" type="text" value="<?=$row['fullname'];?>" readonly>
             </div>
             <div class="input_wrap">
                 <label for="fullname">ID Number</label>
@@ -130,10 +130,8 @@
                 <label for="personal_contact">Personal Contact No</label>
                 <input class="input-box" name="phoneno" type="text" value="<?=$row['phoneno'];?>" readonly>
             </div>
+
         </div>
-            
-        </div>
-  </div>
 
         <div class="input_form">
 
@@ -173,7 +171,7 @@
 
             <div class="input_wrap">
                 <label for="fullname">Contact</label>
-                <input class="input-box" name="cfather" id="cfather" type="text" value="<?=$row['cfather'];?>" readonly>
+                <input class="input-box" name="cfather" id="contactInput_one" type="text" value="<?=$row['cfather'];?>" readonly>
             </div>
         </div>
 
@@ -185,7 +183,7 @@
 
             <div class="input_wrap">
                 <label for="fullname">Contact</label>
-                <input name="cmother" class="input-box" id="cmother" type="text" value="<?=$row['cmother'];?>" readonly>
+                <input name="cmother" class="input-box" id="contactInput_two" type="text" value="<?=$row['cmother'];?>" readonly>
             </div>
         </div>
 <br>
@@ -310,6 +308,33 @@
 
         </div>
 
+<div class="input_form">
+
+    <div class="row-container">
+
+        <div class="input_wrap">
+            <label for="fullname" id="language">Is your child taking any medications at present?</label>  
+        </div>
+
+        <div>
+            <input class="checkbox" name="yesmedication" value="yesmedication" type="checkbox" id="yesmedication" value="<?= $row['yesmedication'];?>" <?php if ($row['yesmedication']) echo "checked"; ?>>
+            <label class="checkbox-label" for="yesmedication" style="font-size: 14px; padding-left: 30px;">Yes</label>
+        </div>
+
+        <div>
+            <input class="checkbox" name="nomedication" value="nomedication" type="checkbox" id="nomedication" value="<?= $row['nomedication'];?>" <?php if ($row['nomedication']) echo "checked"; ?>>
+            <label class="checkbox-label" for="nomedication" style="font-size: 14px; padding-left: 30px;">No</label>
+        </div>
+
+        <div class="input_wrap">
+            <input name="medication" class="input-box" id="otherillnesss" type="text" placeholder="If YES, please list the name of the medicine/s." value="<?=$row['medication'];?>" readonly>
+        </div>
+
+    </div>
+
+</div>
+    
+
 <div class="input_form"> 
 
     <div class="row-container">
@@ -331,58 +356,34 @@
     </div>       
 
 </div>
-<!-- DIGDI NA AKO -->
+<br>
 
-<div class="question">
-
-    <div class="row-container">
-
-        <div class="input_wrap">
-            <label for="fullname">Is your child taking any medications at present?</label>  
-        <div>
-            <input class="checkbox" name="yesmedication" value="yesmedication" type="checkbox" id="yesmedication" value="<?= $row['yesmedication'];?>" <?php if ($row['yesmedication']) echo "checked"; ?>>
-            <label class="checkbox-label" for="yesmedication" style="font-size: 14px; padding-left: 30px;">Yes</label>
-        </div>
-
-        <div>
-            <input class="checkbox" name="nomedication" value="nomedication" type="checkbox" id="nomedication" value="<?= $row['nomedication'];?>" <?php if ($row['nomedication']) echo "checked"; ?>>
-            <label class="checkbox-label" for="nomedication" style="font-size: 14px; padding-left: 30px;">No</label>
-        </div>
-
-        <div class="input_wrap">
-            <input name="medication" class="input-box" id="otherillnesss" type="text" placeholder="If YES, please list the name of the medicine/s." value="<?=$row['medication'];?>" readonly>
-        </div>
-
-    </div>
-</div>
-
-    <div class="input_form"> 
+        <div class="input_form"> 
 
             <div class="input_wrap">
                 <label for="fullname" >Person to be notified in case of emergency:</label>
-                <input name="notified" class="input-box" id ="languages" type="text" value="<?=$row['notified'];?>" readonly>
+                <input name="notified" id ="languages" type="text" value="<?=$row['notified'];?>" readonly>
             </div>
             <div class="input_wrap">
                 <label for="fullname">Contact</label>
-                <input name="contact" class="input-box" id ="languagess" type="text" value="<?=$row['contact'];?>" readonly>
+                <input name="contact" id ="languages" type="text" value="<?=$row['contact'];?>" readonly>
             </div>
             <div class="input_wrap">
                 <label for="fullname">Relationship</label>
-                <input name="relationship" class="input-box" id ="relationship" type="text" value="<?=$row['relationship'];?>" readonly>
+                <input name="relationship" id ="languages" type="text" value="<?=$row['relationship'];?>" readonly>
             </div>
 
         </div>
-             
-<?php
-                            }
 
-
-                            ?>
-</div>
     </div>
 
-				    </div><!--//app-card-body-->
-				</div>			    
+    </div>
+<?php
+}
+?>
+
+
+				    </div><!--//app-card-body-->		    
 		    </div>
 	    </div>
     </div>  					

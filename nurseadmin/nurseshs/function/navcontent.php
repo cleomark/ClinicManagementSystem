@@ -1,7 +1,7 @@
 <?php
 
 $items = array(
-    "Report Generation" => array('#', 'menu-icon-04', 
+    "Report Generation" => array('#', 'menu-icon-09', 
         [
             "Total Medical Appointment Reports" => "totalappointments.php",
             "Total Dental Appointment Reports" => "totaldentalappointments.php",
@@ -9,15 +9,15 @@ $items = array(
             "Total Clinic Visitor" => "totalvisitors.php",
             "Total Medicine Cosumes" => "totalmedicines.php",
     ]),
-    "Health Profiles" => array('#', 'menu-icon-04', 
+    "Health Profiles" => array('#', 'menu-icon-08', 
         [
             "Grade School and Junior High School Building" => "gsjhslists.php",
             "Senior High School Building" => "shslist.php",
             "College Building" => "collegelists.php",
     ]),
-    "Appointments" => array('medicalshs.php', 'menu-icon-04', ),
+    "Appointments" => array('medicalshs.php', 'menu-icon-012', ),
     "Consultation Form" => array('consultationformshs.php', 'menu-icon-04', ),
-    "Health Assessment" => array('schoolhealthassessmentformshs.php', 'menu-icon-15', ),
+    "Health Assessment" => array('schoolhealthassessmentformshs.php', 'menu-icon-10', ),
     "Monitoring Sheet" => array('#', 'menu-icon-15', 
         [
             "Weight Monitoring Sheet" => "weightmonitoringshs.php",

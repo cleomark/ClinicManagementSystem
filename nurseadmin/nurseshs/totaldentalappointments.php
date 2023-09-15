@@ -125,12 +125,13 @@
     }
 
     #generateReport {
-        background-color: #007bff; /* Clinic blue */
+        background-color: #2E37A4; /* Clinic blue */
         color: #fff;
-        padding: 10px 20px;
+        padding: 10px 15px;
         border: none;
-        border-radius: 5px;
+        border-radius: 6px;
         cursor: pointer;
+
     }
 
     /* Clinic chart title styling */
@@ -248,12 +249,12 @@
                         {
                             label: "Total of Student in SHS",
                             data: data.total_student_shs,
-                            backgroundColor: "rgba(0, 0, 128, 0.5)", // You can change the color here
+                            backgroundColor: "rgba(46, 55, 164)", // You can change the color here
                         },
                         {
                             label: "Total of Employees in SHS",
                             data: data.total_employee_shs,
-                            backgroundColor: "rgba(139, 0, 0, 0.5)", // You can change the color here
+                            backgroundColor: "rgba(255,87,87)", // You can change the color here
                         },
                     ],
                 };

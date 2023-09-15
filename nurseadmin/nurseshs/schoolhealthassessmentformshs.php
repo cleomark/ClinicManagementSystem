@@ -47,7 +47,22 @@
     <!-- App CSS -->  
     <link id="theme-style" rel="stylesheet" href="assets/css/portal.css">
 	<link rel="stylesheet" href="assets/table.css">
-    
+  <style> 
+
+.btn-submit { 
+background-color: #2E37A4!important;
+color: #fff!important;
+padding: 6px 12px!important;
+font-size: 14px!important;
+
+}
+
+.btn-submit:hover { 
+background-color: #28308f!important;
+color: #fff!important;
+
+}
+</style>
     
 
 </head> 
@@ -356,7 +371,7 @@
     <div class="col-sm-offset-2 col-sm-10">
         <br>
         <input type="text" name="admin_id" style="display: none;" value="<?= $_SESSION['admin_id'];?>">
-        <button name="submit_schoolhealthassesform" class="btn btn-success">Submit</button>
+        <button name="submit_schoolhealthassesform" class="btn btn-submit">Submit</button>
     </div>
 </div>
 </form>

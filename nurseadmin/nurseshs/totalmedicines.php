@@ -49,7 +49,18 @@
     <link id="theme-style" rel="stylesheet" href="assets/css/portal.css">
 	<link rel="stylesheet" href="assets/generate.css">
     
-    
+    <style> 
+
+#generateReport {
+        background-color: #2E37A4; /* Clinic blue */
+        color: #fff;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+
+    }
+</style>
 
 </head> 
 
@@ -168,7 +179,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <option value="2025" <?php echo $selected_year === '2025' ? 'selected' : ''; ?>>2025</option>
     </select>
 
-    <button type="submit">Generate Report</button>
+    <button type="submit" id="generateReport">Generate Report</button>
 </form>
 
     </script>			
