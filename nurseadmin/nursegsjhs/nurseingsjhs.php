@@ -277,104 +277,8 @@ window.myChart = new Chart(ctx, {
 				</div>			    
 		    </div>
 	    </div>
-    </div>  					
-    <!-- Javascript -->    
+    </div>  		
     
-    <style>
-        /* Style the container to have fixed size and enable scrolling */
-
-        .spinner-wrapper {
-      background-color: #F5F6FE;
-      position: fixed;
-      top: 0;
-      left: 0; 
-      width: 100%;
-      height: 100%;
-      z-index: 9999;
-      display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: all 0.2s;
-    }
-
-
-.spinner-wrapper img{
-      width: 20%;
-      height: 20%;
-    }
-
-
-                        .spinner-wrapper:before,
-                        .spinner-wrapper:after {
-                            content: "";
-                            position: absolute;
-                            height: 100px;
-                            width: 100px;
-                            background-color: #3330ca;
-                            border-radius: 80%;
-                            z-index: -1;
-                            opacity: 0.7;
-							
-                        }
-
-                        .spinner-wrapper:before {
-                            animation: pulse 2s ease-out infinite;
-                        }
-
-                        .spinner-wrapper:after {
-                            animation: pulse 2s 1s ease-out infinite;
-                        }
-
-                        @keyframes pulse {
-                            100% {
-                                transform: scale(2.6);
-                                opacity: 0;
-                            }
-                        }
-
-
-
-        .chart-container {
-            width: 800px;
-            height: 400px;
-            overflow: auto;
-        }
-
-        #reportForm {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 10px;
-        margin-bottom: 20px;
-    }
-
-    #generateReport {
-        background-color: #2E37A4; /* Clinic blue */
-        color: #fff;
-        padding: 10px 15px;
-        border: none;
-        border-radius: 6px;
-        cursor: pointer;
-
-    }
-
-    /* Clinic chart title styling */
-    .chart-title {
-        font-size: 24px;
-        font-weight: bold;
-        color: #007bff; /* Clinic blue */
-        margin-bottom: 10px;
-    }
-
-    /* Clinic chart container styling */
-    .chart-container {
-        background-color: #f8f9fa; /* Clinic light gray */
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        padding: 20px;
-    }
-
-    </style>
     
     <script> 
 const spinnerWrapperEl = document.querySelector('.spinner-wrapper');
@@ -384,9 +288,16 @@ window.addEventListener('load', () => {
 
   setTimeout(() => {
     spinnerWrapperEl.style.display = 'none';
+<<<<<<< HEAD
+  }, 2000);
+})
+</script>
+    <!-- Javascript -->          
+=======
   }, 2500);
 })
 </script>
+>>>>>>> 91605231c1537d4fdf012dfbe7286af24b01a8ef
     <script src="assets/plugins/popper.min.js"></script>
     <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>  
     
