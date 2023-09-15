@@ -87,7 +87,7 @@ color: #fff!important;
   <div style="display: flex; justify-content: center; align-items: center;">
     <div class="app-card-body p-4">
 
-    <button class="btn btn-submit" id="printButton">Print</button> // nakatahaw na su mga charts pag reload ko nagbalik
+    <button class="btn btn-submit" id="printButton">Print</button>
 <div id="pdfContainer"></div>
 
 <script>
