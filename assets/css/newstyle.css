@@ -1,4 +1,7 @@
 
+:root{
+    --ternary: blue;
+}
 .app-card-body p {
     text-align: center;
 }
@@ -15,3 +18,32 @@
     width: 100%!important;
 }
 
+
+.app-card-body .form-horizontal p{
+    text-align: left;
+}
+
+input, select{
+    border: 2px solid rgba(183, 183, 207, 0.596);
+}
+
+input:hover,select:hover{
+    border: 2px solid var(--ternary);
+    background-color: transparent;
+}
+
+input:focus, select:focus{
+    border: 2px solid var(--ternary);
+}
+
+.checkbox-label::before{
+    border: 2px solid var(--ternary) !important;
+}
+
+.checkbox:checked + label:before{
+    background-color: var(--ternary);
+}
+
+.checkbox-label::before:checked {
+    background-color: var(--ternary);
+}
