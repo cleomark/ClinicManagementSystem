@@ -190,7 +190,7 @@ if (mysqli_num_rows($result) > 0) {
 </div>
 <?php
 // Fetch and display medical records
-$sql = "SELECT * FROM medicalapp WHERE admin_id = '11' AND is_deleted_on_website = 0";
+$sql = "SELECT * FROM medicalappadmin WHERE admin_id = '11' AND is_deleted_on_website = 0";
 $result = $conn->query($sql);
 ?>
 <center>

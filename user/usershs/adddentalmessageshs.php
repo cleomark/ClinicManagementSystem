@@ -189,6 +189,7 @@
     $sql1 = "SELECT * FROM status";
     $result1 = mysqli_query($conn, $sql1);
 
+ 
     if (mysqli_num_rows($result1)) {
         $row1 = $result1->fetch_assoc();
 
@@ -197,6 +198,8 @@
         $statuses230_3 = $row1['statuses230_3']; // Update column name to 'statuses230'
         $statuses330_4 = $row1['statuses330_4']; // Update column name to 'statuses330'
         $statuses430_5 = $row1['statuses430_5']; // Update column name to 'statuses430'
+    }else{
+      
     }
     ?>
     <p>

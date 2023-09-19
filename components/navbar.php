@@ -24,10 +24,8 @@
 
 
 <?php 
-    if(!isset($fullname)){
-        if (isset($_SESSION['username'])){
-            $fullname = $_SESSION['username'];
-        }
+    if (isset($_SESSION['username'])){
+        $fullname = $_SESSION['username'];
     }
     include './function/navcontent.php';
     include $_SERVER['DOCUMENT_ROOT'] . "/DivineClinic/components/icons.php";
@@ -53,16 +51,16 @@
     <span class="user-img">
     <img src="../../assets/img/user.png">
     </span>
-    </a>
-    <div class="dropdown-menu">
-    <a class="dropdown-item" href="function/logout.php">Log Out</a>
+                    </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="function/logout.php">Log Out</a>
+                </div>
+            </li>
+        </ul>
     </div>
-    </li>
-    </ul>
-    </div>
-    <div class="sidebar" id="sidebar">
-    <div class="sidebar-inner slimscroll">
-    <div id="sidebar-menu" class="sidebar-menu">
+        <div class="sidebar" id="sidebar">
+        <div class="sidebar-inner slimscroll">
+        <div id="sidebar-menu" class="sidebar-menu">
     <ul>
     <li class="menu-title">Main</li>
     <?php 
@@ -117,16 +115,6 @@
 <div class="sidebar-overlay" data-reff></div>
 
 <script src="../../assets/js/jquery-3.6.1.min.js"></script>
-<?php 
-if(in_array( basename($_SERVER["SCRIPT_FILENAME"]), 
-["addmedicalmessageshs.php", "adddentalmessageshs.php", "addphysicianmessagegsjhs.php",
- "adddentalmessagecollege.php", "addmedicalmessagecollege.php", "medicalcollege.php",  ])
-){
-    ?>
-        <script src="../../assets/js/bootstrap.bundle.min.js"></script>
-    <?php
-}
-?>
 
 <script src="../../assets/js/feather.min.js"></script>
 
@@ -150,3 +138,16 @@ if(in_array( basename($_SERVER["SCRIPT_FILENAME"]),
 <script src="../../assets/js/app.js"></script>
 
 <link rel="stylesheet" href="../../assets/css/newstyle.css">
+
+<?php 
+ // remove after development, please fix ur backend
+
+ $statuses1030_1 = "Unavailble"; // Update column name to 'statuses1030'
+ $statuses1130_2 ="Unavailble"; // Update column name to 'statuses1130'
+ $statuses230_3 = "Unavailble"; // Update column name to 'statuses230'
+ $statuses330_4 = "Unavailble"; // Update column name to 'statuses330'
+ $statuses430_5 = "Unavailble"; // Update col
+
+ // Inserted a table medicalappadmin with admin_id for medicalcollege.php (nursecollege), please fix if table is not intended
+
+?>

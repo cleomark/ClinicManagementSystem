@@ -23,6 +23,22 @@ SET time_zone = "+00:00";
 
 -- --------------------------------------------------------
 
+CREATE TABLE `statuscollege` (
+  `statuses1030_1`  varchar(200) NOT NULL,
+  `statuses1130_2`  varchar(200) NOT NULL,
+  `statuses230_3`  varchar(200) NOT NULL,
+  `statuses330_4` varchar(200) NOT NULL,
+  `statuses430_5`  varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+CREATE TABLE `status` (
+  `statuses1030_1`  varchar(200) NOT NULL,
+  `statuses1130_2`  varchar(200) NOT NULL,
+  `statuses230_3`  varchar(200) NOT NULL,
+  `statuses330_4` varchar(200) NOT NULL,
+  `statuses430_5`  varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
 --
 -- Table structure for table `admins`
 --
@@ -450,6 +466,24 @@ INSERT INTO `healthrecordformshs` (`healthshs_id`, `user_id`, `image`, `fullname
 CREATE TABLE `medicalapp` (
   `medicalapp_id` int(11) NOT NULL,
   `user_id` int(20) NOT NULL,
+  `user_id` int(20) NOT NULL,
+  `idnumber` int(20) NOT NULL,
+  `name1` varchar(50) NOT NULL,
+  `gradecourseyear1` varchar(50) NOT NULL,
+  `phoneno` varchar(50) NOT NULL,
+  `date_time` varchar(200) NOT NULL,
+  `sched_time` varchar(200) NOT NULL,
+  `role` varchar(200) NOT NULL,
+  `onoff` varchar(200) NOT NULL,
+  `created_at` varchar(200) NOT NULL,
+  `is_deleted_on_website` tinyint(1) NOT NULL,
+  `availability` int(11) DEFAULT 1,
+  `status` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+CREATE TABLE `medicalappadmin` (
+  `medicalapp_id` int(11) NOT NULL,
+  `admin_id` int(20) NOT NULL,
   `idnumber` int(20) NOT NULL,
   `name1` varchar(50) NOT NULL,
   `gradecourseyear1` varchar(50) NOT NULL,
@@ -1593,6 +1627,20 @@ INSERT INTO `statusmedicalshswednesday` (`medical_id`, `statusmed8_am`, `statusm
 
 -- --------------------------------------------------------
 
+CREATE TABLE `statusmedicalgsjhs` (
+  `statusmedmonam_1` varchar(50) NOT NULL,
+  `statusmedtueam_2` varchar(50) NOT NULL,
+  `statusmedwedam_3` varchar(50) NOT NULL,
+  `statusmedthuam_4` varchar(50) NOT NULL,
+  `statusmedfriam_5` varchar(50) NOT NULL,
+  `statusmedmonpm_6` varchar(50) NOT NULL,
+  `statusmedtuepm_7` varchar(50) NOT NULL,
+  `statusmedwedpm_8` varchar(50) NOT NULL,
+  `statusmedthupm_9` varchar(50) NOT NULL,
+  `statusmedfripm_10` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
 --
 -- Table structure for table `statusphysiciancollege`
 --
@@ -1602,7 +1650,8 @@ CREATE TABLE `statusphysiciancollege` (
   `statusphysician9_am` varchar(200) NOT NULL,
   `statusphysician10_am` varchar(200) NOT NULL,
   `statusphysician11_am` varchar(200) NOT NULL,
-  `statusphysician12_pm` varchar(50) NOT NULL
+  `statusphysician12_pm` varchar(50) NOT NULL,
+  `status812` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -1622,7 +1671,8 @@ CREATE TABLE `statusphysiciangsjhsshs` (
   `statphysician_id` int(11) NOT NULL,
   `statusphysician9_am` varchar(200) NOT NULL,
   `statusphysician10_am` varchar(200) NOT NULL,
-  `statusphysician11_am` varchar(200) NOT NULL
+  `statusphysician11_am` varchar(200) NOT NULL,
+  `status811` varchar (200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
