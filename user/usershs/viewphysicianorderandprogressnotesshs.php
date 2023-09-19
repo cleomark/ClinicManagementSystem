@@ -94,10 +94,14 @@
           border: 3px solid #4e5864 !important;
           background-color: #fff !important;
         }
-        /* Hide placeholder text on hover and focus */
-        input.form-control:hover::placeholder,
-        input.form-control:focus::placeholder {
-            color: transparent !important;
+        select{
+          background-color: transparent !important;
+          border: 3px solid #4e5864 !important;
+        }
+        select:hover{
+          border: 1px solid #4e5864 !important;
+          background-color: #e0e0e0 !important;
+          border-color: #4e5864 !important;
         }
     </style>
 
