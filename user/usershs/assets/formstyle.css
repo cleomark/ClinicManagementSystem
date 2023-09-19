@@ -216,7 +216,6 @@ input:focus + label, input:valid + label, select:focus + label, select:valid + l
 
 .checkbox-group div {
     display: flex;
-    align-items: center;
     margin-bottom: 10px;
 }
 .checkbox {

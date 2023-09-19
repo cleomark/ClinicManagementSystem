@@ -271,10 +271,10 @@
 </div>
 
         <br>
-        <p style="color: #000;">Do you have any allergy to:</p>
+        <p style="color: #000; text-align: left;">Do you have any allergy to:</p>
 
         <div class="row-container">
-            <p><b>Food:</b></p>
+            <p style="text-align: left;"><b>Food:</b></p>
 
             <div>
                 <input class="checkbox" name="yesfood" value="yesfood" type="checkbox" id="yesfood" value="<?= $row['yesfood'];?>" <?php if ($row['yesfood']) echo "checked"; ?> readonly>
@@ -290,7 +290,7 @@
                 <input name="food" class="input-box" id="otherillnesss" type="text" value="<?=$row['food'];?>" readonly>
             </div>
 
-            <p><b>Medicine:</b></p>
+            <p style="text-align: left;"><b>Medicine:</b></p>
 
             <div>
                 <input class="checkbox" name="yesmed" value="yesmed" type="checkbox" id="yesmed" value="<?= $row['yesmed'];?>" <?php if ($row['yesmed']) echo "checked"; ?> readonly>

@@ -91,10 +91,14 @@
             color: #800000;
             font-size: 17px !important;
         }
-        /* Hide placeholder text on hover and focus */
-        input.form-control:hover::placeholder,
-        input.form-control:focus::placeholder {
-            color: transparent !important;
+        select{
+          background-color: transparent !important;
+          border: 3px solid #4e5864 !important;
+        }
+        select:hover{
+          border: 1px solid #4e5864 !important;
+          background-color: #e0e0e0 !important;
+          border-color: #4e5864 !important;
         }
     </style>
 
@@ -216,7 +220,7 @@ if (mysqli_num_rows($result) > 0) {
   <div class="col-sm-3">
     <div class="form-group">
       <label for="fullname" class="control-label">Sex</label>
-      <select class="form-control" name="sex">
+      <select class="form-control" name="sex" readonly>
         <option disabled selected><?= $row['sex'];?></option>
       </select>
     </div>

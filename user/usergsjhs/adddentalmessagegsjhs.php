@@ -439,17 +439,6 @@ header .current-date{
   text-decoration: none;
   cursor: pointer;
 }
-
-
-
-
-
-
-
-
-
-
-
 </style>
 <?php
     class Calendar {
