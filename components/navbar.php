@@ -128,7 +128,6 @@ if(in_array( basename($_SERVER["SCRIPT_FILENAME"]),
 }
 ?>
 
-
 <script src="../../assets/js/feather.min.js"></script>
 
 <script src="../../assets/js/jquery.slimscroll.js"></script>
