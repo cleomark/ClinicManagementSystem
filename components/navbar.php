@@ -119,8 +119,8 @@
 <script src="../../assets/js/jquery-3.6.1.min.js"></script>
 <?php 
 if(in_array( basename($_SERVER["SCRIPT_FILENAME"]), 
-["addmedicalmessageshs.php", "adddentalmessageshs.php",
- "adddentalmessagecollege.php", "addmedicalmessagecollege.php", ])
+["addmedicalmessageshs.php", "adddentalmessageshs.php", "addphysicianmessagegsjhs.php",
+ "adddentalmessagecollege.php", "addmedicalmessagecollege.php", "medicalcollege.php",  ])
 ){
     ?>
         <script src="../../assets/js/bootstrap.bundle.min.js"></script>
