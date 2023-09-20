@@ -149,19 +149,15 @@ if (mysqli_num_rows($result) > 0) {
 		    <div class="container-xl">
 			    <div class="position-relative mb-3">
 				    <div class="row g-3 justify-content-between">
-					    <div class="col-auto">
-					        <h1 class="app-page-title mb-0"></h1>
-					    </div>
 						
 				    </div>
 			    </div>
 			    
-                <div class="app-card app-card-notification shadow-sm mb-4">
+          <div class="app-card app-card-notification shadow-sm mb-4">
 				    <div class="app-card-header px-4 py-3">
 				        <div class="row g-3 align-items-center">
-					        <div class="col-12 col-lg-auto text-center text-lg-start">
-					        </div>
-                            <?php
+                  
+              <?php
 								if(isset($_SESSION['success'])){
 									echo $_SESSION['success'];
 									unset($_SESSION['success']);

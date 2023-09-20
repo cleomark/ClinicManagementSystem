@@ -48,6 +48,61 @@
     <link id="theme-style" rel="stylesheet" href="assets/css/portal.css">
 	<link rel="stylesheet" href="assets/style.css">
 
+    <style>
+        /* Define custom styles here */
+        .form-container {
+            background-color: #fff;
+            box-shadow: 4px 4px 4px 4px rgba(76, 84, 177, 0.5);
+            padding: 20px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-title {
+            text-align: center;
+            color: #4c54b1;
+            font-weight: bold;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            color: #000 !important;
+        }
+
+        input.form-control {
+            border: 3px solid #4e5864;
+            background-color: #fff !important;
+            padding: 10px;
+            border-radius: 10px;
+            transition: border-color 0.3s ease;
+        }
+
+        input.form-control:hover {
+            background-color: #e0e0e0 !important;
+            border-color: #4e5864 !important;
+        }
+        input.form-control:focus{
+            background-color: #e0e0e0 !important;
+        }
+        .sched{
+            color: #800000;
+            font-size: 17px !important;
+        }
+        select{
+          background-color: transparent !important;
+          border: 3px solid #4e5864 !important;
+        }
+        select:hover{
+          border: 1px solid #4e5864 !important;
+          background-color: #e0e0e0 !important;
+          border-color: #4e5864 !important;
+        }
+    </style>
+
 </head> 
 
 <body class="app">   	
@@ -80,8 +135,6 @@ if (mysqli_num_rows($result) > 0) {
 			    <div class="position-relative mb-3">
 				    <div class="row g-3 justify-content-between">
 					   
-					       
-						
 				    </div>
 			    </div>
 			    
@@ -98,51 +151,65 @@ if (mysqli_num_rows($result) > 0) {
 							$result = $conn->query($sql);
     						while($row = $result->fetch_array()){
 						?>
-                        <br>
-				 <div class="row">
-                 <div class="col-sm-4">
+
+<div class="container">
+  <div class="form-container">
+
+    <div class="form-title">
+      Dental Record Form
+    </div>
+
+		<div class="row">
+
+            <div class="col-sm-4">
                 <div class="form-group">
-                    <label for="idnumber" class="col-sm-6 control-label">Your ID Number</label>
+                    <label for="idnumber" class="control-label">Your ID Number</label>
                         <input type="text" class="form-control" id="idnumber" name="idnumber" placeholder="Enter patient ID number" value="<?php echo $row['idnumber']; ?>" readonly>
                 </div>
             </div>
             <div class="col-sm-4">
                 <div class="form-group">
-                    <label for="patient_name" class="col-sm-4 control-label">Your name</label>
+                    <label for="patient_name" class="control-label">Your name</label>
                         <input type="text" class="form-control" id="fullname" name="fullname" placeholder="Enter your Fullname" value="<?php echo $row['fullname']; ?>" readonly>
                 </div>
             </div>
       
-         <div class="col-sm-4">
-        <div class="form-group">
-                    <label for="role" class="col-sm-4 control-label">Role</label>
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label for="role" class="control-label">Role</label>
                     <select id="role" name="role" class="form-control" readonly>
                             <option disabled selected><?= $row['role']; ?></option>
                         </select>
                 </div>
             </div>
-      </div>
-      <br>
-            <div class="row">
+
+        </div>
+        <br>
+
+        <div class="row">
+
             <div class="col-sm-4">
                 <div class="form-group">
-                    <label for="cenrolled" class="col-sm-8 control-label">Currently Enrolled In</label>
+                    <label for="cenrolled" class="control-label">Currently Enrolled In</label>
                         <input type="text" class="form-control" id="cenrolled" name="cenrolled" placeholder="If you are an employee, just type Employee" value="<?php echo $row['cenrolled']; ?>" readonly>
                 </div>
             </div>
       
-        <div class="col-sm-4">
+            <div class="col-sm-4">
                 <div class="form-group">
-                    <label for="service" class="col-sm-8 control-label">Service</label>
+                    <label for="service" class="control-label">Service</label>
                         <input type="text" class="form-control" id="service" name="service" value="<?php echo $row['service']; ?>" readonly>
-                    </div>
-                            </div>
+                </div>
             </div>
 
-        <div class="form-group">
-            <span>Schedule: <?php echo $row['date_time']; ?></span>
         </div>
-  
+
+        <div class="form-group">
+            <span class="sched">Schedule: <?php echo $row['date_time']; ?></span>
+        </div>
+
+    </div>
+</div>  
         <?php } ?>
 				    </div><!--//app-card-body-->
 				</div>			    

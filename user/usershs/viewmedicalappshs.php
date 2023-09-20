@@ -145,7 +145,7 @@
                         $sql = "SELECT * FROM medicalappshs WHERE idnumber = '$idnumber'";
                         $result = $conn->query($sql);
                         while($row = $result->fetch_array()) {
-                    ?><br>
+                    ?>
 
 <div class="container">
     <div class="form-container">
@@ -190,7 +190,8 @@
                             <b><span class="sched">Schedule: <?php echo date('Y-m-d', strtotime($row['date_time'])); ?>
                             <?php echo date('h:i A', strtotime($row['sched_time'])); ?></span></b>
                         </div>
-    </div>
+                        
+                    </div>
 </div>
 <?php } ?>
             </div>
