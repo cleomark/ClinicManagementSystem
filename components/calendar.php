@@ -1,19 +1,17 @@
 <!-- CSS -->
 <style>
-   body {
-        color: #000;
-        overflow-x: hidden;
-        height: 100%;
-        background-color: #C5CAE9 ;
-        background-repeat: no-repeat;
-        padding: 0px !important;
-    }
-  
   .calendar-container{
     width: 90%;
     height: 55%;
     display:flex;
     justify-content: center;
+  }
+
+  .clip-content{
+    overflow: hidden;
+  }
+  .calendar-beveled{
+    border-radius: 30px;
   }
   
   .container-fluid {
@@ -192,9 +190,9 @@
       <div class="calendar-container">
 
               <!-- this hold the main width of the calendar -->
-              <div class="col-lg-10">
+              <div class="col-lg-10 calendar-beveled">
                 <!-- This hold the time -->
-                <div class="card border-0">
+                <div class="card border-0 calendar-beveled clip-content">
                   <form autocomplete="off">
                     <div class="card-header bg-dark">
                       <!-- this class hold the pick date interface -->
