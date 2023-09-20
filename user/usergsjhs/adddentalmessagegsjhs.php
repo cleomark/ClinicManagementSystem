@@ -49,7 +49,61 @@
     <link id="theme-style" rel="stylesheet" href="assets/css/portal.css">
 	  <link rel="stylesheet" href="assets/style.css">
 
+      <style>
+        /* Define custom styles here */
+        .form-container {
+            background-color: #fff;
+            box-shadow: 4px 4px 4px 4px rgba(76, 84, 177, 0.5);
+            padding: 20px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+        }
 
+        .form-title {
+            text-align: center;
+            color: #4c54b1;
+            font-weight: bold;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            color: #000 !important;
+        }
+
+        input.form-control {
+            border: 3px solid #4e5864;
+            background-color: #fff !important;
+            padding: 10px;
+            border-radius: 10px;
+            transition: border-color 0.3s ease;
+        }
+
+        input.form-control:hover {
+            background-color: #e0e0e0 !important;
+            border-color: #4e5864 !important;
+        }
+        input.form-control:focus{
+            background-color: #e0e0e0 !important;
+        }
+        .sched{
+            color: #800000;
+            font-size: 17px !important;
+        }
+        select{
+            border: 3px solid #4e5864 !important;
+        }
+        select:hover{
+            border: 1px solid #4e5864 !important;
+            background-color: #e0e0e0 !important;
+        }
+        select:focus{
+            background-color: #e0e0e0 !important;
+        }
+    </style>
 
    
 </style>
@@ -74,9 +128,6 @@
                 <div class="app-card app-card-notification shadow-sm mb-4">
 				    <div class="app-card-header px-4 py-3">
 				        <div class="row g-3 align-items-center">
-                        <div class="col-12 col-lg-auto text-center text-lg-start">
-						        <h4 class="notification-title mb-1">Request Dental Schedule</h4>
-					        </div>
                             <?php
 								if(isset($_SESSION['success'])){
 									echo $_SESSION['success'];
@@ -86,49 +137,50 @@
 				        </div><!--//row-->
 				    </div><!--//app-card-header-->
 				    <div class="app-card-body p-4">
-                    <b><p>Please wait for a message for approval of your dental request appointment.</b></p>
 
-                    <form class="form-horizontal mt-4" method="post" action="function/functions.php" onsubmit="return validateForm()">
-                    <div class="row">
-    <div class="col-sm-3">
-        <div class="form-group">
-            <label for="idnumber" class="col-sm-12 control-label" style="font-size: 16px">Enter your ID Number</label>
-            <div class="col-sm-12">
-                <input type="text" class="form-control" id="idnumber" name="idnumber" placeholder="ID number" required>
-            </div>
+<div class="container">
+    <div class="form-container" style="margin-left: 10px;">
+        <div class="form-title">
+            Request Dental Schedule
         </div>
-    </div>
-    <div class="col-sm-3">
-        <div class="form-group">
-            <label for="patient_name" class="col-sm-12 control-label" style="font-size: 16px">Enter your Fullname</label>
-            <div class="col-sm-12">
-                <input type="text" class="form-control" id="name" name="fullname" placeholder="Enter your Fullname" required>
-            </div>
-        </div>
-    </div>
 
-    <div class="col-sm-3">
-        <div class="form-group">
-            <label for="dental_service" class="col-sm-12 control-label" style="font-size: 16px">Dental Services</label>
-            <div class="col-sm-12">
-                <select id="dental_service" name="service" class="form-control" required>
-                    <option value="">Select Service</option>
-                    <option value="Cleaning">Cleaning</option>
-                    <option value="Tooth Extraction">Tooth Extraction</option>
-                </select>
-            </div>
-        </div>
-    </div>
+        <b><p>Please wait for a message for approval of your dental request appointment.</b></p>
 
-    <div class="col-sm-3">
-  <div class="form-group">
-  <label for="phoneno" class="col-sm-12 control-label" style="font-size: 16px">Phone Number</label>
-    <div class="col-sm-12">
-      <input id="personalContactInput" name="phoneno" type="text" placeholder="+63" class="form-control contactInput">
-      <p id="personalContactError" class="errorMessage" style="color: red; display: none;">Invalid Phone Number</p>
-    </div>
-  </div>
-</div>
+        <form class="form-horizontal mt-4" method="post" action="function/functions.php" onsubmit="return validateForm()">
+
+        <div class="row" style="margin-left:auto">
+
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <label for="idnumber" class="control-label">Enter your ID Number</label>
+                    <input type="text" class="form-control" id="idnumber" name="idnumber" placeholder="ID number" required>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <label for="patient_name" class="control-label">Enter your Fullname</label>
+                    <input type="text" class="form-control" id="name" name="fullname" placeholder="Enter your Fullname" required>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <label for="dental_service" class="control-label">Dental Services</label>
+                    <select id="dental_service" name="service" class="form-control" required>
+                        <option value="">Select Service</option>
+                        <option value="Cleaning">Cleaning</option>
+                        <option value="Tooth Extraction">Tooth Extraction</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <label for="phoneno" class="control-label">Phone Number</label>
+                    <input id="personalContactInput" name="phoneno" type="text" placeholder="+63" class="form-control contactInput">
+                    <p id="personalContactError" class="errorMessage" style="color: red; display: none;">Invalid Phone Number</p>
+                </div>
+            </div>
+        
+       
 
 <script>
     const personalContactInput = document.getElementById('personalContactInput');
@@ -161,46 +213,43 @@
 </div>
 
 <br>
-<div class="row">
+        <div class="row" style="margin-left: auto;" >
 
-  
-<div class="col-sm-3">
-<div class="form-group">
-        <label for="datetime" class="col-sm-12 control-label" style="font-size: 16px">Schedule</label>
-        <div class="col-sm-12">
-            <input type="text" class="form-control no-color-change" id="selected-date" name="date_time" placeholder="Choose Date in the Calendar" readonly>
-        </div>
-    </div>
-</div>
+        
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <label for="datetime" class="control-label">Schedule</label>
+                        <input type="text" class="form-control no-color-change" id="selected-date" name="date_time" placeholder="Choose Date in the Calendar" readonly>
+                </div>
+            </div>
 
-<div class="col-sm-3">
-    <div class="form-group">
-        <label for="newInput" class="col-sm-12 control-label" style="font-size: 16px">Time</label>
-        <div class="col-sm-12">
-            <input type="text" class="form-control no-color-change" id="sched_time" name="sched_time" placeholder="Select Time" readonly>
-        </div>
-    </div>
-</div>
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <label for="newInput" class="control-label">Time</label>
+                        <input type="text" class="form-control no-color-change" id="sched_time" name="sched_time" placeholder="Select Time" readonly>
+                </div>
+            </div>
 
 
-    <div class="col-sm-3">
-        <div class="form-group">
-            <label for="gradecourseyear" class="control-label" style="font-size: 16px">Grade & Section</label>
-            <input type="text" class="form-control" id="igradecourseyear" name="gradecourseyear" placeholder="Enter Grade & Section">
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <label for="gradecourseyear" class="control-label">Grade & Section</label>
+                    <input type="text" class="form-control" id="igradecourseyear" name="gradecourseyear" placeholder="Enter Grade & Section">
+                </div>
+            </div>
+                
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <label for="fullname">Role</label>
+                    <select id="role" name="role" class="form-control">
+                        <option value="">--Select--</option>
+                        <option value="Student in GS/JHS">Student</option>
+                        <option value="Employee in GS/JHS">Employee</option>
+                    </select>
+                </div>
+            </div>
+
         </div>
-    </div>
-    
-    <div class="col-sm-3">
-        <div class="form-group">
-            <label for="fullname" style="font-size: 16px">Role</label>
-            <select id="role" name="role" class="form-control">
-                <option value="">--Select--</option>
-                <option value="Student in GS/JHS">Student</option>
-                <option value="Employee in GS/JHS">Employee</option>
-            </select>
-        </div>
-    </div>
-</div>
 
 <br><br>
 <style>
@@ -725,6 +774,9 @@
     </div>
 </div>
 </form>
+
+    </div>
+</div>
 
 
 </div><!--//app-card-body-->
