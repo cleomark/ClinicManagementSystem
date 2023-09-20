@@ -125,8 +125,8 @@
 <script src="../../assets/plugins/datatables/jquery.dataTables.min.js"></script>
 <script src="../../assets/plugins/datatables/datatables.min.js"></script>
 
-<script src="../../assets/plugins/simple-calendar/jquery.simple-calendar.js"></script>
-<script src="../../assets/js/calander.js"></script>
+<!-- <script src="../../assets/plugins/simple-calendar/jquery.simple-calendar.js"></script>
+<script src="../../assets/js/calander.js"></script> -->
 
 <script src="../../assets/plugins/apexchart/apexcharts.min.js"></script>
 <script src="../../assets/plugins/apexchart/chart-data.js"></script>
