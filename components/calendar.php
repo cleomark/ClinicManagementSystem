@@ -67,13 +67,19 @@
   }
   
   .datepicker {
-    margin-top: 20px;
+  
+    top: 20px;
   background-color: #211eb7!important;
   color: #fff !important;
   border: none;
   padding: 10px !important;
   text-align: center;
   cursor: pointer;
+  }
+
+
+  td.active.day {
+    border-radius: 90px!important;
   }
   #dp1{
     width: 400px;
@@ -84,10 +90,12 @@
   border-bottom: 6px solid #000;
   }
   
-  .datepicker-dropdown{
-    width: 400px;
-    background:white!important;
-  }
+  .datepicker-dropdown {
+  width: 400px;
+  background: white!important;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Adjust the values for shadow color and size as needed */
+}
+
   .table-condensed{
     width: 380px;
   }
@@ -116,7 +124,7 @@
   color: #000 !important;
   }
   
-  
+
   .disabled {
   color: #616161 !important;
   }
