@@ -190,7 +190,7 @@
 
 <div class="medical-history">
 
-    <p style="color: #000;" >Please select box if you have/had any of the following illnesses:</p>
+    <p style="color: #000; text-align: left;" >Please select box if you have/had any of the following illnesses:</p>
 
     <div class="checkbox-group">
 
