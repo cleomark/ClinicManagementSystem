@@ -1,8 +1,11 @@
 <!-- CSS -->
 <style>
+  .app-card{
+    padding:40px;
+  }
   .calendar-container{
     width: 90%;
-    height: 55%;
+    height: 70%;
     display:flex;
     justify-content: center;
   }
@@ -25,6 +28,16 @@
   .card {
   box-shadow: 0px 4px 8px 0px #7986CB;
   }
+
+  p{
+    text-align:center;
+  }
+
+  label{
+    padding-left:3px;
+    padding-top:5px;
+    font-size:20px;
+  }
   
   input {
     padding: 10px 20px !important;
@@ -32,7 +45,7 @@
     border-radius: 10px;
     box-sizing: border-box;
     background-color: #616161 ;
-    color: #fff !important;
+    
     font-size: 16px;
     letter-spacing: 1px;
     width: 180px;
@@ -42,7 +55,7 @@
     -moz-box-shadow: none !important;
     -webkit-box-shadow: none !important;
     box-shadow: none !important;
-    border: 1px solid #512DA8;
+    border: 1px solid #fff;
     outline-width: 0;
   }
   
@@ -67,6 +80,7 @@
   }
   
   .datepicker {
+  height:400px;
   background-color: #fb8b24!important;
   color: #fff !important;
   border: none;
@@ -74,6 +88,13 @@
   text-align: center;
   cursor: pointer;
   }
+.active{
+  background:#fff!important;
+}
+.active.day{
+  color:black!important;
+}
+
   #dp1{
     width: 400px;
     height: 40px;
@@ -154,6 +175,11 @@
   padding-left: 5px;
   cursor: pointer;
   }
+
+  .unavailable{
+    pointer-events: none;
+    background-color: #EEE;
+  }
   
 </style>
 <!-- !CSS -->
@@ -182,7 +208,77 @@
         autoclose: true,
         startDate: '0d'
     });
+    document.querySelectorAll('.cell').forEach( cell => {
+      cell.addEventListener('click',()=>{
+        document.querySelector('#sched_time').value = cell.innerHTML;
+      });
+    });
 });
+
+let availability_table = {
+  "sunday" :  [],
+  "saturday" : [],
+    <?php
+        foreach($week as $day=>$available){
+            echo "'".$day."': [";
+            foreach($available as $time){
+                echo "'".$time."'".",";
+            }
+            echo "],";
+        }
+    ?>     
+}
+
+function setSchedule(value){
+  var date_split = value.split("-");
+  date_split.reverse();
+  const date = new Date(date_split[0]+"-"+date_split[1]+"-"+date_split[2]);
+  let day_index = date.getDay();
+  var day = "";
+  switch(day_index){
+    case 0:
+      day = "Sunday";
+    break;
+    case 1:
+      day = "Monday";
+    break;
+    case 2:
+      day = "Tuesday";
+    break;
+    case 3:
+      day = "Wednesday";
+    break;
+    case 4:
+      day = "Thursday";
+    break;
+    case 5:
+      day = "Friday";
+    break;
+    case 6:
+      day = "Saturday";
+    break;
+    default:
+      day = "INVALID";
+  }
+  
+  var d = new Date();
+  d.setMonth(date_split[2] - 1)
+  var month = d.toLocaleString('en-US', { month: 'long' });
+  var sched = day + ", " + month + " "+ date_split[1] + ", " + date_split[0];
+  document.querySelector('#selected-date').value = sched;
+
+  // set available time
+
+  document.querySelectorAll('.cell').forEach( cell =>{
+    if(availability_table[day.toLowerCase()].includes(cell.innerHTML)){
+      cell.classList.remove('unavailable');
+    }else{
+      if(!cell.classList.contains('unavailable')){
+        cell.classList.add('unavailable');
+      }
+    }
+  });
+}
 </script>
 <!-- !JS -->
 
@@ -197,40 +293,40 @@
                     <div class="card-header bg-dark">
                       <!-- this class hold the pick date interface -->
                       <div class="mx-0 mb-0 row justify-content-sm-center justify-content-start px-1">
-                        <input type="text" id="dp1" class="datepicker" placeholder="Pick Date" name="date" readonly><span class="fa fa-calendar"></span>
+                        <input type="text" id="dp1" class="datepicker" onChange="setSchedule(this.value)" placeholder="Pick Date" name="date" readonly><span class="fa fa-calendar"></span>
                       </div>
                     </div>
                     <!-- Card body -->
                     <div class="card-body p-3 p-sm-5">
                       <div class="row text-center mx-0">
-                        <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">9:00AM</div></div>
-                        <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">9:30AM</div></div>
-                        <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">9:45AM</div></div>
-                        <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">10:00AM</div></div>
-                        <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">10:30AM</div></div>
-                        <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">10:45AM</div></div>
+                        <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1 unavailable">9:00AM</div></div>
+                        <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1 unavailable">9:30AM</div></div>
+                        <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1 unavailable">9:45AM</div></div>
+                        <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1 unavailable">10:00AM</div></div>
+                        <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1 unavailable">10:30AM</div></div>
+                        <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1 unavailable">10:45AM</div></div>
                       </div>
                       <div class="row text-center mx-0">
-                        <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">11:00AM</div></div>
-                        <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">11:30AM</div></div>
-                        <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">11:45AM</div></div>
-                        <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">12:00PM</div></div>
-                        <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">12:30PM</div></div>
-                        <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">12:45PM</div></div>
+                        <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1 unavailable">11:00AM</div></div>
+                        <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1 unavailable">11:30AM</div></div>
+                        <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1 unavailable">11:45AM</div></div>
+                        <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1 unavailable">12:00PM</div></div>
+                        <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1 unavailable">12:30PM</div></div>
+                        <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1 unavailable">12:45PM</div></div>
                       </div>
                       <div class="row text-center mx-0">
-                        <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">1:00PM</div></div>
-                        <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">1:30PM</div></div>
-                        <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">1:45PM</div></div>
-                        <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">2:00PM</div></div>
-                        <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">2:30PM</div></div>
-                        <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">2:45PM</div></div>
+                        <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1 unavailable">1:00PM</div></div>
+                        <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1 unavailable">1:30PM</div></div>
+                        <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1 unavailable">1:45PM</div></div>
+                        <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1 unavailable">2:00PM</div></div>
+                        <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1 unavailable">2:30PM</div></div>
+                        <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1 unavailable">2:45PM</div></div>
                       </div>
                       <div class="row text-center mx-0">
-                        <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">3:00PM</div></div>
-                        <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">3:30PM</div></div>
-                        <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">4:15PM</div></div>
-                        <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">5:00PM</div></div>
+                        <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1 unavailable">3:00PM</div></div>
+                        <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1 unavailable">3:30PM</div></div>
+                        <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1 unavailable">4:15PM</div></div>
+                        <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1 unavailable">5:00PM</div></div>
                       </div>
                     </div>
                   </form>

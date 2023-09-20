@@ -81,7 +81,7 @@
     }
 
 
-.spinner-wrapper:before,
+                        .spinner-wrapper:before,
                         .spinner-wrapper:after {
                             content: "";
                             position: absolute;

@@ -190,6 +190,9 @@
         <br><br>
     </div>
     <style>
+        
+
+
     /* Calendar container */
 #calendar {
   font-family: Arial, sans-serif;
@@ -279,7 +282,6 @@
 </style>
 <?php
     class Calendar {
-  
             
              //Constructor
              
@@ -497,37 +499,10 @@
     $calendar = new Calendar();
     ?>
 
-
-    <div id="calendar-container">
-        <?php
-        // Generate and display the calendar
-        $calendar->generateCalendar();
-        ?>
-        <br><br>
-    </div>
-    
-
-    <?php
-    $sql1 = "SELECT * FROM statusphysiciangsjhsshs";
-    $result1 = mysqli_query($conn, $sql1);
-
-    if (mysqli_num_rows($result1)) {
-        $row1 = $result1->fetch_assoc();
-        $statusphysician9_am = $row1['statusphysician9_am'];
-        $statusphysician10_am = $row1['statusphysician10_am'];
-        $statusphysician11_am = $row1['statusphysician11_am'];
-    }
-    ?>
-
-<table class="schedule-table" id="wednesday-table">
-<th colspan="4" id="selected-day-header"><span id="selected-date-display"></span></th>
-  <tr>
-    <td class="<?php echo ($statusphysician9_am == 'Unavailable') ? 'unavailable' : 'available'; ?>" onclick="handleLabelClick('<?php echo $statusphysician9_am; ?>')"><?php echo $statusphysician9_am; ?></td>
-    <td class="<?php echo ($statusphysician10_am == 'Unavailable') ? 'unavailable' : 'available'; ?>" onclick="handleLabelClick('<?php echo $statusphysician10_am; ?>')"><?php echo $statusphysician10_am; ?></td>
-    <td class="<?php echo ($statusphysician11_am == 'Unavailable') ? 'unavailable' : 'available'; ?>" onclick="handleLabelClick('<?php echo $statusphysician11_am; ?>')"><?php echo $statusphysician11_am; ?></td>
-  </tr>
-</table>
-
+<?php 
+        include $_SERVER['DOCUMENT_ROOT'] . "/DivineClinic/components/calendar.php";
+?>
+p
 
 <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
@@ -561,7 +536,7 @@
     }, 5000);
 </script>
   <!-- jQuery library (make sure to include it) -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
     
     <script>
 $(document).ready(function() {

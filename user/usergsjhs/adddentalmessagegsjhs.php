@@ -203,96 +203,6 @@
 </div>
 
 <br><br>
-<style>
-    /* Calendar container
-#calendar {
-  font-family: Arial, sans-serif;
-  width: 300px;
-  margin: 0 auto;
-}
-
-/* Calendar header */
-/* #calendar .header {
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  padding: 10px 0;
-} */
-
-/* Previous and Next month links */
-/* #calendar .prev,
-#calendar .next {
-  color: #fff;
-  text-decoration: none;
-  margin: 0 10px;
-  font-size: 18px;
-} */
-
-/* Calendar title */
-/* #calendar .title {
-  font-size: 20px;
-} */
-
-/* Calendar labels (Mon, Tue, etc.) */
-/* #calendar .label {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  background-color: #eee;
-  text-align: center;
-} */
-
-/* #calendar .label li {
-  display: inline-block;
-  width: 14.285%;
-  padding: 10px 0;
-  border-right: 1px solid #ccc;
-  border-bottom: 1px solid #ccc;
-  box-sizing: border-box;
-  background-color: #5579c6 !important;
-  color:white!important;
-} */
-
-/* Calendar dates */
-/* #calendar .dates {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-#calendar .dates li {
-  display: inline-block;
-  width: 14.285%;
-  padding: 10px 0;
-  text-align: center;
-  box-sizing: border-box;
-  border-right: 1px solid #ccc;
-  border-bottom: 1px solid #ccc;
-} */
-
-/* Highlighted start and end days */
-/* #calendar .start {
-  background-color: #337ab7;
-  color: #fff;
-} */
-
-/* #calendar .end {
-  background-color: #337ab7;
-  color: #fff;
-} */
-
-/* Today's date */
-/* #calendar .today {
-  background-color: #5bc0de;
-  color: #fff;
-} */
-
-/* Disabled days */
-/* #calendar .mask {
-  color: #ccc;
-} */
-
-</style>
 
 <?php
     class Calendar {
@@ -514,107 +424,36 @@
     ?>
 
 
-
-
-
-
- <!-- --------------------------------------------------CALENDAR-NEW--------------------------------------------------------------------- -->
-
- <?php 
-        include $_SERVER['DOCUMENT_ROOT'] . "/DivineClinic/components/calendar.php";
-    ?>
-
-<!-- ------------------------------------------------------------------------------------------------------------------------ -->
-
 <script>
-
-// const daysTag = document.querySelector(".days"),
-// currentDate = document.querySelector(".current-date"),
-// prevNextIcon = document.querySelectorAll(".icons span");
-
-// // getting new date, current year and month
-// let date = new Date(),
-// currYear = date.getFullYear(),
-// currMonth = date.getMonth();
-
-// // storing full name of all months in array
-// const months = ["January", "February", "March", "April", "May", "June", "July",
-//               "August", "September", "October", "November", "December"];
-
-// const renderCalendar = () => {
-//     let firstDayofMonth = new Date(currYear, currMonth, 1).getDay(), // getting first day of month
-//     lastDateofMonth = new Date(currYear, currMonth + 1, 0).getDate(), // getting last date of month
-//     lastDayofMonth = new Date(currYear, currMonth, lastDateofMonth).getDay(), // getting last day of month
-//     lastDateofLastMonth = new Date(currYear, currMonth, 0).getDate(); // getting last date of previous month
-//     let liTag = "";
-
-//     for (let i = firstDayofMonth; i > 0; i--) { // creating li of previous month last days
-//         liTag += `<li class="inactive">${lastDateofLastMonth - i + 1}</li>`;
-//     }
-
-//     for (let i = 1; i <= lastDateofMonth; i++) { // creating li of all days of current month
-//         // adding active class to li if the current day, month, and year matched
-//         let isToday = i === date.getDate() && currMonth === new Date().getMonth() 
-//                      && currYear === new Date().getFullYear() ? "active" : "";
-//         liTag += `<li class="${isToday}">${i}</li>`;
-//     }
-
-//     for (let i = lastDayofMonth; i < 6; i++) { // creating li of next month first days
-//         liTag += `<li class="inactive">${i - lastDayofMonth + 1}</li>`
-//     }
-//     currentDate.innerText = `${months[currMonth]} ${currYear}`; // passing current mon and yr as currentDate text
-//     daysTag.innerHTML = liTag;
-// }
-// renderCalendar();
-
-// prevNextIcon.forEach(icon => { // getting prev and next icons
-//     icon.addEventListener("click", () => { // adding click event on both icons
-//         // if clicked icon is previous icon then decrement current month by 1 else increment it by 1
-//         currMonth = icon.id === "prev" ? currMonth - 1 : currMonth + 1;
-
-//         if(currMonth < 0 || currMonth > 11) { // if current month is less than 0 or greater than 11
-//             // creating a new date of current year & month and pass it as date value
-//             date = new Date(currYear, currMonth, new Date().getDate());
-//             currYear = date.getFullYear(); // updating current year with new date year
-//             currMonth = date.getMonth(); // updating current month with new date month
-//         } else {
-//             date = new Date(); // pass the current date as date value
-//         }
-//         renderCalendar(); // calling renderCalendar function
-//     });
-// });
-
-
-
-
 </script>
 
-
-
-
-
-<!-- ------------------------------------------------------------------------------------------------------------------------ -->
-
-   <!-- <div id="calendar-container">
-        <?php
-        // Generate and display the calendar
-        // $calendar->generateCalendar();
-        ?>
-    </div>  -->
-
-
-    <br>
 <!-- --------------------------------------------------------UPPER MAINTENANCE---------------------------------------------- -->
     <?php
+
+    $week = [
+        "monday" => [],
+        "tuesday"=> [],
+        "wednesday"=> [],
+        "thursday"=> [],
+        "friday"=> [],
+    ];
     $sql1 = "SELECT * FROM statusdentalgsjhsshsmonday";
     $result1 = mysqli_query($conn, $sql1);
 
     if (mysqli_num_rows($result1)) {
         $row1 = $result1->fetch_assoc();
-
         $statusden9_am = $row1['statusden9_am'];
         $statusden10_am = $row1['statusden10_am'];
         $statusden11_am = $row1['statusden11_am'];
+        if($statusden9_am != "Unavailable"){
+            array_push($week["monday"], "9:00AM");
+        }
+        if($statusden10_am != "Unavailable"){
+            array_push($week["monday"], "10:00AM");
+        }
+        if($statusden11_am != "Unavailable"){
+            array_push($week["monday"], "11:00AM");
+        }
     }
     ?>
 
@@ -637,6 +476,15 @@
         $statusden9_am = $row1['statusden9_am'];
         $statusden10_am = $row1['statusden10_am'];
         $statusden11_am = $row1['statusden11_am'];
+        if($statusden9_am != "Unavailable"){
+            array_push($week["tuesday"], "9:00AM");
+        }
+        if($statusden10_am != "Unavailable"){
+            array_push($week["tuesday"], "10:00AM");
+        }
+        if($statusden11_am != "Unavailable"){
+            array_push($week["tuesday"], "11:00AM");
+        }
     }
     ?>
 
@@ -659,6 +507,15 @@
         $statusden9_am = $row1['statusden9_am'];
         $statusden10_am = $row1['statusden10_am'];
         $statusden11_am = $row1['statusden11_am'];
+        if($statusden9_am != "Unavailable"){
+            array_push($week["wednesday"], "9:00AM");
+        }
+        if($statusden10_am != "Unavailable"){
+            array_push($week["wednesday"], "10:00AM");
+        }
+        if($statusden11_am != "Unavailable"){
+            array_push($week["wednesday"], "11:00AM");
+        }
     }
     ?>
 <table class="schedule-table" id="wednesday-table">
@@ -680,6 +537,15 @@
         $statusden9_am = $row1['statusden9_am'];
         $statusden10_am = $row1['statusden10_am'];
         $statusden11_am = $row1['statusden11_am'];
+        if($statusden9_am != "Unavailable"){
+            array_push($week["thursday"], "9:00AM");
+        }
+        if($statusden10_am != "Unavailable"){
+            array_push($week["thursday"], "10:00AM");
+        }
+        if($statusden11_am != "Unavailable"){
+            array_push($week["thursday"], "11:00AM");
+        }
     }
     ?>
 <table class="schedule-table" id="thursday-table">
@@ -700,6 +566,15 @@
         $statusden9_am = $row1['statusden9_am'];
         $statusden10_am = $row1['statusden10_am'];
         $statusden11_am = $row1['statusden11_am'];
+        if($statusden9_am != "Unavailable"){
+            array_push($week["friday"], "9:00AM");
+        }
+        if($statusden10_am != "Unavailable"){
+            array_push($week["friday"], "10:00AM");
+        }
+        if($statusden11_am != "Unavailable"){
+            array_push($week["friday"], "11:00AM");
+        }
     }
     ?>
 <table class="schedule-table" id="friday-table">
@@ -713,6 +588,13 @@
 
 
 
+ <!-- --------------------------------------------------CALENDAR-NEW--------------------------------------------------------------------- -->
+
+    <?php 
+        include $_SERVER['DOCUMENT_ROOT'] . "/DivineClinic/components/calendar.php";
+    ?>
+
+<!-- ------------------------------------------------------------------------------------------------------------------------ -->
 
 <!-- -------------------------------------------------UNDER MAINTENANCE-------------------------------------------------- -->
 

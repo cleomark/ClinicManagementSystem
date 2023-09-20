@@ -198,8 +198,6 @@
         $statuses230_3 = $row1['statuses230_3']; // Update column name to 'statuses230'
         $statuses330_4 = $row1['statuses330_4']; // Update column name to 'statuses330'
         $statuses430_5 = $row1['statuses430_5']; // Update column name to 'statuses430'
-    }else{
-      
     }
     ?>
     <p>
@@ -257,7 +255,7 @@
 
 
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
 <script>
   $(document).ready(function() {
     function updateColor() {
@@ -268,10 +266,6 @@
     $('select').each(updateColor).change(updateColor);
   });
 </script>
-
-
-
-
 
 <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
