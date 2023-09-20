@@ -168,7 +168,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <option value="2025" <?php echo $selected_year === '2025' ? 'selected' : ''; ?>>2025</option>
     </select>
 
-    <button type="submit">Generate Report</button>
+    <button type="submit" class="btn btn-success">Generate Report</button>
 </form>
 
     </script>			

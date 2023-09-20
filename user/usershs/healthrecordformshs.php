@@ -44,7 +44,21 @@
     <link id="theme-style" rel="stylesheet" href="assets/css/portal.css">
 	<link rel="stylesheet" href="assets/formstyle.css">
 
-    <style>
+  
+
+</head> 
+
+<body class="app">   	
+    <?php 
+        include $_SERVER['DOCUMENT_ROOT'] . "/DivineClinic/components/navbar.php";
+    ?>
+
+<div class="spinner-wrapper">
+<img src="\DivineClinic\assets\3D\divineloader.gif" alt="">
+ 
+</div>
+
+<style>
         /* Define custom styles here */
         .form-container {
             background-color: #fff;
@@ -115,18 +129,6 @@
 
 
     </style>
-
-</head> 
-
-<body class="app">   	
-    <?php 
-        include $_SERVER['DOCUMENT_ROOT'] . "/DivineClinic/components/navbar.php";
-    ?>
-
-<div class="spinner-wrapper">
-<img src="\DivineClinic\assets\3D\divineloader.gif" alt="">
- 
-</div>
 
 
     <div class="app-wrapper">

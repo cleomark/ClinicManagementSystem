@@ -11,7 +11,7 @@ $items = array(
             "Senior High School Building" => "shslist.php",
             "College Building" => "collegelists.php",
     ]),
-    "Consultation Requests" => array('#', 'menu-icon-15', 
+    "Consultation" => array('#', 'menu-icon-15', 
         [
             "Student" => "physicianstudentcollege.php",
             "Employee" => "physicianemployeecollege.php",

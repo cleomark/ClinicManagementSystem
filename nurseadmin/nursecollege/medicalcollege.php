@@ -188,6 +188,29 @@ if (mysqli_num_rows($result) > 0) {
         Update Dental Schedule
     </button>
 </div>
+
+<style>
+
+.btn-secondary {
+    background-color: #0000FF!important;
+    color: #fff!important;
+}
+
+.btn:hover {
+    background-color: #0000FF!important;
+    color: #fff!important;
+}
+
+.btn:active {
+    background-color: #0000FF!important;
+    color: #fff!important;
+}
+
+.btn:disabled {
+    background-color: #0000FF!important;
+    color: #fff!important;
+}
+</style>
 <?php
 // Fetch and display medical records
 $sql = "SELECT * FROM medicalappadmin WHERE admin_id = '11' AND is_deleted_on_website = 0";
@@ -362,6 +385,19 @@ $result = $conn->query($sql);
         </div>
     </div>
 </div>
+
+<style>
+
+
+td {
+    text-align: left!important; 
+}
+
+.styled-table thead tr{
+    background-color: #0000FF!important;
+    color: #fff!important;}
+
+</style>
 
     <!-- Javascript -->          
     <script src="assets/plugins/popper.min.js"></script>

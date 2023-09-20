@@ -18,6 +18,27 @@
     width: 100%!important;
 }
 
+#tableSelectYear {
+    font-size: 16px!important;
+    padding: 8px!important;
+    border: 1px solid #ccc!important;
+    border-radius: 4px!important;
+    width: 100px!important;
+}
+
+
+#tableSelectYear option {
+    font-size: 14px!important;
+    padding: 4px!important;
+    background-color: #f7f7f7!important;
+}
+
+
+#tableSelectYear option:checked {
+    background-color: #007bff!important;
+    color: #fff!important;
+}
+
 
 .app-card-body .form-horizontal p{
     text-align: left;
@@ -76,6 +97,22 @@ input[type="file"]{
 .btn-success:active{
     background-color: var(--ternary)!important;
     border: 3px solid var(--ternary)!important;
+}
+
+
+
+
+.app-search-form .search-btn {
+    padding: 0.7rem 1rem;
+  
+}
+td {
+    text-align: left; 
+}
+
+thead{
+    background-color: #2E37A4;
+    color: #fff;
 }
 
 

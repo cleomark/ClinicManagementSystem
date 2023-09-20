@@ -60,6 +60,27 @@
         cursor: pointer;
 
     }
+
+    #tableSelectYear {
+    font-size: 16px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100px;
+}
+
+
+#tableSelectYear option {
+    font-size: 14px;
+    padding: 4px;
+    background-color: #f7f7f7;
+}
+
+
+#tableSelectYear option:checked {
+    background-color: #007bff;
+    color: #fff;
+}
 </style>
 
 </head> 
@@ -173,7 +194,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <option value="year">Year</option>
     </select>
 
-    <select id="yearSelect" name="selected_year">
+    <select id="tableSelectYear" name="selected_year">
         <option value="2023" <?php echo $selected_year === '2023' ? 'selected' : ''; ?>>2023</option>
         <option value="2024" <?php echo $selected_year === '2024' ? 'selected' : ''; ?>>2024</option>
         <option value="2025" <?php echo $selected_year === '2025' ? 'selected' : ''; ?>>2025</option>

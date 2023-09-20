@@ -109,7 +109,21 @@
     <link id="theme-style" rel="stylesheet" href="assets/css/portal.css">
 	<link rel="stylesheet" href="assets/generate.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <style>
+   
+    
+
+</head> 
+
+<body class="app">   	
+<?php 
+        include $_SERVER['DOCUMENT_ROOT'] . "/DivineClinic/components/navbar.php";
+    ?>
+
+<div class="spinner-wrapper">
+<img src="/DivineClinic/assets/3D/divineloader.gif" alt="">
+</div>
+
+<style>
         /* Style the container to have fixed size and enable scrolling */
         .chart-container {
             width: 800px;
@@ -202,19 +216,28 @@
                                 opacity: 0;
                             }
                         }
+
+                        #tableSelectYear {
+    font-size: 16px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100px;
+}
+
+
+#tableSelectYear option {
+    font-size: 14px;
+    padding: 4px;
+    background-color: #f7f7f7;
+}
+
+
+#tableSelectYear option:checked {
+    background-color: #007bff;
+    color: #fff;
+}
     </style>
-    
-
-</head> 
-
-<body class="app">   	
-<?php 
-        include $_SERVER['DOCUMENT_ROOT'] . "/DivineClinic/components/navbar.php";
-    ?>
-
-<div class="spinner-wrapper">
-<img src="/DivineClinic/assets/3D/divineloader.gif" alt="">
-</div>
     <div class="app-wrapper">
 	    
 	    <div class="app-content pt-3 p-md-3 p-lg-4">
@@ -240,13 +263,13 @@
 				    <div class="app-card-body p-4">
                         
                     <form id="reportForm">
-        <select id="tableSelect" name="report_type">
+        <select id="tableSelect" name="report_type"></select>
             <option value="week">Week</option>
             <option value="month">Month</option>
             <option value="year">Year</option>
         </select>
 
-        <select id="yearSelect" name="selected_year">
+        <select id="tableSelectYear" name="selected_year">
             <option value="2023">2023</option>
             <option value="2024">2024</option>
             <option value="2025">2025</option>

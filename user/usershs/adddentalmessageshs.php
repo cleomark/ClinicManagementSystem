@@ -46,7 +46,63 @@
     <link id="theme-style" rel="stylesheet" href="assets/css/portal.css">
 	<link rel="stylesheet" href="assets/style.css">
     
+    <style>
+        /* Define custom styles here */
+        .form-container {
+            background-color: #fff;
+            box-shadow: 4px 4px 4px 4px rgba(76, 84, 177, 0.5);
+            padding: 20px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+        }
 
+        .form-title {
+            text-align: center;
+            color: #4c54b1;
+            font-weight: bold;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            color: #000 !important;
+        }
+
+        input.form-control {
+            border: 3px solid #4e5864;
+            background-color: #fff !important;
+            padding: 10px;
+            border-radius: 10px;
+            transition: border-color 0.3s ease;
+        }
+
+        input.form-control:hover {
+            background-color: #e0e0e0 !important;
+            border-color: #4e5864 !important;
+        }
+        input.form-control:focus{
+            background-color: #e0e0e0 !important;
+        }
+        .sched{
+            color: #800000;
+            font-size: 17px !important;
+        }
+        select{
+            border: 3px solid #4e5864 !important;
+        }
+        select:hover{
+            border: 1px solid #4e5864 !important;
+            background-color: #e0e0e0 !important;
+        }
+        select:focus{
+            background-color: #e0e0e0 !important;
+        }
+    </style>
+       
+    </style>
    
 </style>
 </head> 
@@ -70,9 +126,6 @@
                 <div class="app-card app-card-notification shadow-sm mb-4">
 				    <div class="app-card-header px-4 py-3">
 				        <div class="row g-3 align-items-center">
-                        <div class="col-12 col-lg-auto text-center text-lg-start">
-						        <h4 class="notification-title mb-1">Request Dental Schedule</h4>
-					        </div>
                             <?php
 								if(isset($_SESSION['success'])){
 									echo $_SESSION['success'];
@@ -82,199 +135,392 @@
 				        </div><!--//row-->
 				    </div><!--//app-card-header-->
 				    <div class="app-card-body p-4">
-                    <b><p>Please wait for a message for approval of your dental request appointment.</b></p>
-
-                    <form class="form-horizontal mt-4" method="post" action="function/functions.php" onsubmit="return validateForm()">
-                    <div class="row">
-    <div class="col-sm-3">
-        <div class="form-group">
-            <label for="idnumber" class="col-sm-12 control-label" style="font-size: 16px">Enter your ID Number</label>
-            <div class="col-sm-12">
-                <input type="text" class="form-control" id="idnumber" name="idnumber" placeholder="ID number" required>
-            </div>
-        </div>
-    </div>
-    <div class="col-sm-3">
-        <div class="form-group">
-            <label for="patient_name" class="col-sm-12 control-label" style="font-size: 16px">Enter your Fullname</label>
-            <div class="col-sm-12">
-                <input type="text" class="form-control" id="name" name="fullname" placeholder="Enter your Fullname" required>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-sm-3">
-        <div class="form-group">
-            <label for="dental_service" class="col-sm-12 control-label" style="font-size: 16px">Dental Services</label>
-            <div class="col-sm-12">
-                <select id="dental_service" name="service" class="form-control" required>
-                    <option value="">Select Service</option>
-                    <option value="Cleaning">Cleaning</option>
-                    <option value="Tooth Extraction">Tooth Extraction</option>
-                </select>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-sm-3">
-  <div class="form-group">
-    <label for="phoneno" class="col-sm-12 control-label" style="font-size: 16px">Phone Number</label>
-    <div class="col-sm-12">
-      <input type="text" class="form-control contactInput" name="phoneno" placeholder="+63">
-      <p class="errorMessage" style="color: red; display: none;">Invalid Phone Number</p>
-    </div>
-  </div>
-</div>
-
-<script>
-  function validateForm() {
-    var contactInputs = document.getElementsByClassName("contactInput");
-    var isValid = true;
-
-    for (var i = 0; i < contactInputs.length; i++) {
-      var contactInput = contactInputs[i].value;
-
-      if (!contactInput.startsWith("+63")) {
-        isValid = false;
-        document.getElementsByClassName("errorMessage")[i].style.display = "block";
-      } else {
-        document.getElementsByClassName("errorMessage")[i].style.display = "none";
-      }
-    }
-
-    return isValid;
-  }
-</script>
-
-</div>
-
-<br>
-<div class="row">
-    <div class="col-sm-4">
-        <div class="form-group">
-            <label for="gradecourseyear" class="control-label" style="font-size: 16px">Grade & Section</label>
-            <input type="text" class="form-control" id="igradecourseyear" name="gradecourseyear" placeholder="Enter Grade & Section">
-        </div>
-    </div>
-    
-    <div class="col-sm-4">
-        <div class="form-group">
-            <label for="fullname" style="font-size: 16px">Role</label>
-            <select id="role" name="role" class="form-control">
-                <option value="">--Select--</option>
-                <option value="Student in SHS">Student</option>
-                <option value="Employee in SHS">Employee</option>
-            </select>
-        </div>
-    </div>
-    
-    <div class="col-sm-4">
-        <div class="form-group">
-            <label for="datetime" class="control-label" style="font-size: 16px">Schedule</label>
-            <input type="datetime-local" class="form-control" id="datetime" name="date_time">
-        </div>
-    </div>
-</div>
-
-
-<br>
-
 <div class="container">
-  <div class="text-box">
-    <center>
-      <p>Available Day and Time <b>IN GS, JHS and SHS</b></p>
-    </center>
+    <div class="form-container" style="margin-left: 10px;">
+        <div class="form-title">
+            Request Dental Schedule
+        </div>
+        <b><p>Please wait for a message for approval of your dental request appointment.</b></p>
 
-    <?php
-    $sql1 = "SELECT * FROM status";
-    $result1 = mysqli_query($conn, $sql1);
+<form class="form-horizontal mt-4" method="post" action="function/functions.php" onsubmit="return validateForm()">
+<div class="row" style="margin-left: auto;">
+<div class="col-sm-3">
+<div class="form-group">
+<label for="idnumber" class="col-sm-12 control-label" style="font-size: 16px">Enter your ID Number</label>
+<div class="col-sm-12">
+<input type="text" class="form-control" id="idnumber" name="idnumber" placeholder="ID number" required>
+</div>
+</div>
+</div>
+<div class="col-sm-3">
+<div class="form-group">
+<label for="patient_name" class="col-sm-12 control-label" style="font-size: 16px">Enter your Fullname</label>
+<div class="col-sm-12">
+<input type="text" class="form-control" id="name" name="fullname" placeholder="Enter your Fullname" required>
+</div>
+</div>
+</div>
 
- 
-    if (mysqli_num_rows($result1)) {
-        $row1 = $result1->fetch_assoc();
+<div class="col-sm-3">
+<div class="form-group">
+<label for="dental_service" class="col-sm-12 control-label" style="font-size: 16px">Dental Services</label>
+<div class="col-sm-12">
+<select id="dental_service" name="service" class="form-control" required>
+<option value="">Select Service</option>
+<option value="Cleaning">Cleaning</option>
+<option value="Tooth Extraction">Tooth Extraction</option>
+</select>
+</div>
+</div>
+</div>
 
-        $statuses1030_1 = $row1['statuses1030_1']; // Update column name to 'statuses1030'
-        $statuses1130_2 = $row1['statuses1130_2']; // Update column name to 'statuses1130'
-        $statuses230_3 = $row1['statuses230_3']; // Update column name to 'statuses230'
-        $statuses330_4 = $row1['statuses330_4']; // Update column name to 'statuses330'
-        $statuses430_5 = $row1['statuses430_5']; // Update column name to 'statuses430'
-    }
-    ?>
-    <p>
-      <div class="<?php echo ($statuses1030_1 == 'Unavailable') ? 'unavailable' : 'available'; ?> status-label" disabled><?php echo $statuses1030_1; ?></div>
-      Monday - 9:00 A.M - 11:00 A.M.
-      <br><br><div class="<?php echo ($statuses1130_2 == 'Unavailable') ? 'unavailable' : 'available'; ?> status-label" disabled><?php echo $statuses1130_2; ?></div>
-      Tuesday - 9:00 A.M - 11:00 A.M.
-      <br><br><div class="<?php echo ($statuses230_3 == 'Unavailable') ? 'unavailable' : 'available'; ?> status-label" disabled><?php echo $statuses230_3; ?></div>
-      Wednesday - 9:00 A.M - 11:00 A.M.
-      <br><br>
-      <div class="<?php echo ($statuses330_4 == 'Unavailable') ? 'unavailable' : 'available'; ?> status-label" disabled><?php echo $statuses330_4; ?></div>
-      Thursday- 9:00 A.M - 11:00 A.M.
-      <br><br><div class="<?php echo ($statuses430_5 == 'Unavailable') ? 'unavailable' : 'available'; ?> status-label" disabled><?php echo $statuses430_5; ?></div>
-      Friday- 9:00 A.M - 11:00 A.M.
-    </p>
-  </div>
+<div class="col-sm-3">
+<div class="form-group">
+<label for="phoneno" class="col-sm-12 control-label" style="font-size: 16px">Phone Number</label>
+<div class="col-sm-12">
+<input id="personalContactInput" name="phoneno" type="text" placeholder="+63" class="form-control contactInput">
+<p id="personalContactError" class="errorMessage" style="color: red; display: none;">Invalid Phone Number</p>
+</div>
+</div>
+</div>
 
-  <div class="text-box">
-    <center>
-      <p>Available Day and Time <b>IN COLLEGE</b></p>
-    </center>
-    <p>
-    </p>
+<script>
+const personalContactInput = document.getElementById('personalContactInput');
+const personalContactError = document.getElementById('personalContactError');
 
-    <?php
-    $sql3 = "SELECT * FROM statuscollege";
-    $result3 = mysqli_query($conn, $sql3);
+personalContactInput.addEventListener('input', function() {
+let inputValue = personalContactInput.value.trim();
 
-    if (mysqli_num_rows($result3)) {
-        $row3 = $result3->fetch_assoc();
+// Ensure that the input always starts with "+63"
+if (!inputValue.startsWith('+63')) {
+inputValue = '+63' + inputValue;
+}
 
-        $statuses1030_1 = $row3['statuses1030_1']; // Update column name to 'statuses1030'
-        $statuses1130_2 = $row3['statuses1130_2']; // Update column name to 'statuses1130'
-        $statuses230_3 = $row3['statuses230_3']; // Update column name to 'statuses230'
-        $statuses330_4 = $row3['statuses330_4']; // Update column name to 'statuses330'
-        $statuses430_5 = $row3['statuses430_5']; // Update column name to 'statuses330'
-    }
-    ?>
-     <p>
-      <div class="<?php echo ($statuses1030_1 == 'Unavailable') ? 'unavailable' : 'available'; ?> status-label" disabled><?php echo $statuses1030_1; ?></div>
-      Monday - 8:00 A.M - 12:00 P.M.
-      <br><br><div class="<?php echo ($statuses1130_2 == 'Unavailable') ? 'unavailable' : 'available'; ?> status-label" disabled><?php echo $statuses1130_2; ?></div>
-      Tuesday - 8:00 A.M - 12:00 A.M.
-      <br><br><div class="<?php echo ($statuses230_3 == 'Unavailable') ? 'unavailable' : 'available'; ?> status-label" disabled><?php echo $statuses230_3; ?></div>
-      Wednesday - 8:00 A.M - 12:00 P.M.
-      <br><br>
-      <div class="<?php echo ($statuses330_4 == 'Unavailable') ? 'unavailable' : 'available'; ?> status-label" disabled><?php echo $statuses330_4; ?></div>
-      Thursday- 8:00 A.M - 12:00 P.M.
-      <br><br><div class="<?php echo ($statuses430_5 == 'Unavailable') ? 'unavailable' : 'available'; ?> status-label" disabled><?php echo $statuses430_5; ?></div>
-      Friday- 8:00 A.M - 12:00 P.M.
-    </p>
-  </div>
+// Remove any extra characters beyond the maximum length
+if (inputValue.length > 13) {
+inputValue = inputValue.slice(0, 13);
+}
+
+// Check if the input is valid
+if (inputValue === '+63' || (inputValue.startsWith('+63') && inputValue.length <= 13 && inputValue[3] === '9')) {
+personalContactInput.value = inputValue;
+personalContactError.style.display = 'none'; // Hide the error message
+} else {
+personalContactInput.value = ''; // Clear the input if it's invalid
+personalContactError.style.display = 'block'; // Show the error message for invalid input
+}
+});
+</script>
+
+</div>
+
+<br>
+<div class="row" style="margin-left: auto;">
+
+
+<div class="col-sm-3">
+<div class="form-group">
+<label for="datetime" class="col-sm-12 control-label" style="font-size: 16px">Schedule</label>
+<div class="col-sm-12">
+<input type="text" class="form-control no-color-change" id="selected-date" name="date_time" placeholder="Choose Date in the Calendar" readonly>
+</div>
+</div>
+</div>
+
+<div class="col-sm-3">
+<div class="form-group">
+<label for="newInput" class="col-sm-12 control-label" style="font-size: 16px">Time</label>
+<div class="col-sm-12">
+<input type="text" class="form-control no-color-change" id="sched_time" name="sched_time" placeholder="Select Time" readonly>
+</div>
+</div>
 </div>
 
 
+<div class="col-sm-3">
+<div class="form-group">
+<label for="gradecourseyear" class="control-label" style="font-size: 16px">Grade & Section</label>
+<input type="text" class="form-control" id="igradecourseyear" name="gradecourseyear" placeholder="Enter Grade & Section">
+</div>
+</div>
+
+<div class="col-sm-3">
+<div class="form-group">
+<label for="fullname" style="font-size: 16px">Role</label>
+<select id="role" name="role" class="form-control">
+<option value="">--Select--</option>
+<option value="Student in SHS">Student</option>
+<option value="Employee in SHS">Employee</option>
+</select>
+</div>
+</div>
+</div>
+
+<br><br>
+
+<?php
+class Calendar {
 
 
-<!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
-<script>
-  $(document).ready(function() {
-    function updateColor() {
-      var selectedValue = $(this).val();
-      $(this).removeClass('available unavailable').addClass(selectedValue.toLowerCase());
+//Constructor
+
+public function __construct(){     
+$this->naviHref = htmlentities($_SERVER['PHP_SELF']);
+}
+
+// PROPERTY
+private $dayLabels = array("Mon","Tue","Wed","Thu","Fri","Sat","Sun");
+
+private $currentYear=0;
+
+private $currentMonth=0;
+
+private $currentDay=0;
+
+private $currentDate=null;
+
+private $daysInMonth=0;
+
+private $naviHref= null;
+
+//PUBLIC 
+
+// print out the calendar
+
+public function show() {
+$year  = null;
+
+$month = null;
+
+if(null==$year&&isset($_GET['year'])){
+
+$year = $_GET['year'];
+
+}else if(null==$year){
+
+$year = date("Y",time());  
+
+}          
+
+if(null==$month&&isset($_GET['month'])){
+
+$month = $_GET['month'];
+
+}else if(null==$month){
+
+$month = date("m",time());
+
+}                  
+
+$this->currentYear=$year;
+
+$this->currentMonth=$month;
+
+$this->daysInMonth=$this->_daysInMonth($month,$year);  
+
+$content='<div id="calendar">'.
+            '<div class="box">'.
+            $this->_createNavi().
+            '</div>'.
+            '<div class="box-content">'.
+                    '<ul class="label">'.$this->_createLabels().'</ul>';   
+                    $content.='<div class="clear"></div>';     
+                    $content.='<ul class="dates">';    
+                     
+                    $weeksInMonth = $this->_weeksInMonth($month,$year);
+                    // Create weeks in a month
+                    for( $i=0; $i<$weeksInMonth; $i++ ){
+                         
+                        //Create days in a week
+                        for($j=1;$j<=7;$j++){
+                            $content.=$this->_showDay($i*7+$j);
+                        }
+                    }
+                     
+                    $content.='</ul>';
+                     
+                    $content.='<div class="clear"></div>';     
+ 
+            $content.='</div>';
+     
+$content.='</div>';
+return $content;   
+}
+
+// PRIVATE 
+// create the li element for ul
+private function _showDay($cellNumber) {
+if ($this->currentDay == 0) {
+$firstDayOfTheWeek = date('N', strtotime($this->currentYear . '-' . $this->currentMonth . '-01'));
+
+if (intval($cellNumber) == intval($firstDayOfTheWeek)) {
+$this->currentDay = 1;
+}
+}
+
+if (($this->currentDay != 0) && ($this->currentDay <= $this->daysInMonth)) {
+$this->currentDate = date('Y-m-d', strtotime($this->currentYear . '-' . $this->currentMonth . '-' . ($this->currentDay)));
+$cellContent = $this->currentDay;
+
+// Add data attributes for year and month
+$dataYear = $this->currentYear;
+$dataMonth = $this->currentMonth;
+$this->currentDay++;
+
+// Check if the date is in the past
+$currentTimestamp = strtotime(date('Y-m-d'));
+$cellTimestamp = strtotime($this->currentDate);
+
+if ($cellTimestamp < $currentTimestamp) {
+return '<li class="disabled">' . $cellContent . '</li>';
+}
+} else {
+$this->currentDate = null;
+$cellContent = null;
+$dataYear = null;
+$dataMonth = null;
+}
+
+return '<li id="li-' . $this->currentDate . '" class="' . ($cellNumber % 7 == 1 ? ' start ' : ($cellNumber % 7 == 0 ? ' end ' : ' ')) .
+($cellContent == null ? 'mask' : '') . '" data-year="' . $dataYear . '" data-month="' . $dataMonth . '">' . $cellContent . '</li>';
+}
+
+// create navigation
+
+private function _createNavi(){
+
+$nextMonth = $this->currentMonth==12?1:intval($this->currentMonth)+1;
+
+$nextYear = $this->currentMonth==12?intval($this->currentYear)+1:$this->currentYear;
+
+$preMonth = $this->currentMonth==1?12:intval($this->currentMonth)-1;
+
+$preYear = $this->currentMonth==1?intval($this->currentYear)-1:$this->currentYear;
+
+return
+'<div class="header">'.
+    '<a class="prev" href="'.$this->naviHref.'?month='.sprintf('%02d',$preMonth).'&year='.$preYear.'">Prev</a>'.
+        '<span class="title">'.date('Y M',strtotime($this->currentYear.'-'.$this->currentMonth.'-1')).'</span>'.
+    '<a class="next" href="'.$this->naviHref.'?month='.sprintf("%02d", $nextMonth).'&year='.$nextYear.'">Next</a>'.
+'</div>';
+}
+
+
+//create calendar week labels
+
+private function _createLabels(){  
+     
+$content='';
+
+foreach($this->dayLabels as $index=>$label){
+ 
+$content.='<li class="'.($label==6?'end title':'start title').' title">'.$label.'</li>';
+
+}
+
+return $content;
+}
+
+
+
+
+//calculate number of weeks in a particular month
+
+private function _weeksInMonth($month=null,$year=null){
+
+if( null==($year) ) {
+$year =  date("Y",time()); 
+}
+
+if(null==($month)) {
+$month = date("m",time());
+}
+
+// find number of days in this month
+$daysInMonths = $this->_daysInMonth($month,$year);
+
+$numOfweeks = ($daysInMonths%7==0?0:1) + intval($daysInMonths/7);
+
+$monthEndingDay= date('N',strtotime($year.'-'.$month.'-'.$daysInMonths));
+
+$monthStartDay = date('N',strtotime($year.'-'.$month.'-01'));
+
+if($monthEndingDay<$monthStartDay){
+ 
+$numOfweeks++;
+
+}
+
+return $numOfweeks;
+}
+
+//calculate number of days in a particular month
+
+private function _daysInMonth($month=null,$year=null){
+
+if(null==($year))
+$year =  date("Y",time()); 
+
+if(null==($month))
+$month = date("m",time());
+ 
+return date('t',strtotime($year.'-'.$month.'-01'));
+}
+
+
+
+// Add a method to generate the calendar
+public function generateCalendar() {
+$year = $this->currentYear;
+$month = $this->currentMonth;
+
+$calendarHTML = $this->show(); // Generate the calendar HTML
+
+echo $calendarHTML;
+}
+}
+
+// Create an instance of the Calendar class
+$calendar = new Calendar();
+?>
+
+<?php
+    $week = [
+        "monday" => [],
+        "tuesday"=> [],
+        "wednesday"=> [],
+        "thursday"=> [],
+        "friday"=> [],
+    ];
+
+    foreach(["09:00AM", "10:00AM", "11:00AM"] as $time){
+        if($time != "Unavailable"){
+            array_push($week["monday"], str_replace('.', '', str_replace(' ', '', $time)));
+            array_push($week["tuesday"], str_replace('.', '', str_replace(' ', '', $time)));
+            array_push($week["wednesday"], str_replace('.', '', str_replace(' ', '', $time)));
+            array_push($week["thursday"], str_replace('.', '', str_replace(' ', '', $time)));
+            array_push($week["friday"], str_replace('.', '', str_replace(' ', '', $time)));
+        }
     }
 
-    $('select').each(updateColor).change(updateColor);
-  });
-</script>
+?>
+
+
+
+<?php 
+        include $_SERVER['DOCUMENT_ROOT'] . "/DivineClinic/components/calendar.php";
+?>
 
 <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10">
-        <br>
-        <input type="text" name="user_id" style="display: none;" value="<?= $_SESSION['user_id'];?>">
-        <button name="submit_dental" class="btn btn-success">Send Dental Appointment</button>
-    </div>
+<div class="col-sm-offset-2 col-sm-10">
+<br>
+<input type="text" name="user_id" style="display: none;" value="<?= $_SESSION['user_id'];?>">
+<button name="submit_dental" class="btn btn-success">Send Dental Appointment</button>
+</div>
 </div>
 </form>
+
+
 </div><!--//app-card-body-->
 </div>			    
 </div>
@@ -288,13 +534,14 @@
 <script src="assets/js/app.js"></script> 
 
 <script>
-    // Timer to remove success message after 5 seconds (5000 milliseconds)
-    setTimeout(function(){
-        var successMessage = document.getElementById('success-message');
-        if(successMessage){
-            successMessage.remove();
-        }
-    }, 5000);
+// Timer to remove success message after 5 seconds (5000 milliseconds)
+setTimeout(function(){
+var successMessage = document.getElementById('success-message');
+if(successMessage){
+successMessage.remove();
+}
+}, 5000);
+
 </script>
 
 

@@ -221,6 +221,21 @@ if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === 'POST') 
     $conn->close();
 }
 ?>
+<style> 
+
+.app-search-form .search-btn {
+    padding: 0.7rem 1rem;
+  
+}
+td {
+    text-align: left; 
+}
+
+thead{
+    background-color: #2E37A4;
+    color: #fff;
+}
+</style>
 
 <script>
 function searchRecords() {

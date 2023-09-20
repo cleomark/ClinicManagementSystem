@@ -104,6 +104,27 @@
 	<link rel="stylesheet" href="assets/generate.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
+
+#tableSelectYear {
+    font-size: 16px!important;
+    padding: 8px!important;
+    border: 1px solid #ccc!important;
+    border-radius: 4px!important;
+    width: 100px!important;
+}
+
+
+#tableSelectYear option {
+    font-size: 14px!important;
+    padding: 4px!important;
+    background-color: #f7f7f7!important;
+}
+
+
+#tableSelectYear option:checked {
+    background-color: #007bff!important;
+    color: #fff!important;
+}
         /* Style the container to have fixed size and enable scrolling */
         .chart-container {
             width: 800px;
@@ -184,7 +205,7 @@
             <option value="year">Year</option>
         </select>
 
-        <select id="yearSelect" name="selected_year">
+        <select id="tableSelectYear" name="selected_year">
             <option value="2023">2023</option>
             <option value="2024">2024</option>
             <option value="2025">2025</option>
@@ -243,7 +264,7 @@
                         {
                             label: "Total of Visitors",
                             data: data.total_visitors,
-                            backgroundColor: "rgba(0, 0, 128, 0.5)", // You can change the color here
+                            backgroundColor: "rgba(46, 55, 164)", // You can change the color here
                         },
                        
                     ],

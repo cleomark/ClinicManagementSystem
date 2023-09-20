@@ -46,7 +46,62 @@
     <link id="theme-style" rel="stylesheet" href="assets/css/portal.css">
     <link rel="stylesheet" href="assets/style.css">
 
+    <style>
+        /* Define custom styles here */
+        .form-container {
+            background-color: #fff;
+            box-shadow: 4px 4px 4px 4px rgba(76, 84, 177, 0.5);
+            padding: 20px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+        }
 
+        .form-title {
+            text-align: center;
+            color: #4c54b1;
+            font-weight: bold;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            color: #000 !important;
+        }
+
+        input.form-control {
+            border: 3px solid #4e5864;
+            background-color: #fff !important;
+            padding: 10px;
+            border-radius: 10px;
+            transition: border-color 0.3s ease;
+        }
+
+        input.form-control:hover {
+            background-color: #e0e0e0 !important;
+            border-color: #4e5864 !important;
+        }
+        input.form-control:focus{
+            background-color: #e0e0e0 !important;
+        }
+        .sched{
+            color: #800000;
+            font-size: 17px !important;
+        }
+        select{
+            border: 3px solid #4e5864 !important;
+        }
+        select:hover{
+            border: 1px solid #4e5864 !important;
+            background-color: #e0e0e0 !important;
+        }
+        select:focus{
+            background-color: #e0e0e0 !important;
+        }
+        
+    </style>
    
 </style>
 </head> 
@@ -57,7 +112,7 @@
         include $_SERVER['DOCUMENT_ROOT'] . "/DivineClinic/components/navbar.php";
     ?>
     
-        <div class="app-wrapper">
+<div class="app-wrapper">
 	    
 	    <div class="app-content pt-3 p-md-3 p-lg-4">
 		    <div class="container-xl">
@@ -72,9 +127,6 @@
                 <div class="app-card app-card-notification shadow-sm mb-4">
 				    <div class="app-card-header px-4 py-3">
 				        <div class="row g-3 align-items-center">
-                        <div class="col-12 col-lg-auto text-center text-lg-start">
-						        <h4 class="notification-title mb-1">Request Physician Consultation Schedule</h4>
-					        </div>
                             <?php
 								if(isset($_SESSION['success'])){
 									echo $_SESSION['success'];
@@ -84,46 +136,47 @@
 				        </div><!--//row-->
 				    </div><!--//app-card-header-->
 				    <div class="app-card-body p-4">
+
+<div class="container">
+    <div class="form-container" style="margin-left: 10px;">
+        <div class="form-title">
+            Request Physician Schedule
+        </div>
+
             <b><p>Please wait for a message for approval of your physician consultation request appointment.</b></p>
 
 <form class="form-horizontal mt-4" method="post" action="function/functions.php" onsubmit="return validateForm()">
-<div class="row">
-  <div class="col-sm-3">
-    <div class="form-group">
-      <label for="idnumber" class="col-sm-10 control-label" style="font-size: 16px">Enter your ID Number</label>
-      <div class="col-sm-12">
-        <input type="text" class="form-control" id="idnumber" name="idnumber" placeholder="Enter ID number" required>
-      </div>
-    </div>
-  </div>
 
-  <div class="col-sm-3">
-    <div class="form-group">
-      <label for="patient_name" class="col-sm-10 control-label" style="font-size: 16px">Enter your Fullname</label>
-      <div class="col-sm-12">
-        <input type="text" class="form-control" id="name" name="name" placeholder="Enter Fullname" required>
-      </div>
-    </div>
-  </div>
+<div class="row" style="margin-left:auto">
 
-  <div class="col-sm-3">
-    <div class="form-group">
-      <label for="gradesection" class="col-sm-10 control-label" style="font-size: 16px">Grade & Section</label>
-      <div class="col-sm-12">
-        <input type="text" class="form-control" id="gradesection" name="gradesection" placeholder="Enter your Grade & Section" required>
-      </div>
-    </div>
-  </div>
+        <div class="col-sm-3">
+            <div class="form-group">
+            <label for="idnumber" class="control-label">Enter your ID Number</label>
+                <input type="text" class="form-control" id="idnumber" name="idnumber" placeholder="Enter ID number" required>
+            </div>
+        </div>
 
-  <div class="col-sm-3">
-  <div class="form-group">
-  <label for="phoneno" class="col-sm-12 control-label" style="font-size: 16px">Phone Number</label>
-    <div class="col-sm-12">
-      <input id="personalContactInput" name="phoneno" type="text" placeholder="+63" class="form-control contactInput">
-      <p id="personalContactError" class="errorMessage" style="color: red; display: none;">Invalid Phone Number</p>
-    </div>
-  </div>
-</div>
+        <div class="col-sm-3">
+            <div class="form-group">
+                <label for="patient_name" class="control-label">Enter your Fullname</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Enter Fullname" required>
+            </div>
+        </div>
+
+        <div class="col-sm-3">
+            <div class="form-group">
+                <label for="gradesection" class="control-label">Grade & Section</label>
+                <input type="text" class="form-control" id="gradesection" name="gradesection" placeholder="Enter your Grade & Section" required>
+            </div>
+        </div>
+
+        <div class="col-sm-3">
+            <div class="form-group">
+                <label for="phoneno" class="control-label">Phone Number</label>
+                <input id="personalContactInput" name="phoneno" type="text" placeholder="+63" class="form-control contactInput">
+                <p id="personalContactError" class="errorMessage" style="color: red; display: none;">Invalid Phone Number</p>
+            </div>
+        </div>
 
 <script>
     const personalContactInput = document.getElementById('personalContactInput');
@@ -154,41 +207,38 @@
 </script>
 
 </div>
-
 <br>
- <div class="row">
- <div class="col-sm-4">
- <div class="form-group">
-        <label for="datetime" class="col-sm-12 control-label" style="font-size: 16px">Schedule</label>
-        <div class="col-sm-12">
-            <input type="text" class="form-control no-color-change" id="selected-date" name="date_time" placeholder="Choose Date in the Calendar" readonly>
-        </div>
-    </div>
-</div>
 
-<div class="col-sm-4">
-<div class="form-group">
-        <label for="newInput" class="col-sm-12 control-label" style="font-size: 16px">Time</label>
-        <div class="col-sm-12">
-            <input type="text" class="form-control no-color-change" id="sched_time" name="sched_time" placeholder="Select Time" readonly>
-        </div>
-    </div>
-</div>
+ <div class="row" style="margin-left:auto">
 
-
- <div class="col-sm-4">
+    <div class="col-sm-4">
         <div class="form-group">
-            <label for="role" class="col-sm-10 control-label" style="font-size: 16px">Role</label>
-            <div class="col-sm-12">
+            <label for="datetime" class="control-label">Schedule</label>
+                <input type="text" class="form-control no-color-change" id="selected-date" name="date_time" placeholder="Choose Date in the Calendar" readonly>
+        </div>
+    </div>
+
+    <div class="col-sm-4">
+        <div class="form-group">
+            <label for="newInput" class="control-label">Time</label>
+                <input type="text" class="form-control no-color-change" id="sched_time" name="sched_time" placeholder="Select Time" readonly>
+        </div>
+    </div>
+
+
+    <div class="col-sm-4">
+        <div class="form-group">
+            <label for="role" class="control-label">Role</label>
                 <select id="role" name="role" class="form-control">
                 <option value="">Select Role</option>
                 <option value="Student in GS/JHS">Student</option>
                 <option value="Employee in GS/JHS">Employee</option>
                 </select>
-            </div>
         </div>
-        <br><br>
     </div>
+
+</div>
+
     <style>
         
 
@@ -499,10 +549,31 @@
     $calendar = new Calendar();
     ?>
 
+<?php
+    $week = [
+        "monday" => [],
+        "tuesday"=> [],
+        "wednesday"=> [],
+        "thursday"=> [],
+        "friday"=> [],
+    ];
+
+    // NOTE: this method is for availability checking for each day of the week
+        // do sql queries here and pass it to the array in foreach
+
+    // foreach([$statusmed8_am,$statusmed9_am, $statusmed10_am, $statusmed11_am,
+    // $statusmed1_pm, $statusmed2_pm, $statusmed3_pm,$statusmed4_pm] as $time){
+    //     if($time != "Unavailable"){
+    //         array_push($week["monday"], str_replace('.', '', str_replace(' ', '', $time)));
+    //     }
+    // }
+?>
+
 <?php 
         include $_SERVER['DOCUMENT_ROOT'] . "/DivineClinic/components/calendar.php";
 ?>
-p
+
+
 
 <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
@@ -512,6 +583,9 @@ p
     </div>
 </div>
 </form>
+
+    </div>
+    </div>
 
 
 </div><!--//app-card-body-->
@@ -535,90 +609,6 @@ p
         }
     }, 5000);
 </script>
-  <!-- jQuery library (make sure to include it) -->
-  <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
-    
-    <script>
-$(document).ready(function() {
-    // Hide all time tables initially
-    $('.schedule-table').hide();
-
-    $('.dates li').click(function() {
-    // Remove the "selected" class from all date cells
-    $('.dates li').removeClass('selected');
-
-    // Add the "selected" class to the clicked date cell
-    $(this).addClass('selected');
-
-    // Get the text content of the clicked date cell
-    var selectedDay = $(this).text();
-
-    // Get the year and month from the data attributes
-    var selectedYear = $(this).data('year');
-    var selectedMonth = $(this).data('month');
-
-    // Create a JavaScript Date object with the selected year, month, and day
-    var selectedDate = new Date(selectedYear, selectedMonth - 1, selectedDay);
-
-    // Adjust for the time zone offset
-    var timezoneOffsetMinutes = selectedDate.getTimezoneOffset();
-    selectedDate.setMinutes(selectedDate.getMinutes() - timezoneOffsetMinutes);
-
-    // Format the date as "Monday September 4, 2023"
-    var formattedDate = selectedDate.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
-
-    // Display the selected date in the Monday table header
-    $('#selected-day-header').text(formattedDate);
-
-    // Set the value of the input field with the selected date
-    $('#selected-date').val(formattedDate);
-
-    // Determine the day of the week for the selected date
-    var selectedDayOfWeek = selectedDate.toLocaleDateString('en-US', { weekday: 'long' });
-
-    // Update the displayed table based on the selected day of the week
-    updateDisplayedTable(selectedDayOfWeek);
-    // Update the respective day headers for Tuesday, Wednesday, Thursday, and Friday
-    if (selectedDayOfWeek === 'Tuesday') {
-        $('#tuesday-date-display').text(formattedDate);
-    } else if (selectedDayOfWeek === 'Wednesday') {
-        $('#wednesday-date-display').text(formattedDate);
-    } else if (selectedDayOfWeek === 'Thursday') {
-        $('#thursday-date-display').text(formattedDate);
-    } else if (selectedDayOfWeek === 'Friday') {
-        $('#friday-date-display').text(formattedDate);
-    }
-});
-
-
-    // Function to update the displayed table based on the selected date
-    function updateDisplayedTable(selectedDayOfWeek) {
-        // Hide all time tables
-        $('.schedule-table').hide();
-
-        // Determine which table to display based on the selected day of the week
-        if (selectedDayOfWeek === 'Monday') {
-            $('#monday-table').show(); // Show the Monday table
-        } else if (selectedDayOfWeek === 'Tuesday') {
-            $('#tuesday-table').show(); // Show the Tuesday table
-        } else if (selectedDayOfWeek === 'Wednesday') {
-            $('#wednesday-table').show(); // Show the Wednesday table
-        }else if (selectedDayOfWeek === 'Thursday') {
-            $('#thursday-table').show(); // Show the Thursday table
-    }else if (selectedDayOfWeek === 'Friday') {
-            $('#friday-table').show(); // Show the Friday table
-  }
-}
-});
-
-
-// Function to handle clicking an available time
-function handleLabelClick(time) {
-    document.getElementById('sched_time').value = time;
-}
-
-    </script>
-
 
 
 </body>

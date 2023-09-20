@@ -108,7 +108,43 @@
     <link id="theme-style" rel="stylesheet" href="assets/css/portal.css">
 	<link rel="stylesheet" href="assets/generate.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <style>
+   
+
+</head> 
+
+<body class="app">   	
+<?php 
+        include $_SERVER['DOCUMENT_ROOT'] . "/DivineClinic/components/navbar.php";
+    ?>
+
+    
+<div class="spinner-wrapper">
+<img src="/DivineClinic/assets/3D/divineloader.gif" alt="">
+</div>
+
+<style>
+
+#tableSelectYear {
+    font-size: 16px!important;
+    padding: 8px!important;
+    border: 1px solid #ccc!important;
+    border-radius: 4px!important;
+    width: 100px!important;
+}
+
+
+#tableSelectYear option {
+    font-size: 14px!important;
+    padding: 4px!important;
+    background-color: #f7f7f7!important;
+}
+
+
+#tableSelectYear option:checked {
+    background-color: #007bff!important;
+    color: #fff!important;
+}
+
         /* Style the container to have fixed size and enable scrolling */
         .chart-container {
             width: 800px;
@@ -206,18 +242,6 @@
     </style>
     
 
-</head> 
-
-<body class="app">   	
-<?php 
-        include $_SERVER['DOCUMENT_ROOT'] . "/DivineClinic/components/navbar.php";
-    ?>
-
-    
-<div class="spinner-wrapper">
-<img src="/DivineClinic/assets/3D/divineloader.gif" alt="">
-</div>
-
     <div class="app-wrapper">
 	    
 	    <div class="app-content pt-3 p-md-3 p-lg-4">
@@ -249,7 +273,7 @@
             <option value="year">Year</option>
         </select>
 
-        <select id="yearSelect" name="selected_year">
+        <select id="tableSelectYear" name="selected_year">
             <option value="2023">2023</option>
             <option value="2024">2024</option>
             <option value="2025">2025</option>
@@ -308,12 +332,12 @@
                         {
                             label: "Total of Student",
                             data: data.total_student,
-                            backgroundColor: "rgba(0, 0, 128, 0.5)", // You can change the color here
+                            backgroundColor: "rgba(46, 55, 164)", // You can change the color here
                         },
                         {
                             label: "Total of Employees",
                             data: data.total_employee,
-                            backgroundColor: "rgba(139, 0, 0, 0.5)", // You can change the color here
+                            backgroundColor: "rgba(255,87,87)", // You can change the color here
                         },
                     ],
                 };
