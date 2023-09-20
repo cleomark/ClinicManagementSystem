@@ -67,7 +67,8 @@
   }
   
   .datepicker {
-  background-color: #fb8b24!important;
+    margin-top: 20px;
+  background-color: #211eb7!important;
   color: #fff !important;
   border: none;
   padding: 10px !important;
@@ -85,13 +86,14 @@
   
   .datepicker-dropdown{
     width: 400px;
+    background:white!important;
   }
   .table-condensed{
     width: 380px;
   }
   
   thead tr:nth-child(3) th {
-  color: #fff !important;
+  color: #000 !important;
   font-weight: bold;
   padding-top: 20px;
   padding-bottom: 10px;
@@ -113,6 +115,7 @@
   border-radius: 6px !important;
   color: #000 !important;
   }
+  
   
   .disabled {
   color: #616161 !important;
@@ -148,13 +151,24 @@
   }
   
   .fa-calendar {
-  color: #fff;
+  margin-top: 20px;
+  color: grey;
   font-size: 30px;
   padding-top: 8px;
   padding-left: 5px;
   cursor: pointer;
   }
-  
+  .datepicker-days{
+    background:white  ;
+    color:black;
+  }
+
+  .datepicker-switch{
+    color:black!important;
+  }
+  .next{
+    color:black!important;
+  }  
 </style>
 <!-- !CSS -->
 
@@ -194,11 +208,12 @@
                 <!-- This hold the time -->
                 <div class="card border-0 calendar-beveled clip-content">
                   <form autocomplete="off">
-                    <div class="card-header bg-dark">
+                  <span class="fa fa-calendar"></span>
+                    <div class="card-header bg-white">
                       <!-- this class hold the pick date interface -->
                       <div class="mx-0 mb-0 row justify-content-sm-center justify-content-start px-1">
-                        <input type="text" id="dp1" class="datepicker" placeholder="Pick Date" name="date" readonly><span class="fa fa-calendar"></span>
-                      </div>
+                        <input type="text" id="dp1" class="datepicker" placeholder="Pick Date" name="date" readonly>
+                      </div>  
                     </div>
                     <!-- Card body -->
                     <div class="card-body p-3 p-sm-5">
