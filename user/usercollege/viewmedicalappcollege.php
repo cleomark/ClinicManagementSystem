@@ -73,7 +73,9 @@ if (mysqli_num_rows($result) > 0) {
 <?php 
         include $_SERVER['DOCUMENT_ROOT'] . "/DivineClinic/components/navbar.php";
     ?>
-    <div class="app-wrapper">
+    
+<div class="app-wrapper">
+
     <div class="app-content pt-3 p-md-3 p-lg-4">
         <div class="container-xl">
             <div class="position-relative mb-3">
@@ -92,29 +94,39 @@ if (mysqli_num_rows($result) > 0) {
                     $result = $conn->query($sql);
                     while($row = $result->fetch_array()) {
                     ?>
-                    <br>
+
+<div class="container">
+    <div class="form-container">
+        <div class="form-title">
+            Medical Record Form
+        </div>
+
                     <div class="row">
+
                         <div class="col-sm-4">
                             <div class="form-group">
-                                <label for="idnumber" class="col-sm-12 control-label">Your ID Number</label>
+                                <label for="idnumber" class="control-label">Your ID Number</label>
                                 <input type="text" class="form-control" id="idnumber" name="idnumber" placeholder="Enter patient ID number" value="<?php echo $row['idnumber']; ?>" readonly>
                             </div>
                         </div>
                         <div class="col-sm-4">
                             <div class="form-group">
-                                <label for="patient_name" class="col-sm-12 control-label">Your name</label>
+                                <label for="patient_name" class="control-label">Your name</label>
                                 <input type="text" class="form-control" id="fullname" name="name1" placeholder="Enter your Fullname" value="<?php echo $row['name1']; ?>" readonly>
                             </div>
                         </div>
                         <div class="col-sm-4">
                             <div class="form-group">
-                                <label for="gradecourseyear1" class="col-sm-12 control-label">Grade & Section/Course & Year</label>
+                                <label for="gradecourseyear1" class="control-label">Grade & Section/Course & Year</label>
                                 <input type="text" class="form-control" id="gradecourseyear1" name="gradecourseyear1" placeholder="Enter your Fullname" value="<?php echo $row['gradecourseyear1']; ?>" readonly>
                             </div>
                         </div>
+
                     </div>
                     <br>
+
                     <div class="row">
+
                         <div class="col-sm-4">
                             <div class="form-group">
                                 <label for="cenrolled" class="col-sm-12 control-label">Role</label>
@@ -128,12 +140,15 @@ if (mysqli_num_rows($result) > 0) {
                             </div>
                         </div>
                         <div class="form-group">
-                            <span>Schedule: <?php echo $row['date_time']; ?></span>
+                            <b><span class="sched">Schedule: <?php echo $row['date_time']; ?></span></b>
                         </div>
+
                     </div>
+
+    </div>
+</div>
                     <?php } ?>
-                </div><!--//app-card-body-->
-            </div>
+            </div><!--//app-card-body-->
         </div>
     </div>
 </div>

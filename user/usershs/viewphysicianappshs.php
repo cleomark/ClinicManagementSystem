@@ -92,11 +92,6 @@
             color: #800000;
             font-size: 17px !important;
         }
-        /* Hide placeholder text on hover and focus */
-        input.form-control:hover::placeholder,
-        input.form-control:focus::placeholder {
-            color: transparent !important;
-        }
     </style>
 
 </head> 
