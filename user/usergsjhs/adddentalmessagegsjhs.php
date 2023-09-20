@@ -71,7 +71,6 @@
 						
 				    </div>
 			    </div>
-			    <br>
                 <div class="app-card app-card-notification shadow-sm mb-4">
 				    <div class="app-card-header px-4 py-3">
 				        <div class="row g-3 align-items-center">
